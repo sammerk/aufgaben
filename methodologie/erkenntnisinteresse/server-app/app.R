@@ -12,6 +12,7 @@ library(shinycssloaders)
 ui <- page_fixed(
   useShinyjs(),
   card(
+  card(
       card_header(
           "Aufgabe: Erkentnisinteresse in Forschungsfrage erkennen",
           class = "bg-dark"),
@@ -42,7 +43,7 @@ ui <- page_fixed(
                    "Neue Aufgabe derselben Art",
                    icon = icon("plus"))
     )      
-)
+))
 
 
 

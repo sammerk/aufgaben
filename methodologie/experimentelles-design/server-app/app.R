@@ -1,42 +1,40 @@
 # Task Name: Experiment_Quasiexperiment_Nichtexperiment ######################
 
 library(shiny)
-library(miniUI)
 library(shinyjs)
-library(hrbrthemes)
-library(PearsonDS)
 library(tidyverse)
 library(learnr)
-library(googledrive)
-library(googlesheets4)
+library(bslib)
 library(shinycssloaders)
 
-## Googlesheets Connection Setup ###############################################
-options(
-  # whenever there is one account token found, use the cached token
-  gargle_oauth_email = TRUE,
-  # specify auth tokens should be stored in a hidden directory ".secrets"
-  gargle_oauth_cache = ".secrets/"
-)
-
-gs4_auth()
 
 
 ## UI #########################################################################
-ui <- miniPage(
+ui <- page_fixed(
   useShinyjs(),
-  miniContentPanel(
-    wellPanel(
-      h4("Aufgabe: Untersuchungsdesign in Studienbeschreibung erkennen"),
+  card(
+    card(
+      card_header(
+        "Aufgabe: Untersuchungsdesign in Studienbeschreibung erkennen",
+        class = "bg-dark"),
+    card_body(
       htmlOutput("prompt_task")
+    )
     ),
-    shinyjs::hidden(wellPanel(id = "feedbackpanel_task",
-                              withSpinner(
-                                htmlOutput("feedback_task"),
-                                proxy.height = "50px",
-                                color = "#8cd000"))
+    
+    
+    shinyjs::hidden(card(id = "feedbackpanel_task",
+                         card_header(
+                           "Feedback",
+                           class = "bg-dark"),
+                         card_body(
+                           withSpinner(
+                             htmlOutput("feedback_task"),
+                             proxy.height = "50px",
+                             color = "#8cd000"))
+    )
     ),
-    wellPanel(
+    card(
       uiOutput("ui_answers_task"),
       actionButton("show_feedback_task", 
                    "Prüfe meine Lösung!",
@@ -48,23 +46,11 @@ ui <- miniPage(
                    "Neue Aufgabe derselben Art",
                    icon = icon("plus"))
     )      
-  )  
-)
+  ))
 
 
 
 server <- function(input, output, session) {
-  
-  # Global functions ###########################################################
-  ## round2 rounds .5 upwards
-  round2 = function(x, n) {
-    posneg = sign(x)
-    z = abs(x)*10^n
-    z = z + 0.5 + sqrt(.Machine$double.eps)
-    z = trunc(z)
-    z = z/10^n
-    z*posneg
-  }
 
   ##############################################################################
   # Backend for task  ##########################################################
@@ -190,35 +176,8 @@ server <- function(input, output, session) {
     reset(id = "answers_task")
   })
 
-  
-  ## URL Variable fetching #####################################################
-  url_vars <- reactive({
-    parseQueryString(session$clientData$url_search)
-  })
-  
-  ## Usage Logging #############################################################
-  observeEvent(input$show_feedback_task, {
-    if(!is.null(input$answers_task)){
-      sheet_append("1AZf7EQk-M2Wgej3WJXG1J2xRdql8b7Xiq0SvIiZogUo",
-                   tibble(PID = ifelse(is.null(url_vars()$PID), 
-                                       "PID is missing", #to keep ncol constant
-                                       url_vars()$PID), # Person identifier from URL
-                          task_name = "Experiment_Quasiexperiment_Nichtexperiment",
-                          task_version = "repeatable_and_parametrized",
-                          time = Sys.time(),
-                          timezone = Sys.timezone(),
-                          result = # correct or wrong sol. provided by student
-                            case_when(is.null(input$answers_task) ~ 
-                                        "false_solution",
-                                      setequal(correct_answers_task(), 
-                                               input$answers_task) ~ 
-                                        "correct_solution",
-                                      TRUE ~  "false_solution")
-                   ),
-                   sheet = 1)
-    }
-  })
 }
+
 
 
 # Create Shiny object
