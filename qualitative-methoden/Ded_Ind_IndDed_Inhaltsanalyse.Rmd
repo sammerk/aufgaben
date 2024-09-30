@@ -1,0 +1,91 @@
+```{r, echo = FALSE, dev='svglite', message=FALSE, fig.width=8, fig.height=4, fig.cap="", out.width="550px"}
+library(tidyverse)
+library(exams)
+
+ded <- 
+  sample(
+    c("Eine Studie widmet sich möglichen Ursachen für Burnout bei Lehrkräften. 
+Da in der wissenschaftlichen Literatur bereits ein umfassendes Bild potenzieller Ursachen beschrieben ist, wurden diese in der Literatur beschriebenen Ursachen zu Kategorien zusammengefasst. Danach wurden N = 146 Leitfadeninterviews mit Lehrkräften mit Erschöpfungssymptomatik durchgeführt und jede Aussage zu Ursachen der Erschöpfung diesen Kategorien aus der Literatur zugeordnet.",
+      "Eine Studie widmet sich möglichen Ursachen für Studienabbruch bei Lehramtsstudierenden. Da in der wissenschaftlichen Literatur bereits ein umfassendes Bild potenzieller Ursachen für Studienabbruch beschrieben ist, wurden diese in der Literatur beschriebenen Ursachen zu Kategorien zusammengefasst. Danach wurden N = 146 Leitfadeninterviews mit Abbrechern des Lehramtsstudiums durchgeführt und jede Aussage zu Ursachen des Studienabbruchs diesen Kategorien aus der Literatur zugeordnet.
+",
+       "Eine Studie widmet sich möglichen Ursachen von Schulabsentismus (umfangreiches »Schule schwänzen«). Da in der wissenschaftlichen Literatur bereits ein umfassendes Bild potenzieller Ursachen für Schulabsentismus beschrieben ist, wurden diese in der Literatur beschriebenen Ursachen zu Kategorien zusammengefasst. Danach wurden N = 146 Leitfadeninterviews mit Schüler:innen mit sehr vielen unentschuldigten Fehltagen durchgeführt und jede Aussage zu Ursachen diesen Kategorien aus der Literatur zugeordnet.
+"), 3)
+
+indded <-
+  sample(
+    c("Eine Studie widmet sich möglichen Ursachen für Burnout bei Lehrkräften. Da in der wissenschaftlichen Literatur bislang nur drei Ursachen beschrieben sind, wurden zum einen diese drei Ursachen in Aussagen von N = 146 Leitfadeninterviews von Lehrkräften mit Erschöpfungssymptomatik identifiziert. Zum anderen aber wurden auch aus den Interviews heraus neue potentielle Ursachen identifiziert. Diese wurden in neue Kategorien zusammengefasst. Bei einem erneuten Kodierdurchgang wurden dann sowohl die Kategorien aus der Literatur als auch aus dem Material auf jede Aussage der Transkripte angewendet.",
+      "Eine Studie widmet sich möglichen Ursachen für Studienabbruch bei Lehramtsstudierenden. Da in der wissenschaftlichen Literatur bislang nur drei Ursachen beschrieben sind, wurden zum einen diese drei Ursachen in Aussagen von N = 146 Leitfadeninterviews von Abbrechern des Lehramtsstudiums identifiziert. Zum anderen aber wurden auch aus den Interviews heraus neue potentielle Ursachen identifiziert. Diese wurden in neue Kategorien zusammengefasst. Bei einem erneuten Kodierdurchgang wurden dann sowohl die Kategorien aus der Literatur als auch aus dem Material auf jede Aussage der Transkripte angewendet.",
+      "Eine Studie widmet sich möglichen Ursachen von Schulabsentismus (umfangreiches »Schule schwänzen«). Da in der wissenschaftlichen Literatur bislang nur drei Ursachen beschrieben sind, wurden zum einen diese drei Ursachen in Aussagen von N = 146 Leitfadeninterviews von Schüler:innen mit sehr vielen unentschuldigten Fehltagen identifiziert. Zum anderen aber wurden auch aus den Interviews heraus neue potenzielle Ursachen identifiziert. Diese wurden in neue Kategorien zusammengefasst. Bei einem erneuten Kodierdurchgang wurden dann sowohl die Kategorien aus der Literatur als auch aus dem Material auf jede Aussage der Transkripte angewendet."
+    ),3)
+
+
+ind <-
+  sample(
+    c("Eine Studie widmet sich möglichen Ursachen für Burnout bei Lehrkräften. Da in der wissenschaftlichen Literatur bislang kaum Ursachen beschrieben sind, wurden Ursachen in Aussagen von N = 146 Leitfadeninterviews von Lehrkräften mit Erschöpfungssymptomatik identifiziert. Diese wurden zu Kategorien zusammengefasst. Bei einem Kodierdurchgang durch alle Interviews wurden dann diese so gefundenen Kategorien auf jede Aussage der Transkripte angewendet.",
+"Eine Studie widmet sich möglichen Ursachen für Studienabbruch bei Lehramtsstudierenden. Da in der wissenschaftlichen Literatur bislang kaum Ursachen beschrieben sind, wurden Ursachen in Aussagen von N = 146 Leitfadeninterviews von Abbrechern des Lehramtsstudiums identifiziert. Diese wurden zu Kategorien zusammengefasst. Bei einem Kodierdurchgang durch alle Interviews wurden dann diese so gefundenen Kategorien auf jede Aussage der Transkripte angewendet.",
+"Eine Studie widmet sich möglichen Ursachen von Schulabsentismus (umfangreiches »Schule schwänzen«). Da in der wissenschaftlichen Literatur bislang kaum Ursachen beschrieben sind, wurden Ursachen in Aussagen von N = 146 Leitfadeninterviews von Schüler:innen mit sehr vielen unentschuldigten Fehltagen identifiziert. Diese wurden zu Kategorien zusammengefasst. Bei einem Kodierdurchgang durch alle Interviews wurden dann diese so gefundenen Kategorien auf jede Aussage der Transkripte angewendet."), 3)
+
+answer_data <- 
+  tibble(
+    Studien = c(ind[1], indded[1], ded[1]),
+    solution = c("ind", "indded", "ded")
+  ) |> 
+  sample_frac(1)
+
+answerlist <- 
+  c(
+    "Studie 1 = Induktive Inhaltsanalyse & Studie 2 = deduktive Inhaltanalyse",
+    "Studie 1 = Induktive Inhaltsanalyse & Studie 3 = deduktive Inhaltanalyse",
+    "Studie 2 = Induktive Inhaltsanalyse & Studie 1 = deduktive Inhaltanalyse",
+    "Studie 2 = Induktive Inhaltsanalyse & Studie 3 = deduktive Inhaltanalyse",
+    "Studie 3 = Induktive Inhaltsanalyse & Studie 1 = deduktive Inhaltanalyse",
+    "Studie 3 = Induktive Inhaltsanalyse & Studie 2 = deduktive Inhaltanalyse"
+  )
+
+
+if(sum(answer_data$solution == c("ind", "ded", "indded")) == 3){
+  exsolution <- c(T,F,F,F,F,F)
+}
+if(sum(answer_data$solution == c("ind", "indded", "ded")) == 3){
+  exsolution <- c(F,T,F,F,F,F)
+}
+if(sum(answer_data$solution == c("ded", "ind", "indded")) == 3){
+  exsolution <- c(F,F,T,F,F,F)
+}
+if(sum(answer_data$solution == c("indded", "ind", "ded")) == 3){
+  exsolution <- c(F,F,F,T,F,F)
+}
+if(sum(answer_data$solution == c("ded", "indded", "ind")) == 3){
+  exsolution <- c(F,F,F,F,T,F)
+}
+if(sum(answer_data$solution == c("indded", "ded", "ind")) == 3){
+  exsolution <- c(F,F,F,F,F,T)
+}
+```
+
+Question
+========
+Welche der drei folgenden Studien führt eine *induktive Inhaltsanalyse*, welche eine *deduktive Inhaltsanalyse* und welche eine *induktiv-deduktive Inhaltsanalyse* durch? 
+
+### Studie 1
+`r answer_data$Studien[1]`
+
+### Studie 2
+`r answer_data$Studien[2]`
+
+### Studie 3
+`r answer_data$Studien[3]`
+
+```{r echo=FALSE, results='asis'}
+answerlist(
+  answerlist,
+  markup = "markdown"
+)
+```
+
+
+Meta-information
+================
+exname: Deduktive, Induktive & Deduktiv-Induktive Inhaltsanalyse
+extype: schoice
+exsolution: `r mchoice2string(exsolution)`

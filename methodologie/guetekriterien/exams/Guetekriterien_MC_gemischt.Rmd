@@ -1,0 +1,39 @@
+Question
+========
+Welche Aussagen zu Qualitätskriterien von Studien sind korrekt?
+
+```{r questionlist, echo = FALSE, results = "asis"}
+library(exams)
+welche_der_weiteren_acht_antworten <- sample(1:8, 3)
+
+answerlist(
+  c("Eine Erhöhung der internen Validität führt nicht zwangsläufig zu einer Erhöhung der externen Validität, eher im Gegenteil.",#1
+    c("Auch ohne interne Validität kann ein hohes Maß an externer Validität einer Studie gegeben sein.",
+      "Eine Erhöhung der internen Validität führt automatisch zu einer Erhöhung der externen Validität.", #3
+      "Zur Einschätzung der Relevanz einer Studie gibt es keine feste Maßzahl.", #4T
+      "Eine Studie ist nur dann als relevant zu bezeichnen, wenn eine neue Theorie aus ihr abgeleitet werden kann.", #5F
+      "Durch die Erhöhung der Stichprobengröße verringert sich die ethische Strenge.", #6T
+      "Durch die Erhöhung der Stichprobengröße in einer Untersuchung erhöht sich die externe Validität.", #7T
+      "Präsentationsqualität wird gesteigert, wenn die Ergebnisse neben der Vorstellung im wissenschaftlichen Kontext auch in zusammengefasster und vereinfachter Form für ein breiteres Publikum zugänglich gemacht werden.", #8T
+      "Präsentationsqualität ist dann verletzt, wenn die Ergebnisse von Forschungskolleg*innen auch unter Einsicht in die Originaldaten und -materialien nicht nachvollzogen werden können." )[welche_der_weiteren_acht_antworten]#9T
+  ),
+markup = "markdown"
+)
+```
+
+
+```{r exsolutiongeneration, echo = F, results='hide'}
+ex_solution <- c(T,
+                 c(T,F,T,
+                   F,T,T,
+                   T,T)[welche_der_weiteren_acht_antworten])
+```
+
+
+
+Meta-information
+================
+exname: Guetekriterien_MC_gemischt
+extype: mchoice
+exsolution: `r mchoice2string(ex_solution)`
+exshuffle: 3

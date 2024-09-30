@@ -1,0 +1,60 @@
+
+```{r, echo=FALSE, results='hide', message=FALSE}
+library(tidyverse)
+library(exams)
+nth_task <- sample(1:9, 1)
+
+data <- tibble(
+  DedAussage = c("Da alle Frösche quaken und Peter ein Frosch ist, quakt Peter.",
+                 "Schüler:innen lernen in kleinen Klassen ein wenig besser. Petra ist in einer kleinen Klasse, also lernt sie etwas besser.",
+                 "Die erste Intuition was anzukreuzen ist, ist bei Multiple Choice Klausuren nicht überlegen, sondern sogar häufiger einer überarbeiteten Lösung unterlegen. Überarbeiten Sie Ihre ersten Antworten in dieser Klausur daher ruhig, wenn Sie sich unsicher sind."),
+  IndAussage = c("Peter und Paul sind Frösche und quaken. Also quaken alle Frösche.",
+                 "Petra ist in einer kleinen Klasse und lernt überdurchschnittlich. Also lernen Schüler:innen in kleinen Klassen besser.",
+                 "Nachbars Cousine ihre Tochter hat nach dem ersten Durcharbeiten einer Multiple Choice Klausur die Antworten bei denen Sie sich unsicher war nochmals überarbeitet und sich dadurch verbessert. Also sollte man bei Multiple Choice Klausuren nicht der ersten Intuition folgen."),
+  AbdAussage = c("Peter quakt. Würden nur Frösche quaken, wäre es sinnvoll anzunehmen, dass Peter ein Frosch ist.",
+                 "Schüler:innen lernen in kleinen Klassen ein wenig besser. Das ist plausibel, wenn man annimmt, dass Lehrer:innen in kleinen wie in großen Klassen sehr ähnlich unterrichten.",
+                 "Die erste Intuition was anzukreuzen ist, ist bei Multiple Choice Klausuren nicht überlegen, sondern sogar häufiger einer überarbeiteten Lösung unterlegen. Das macht vor dem Hintergrund der Theorie zweier kognitiver Systeme großen Sinn: Das erste System kann schnell entscheiden, ist aber anfällig für Verzerrungen (Biases), das zweite System ist langsamer und aufwändiger, aber dafür rationaler."
+                 )
+)
+
+ind_ded_abd <- 
+  sample(c("induktive Schlussfolgerungsweise", 
+           "deduktive Schlussfolgerungsweise",
+           "abduktive Schlussfolgerungsweise"),
+         1)
+
+answerlist_data <-
+  tibble(answerlist =  c(data$DedAussage[sample(1:3, 1)],
+                       data$IndAussage[sample(1:3, 1)],
+                       data$AbdAussage[sample(1:3, 1)]),
+         exsolution = case_when(ind_ded_abd == 
+                                  "induktive Schlussfolgerungsweise" ~ c(F,T,F),
+                                ind_ded_abd == 
+                                  "deduktive Schlussfolgerungsweise" ~ c(T,F,F),
+                                ind_ded_abd == 
+                                  "abduktive Schlussfolgerungsweise" ~ c(F,F,T))) |> 
+  sample_frac(1)
+                 
+
+
+```
+
+
+Question
+========
+Welche der folgenden Argumentationen ist am typischsten für eine `r ind_ded_abd[1]`?
+  
+```{r questionlist, echo = FALSE, results='asis'}
+answerlist(
+  answerlist_data |> pull(answerlist),
+  markup = "markdown")
+```
+
+
+
+
+Meta-information
+================
+exname: Induktion Deduktion Abduktion
+extype: schoice
+exsolution: `r mchoice2string(answerlist_data$exsolution)`

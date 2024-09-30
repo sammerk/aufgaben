@@ -1,0 +1,66 @@
+Question
+========
+```{r, echo = F, message = F, warning=FALSE,  fig.width=5, fig.height=5, out.width="400px", fig.retina=2}
+library(hrbrthemes)
+library(tidyverse)
+library(exams)
+true_corr <- runif(1, -1, 1) %>% 
+  round(., digits = 2) 
+
+
+data <-
+  MASS::mvrnorm(250, mu = c(0, 0), Sigma = matrix(c(1, true_corr, true_corr, 1), 2, 2)) %>%
+  as_tibble() %>%
+  mutate(V3 = ordered(
+    case_when(
+      V1 < quantile(V1, .25) ~ "A",
+      V1 < quantile(V1, .50) ~ "B",
+      V1 < quantile(V1, .75) ~ "C",
+      TRUE ~ "D"
+    )
+  ),
+  V4 = ordered(
+    case_when(
+      V2 < quantile(V2, .25) ~ "a",
+      V2 < quantile(V2, .50) ~ "b",
+      V2 < quantile(V2, .75) ~ "c",
+      TRUE ~ "d"
+    )
+  ),
+  V5 = as.numeric(V3),
+  V6 = as.numeric(V4))
+
+true_corr <- round(cor(data$V5, data$V6, method = "kendall"), 2)
+
+answerlist <- 
+  c(true_corr + seq(-1.75, 1.75, .35)) |> 
+  sort() 
+
+answerlist <- answerlist[answerlist <= 1 & answerlist >= -1]
+
+ggplot(data, aes(V3, V4)) + 
+  geom_jitter(color = "#8CD000", width = .2, height = .2, alpha =.4) +
+  theme_modern_rc() + 
+  ggtitle("Streudiagramm der Variablen V3 & V4")
+  
+```
+
+Obige Abbibldung zeigt die Assoziation der beiden Variablen V1 und V2. Welches Kendall's $\tau_b (V1,V2)$ passt am besten zu dieser Abbildung?
+
+```{r, echo=FALSE, results='asis'}
+answerlist(round(answerlist, 2),
+  markup = "markdown")
+```
+
+```{r exsolutiongeneration, echo = F, results='hide'}
+ex_solution <- 
+  answerlist == true_corr
+```
+
+
+
+Meta-information
+================
+extype: schoice
+exsolution: `r mchoice2string(ex_solution)`
+exname: Guessing_tau_SC

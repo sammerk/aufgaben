@@ -1,0 +1,47 @@
+
+```{r, Datengenese, echo = FALSE, message=FALSE}
+library(tidyverse)
+a <- sample(1:10, 2, replace = F)
+b <- sample(1:10, 2, replace = F)
+data <- tibble(A = c(a, a),
+               B = c(b[1], b[1], b[2], b[2]))
+
+cor(data$A, data$B)
+```
+
+Question
+========
+Welches Pearson's $r(A,B)$ wird sich für folgendes Minimaldatenbeispiel zeigen:
+
+```{r, echo = F, message = F}
+library(kableExtra)
+knitr::kable(data, 
+            format = "html", 
+            booktabs = TRUE) %>% 
+  kableExtra::kable_styling(bootstrap_options = "bordered", 
+                            full_width = FALSE, 
+                            position = "left")
+```
+
+
+Solution
+========
+Trägt man die Daten in ein (kartesisches) Koordinatensystem mit einer A-Achse und einer B-Achse ein, erkennt man, dass die Regressionsgerade eine Steigung von 0 hat. Damit ist auch r gleich 0, da eine Stauchung und Streckung in A- oder B-Richtung diese Steigung nicht verändert.
+```{r, width = "80%", echo = F, message=FALSE, warning=FALSE, fig.cap=""}
+ggplot(data, aes(A, B)) + 
+  geom_point(color="#8cd000") + 
+  stat_smooth(method = "lm", se = F, color = "#8cd000")+
+  hrbrthemes::theme_modern_rc() + 
+  xlim(c(1,10)) +
+  ylim(c(1,10)) + 
+  labs(title = "Regressionsgerade", subtitle = "der gegebenen Daten")
+```
+
+
+
+Meta-information
+================
+extype: num
+exsolution: `r cor(data$A, data$B)`
+exname: Pearson's r aus Minimalbeispiel
+extol: 0.05

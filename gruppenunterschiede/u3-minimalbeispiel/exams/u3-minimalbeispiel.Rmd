@@ -1,0 +1,47 @@
+
+```{r, echo = FALSE, results = "hide", message=FALSE, warning=FALSE}
+library(tidyverse)
+library(exams)
+library(bayestestR)
+library(ggdist)
+library(effsize)
+library(hrbrthemes)
+
+
+
+data <-
+  tibble(
+    A = c(2, 4, 6, 8) * sample(c(-1, 1,-2, 2), 1),
+    B = A + max(A) ,
+    C = A - abs(max(A) - min(A)),
+    D = A,
+    E = (A - mean(A)) * 2 + mean(A),
+    `F` =  (A - mean(A)) * 0.5 + mean(A)
+  )
+
+data <-
+  data %>%
+  dplyr::select(1, sample(2:5, 1))
+
+names(data) <- c("A", "B")
+
+```
+
+
+
+Question
+========
+Welches $U_3(A,B) = \frac{\# (a_i > \bar{b})}{\#A}$ ergibt sich für die folgenden Daten?  
+*(Eine Rechnung ist nicht unbedingt nötig)*
+
+```{r, echo = FALSE}
+knitr::kable(data) |> kableExtra::kable_styling(full_width = F)
+```
+
+
+
+Meta-information
+================
+exname: U3 EE
+extype: num
+exsolution: `r  sum(data %>% pull(A) > data %>% pull(B) %>% mean(.))/4`  

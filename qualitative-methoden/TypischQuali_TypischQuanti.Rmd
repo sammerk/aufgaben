@@ -1,0 +1,63 @@
+
+```{r, echo=FALSE, results='hide', message=FALSE}
+library(tidyverse)
+library(exams)
+nth_task <- sample(1:9, 1)
+
+data <- tibble(
+  Aussage = c(
+    #1
+    "Deduktives Schlussfolgern",
+    #2
+    "Abduktives Schlussfolgern",
+    #3
+    "Repräsentative Stichproben",
+    #4
+    "Ganzheitlichkeit und Rekonstruktion",
+    #5
+    "Theoretische Offenheit",
+    #6
+    "Zirkularität des Forschungsprozesses",
+    #7
+    "Forschung als Kommunikation",
+    #8
+    "Effektstärken",
+    #9
+    "Inferenzstatistik",
+    "A priori Planung der Datenerhebung"
+  ),
+  typisch_quali = c(F, T, F, T, T, T, T, F, F, F)) |> 
+  sample_n(4) |> 
+  add_row(Aussage = "Die Forschungsfrage wird im Laufe des Forschungsprozesses geändert", 
+          typisch_quali = T)
+                 
+quali_quanti <- 
+  sample(c("den qualitativen Forschungsprozess", 
+           "den quantitativen Forschungsprozess"),
+         2)
+
+
+if(quali_quanti[1] == "den qualitativen Forschungsprozess")
+{exsolution <- data$typisch_quali} else 
+{exsolution <- !data$typisch_quali}
+```
+
+
+Question
+========
+Kreuzen Sie die Aussagen/Eigenschaften/Vorgehensweisen an, die eher typisch für `r quali_quanti[1]` (und damit eher untypisch für `r quali_quanti[2]`) sind
+  
+```{r questionlist, echo = FALSE, results='asis'}
+answerlist(
+  data |> pull(Aussage),
+  markup = "markdown")
+```
+
+
+
+
+Meta-information
+================
+exname: Eher typische Quali eher typisch quanti
+extype: mchoice
+exsolution: `r mchoice2string(exsolution)`

@@ -1,0 +1,36 @@
+Question
+========
+Eine Forscherin untersucht, ob die Verwendung dynamischer Geometriesoftware (z.B. GeoGebra) den Erwerb von konzeptuellem Wissen fördert. Dazu erfasst sie Schülerleistungen der 7. Klasse $N = 63$ anhand eines entsprechenden Tests nach der Durchführung der Unterrichtseinheit zum "Satz vom Umkreis" bei Lehrerinnen, die entweder mit oder ohne die dynamische Geometriesoftware arbeiten und über diesen Einsatz auch selbst entscheiden konnten. Es konnte ein statistisch bedeutsamer Unterschied zugunsten der Lernenden, die GeoGebra genutzt haben, nachgewiesen werden.
+Eine Forschergruppe möchte sich die Vorteile der Verwendung von dynamischer Geometriesoftware genauer anschauen. Sie nutzt diese Studie als Grundlage für weitere Forschungsbemühungen. Sie will jedoch die _externe Validität_ erhöhen. Welche Maßnahmen sind hierzu zielführend?
+
+
+
+
+```{r questionlist, echo = FALSE, results = "asis"}
+#library(exams)
+welche_der_weiteren_sechs_antworten <- sample(1:6, 3)
+answerlist(c(
+  "Erhöhung der Stichprobengröße",
+  c("Wahl eines experimentellen Forschungsdesigns",
+    "Randomisierte Zuteilung der Teilnehmenden zu Lehrer*innen mit und ohne Nutzung der dynamischen Geometriesoftware",
+    "Alle Mädchen mit GeoGebra unterrichten und alle Jungen ohne",
+    "Kontrolle von Störvariablen, wie Vorwissen der Schüler*innen",
+    "Die Studie im Labor durchführen",
+    "Untersuchung bei Studierenden oder anderen Klassenstufen planen")[welche_der_weiteren_sechs_antworten]
+),
+markup = "markdown")
+```
+
+
+```{r exsolutiongeneration, echo = F, results='hide'}
+ex_solution <- c(T,
+                 c(F,F,F,F,F,T)[welche_der_weiteren_sechs_antworten])
+```
+
+
+Meta-information
+================
+exname: Steigerung_externe_Validitaet
+extype: mchoice
+exsolution: `r mchoice2string(ex_solution)`
+exshuffle: true

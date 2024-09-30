@@ -1,0 +1,58 @@
+```{r data generation, echo = FALSE, results = "hide", message=FALSE}
+library(tidyverse)
+library(babynames)
+library(exams)
+soll_homomorph_generiert_werden <- sample(c("ja", "nein"), 1)
+
+vorkommende_messwerte <- sample(1:15, 4, replace = T)
+potentielle_falsche_Messwerte <- -15:min(vorkommende_messwerte)
+                 
+data <- 
+  babynames %>% 
+  filter(prop >.01) %>% 
+  slice_sample(n= 4) %>% 
+  select(name, sex) %>% 
+  mutate(`SchülerIn` = name,
+         `Notenpunkte (=Messwert)` = sample(1:15, 4, replace = T),
+         Verrechnungspunkte = `Notenpunkte (=Messwert)`* sample(2:5, 1))
+
+if(soll_homomorph_generiert_werden == "nein"){
+data$`Notenpunkte (=Messwert)`[1] <- sample(potentielle_falsche_Messwerte, 1)
+data <- 
+  data %>% 
+  slice_sample(n= 4)
+}
+```
+
+
+Question
+========
+Stellt die folgende Tabelle eine Messung der Leistung in einer Klausur im Sinne eines Homomorphismus dar?
+
+```{r, echo = F}
+data %>% 
+  select(SchülerIn, Verrechnungspunkte, `Notenpunkte (=Messwert)`) %>% 
+  knitr::kable(., align = "c") %>% 
+  kableExtra::kable_styling(full_width = F)
+```
+
+
+
+```{r questionlist, echo = FALSE, results = "asis"}
+answerlist(c("ja", "nein"), 
+           markup = "markdown")
+```
+
+
+```{r exsolutiongeneration, echo = F, results='hide'}
+ex_solution <- case_when(soll_homomorph_generiert_werden == "ja" ~ c(T,F),
+                         TRUE ~ c(F,T))
+```
+
+
+
+Meta-information
+================
+exname: Homomorphismus erkennen Verrechnungs und Klausurpunkte
+extype: schoice
+exsolution: `r mchoice2string(ex_solution)`

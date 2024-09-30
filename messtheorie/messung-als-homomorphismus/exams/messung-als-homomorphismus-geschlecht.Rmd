@@ -1,0 +1,68 @@
+```{r data generation, echo = FALSE, results = "hide", message=FALSE}
+library(tidyverse)
+library(babynames)
+library(exams)
+soll_homomorph_generiert_werden <- sample(c("ja", "nein"), 1)
+
+list_of_distinct_codes <- sample(c(-100:100, 
+                                 c(-100:100 + runif(201))), 
+                                 prob = c(rep(1,201), rep(.1,201)),
+                                 size =1000,
+                                 replace = T) %>% 
+                          round(., 1) %>% 
+                          unique(.)
+code_m <- sample(list_of_distinct_codes, 1) 
+code_w <- sample(setdiff(list_of_distinct_codes, code_m), 1)
+code_d <- sample(setdiff(list_of_distinct_codes, c(code_m, code_w)), 1)
+                 
+data <- 
+  babynames %>% 
+  filter(prop >.01) %>% 
+  slice_sample(n= 4) %>% 
+  select(name, sex) %>% 
+  mutate(`SchülerIn` = name,
+         Geschlecht = ifelse(sex == "F", "weiblich", "männlich")) %>% 
+  left_join(.,
+            tibble(Geschlecht = c("weiblich", "männlich"),
+                   Messwert = c(code_w, code_m)))
+
+if(soll_homomorph_generiert_werden == "nein"){
+data$Messwert[1] <- code_d
+data <- 
+  data %>% 
+  slice_sample(n= 4)
+}
+```
+
+
+Question
+========
+Stellt die folgende Tabelle eine Messung des Geschlechts im Sinne eines Homomorphismus dar?
+
+```{r, echo = F}
+data %>% 
+  select(SchülerIn, Geschlecht, Messwert) %>% 
+  knitr::kable(., align = "c") %>% 
+  kableExtra::kable_styling(full_width = F)
+```
+
+
+
+```{r questionlist, echo = FALSE, results = "asis"}
+answerlist(c("ja", "nein"), 
+           markup = "markdown")
+```
+
+
+```{r exsolutiongeneration, echo = F, results='hide'}
+ex_solution <- case_when(soll_homomorph_generiert_werden == "ja" ~ c(T,F),
+                         TRUE ~ c(F,T))
+```
+
+
+
+Meta-information
+================
+exname: Homomorphismus erkennen bei Messung Geschlecht
+extype: schoice
+exsolution: `r mchoice2string(ex_solution)`

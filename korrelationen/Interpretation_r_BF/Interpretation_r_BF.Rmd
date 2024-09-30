@@ -1,0 +1,94 @@
+```{r, echo = FALSE, results = "hide", message=FALSE}
+library(tidyverse)
+library(exams)
+q_a_matrix_qshuffeled <- 
+    tibble(
+      Answers_and_Distractors = c("Es liegt moderate Evidenz (3 < BF₁₀ < 10) für die Alternativhypothese (Pearson's r > 0) vor.",
+                                  "Es liegt starke Evidenz (10 ≤ BF₁₀) für die Alternativhypothese (Pearson's r > 0) vor.",
+                                  "Es liegt moderate Evidenz (1/10 < BF₁₀ < 1/3) für die Nullhypothese (Pearson's r = 0) vor.",
+                                  
+                                  "Es liegt starke Evidenz (BF₁₀ ≤ 1/10) für die Nullhypothese (Pearson's r = 0) vor.",
+                                  "Die inferenzstatistische Prüfung ist inkonklusiv (1/3 < BF₁₀ < 3)",
+                                  "Die Alternativhypothese ist wahr.", 
+                                  
+                                  "Die Nullhypothese ist wahr.",
+                                  "Es liegt ein substantieller (mindestens kleiner) Effekt vor."),
+      
+      `Eine Forscherin untersucht die Korrelation zwischen der Klassengröße (variiert zwischen 21 und 27 Schülerinnen und Schülern) und dem Ergebnis eines Fachwissenstests. Dazu erhebt sie beide Variablen bei N = 18678 Schülerinnen und Schülern in 778 Klassen und erhält ein Pearson's r von .01 mit einem BF₁₀ < 1/1000.` =  
+        c(0,NA,NA,  1,0,NA,  0,0),
+      
+      `Ein Forscher untersucht, inwiefern Intelligenz und Gehalt korreliert sind. Dazu erhebt er beide Variablen bei N = 58678 Studierenden und erhält ein Pearson's r von .23 mit einem BF₁₀ > 100.` =  
+        c(NA,1,0,  NA,0,0,  NA,1),
+      
+      `Eine Forscherin untersucht, inwiefern Gewissenhaftigkeit und schulische Leistung korreliert sind. Dazu erhebt er beide Variablen bei N = 678 Studierenden und erhält ein Pearson's r von .13 mit einem BF₁₀ = 63.` =      
+        c(NA,1,0,  NA,0,0,  NA,1),
+      
+      `Ein Forscher untersucht, inwiefern die Fachkompetenz einer Lehrkraft mit dem Lernfortschritt der Schülerinnen und Schüler assoziiert sind. Dazu erfrasst er beide Variablen bei N = 142 Lehrkröften und deren Schülerinnen und Schüler und erhält ein Pearson's r von .34 mit einem BF₁₀ = 12.` =      
+        c(NA,1,0,  NA,0,0,  NA,1),
+      
+      `Ein Forscher untersucht, inwiefern die Begeisterung für den pädagogischen Beruf mit dem Lernfortschritt der Schülerinnen und Schüler assoziiert sind. Dazu erhebt er beide Variablen bei N = 568 Studierenden und erhält ein Pearson's r von .11 mit einem BF₁₀ = 9` =      
+        c(1,NA,0,  NA,0,0,  NA,1),
+      
+      `Ein Forscher untersucht, inwiefern die Verträglichkeit  für den pädagogischen Beruf mit dem Lernfortschritt der Schülerinnen und Schüler assoziiert sind. Dazu erhebt er beide Variablen bei N = 568 Studierenden und erhält ein Pearson's r von .11 mit einem BF₁₀ = 9` =      
+        c(1,NA,0,  NA,0,0,  NA,1),
+      
+      `Ein Forscher untersucht, inwiefern Gehalt der Eltern mit dem Gehalt von Befragten korreliert sind. Dazu erhebt er beide Variablen bei N = 664 Studierenden und erhält ein Pearson's r von .13 mit einem BF₁₀ = 23.` =      
+        c(NA,1,0,  NA,0,0,  NA,1),
+      
+      `Ein Forscher untersucht, inwiefern Intelligenz und Gehalt korreliert sind. Dazu erhebt er beide Variablen bei N = 56 Studierenden und erhält ein Pearson's r von .23 mit einem BF₁₀ = 2.5.` =      
+        c(0,NA,0,  NA,1,NA,  0,1),
+      
+      `Eine Forscherin untersucht, inwiefern Gewissenhaftigkeit und schulische Leistung korreliert sind. Dazu erhebt er beide Variablen bei N = 23 Studierenden und erhält ein Pearson's r von .13 mit einem BF₁₀ = 0.8.` =      
+        c(0,NA,0,  NA,1,NA,  0,1),
+      
+      `Ein Forscher untersucht, inwiefern die Fachkompetenz einer Lehrkraft mit dem Lernfortschritt der Schülerinnen und Schüler assoziiert sind. Dazu erfrasst er beide Variablen bei N = 43 Lehrkröften und deren Schülerinnen und Schüler und erhält ein Pearson's r von .34 mit einem BF₁₀ = 2.6` =      
+        c(0,NA,0,  NA,1,NA,  0,1),
+      
+      `Ein Forscher untersucht, inwiefern die Begeisterung für den pädagogischen Beruf mit dem Lernfortschritt der Schülerinnen und Schüler assoziiert sind. Dazu erhebt er beide Variablen bei N = 68 Studierenden und erhält ein Pearson's r von .11 mit einem BF₁₀ = 0.7` =      
+        c(0,NA,0,  NA,1,NA,  0,1),
+      
+      `Ein Forscher untersucht, inwiefern die Verträglichkeit  für den pädagogischen Beruf mit dem Lernfortschritt der Schülerinnen und Schüler assoziiert sind. Dazu erhebt er beide Variablen bei N = 53 Studierenden und erhält ein Pearson's r von .11 mit einem BF₁₀ = 2.1` =      
+        c(0,NA,0,  NA,1,NA,  0,1),
+      
+      `Ein Forscher untersucht, inwiefern Gehalt der Eltern mit dem Gehalt von Befragten korreliert sind. Dazu erhebt er beide Variablen bei N = 62 Studierenden und erhält ein Pearson's r von .13 mit einem BF₁₀ = 2.9.` =      
+        c(0,NA,0,  NA,1,NA,  0,1)
+      
+      ) %>%
+    # shuffle order of questions
+    relocate(1, 2, sample(2:ncol(.), ncol(.) - 2))
+  
+  ## Shuffle answers
+q_a_matrix_qashuffeled <-
+  q_a_matrix_qshuffeled %>%
+  sample_frac(., size = 1)
+  
+nth_task <- sample(1:13, 1)
+```
+
+Question
+========
+`r names(q_a_matrix_qshuffeled[,nth_task + 1])`
+
+
+```{r echo=FALSE, results='asis'}
+answers <- 
+  q_a_matrix_qshuffeled |> 
+  select(1, nth_task + 1) |> 
+  na.omit() |> 
+  pull(2)
+
+answerlist(
+  q_a_matrix_qshuffeled |> 
+  select(1, nth_task + 1) |> 
+  na.omit() |> 
+  pull(1),
+  markup = "markdown"
+)
+```
+
+
+Meta-information
+================
+exname: Interpretation r BF
+extype: mchoice
+exsolution: `r mchoice2string(answers)`

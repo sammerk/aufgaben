@@ -1,0 +1,93 @@
+Question
+========
+Markieren Sie im Folgenden wahre Aussagen zu p-Werten, Vargha und Delaney's A sowie Cohen's d und U3.
+
+```{r echo = F, results = "asis"}
+library(exams)
+answerblock_01 <- c(
+  "Der p-Wert stellt eine Inferenzstatistik dar."#, um mindestens eine richtige Anwort zu haben (moodle Prompt)
+)
+
+answerblock_02 <- c("Vargha und Delaney's A stellt eine Inferenzstatistik dar.", 
+                    "Vargha und Delaney's A stellt eine Effektstärke dar.") #r
+
+answerblock_03 <- c("Cohen's d stellt eine Inferenzstatistik dar.",
+                    "Cohen's d stellt eine Effektstärke dar.") #r
+
+answerblock_04 <- c("Cohen's U3 stellt eine Inferenzstatistik dar.",
+                    "Cohen's U3 stellt eine Effektstärke dar.") #r
+
+answerblock_05 <-
+  c("Vargha und Delaney's A beschreibt »wie sicher ein in der Stichprobe vorhandener Effekt auf die Population verallgemeinert werden kann«.",
+    "Vargha und Delaney's A beschreibt »wie groß ein Effekt ist«") #r
+
+answerblock_06 <-
+  c("Cohen's U3 beschreibt »wie sicher ein in der Stichprobe vorhandener Effekt auf die Population verallgemeinert werden kann«.",
+    "Cohen's U3 beschreibt »wie groß ein Effekt ist«")#r
+
+answerblock_07 <-
+  c("Cohen's d beschreibt »wie sicher ein in der Stichprobe vorhandener Effekt auf die Population verallgemeinert werden kann«.",
+    "Cohen's d beschreibt »wie groß ein Effekt ist«")#r
+
+answerblock_08 <-
+  c("Vargha und Delaney's A kann beschreiben wie stark zwei nominale Variablen sich in ihrem Modus unterscheiden",
+    "Vargha und Delaney's A kann beschreiben wie stark zwei nominale Variablen zusammenhängen (kovariiieren)",
+    "Vargha und Delaney's A kann beschreiben wie stark sich zwei ordinale Variablen in ihrem Median unterscheiden",#r
+    "Vargha und Delaney's A kann beschreiben wie stark sich zwei intervallskalierte Variablen in ihrem arithmetischen Mittel unterscheiden")#r
+
+answerblock_09 <-
+  c("Cohen's U3 kann beschreiben wie stark zwei nominale Variablen sich in ihrem Modus unterscheiden",
+    "Cohen's U3 kann beschreiben wie stark sich zwei ordinale Variablen in ihrem Median unterscheiden",
+    "Cohen's U3 kann beschreiben wie stark sich zwei intervallskalierte Variablen in ihrem arithmetischen Mittel unterscheiden",#r
+    "Cohen's U3(A,B) ist definiert als der Anteil der Datenpunkte einer Variable A, der das arithmetische Mittel der Variable B übersteigt")#r
+
+answerblock_10 <-
+ c("Cohen's d kann beschreiben wie stark sich zwei nominale Variablen in ihrem Modus unterscheiden",
+   "Cohen's d kann beschreiben wie stark sich zwei ordinale Variablen in ihrem Median unterscheiden",
+   "Cohen's d kann beschreiben wie stark sich zwei normalverteilte intervallskalierte Variablen in ihrem arithmetischen Mittel unterscheiden")#r
+
+selected_from_answerblock_01 <- sample(1:1, 1)
+selected_from_answerblock_02 <- sample(1:2, 1)
+selected_from_answerblock_03 <- sample(1:2, 1)
+selected_from_answerblock_04 <- sample(1:2, 1)
+selected_from_answerblock_05 <- sample(1:2, 1)
+selected_from_answerblock_06 <- sample(1:2, 1)
+selected_from_answerblock_07 <- sample(1:2, 1)
+
+selected_from_answerblock_08 <- sample(1:4, 1)
+selected_from_answerblock_09 <- sample(1:4, 1)
+selected_from_answerblock_10 <- sample(1:3, 1)
+
+which_of_the_answers <- c(1, sample(2:10, 4, replace = F))
+
+solution <- c(ifelse(selected_from_answerblock_01 == 1, 1, 0),
+              ifelse(selected_from_answerblock_02 == 2, 1, 0),
+              ifelse(selected_from_answerblock_03 == 2, 1, 0),
+              ifelse(selected_from_answerblock_04 == 2, 1, 0),
+              ifelse(selected_from_answerblock_05 == 2, 1, 0),
+              ifelse(selected_from_answerblock_06 == 2, 1, 0),
+              ifelse(selected_from_answerblock_07 == 2, 1, 0),
+              ifelse(selected_from_answerblock_08 %in% 3:4, 1, 0),
+              ifelse(selected_from_answerblock_09 %in% 3:4, 1, 0),
+              ifelse(selected_from_answerblock_10 == 3, 1, 0))[which_of_the_answers]
+
+answerlist(c(
+  answerblock_01[selected_from_answerblock_01],
+  answerblock_02[selected_from_answerblock_02],
+  answerblock_03[selected_from_answerblock_03],
+  answerblock_04[selected_from_answerblock_04],
+  answerblock_05[selected_from_answerblock_05],
+  answerblock_06[selected_from_answerblock_06],
+  answerblock_07[selected_from_answerblock_07],
+  answerblock_08[selected_from_answerblock_08],
+  answerblock_09[selected_from_answerblock_09],
+  answerblock_10[selected_from_answerblock_10])[which_of_the_answers], markup = "markdown")
+
+```
+
+Meta-information
+================
+exname: Definitionen A, d, U3, p
+extype: mchoice
+exsolution: `r mchoice2string(solution)`
+exshuffle: 5

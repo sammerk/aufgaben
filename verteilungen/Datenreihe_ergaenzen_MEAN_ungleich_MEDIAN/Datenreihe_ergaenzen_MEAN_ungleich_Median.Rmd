@@ -1,0 +1,34 @@
+```{r data generation, echo = FALSE, results = "hide"}
+# data 1
+library(exams)
+data_1 <- -2:2*sample(1:4,1) + sample(8:18,1)
+data_1[3] <- "X"
+```
+
+Question
+========
+Gegeben sei die Datenreihe A = `r data_1`.  
+Wählen Sie die Zahl(en) X aus, die die Datenreihe A so ergänzt, dass $mean(A) \ne median(A)$ gilt.
+
+Answer
+------
+```{r, echo=FALSE, results='asis'}
+answerlist(c(
+  mean(as.numeric(data_1[c(1,2,4,5)])),
+  mean(as.numeric(data_1[c(1,2,4,5)])) + .5,
+  mean(as.numeric(data_1[c(1,2,4,5)])) - .5,
+  mean(as.numeric(data_1[c(1,2,4,5)])) + 1,
+  mean(as.numeric(data_1[c(1,2,4,5)])) - 1),
+  markup = "markdown")
+```
+
+
+Solution
+=========
+Median und Mean fallen bei nur bei perfekt symmetrischen Datenreihen aufeinander.
+
+Meta-information
+================
+extype: mchoice
+exsolution: 01111
+exname: Datenreihe ergänzen so dass Mean ungleich Median

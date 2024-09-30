@@ -1,0 +1,48 @@
+Question
+========
+```{r, echo = F, message = F, warning=FALSE,  fig.width=5, fig.height=5, out.width="400px", dev="svglite"}
+library(tidyverse)
+library(hrbrthemes)
+library(ggbeeswarm)
+library(bayestestR)
+
+
+d <- runif(1, .70, .80)
+n <- sample(30:150, 1)
+    
+data_wide <- 
+  tibble(A = distribution_normal(n, 0, 1),
+         B = distribution_normal(n, d, 1))
+data <-
+   data_wide %>%
+  gather(Group, `Variable X`) %>%
+  mutate(PID = 1:n())
+  
+effsize <- effsize::cohen.d(`Variable X` ~ Group, data = data)
+demp <- effsize$estimate
+  
+U3emp <- sum(data_wide$A > mean(data_wide$B))/nrow(data_wide)
+  
+randcol <- randomcoloR::randomColor()    
+plot <- ggplot(data, aes(`Variable X`)) +
+  geom_histogram(color = randcol,
+                 fill = randcol) +
+  theme_ipsum() +
+  facet_wrap(~ Group, ncol = 1) +
+  xlab("") 
+
+partial_credit_range <- 
+  c(ifelse(U3emp > .5, .4, 0),
+    ifelse(U3emp > .5, 1, .6))
+
+plot
+```
+
+Die obige Abbildung zeigt die Verteilung der Variablen A und B. Welches Cohen's $U_3(A,B) = \frac{\#a_i > \overline{B}}{\#A}$ passt Ihrer Abschätzung nach zu dieser Abbildung? Verwenden Sie "," als Dezimaltrennzeichen und geben Sie Prozente als Wert zwischen 0 und 1 ein. Also z.B. 35% $\Rightarrow$ 0,35.
+
+Meta-information
+================
+exname: Visual Guessing U3 (Histogramm) 
+extype: num
+exsolution: `r U3emp`
+extol: 0.2

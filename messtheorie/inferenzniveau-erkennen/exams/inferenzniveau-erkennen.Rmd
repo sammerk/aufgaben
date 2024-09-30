@@ -1,0 +1,54 @@
+```{r data generation, echo = FALSE, results = "hide"}
+library(tidyverse)
+# library(exams)
+bsp <-
+  c("Anzahl der Wortmeldungen der einzelnen Schüler*innen", #1
+    "Sozialform des Unterrichts",
+    "Anteil an Mädchen in der Klasse",
+    "Einsatz von Arbeitsblättern",
+    "Anzahl Schüler*innen mit braunen Haaren",
+    "Redeanteil Lehrkraft",
+    "Lautstärke während Einzelarbeit",
+    "Nutzung digitaler Medien",
+    "Zeitpunkt der Erteilung von Hausaufgaben",
+    "Anzahl fehlender Schüler*innen", #10
+    "Unterrichtsklima",
+    "Aufmerksamkeit der Schüler*innen",
+    "Klassenführung",
+    "Kompetenz der Lehrkraft",
+    "Interesse der Schüler*innen am Thema",
+    "kognitive Aktivierung",
+    "Unterrichtsstörungen",
+    "Grad der Differenzierung",
+    "Didaktische Reduktion",
+    "Verständlichkeit der Lehrkraft") #20
+
+wievieltes_bsp <- sample(1:20, 1)
+```
+
+
+Question
+========
+Bezeichnet man die folgende Variable sinnvollerweise als hoch- oder niedriginferent?
+
+> `r paste(bsp[wievieltes_bsp])`
+
+
+```{r questionlist, echo = FALSE, results = "asis"}
+answerlist(c("als hochinferent",
+             "als niedriginferent"), 
+           markup = "markdown")
+```
+
+
+```{r exsolutiongeneration, echo = F, results='hide'}
+ex_solution <- case_when(wievieltes_bsp %in% 1:10 ~ c(F,T),
+                         TRUE ~ c(T,F))
+```
+
+
+Meta-information
+================
+exname: "Inferenzniveau erkennen"
+extype: schoice
+exsolution: `r mchoice2string(ex_solution)`

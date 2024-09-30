@@ -1,0 +1,44 @@
+```{r data generation, echo = FALSE, results = "hide", message=FALSE}
+library(exams)
+library(tidyverse)
+
+FF <-
+  c(
+    "Eine Forscherin will untersuchen, ob Jungs oder Mädchen häufiger Fahrradhelm tragen.",
+    "Eine Forscherin will untersuchen, ob Jungs oder Mädchen häufiger Essstörungen entwickeln.",
+    "Eine Forscherin will untersuchen, ob Land- oder Stadtkinder häufiger Ethik- statt Religionsunterricht besuchen.",
+    "Eine Forscherin will untersuchen, ob Land- oder Stadtkinder häufiger ein Hochschulstudium aufnehmen.",
+    "Eine Forscherin will untersuchen, ob Menschen aus den neuen oder alten Bundesländern häufiger die AfD wählen.",
+    "Eine Forscherin will untersuchen, ob Menschen aus den neuen oder alten Bundesländern häufiger arbeitslos sind.",
+    "Eine Forscherin will untersuchen, ob Menschen aus den neuen oder alten Bundesländern häufiger wegen des Arbeitsplatzes umziehen.",
+    "Eine Forscherin will untersuchen, ob Menschen aus den neuen oder alten Bundesländern häufiger gegen die Lieferung von Kampfpanzern an die Ukraine sind.",
+    "Eine Forscherin will untersuchen, ob Menschen der Generation Z häufiger in Teilzeit arbeiten als die Menschen anderer Generationen.",
+    "Eine Forscherin will untersuchen, ob Menschen der Generation Z im Jahr 2020 häufiger gemeinsam mit ihren Eltern in den Urlaub gefahren sind als die Menschen anderer Generationen.",
+    "Eine Forscherin will untersuchen, ob Menschen der Generation Z häufiger den Klimawandel als ihre größte Zukunftssorge bezeichnen als die Menschen anderer Generationen."
+  )
+
+```
+
+Question
+========
+`r FF[sample(1:10,1)]` Welche Effektstärkemaß sollte Sie dazu verwenden?
+
+```{r, echo=FALSE, results='asis'}
+answerlist(c("Vargha & Delaney's A",
+             "Cliff's d",
+             "Cohen's $U_3$",
+             "p-Wert",
+             "Bayes Factor",
+             "Cohen's d",
+             "Pearson's r",
+             "Kendall's $\\tau_B$",
+             "Cramér's V"),
+  markup = "markdown")
+```
+
+
+Meta-information
+================
+extype: schoice
+exsolution: 000000001
+exname: Anwendbarkeit_V_erkennen

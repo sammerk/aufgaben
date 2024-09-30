@@ -1,0 +1,103 @@
+
+```{r, echo=FALSE, results='hide', message=FALSE}
+library(tidyverse)
+library(bayestestR)
+library(exams)
+library(patchwork)
+
+# Welcher Plot hat Nulleffekt?
+nullplot_num <- sample(2:5, 1)
+nullplot_letter <- LETTERS[nullplot_num]
+  
+# Zu Plottende Effektstärken
+effsizes_d_int <- sample(c(-2, -1.5, -1, 1, 1.5, 2), 5)
+effsizes_d <- c(effsizes_d_int[1:(nullplot_num-1)], 0, effsizes_d_int[nullplot_num:5])
+
+# Exsolution
+exsolution <- c(rep(F, 6)[1:(nullplot_num-1)], T, rep(F, 6)[nullplot_num:5])
+
+# Plots
+plot_a <- 
+  tibble(`Abhängige Variable` = c(distribution_normal(100, 0, 1),
+                                  distribution_normal(100, effsizes_d[1], 1)),
+         Gruppe = c(rep("Gruppe 1", 100), rep("Gruppe 2", 100))) |> 
+  ggplot(aes(`Abhängige Variable`, Gruppe)) +
+  geom_violin() +
+  theme_minimal() +
+  ylab("") +
+  ggtitle("Plot A")
+
+plot_b <- 
+  tibble(`Abhängige Variable` = c(distribution_normal(100, 0, 1),
+                                  distribution_normal(100, effsizes_d[2], 1)),
+         Gruppe = c(rep("Gruppe 1", 100), rep("Gruppe 2", 100))) |> 
+  ggplot(aes(Gruppe, `Abhängige Variable`)) +
+  geom_boxplot() +
+  theme_minimal() +
+  xlab("") +
+  ggtitle("Plot B")
+
+plot_c <- 
+  tibble(`Abhängige Variable` = c(distribution_normal(100, 0, 1),
+                                  distribution_normal(100, effsizes_d[3], 1)),
+         Gruppe = c(rep("Gruppe 1", 100), rep("Gruppe 2", 100))) |> 
+  ggplot(aes(Gruppe, `Abhängige Variable`)) +
+  ggforce::geom_sina() +
+  theme_minimal() +
+  xlab("") +
+  ggtitle("Plot C")
+
+plot_d <- 
+  tibble(`Abhängige Variable` = c(distribution_normal(100, 0, 1),
+                                  distribution_normal(100, effsizes_d[4], 1)),
+         Gruppe = c(rep("Gruppe 1", 100), rep("Gruppe 2", 100))) |> 
+  ggplot(aes(`Abhängige Variable`)) +
+  geom_histogram() +
+  theme_minimal() +
+  facet_wrap(~Gruppe, ncol = 1) +
+  ggtitle("Plot D")
+
+plot_e <- 
+  tibble(`Abhängige Variable` = c(distribution_normal(100, 0, 1),
+                                  distribution_normal(100, effsizes_d[5], 1)),
+         Gruppe = c(rep("Gruppe 1", 100), rep("Gruppe 2", 100))) |> 
+  ggplot(aes(Gruppe, `Abhängige Variable`)) +
+  geom_jitter() +
+  theme_minimal() +
+  xlab("") +
+  ggtitle("Plot E")
+
+plot_f <- 
+  tibble(`Abhängige Variable` = c(distribution_normal(100, 0, 1),
+                                  distribution_normal(100, effsizes_d[6], 1)),
+         Gruppe = c(rep("Gruppe 1", 100), rep("Gruppe 2", 100))) |> 
+  ggplot(aes(`Abhängige Variable`)) +
+  geom_dotplot() +
+  theme_minimal() +
+  facet_wrap(~Gruppe, ncol = 1) +
+  ggtitle("Plot F")
+```
+
+
+Question
+========
+In welchem der folgenden Plots ist die Überlappung der beiden Gruppen am größten (zeigt sich also das kleinste Cohen's U~1~)?
+```{r dev="svglite", echo=FALSE, fig.width=12, fig.height=6, warning=FALSE, out.width="800px", fig.cap = "", warning=FALSE, message=FALSE}
+(plot_a + plot_b + plot_c)/(plot_d + plot_e + plot_f)
+```
+
+  
+```{r questionlist, echo = FALSE, results='asis'}
+answerlist(
+  paste("Plot ", LETTERS[1:6], sep = ""),
+  markup = "markdown")
+```
+
+
+
+
+Meta-information
+================
+exname: Nulleffekt in Plots erkennen
+extype: schoice
+exsolution: `r mchoice2string(exsolution)`

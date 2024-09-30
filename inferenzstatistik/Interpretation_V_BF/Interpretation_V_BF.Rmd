@@ -1,0 +1,83 @@
+```{r, echo = FALSE, results = "hide", message=FALSE}
+library(tidyverse)
+library(exams)
+BF10_class <- sample(c("strong_pro_HA", "strong_pro_H0", "inconclusive"), 1)
+
+BF_fraction_string <- 
+  ifelse(BF10_class == "strong_pro_HA", 
+         paste0("$\\frac{", sample(100:10000, 1), "}{1}$"),
+         ifelse(BF10_class == "strong_pro_H0", paste0("$\\frac{1}{", sample(100:10000, 1), "}$"),
+                "$\\frac{1}{1}$"))
+
+V_class <- sample(c("null", "small", "large"), 1)
+
+V <- ifelse(V_class == "null",
+            runif(1, 0, .03),
+            ifelse(V_class == "small", runif(1, 0.1, .15),
+                   runif(1, .6, .99))) %>% 
+  round(., 2)
+
+data_vars <-
+  tibble::tribble(
+                    ~AV,                                   ~UV, 
+       "das Geschlecht",      "dem Tragen eines Fahrradhelmes", 
+          "der Wohnort (Stadt/Land)",                   "der sozialen Nähe", 
+     "der eigene Beruf (Lehrer/nicht Lehrer",                "dem Beruf der Mutter", 
+      "das  Geschlecht", "dem Einnehmen einer Funktionsstelle", 
+    "der Stellenumfang (Vollzeit/Teilzeit)",                      "dem Geschlecht")
+  
+nt <- sample(1:5, 1)
+```
+
+Question
+========
+`r paste(
+  "Eine Forscherin untersucht, inwiefern ",
+  data_vars[nt, "AV"],
+  "mit",
+  data_vars[nt, "UV"],
+  "assoziert ist und erhebt dazu Daten."
+)`
+
+
+`r paste(
+  "Sie führt einen χ²-Test für die $H_0{:}\\;Cramér's\\; V = 0$ durch und erhält einen Bayes Faktor BF₁₀ von ",
+  BF_fraction_string,
+  " und ein Cramér's V von ",
+  V,
+  ' ("." = Dezimaltrennzeichen)',
+  ".<br><br><b>Welche der folgenden Interpretationen sind korrekt?</b>",
+  sep = ""
+)`
+
+
+
+
+Answerlist
+----------
+* Die `r ifelse(BF10_class == "strong_proHA", 
+                "Nullhypothese", 
+                "Alternativhypothese")` ist wahr.
+* `r ifelse(BF10_class == "strong_pro_HA", 
+                "Es liegt starke Evidenz für die Alternativhypothese vor.",
+                ifelse(BF10_class == "strong_pro_H0", 
+                "Es liegt starke Evidenz für die Nullhypothese vor.",
+                "Der Bayes Faktor ist inkonklusiv."))`
+* Die Daten sind wahrscheinlicher, angenommen die Alternativhypothese ist wahr.
+* Es liegt ein großer Effekt vor.
+
+```{r echo=FALSE, results='hide'}
+answers <- c(
+  F,
+  T,
+  BF10_class == "strong_pro_HA",
+  V_class == "large"
+)a
+```
+
+
+Meta-information
+================
+exname: Interpretation V BF
+extype: mchoice
+exsolution: `r mchoice2string(answers)`

@@ -1,0 +1,32 @@
+```{r, echo = FALSE, results = "hide", message=FALSE}
+library(tidyverse)
+library(exams)
+data <- tibble(
+  answerlist = c("Cohen's U~1~", "Pearson's r", "Kendall's τ", "Cohen's U~3~",
+                 "Cohen's d", "Mittelwert", "Standardabweichung"),
+  exsolution = rep(F, 7))|> 
+  sample_n(2) |> 
+  add_row(answerlist = c("p-Wert", "Bayes-Faktor"), 
+          exsolution = c(T, T)) |> 
+  sample_frac(1)
+      
+```
+
+Question
+========
+Welche der folgenden Koeffizienten beschreiben wie sicher ein Effekt ist (also eine Inferenzstatistik)?
+
+
+```{r echo=FALSE, results='asis'}
+answerlist(
+  data$answerlist,
+  markup = "markdown"
+)
+```
+
+
+Meta-information
+================
+exname: Welche Koeff Infstat
+extype: mchoice
+exsolution: `r mchoice2string(data$exsolution)`

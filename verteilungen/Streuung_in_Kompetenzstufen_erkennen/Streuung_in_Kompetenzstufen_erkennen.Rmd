@@ -1,0 +1,96 @@
+Question
+========
+Ein Schulleiter einer großen Grundschule hat folgende Ergebnisse der Vergleichsarbeiten in Klasse 3 (VERA 3) vorliegen. Er fragt sich: Welche der Klassen weist die größte Heterogenität (Streuung) auf?
+
+```{r dev="svglite", echo=FALSE, message=FALSE, warning=FALSE, fig.width=6, fig.height=5, warning=FALSE, out.width="600px", fig.cap = ""}
+library(exams)
+library(bayestestR)
+library(tidyverse)
+library(hrbrthemes)
+
+classsizes_random <- 
+  sample(17:32, 8, replace = T)
+
+classnames_random <- 
+  sample(LETTERS[1:8], 8)
+
+data <- 
+  tibble(
+      Performance = c(distribution_beta(classsizes_random[1], 0004, 0004), # normal
+                      distribution_beta(classsizes_random[2], 00.7, 0002), # right
+                      distribution_beta(classsizes_random[3], 0001.5, 00.8), # left
+                      distribution_beta(classsizes_random[4], 1.05, 0.95), # unif
+                      distribution_beta(classsizes_random[5], 0.95, 1.05), # unif
+                      distribution_beta(classsizes_random[6], 005, 5), # lepto
+                      distribution_beta(classsizes_random[7], 20, 5), # lepto right
+                      distribution_beta(classsizes_random[8], sample(c(.2, .3), 1), sample(c(.2, .3), 1))), # u
+      Klasse = c(rep(paste("Klasse ", classnames_random[1]), classsizes_random[1]),
+                 rep(paste("Klasse ", classnames_random[2]), classsizes_random[2]),
+                 rep(paste("Klasse ", classnames_random[3]), classsizes_random[3]),
+                 rep(paste("Klasse ", classnames_random[4]), classsizes_random[4]),
+                 rep(paste("Klasse ", classnames_random[5]), classsizes_random[5]),
+                 rep(paste("Klasse ", classnames_random[6]), classsizes_random[6]),
+                 rep(paste("Klasse ", classnames_random[7]), classsizes_random[7]),
+                 rep(paste("Klasse ", classnames_random[8]), classsizes_random[8])
+      )
+    ) %>% 
+    mutate(
+      Kompetenzstufe = case_when(Performance < .2 ~ "1 = niedrigste Stufe",
+                                 Performance < .4 ~ "2",
+                                 Performance < .6 ~ "3",
+                                 Performance < .8 ~ "4",
+                                 T ~ "5"),
+      Kompetenzstufe = factor(Kompetenzstufe, 
+                              levels = c("5",
+                                         "4",
+                                         "3",
+                                         "2",
+                                         "1 = niedrigste Stufe")
+      )
+    )
+    
+plot <- ggplot(data, aes(Klasse, fill = Kompetenzstufe)) +
+      geom_bar(color = "#00000000") +
+      scale_fill_viridis_d() +
+      theme_ipsum() + 
+      ylab("Anzahl Schüler*innen") + 
+      coord_flip() +
+      ggtitle("Kompetenzstufenbelegung", "in acht Klassen") +
+      theme(legend.position = "bottom") +
+      xlab("")
+
+answers <- 
+  case_when(classnames_random[8] == "A" ~ c(T,F,F,F,F,F,F,F),
+            classnames_random[8] == "B" ~ c(F,T,F,F,F,F,F,F),
+            classnames_random[8] == "C" ~ c(F,F,T,F,F,F,F,F),
+            classnames_random[8] == "D" ~ c(F,F,F,T,F,F,F,F),
+            classnames_random[8] == "E" ~ c(F,F,F,F,T,F,F,F),
+            classnames_random[8] == "F" ~ c(F,F,F,F,F,T,F,F),
+            classnames_random[8] == "G" ~ c(F,F,F,F,F,F,T,F),
+            classnames_random[8] == "H" ~ c(F,F,F,F,F,F,F,T))
+
+plot
+```
+
+
+Answerlist
+----------
+
+* Klasse A
+* Klasse B
+* Klasse C
+* Klasse D
+* Klasse E
+* Klasse F
+* Klasse G
+* Klasse H
+
+
+Solution
+=========
+
+Meta-information
+================
+extype: schoice
+exsolution: `r mchoice2string(answers)`
+exname: Streuung_in_Kompetenzstufen_erkennen

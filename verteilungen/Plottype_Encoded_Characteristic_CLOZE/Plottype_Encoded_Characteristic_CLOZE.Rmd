@@ -1,0 +1,52 @@
+```{r data generation, echo = FALSE, results = "hide", message=FALSE}
+library(exams)
+questions <- solutions <- explanations <- rep(list(""), 6)
+type <- rep(list("schoice"), 6)
+
+plottype <- sample(1:8, 1)
+stat <- sample(1:5, 1)
+
+q_a <- 
+  tibble::tribble(
+          ~Plottyp,        ~Mittelwert,            ~Median,          ~Schiefe,        ~Modalität,  ~Stichprobengröße,
+      "Histogramm",      "abschätzbar",      "abschätzbar",     "abschätzbar",     "abschätzbar",      "abschätzbar",
+         "Dotplot",      "abschätzbar",      "abschätzbar",     "abschätzbar",     "abschätzbar",      "abschätzbar",
+     "Densityplot",      "abschätzbar",      "abschätzbar",     "abschätzbar",     "abschätzbar",  "nicht ables-/schätzbar",
+      "Violinplot",      "abschätzbar",      "abschätzbar",     "abschätzbar",     "abschätzbar",  "nicht ables-/schätzbar",
+    "Errorbarplot", "direkt enkodiert",      "abschätzbar", "nicht ables-/schätzbar", "nicht ables-/schätzbar",  "nicht ables-/schätzbar",
+      "Jitterplot",      "abschätzbar",      "abschätzbar",     "abschätzbar",     "abschätzbar", "direkt enkodiert",
+         "Boxplot",      "abschätzbar", "direkt enkodiert",     "abschätzbar", "nicht ables-/schätzbar",  "nicht ables-/schätzbar",
+        "Sinaplot",      "abschätzbar",      "abschätzbar",     "abschätzbar",     "abschätzbar", "direkt enkodiert"
+    )
+
+```
+
+Question
+========
+Welche Information ist in einem `r q_a[plottype, 1]` direkt enkodiert (direkt ablesbar), grafisch abschätzbar, weder ables- noch abschätzbar?
+
+Answerlist
+----------
+* der Mittelwert ist 
+
+
+
+
+
+```{r exsolutiongeneration, echo = F, results='hide'}
+ex_solution <- 
+  answerlist == round(
+    data |> 
+      filter(Klasse == "Klasse 3a") |> 
+      pull(`Anzahl richtig gelesener Wörter`) %>%
+      DescTools::MAD(., center = mean),
+    1)
+```
+
+
+
+Meta-information
+================
+extype: schoice
+exsolution: `r mchoice2string(ex_solution)`
+exname: MAD_guessing_reading_SC

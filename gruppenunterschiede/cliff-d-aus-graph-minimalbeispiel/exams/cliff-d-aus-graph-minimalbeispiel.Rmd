@@ -1,0 +1,41 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+Question
+========
+Eine Lehrkraft will vergleichen ob Schülerinnen der 8ten oder 9ten Klasse häufiger die Schule schwänzen. Dazu berechnet Sie Cliff's $d = \frac{\#(Kl8_i > Kl9_i) - \#(Kl8_i < Kl9_i)}{\#Kl8 \cdot \#Kl9}$ für die folgenden (Minimal-)Daten. Welcher Koeffizient ergibt sich? Runden Sie auf drei Nachkommastellen und verwenden Sie "," als Dezimaltrennzeichen.  
+
+```{r, echo = F, message = F, warning=FALSE,  fig.width=5, fig.height=5, out.width="400px", dev="svglite", fig.cap=""}
+library(tidyverse)
+library(hrbrthemes)
+library(exams)
+ ## Data for task ####
+data <- tibble(Kl8 = sample(0:10, 3),
+               Kl9 = sample(0:10, 3)) |>
+  pivot_longer(cols = c(Kl8, Kl9),
+               names_to = "Klassenstufe",
+               values_to = "Häufigkeit unerlaubtes Fehlen")
+
+cl_d <-
+  effsize::cliff.delta(`Häufigkeit unerlaubtes Fehlen` ~ Klassenstufe,
+                       data = data)$estimate
+
+ggplot(data, aes(Klassenstufe, `Häufigkeit unerlaubtes Fehlen`)) +
+  geom_point() +
+  ggtitle("Häufigkeit unerlaubten Fehlens", "nach Klassenstufe") +
+  theme_ipsum()
+
+```
+
+
+
+Meta-information
+================
+extype: num
+exname: cliff d aus Plot bestimmen
+exsolution: `r cl_d`
+exclozetype: num
+extol: 0.02

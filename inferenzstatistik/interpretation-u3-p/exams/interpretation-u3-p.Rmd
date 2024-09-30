@@ -1,0 +1,71 @@
+```{r, echo = FALSE, results = "hide", message=FALSE}
+library(tidyverse)
+library(exams)
+library(bayestestR)
+library(ggdist)
+library(effsize)
+
+q_a_matrix_qshuffeled <-
+  tibble(
+    Answers_and_Distractors = c(
+      "Es liegt eine signifikante (bei ⍺-Niveau = .05) Mittelwertsdifferenz vor.",
+      "Der vorliegende Effekt kann von den Daten auf die Population verallgemeinert werden.",
+      "Der vorliegende Effekt kann nicht von den Daten auf die Population verallgemeinert werden.",
+      
+      "Es liegt Evidenz für die Nullhypothese (Cohen's $U_3$ = .5) vor.",
+      "Die Alternativhypothese ist wahr.",
+      "Die Nullhypothese ist wahr.",
+      
+      "Es liegt ein substantieller (mindestens kleiner) Effekt vor."
+    ),
+    
+    `Eine Forscherin untersucht, inwiefern sich Lehramtsstudierende von anderen Studierenden bzgl. der Persönlichkeitseigenschaft »Offenheit« (Extraversion) unterscheiden. Sie findet eine im Durchschnitt größere Offenheit bei den Lehramtsstudierenden (Cohen's U₃ = .61, p = .001)` =
+      c(1, 1, NA,  0, 0, NA,  1),
+    
+    `Eine Forscherin untersucht, inwiefern sich Lehramtsstudierende von anderen Studierenden bzgl. des sozialen Berufsinteresses unterscheiden. Sie findet eine im Durchschnitt ein höheres soziales Interesse bei den Lehramtsstudierenden (Cohen's U₃ = .81, p = .001)` =
+      c(1, 1, NA,  0, 0, NA,  1),
+    
+    `Ein Forscher untersucht, inwiefern sich Lehramtsstudierende von anderen Studierenden bzgl. ihrer kognitiven Fähigkeiten unterscheiden. Sie findet ein Cohen's U₃ = .52 mit einem p-Wert von .562` =
+      c(0, NA, 1,  0, NA, 0,  0),
+    
+    `Ein Dozent untersucht, inwiefern sich Klausurergebnisse von Studierenden unterscheiden, je nachdem ob sie konzentriert, direkt vor der Klausur lernen (massed practice) oder verteilt über das Semester (spaced learning). Er findet ein Cohen's U₃ = .72 zugunsten des spaced learning mit einem p-Wert von .00001` =
+      c(1, 1, NA,  0, 0, NA,  1),
+    
+    `Ein Dozent untersucht, inwiefern sich Klausurergebnisse von Studierenden unterscheiden, wenn er eine zufällig ausgewählte Hälfte der Studierenden dazu anleitet, während des Lernens selbst zu verbalisieren und sich selbst Fragen zu stellen. Er findet ein Cohen's U₃ = .709 mit einem p-Wert = .001` =
+      c(1, 1, NA,  0, 0, NA,  1),
+    
+    `Eine Forscherin untersucht, ob die, durch die Lehrkraft eingeschätzte, Aufmerksamkeit der Schülerinnen und Schüler durch die Anwesenheit eines Schulhundes während der Stunde erhöht wird. In einem experimentellen Design vergleicht sie hierfür Stunden mit und ohne Anwesenheit eines Schulhundes in 35 Klassen. Sie findet ein Cohen's U₃ = .45 mit einem p-Wert = .862` =
+      c(0, NA, 1,  0, NA, 0,  0),
+    `Ein Forschungsteam beschäftigt sich mit der Effizienz von Bewegungspausen im Unterricht. Dazu vergleicht sie Unterrichtsstunden in denen Bewegungseinheiten stattgefunden haben, mit denen ohne Bewegungsunterbrechungen. Am Ende der Stunden bearbeiten die Schülerinnen und Schüler jeweils den Aufmerksamkeits-Belastungs-Test d2. Sie finden ein Cohen's U₃ = .8 mit einem p-Wert = .678` =
+      c(0, 0, NA,  0, NA, 0,  1),
+    `Ein Doktorand untersucht den Effekt von Schriftarten auf die Lesefähigkeiten von Schülerinnen und Schülern mit Dyslexie. Er vergleicht dafür die Leistungen eines Textes in der serifenlosen Schriftart Comic Sans mit der Serifenschrift Times New Roman. Er findet ein Cohen's U₃ = .672 mit einem p-Wert = .09` =
+      c(0, 0, NA,  0, NA, 0,  1),
+    `Eine Forscherin untersucht den Einfluss von Lob auf die Motivation von Schülerinnen und Schülern. Dazu teilt sie die 8 Lehrkräfte zufällig in eine Kontrollbedingung und eine Experimentalbedingung ein. Die Kontrollgruppe erhält keine gesonderten Instruktionen, während die Lehrkräfte der Experimentalgruppe aufgefordert werden, in der kommenden Woche die Schülerinnen und Schüler so viel wie möglich zu loben. Am Ende der Woche vergleicht sie die Werte in einem Motivationsfragebogen. Sie findet ein Cohen's U₃ = .309 mit einem p-Wert = .102` =
+      c(0, NA, 1,  0, NA, 0,  1),
+    `Ein Forscher vergleicht die Unterrichtsqualität zwischen öffentlichen und privaten Schulen. Er findet ein Cohen's U₃ = .523 mit einem p-Wert = .245` =
+      c(0, NA, 1,  0, NA, 0,  0)) %>%
+  # shuffle order of questions
+  relocate(1, sample(2:ncol(.), ncol(.) - 1)) %>% 
+  select(1:2) %>% 
+  na.omit()
+
+```
+
+
+
+Question
+========
+`r names(q_a_matrix_qshuffeled)[2]`
+
+```{r, results='asis', echo=FALSE}
+answerlist(q_a_matrix_qshuffeled %>% pull(1), markup = "markdown")
+```
+
+
+
+
+Meta-information
+================
+exname: Interpretation U3 p 
+extype: mchoice
+exsolution: `r mchoice2string(q_a_matrix_qshuffeled %>% pull(2))`  

@@ -1,0 +1,108 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+```{r data generation, echo = FALSE, results = "hide", message=FALSE}
+library(exams)
+library(bayestestR)
+library(tidyverse)
+
+n_per_group <- 5000
+  
+data <- 
+  tibble(
+    rightskew = distribution_beta(n_per_group, 5, 1),
+    leftskew = distribution_beta(n_per_group, 1, 5),
+    quasinorm = distribution_beta(n_per_group, 5, 5),
+    ushaped = distribution_beta(n_per_group, .5, .5),
+    uniform = distribution_beta(n_per_group, 1, 1)
+  ) %>% 
+  relocate(sample(1:5, 5))
+
+names(data) <- paste("Schule", sample(LETTERS, 5))
+
+dv <- sample(c("Anzahl der Fehltage", 
+               "Anzahl der Freunde", 
+               "Mediennutzung (Minuten) pro Tag",
+               "Anzahl gegessener Fertiggerichte pro Schüler:in pro Woche",
+               "Anzahl richtiger Aufgaben in einer Klassenarbeit",
+               "Anzahl der Meldungen pro Stunde"), 1)
+
+data_long <- 
+  data %>% 
+  pivot_longer(cols = 1:5,
+               names_to = "Schule", 
+               values_to = "values")
+```
+
+Question
+========
+In mehreren Schulen wird die `r dv` erhoben und anschließend in folgenden Histogrammen dargestellt.
+
+> In welche(n) Schule(n) gilt die Aussage: *Median und arithmetisches Mittel unterscheiden sich »deutlich«*.
+
+```{r, echo = F, dev='svglite', fig.width=6, fig.height=6, warning=FALSE, out.width="400px"}
+randcol <- randomcoloR::randomColor()
+
+ggplot(data_long, aes(values)) +
+  geom_histogram(fill = randcol,
+                 color = randcol,
+                 bins = sample(8:15, 1)) +
+  theme_minimal() +
+  facet_wrap(~ Schule, 
+             ncol = sample(2:4,1)) +
+  xlab(dv) +
+  ylab("Anzahl Datenpunkte") +
+  ggtitle(dv) + 
+  theme(
+    axis.text.x = element_blank(),
+    axis.text.y = element_blank(),
+  )
+```
+
+
+```{r, echo=FALSE, results='asis'}
+answerlist(unique(data_long$Schule),
+  markup = "markdown")
+```
+
+```{r exsolutiongeneration, echo = F, results='hide'}
+ex_solution <- 
+  c(data_long %>% 
+      filter(Schule == unique(data_long$Schule)[1]) %>% 
+      pull(values) %>% 
+      moments::skewness() %>% 
+      abs() > .1,
+    data_long %>% 
+      filter(Schule == unique(data_long$Schule)[2]) %>% 
+      pull(values) %>% 
+      moments::skewness() %>% 
+      abs() > .1,
+    data_long %>% 
+      filter(Schule == unique(data_long$Schule)[3]) %>% 
+      pull(values) %>% 
+      moments::skewness() %>% 
+      abs() > .1,
+    data_long %>% 
+      filter(Schule == unique(data_long$Schule)[4]) %>% 
+      pull(values) %>% 
+      moments::skewness() %>% 
+      abs() > .1,
+    data_long %>% 
+      filter(Schule == unique(data_long$Schule)[5]) %>% 
+      pull(values) %>% 
+      moments::skewness() %>% 
+      abs() > .1
+  )
+```
+
+Solution
+=========
+Nicht symmetrische Verteilungen zeichnen sich durch unterschiedliche Streuung in der oberen und unteren Hälfte der Datenreihe aus.
+
+Meta-information
+================
+extype: mchoice
+exsolution: `r mchoice2string(ex_solution)`
+exname: Diff MeanMedian in schiefen Verteilungen erkennen

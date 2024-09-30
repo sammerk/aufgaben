@@ -1,0 +1,38 @@
+```{r data generation, echo = FALSE, results = "hide", message=FALSE}
+library(exams)
+library(tidyverse)
+
+FF <-
+  c(
+    "Ein Forscher will untersuchen, inwiefern höhere Schulabschlüsse mit größerem Einkommen einhergehen.",
+    "Ein Forscher will untersuchen, inwiefern höhere Schulabschlüsse mit besserer psychischer Gesundheit einhergehen.",
+    "Ein Forscher will untersuchen, inwiefern höhere Schulabschlüsse einer Person mit höheren Schulabschlüssen der Partnerin einhergehen.",
+    "Ein Forscher will untersuchen, inwiefern höhere Schulabschlüsse der Mutter mit höheren Schulabschlüssen der ältesten Tochter einhergehen.",
+    "Ein Forscher will untersuchen, inwiefern eine höhere Grundschulempfehlung mit einem höchsten Schulabschluss der Eltern einhergeht.",
+    "Ein Forscher will untersuchen, inwiefern eine höhere Grundschulempfehlung eines Kindes mit einer höheren Grundschulempfehlung dessen nächstjüngeren Geschwisters einhergeht."
+  )
+
+```
+
+Question
+========
+`r FF[sample(1:length(FF),1)]` Welches Effektstärkemaß sollte Sie dazu verwenden?
+
+```{r, echo=FALSE, results='asis'}
+answerlist(c("Cliff's d",
+             "Cohen's $U_3$",
+             "Cohen's $U_1$",
+             "SD",
+             "Cohen's d",
+             "Median",
+             "MAD",
+             "Kendall's $\\tau_B$"),
+  markup = "markdown")
+```
+
+
+Meta-information
+================
+extype: schoice
+exsolution: 00000001
+exname: Anwendbarkeit_tau_erkennen

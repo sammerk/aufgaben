@@ -1,0 +1,85 @@
+Question
+========
+```{r, echo = F, message = F, warning=FALSE,  fig.width=6, fig.height=6, out.width="400px", dev='svglite', fig.cap=""}
+library(tidyverse)
+library(hrbrthemes)
+library(exams)
+
+num_to_moodle <- function(x, tol = 0, breaks = 1, range = NULL, digits = 5) {
+  ## round correct solution and tolerance
+  breaks <- round(breaks)
+  x <- round(x, digits = digits)
+  tol <- round(tol, digits = digits)
+
+  ## only correct solution without tolerance
+  if(breaks <= 0L || (breaks == 1L && tol <= 0)) return(paste0(":NUMERICAL:=", x))
+
+  ## only correct solution with tolerance
+  if(breaks == 1L) return(paste0(":NUMERICAL:=", x, ":", tol))
+
+  ## multiple partial solutions with tolerances
+  if(!(breaks %in% c(2:6, 10))) stop("'breaks' must be 0, 1, ..., 6, or 10")
+  perc <- exams:::moodlePercent((breaks:1L)/breaks)
+  y <- seq(x + 1.5 * tol, by = tol, length.out = breaks - 1L)
+
+  ## set up Moodle string: :NUMERICAL:=solution1~solution2~solution3 etc.
+  ## where each solution has: %_percent_%_solution_:_tolerance_#_comment_
+  perc <- c("", paste0("%", rep.int(perc[-1], 2), "%"))
+  x <- round(c(x, y, x + (x - y)), digits = digits)
+  tol <- c(tol, rep.int(tol/2, 2 * (breaks - 1L)))
+  if(!is.null(range)) {
+    if(length(range) != 2L) stop("'range' must have length 2")
+    ok <- (x >= range[1L]) & (x <= range[2L])
+    if(!ok[1L]) stop("'x' is not within 'range'")
+  } else {
+    ok <- rep.int(TRUE, 2 * breaks - 1L)
+  }
+  num <- paste0(":NUMERICAL:=", paste0(
+    perc[ok],        ## percents
+    x[ok],           ## solutions
+    ":", tol[ok],    ## tolerances
+    "",              ## comments (none for now)
+    collapse = "~")) ## collapse
+  return(num)
+}
+
+pop_corr <- runif(1, -1, 1) %>% 
+  round(., digits = 2)
+
+pop_N <- round(runif(1,30,300), 0)
+
+true_corr <- runif(1, -1, 1)
+
+sample <- MASS::mvrnorm(pop_N, mu = c(0,0), Sigma = matrix(c(1,true_corr,true_corr,1),2,2)) %>% 
+  as_tibble()
+
+sample_r <- cor(sample$V1, sample$V2)
+
+partial_credit_range <- 
+  c(-1,1)
+  #if(sample_r > 0){c(-.05,1)}else{c(-1,.05)}
+
+sample %>% 
+  ggplot(., aes(V1, V2)) + 
+  geom_point(color = "#8CD000") +
+  stat_smooth(se = F, method = "lm", color = "#8CD000") +
+  geom_rug(color = "#8CD000", alpha = .5) + 
+  theme_modern_rc() + 
+  coord_fixed() +
+  ggtitle("Streudiagramm", "der Variablen V1 & V2")
+```
+
+Obige Abbildung zeigt die Assoziation der beiden Variablen V1 und V2. 
+
+Answerlist
+----------
+* Wie groß schätzen Sie Pearsons's $r$ für diese Daten? (Verwenden Sie "," als Dezimaltrennzeichen)
+
+
+
+Meta-information
+================
+exname: Visual Guessing r 
+extype: cloze
+exclozetype: verbatim
+exsolution: `r num_to_moodle(true_corr, tol = 0.2, breaks = 5, range = partial_credit_range)`

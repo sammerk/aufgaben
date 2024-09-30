@@ -1,0 +1,77 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+```{r, echo = FALSE, results = "hide", message=FALSE}
+library(tidyverse)
+library(here)
+library(exams)
+library(bayestestR)
+
+shape <-
+  sample(c("unif", "skew1",
+           "skew2", "normal", "u"), 1)
+
+data <-
+  tibble(
+    u = sample(distribution_beta(100, .6, .6), 100),
+    unif = sample(distribution_beta(100, 1, 1), 100),
+    normal = sample(distribution_beta(100, 4, 4), 100),
+    skew1 = sample(distribution_beta(100, 1, 8), 100),
+    skew2 = sample(distribution_beta(100, 8, 1), 100)
+  ) %>%
+  select(as.character(shape))
+
+names(data) <- "A"
+
+data$B <-
+  (data$A + rnorm(100, 0, sample(c(.15, 60), 1))) * sample(c(1, -1), 1)
+
+
+answers <- c(
+  shape == "u",
+  T,
+  cor(data$A, data$B) > .4,
+  cor(data$A, data$B) < -.4
+)
+
+```
+
+Question
+========
+
+
+```{r, echo = FALSE, dev='svglite', message=FALSE, fig.width=5, fig.height=5, fig.cap=""}
+ggplot(data, aes(A, B)) + 
+      geom_point(color = "#8CD000") +
+      stat_smooth(se = F, method = "lm", color = "#8CD000") +
+      geom_rug(color = "#8CD000", alpha = .5) + 
+      theme_minimal() + 
+      ggtitle("Streudiagramm") +
+      labs(caption = "Die x- und y-Koordinaten jedes Punktes sind\nauf den jeweiligen Achsen als Striche dargestellt")
+```
+
+
+
+```{r questionlist, echo = FALSE, results='asis'}
+answerlist(
+  c(
+    "A ist U-förmig verteilt.",
+    ifelse(DescTools::Skew(data$A) < -1, "A ist linksschief verteilt.",
+           ifelse(DescTools::Skew(data$A) > 1, "A ist rechtsschief verteilt.",
+                  "A ist symmetrisch verteilt.")),
+    "A und B sind stark positiv korreliert.",
+    "A und B sind stark negativ korreliert."
+  ),
+  markup = "markdown"
+)
+```
+
+
+
+Meta-information
+================
+exname: Korrelationen deskriptiv lesen
+extype: mchoice
+exsolution: `r mchoice2string(answers)`

@@ -1,0 +1,255 @@
+
+```{r, Datengenese, echo = FALSE, message=FALSE}
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+library(hrbrthemes)
+library(PearsonDS)
+library(tidyverse)
+library(exams)
+
+mean <- sample(seq(-100, 100, 10), 1)
+sd <- sample(seq(1, 13, 4), 1)
+modality <- sample(c("unimod", "bimod", "trimod"), 1)
+plottype <- sample(c("hist", "violin", "sina"), 1)
+skewness <- sample(c(0, .8, -.8),1)
+
+
+data <- tibble(
+  unimod_raw =
+    rpearson(
+      600,
+      moments = c(
+        mean = 0,
+        variance = 1,
+        skewness = skewness,
+        kurtosis = 3
+      )
+    ),
+  
+  bimod_raw =
+    c(rpearson(
+      300,
+      moments = c(
+        mean = 0,
+        variance = 1,
+        skewness = skewness,
+        kurtosis = 3
+      )
+    ),
+    rpearson(
+      300,
+      moments = c(
+        mean = ifelse(skewness == 0, 4, 3),
+        variance = 1,
+        skewness = skewness,
+        kurtosis = 3
+      )
+    )),
+  
+  trimod_raw =
+    c(
+      rpearson(
+        200,
+        moments = c(
+          mean = 0,
+          variance = 1,
+          skewness = skewness,
+          kurtosis = 3
+        )
+      ),
+      rpearson(
+        200,
+        moments = c(
+          mean = ifelse(skewness == 0, 4, 3),
+          variance = 1,
+          skewness = skewness,
+          kurtosis = 3
+        )
+      ),
+      rpearson(
+        200,
+        moments = c(
+          mean = ifelse(skewness == 0, 8, 6),
+          variance = 1,
+          skewness = skewness,
+          kurtosis = 3
+        )
+      )
+    ),
+  unimod = (unimod_raw - mean(unimod_raw))/sd(unimod_raw)*sd +  mean,
+  bimod = (bimod_raw - mean(bimod_raw))/sd(bimod_raw)*sd + mean,
+  trimod = (trimod_raw - mean(trimod_raw))/sd(trimod_raw)*sd + mean,
+  dummy = 1
+)
+
+
+data_to_plot <- data[,c("dummy", modality)]
+names(data_to_plot) <- c("dummy", "data") 
+
+dist_descriptionstring_true <- 
+  paste(
+    case_when(
+      modality == "unimod" ~ "unimodal, ",
+      modality == "bimod" ~ "bimodal, ",
+      TRUE ~ "trimodal, "),
+     case_when(
+      skewness == 0.8 ~ "rechtsschief, ",
+      skewness == -0.8 ~ "linksschief, ",
+      TRUE ~ "symmetrisch, "),
+    "hat einen Mittwelwert von ",
+    mean, 
+    " und das erste Quartil liegt bei ",
+    round(quantile(data_to_plot$data, .25), 1),
+    sep = "")
+
+dist_descriptionstring_false01 <- 
+  paste(
+    case_when(
+      modality == "unimod" ~ "bimodal, ",
+      modality == "bimod" ~ "trimodal, ",
+      TRUE ~ "unimodal, "),
+     case_when(
+      skewness == 0.8 ~ "rechtsschief, ",
+      skewness == -0.8 ~ "linksschief, ",
+      TRUE ~ "symmetrisch, "),
+    "hat einen Mittwelwert von ",
+    mean, 
+    " und das erste Quartil liegt bei ",
+    round(quantile(data_to_plot$data, .25), 1),
+    sep = "")
+
+dist_descriptionstring_false02 <- 
+  paste(
+    case_when(
+      modality == "unimod" ~ "bimodal, ",
+      modality == "bimod" ~ "unimodal, ",
+      TRUE ~ "trimodal, "), 
+     case_when(
+      skewness == 0.8 ~ "linksschief, ",
+      skewness == -0.8 ~ "rechtsschief, ",
+      TRUE ~ "symmetrisch, "),
+    "hat einen Mittwelwert von ",
+    mean, 
+    " und das erste Quartil liegt bei ",
+    round(quantile(data_to_plot$data, .25), 1) - 1.5*sd, #  immer false!
+    sep = "")
+
+dist_descriptionstring_false03 <- 
+  paste(
+    case_when(
+      modality == "unimod" ~ "bimodal, ",
+      modality == "bimod" ~ "unimodal, ",
+      TRUE ~ "trimodal, "),
+     case_when(
+      skewness == 0.8 ~ "linksschief, ",
+      skewness == -0.8 ~ "rechtsschief, ",
+      TRUE ~ "symmetrisch, "),
+    "hat einen Mittwelwert von ",
+    mean + 2*sd, #  immer false!
+    " und das erste Quartil liegt bei ",
+    round(quantile(data_to_plot$data, .25), 1) + 2*sd,#  immer false!
+    sep = "")
+
+dist_descriptionstring_false04 <- 
+  paste(
+    case_when(
+      modality == "unimod" ~ "unimodal, ",
+      modality == "bimod" ~ "bimodal, ",
+      TRUE ~ "trimodal, "),
+     case_when(
+      skewness == 0.8 ~ "linksschief, ",
+      skewness == -0.8 ~ "rechtsschief, ",
+      TRUE ~ "symmetrisch, "),
+    "hat einen Mittwelwert von ",
+    mean + 2*sd, #  immer false!
+    " und das erste Quartil liegt bei ",
+    round(quantile(data_to_plot$data, .25), 1) -1*sd,#  immer false!
+    sep = "")
+
+dist_descriptionstring_false05 <- 
+  paste(
+    case_when(
+      modality == "unimod" ~ "unimodal, ",
+      modality == "bimod" ~ "bimodal, ",
+      TRUE ~ "trimodal, "),
+     case_when(
+      skewness == 0.8 ~ "rechtsschief, ",
+      skewness == -0.8 ~ "linksschief, ",
+      TRUE ~ "symmetrisch, "),
+    "hat einen Mittwelwert von ",
+    mean, 
+    " und das erste Quartil liegt bei ",
+    round(quantile(data_to_plot$data, .25), 1) + 1*sd, #  immer false!
+    sep = "")
+
+#mean
+#sd
+#mean(data_to_plot$data)
+#sd(data_to_plot$data)
+```
+
+Question
+========
+
+Gegeben sei die folgende Verteilung.  
+
+```{r, fig.width=6, echo=F, warning=F, fig.path = "", fig.cap = "", warning=FALSE, message=FALSE, dev='svglite'}
+if(plottype == "hist"){
+ggplot(data_to_plot, aes(data)) +
+    geom_histogram() +
+    theme_ipsum_rc() + 
+    xlab("") + 
+    ylab("") + 
+    ggtitle("Histogramm")
+}
+
+if(plottype == "violin"){
+ggplot(data_to_plot, aes(dummy, data)) +
+    geom_violin(width = .5) +
+    theme_ipsum_rc() + 
+    theme(axis.text.y=element_blank()) + 
+    xlab("") + 
+    ylab("") + 
+    ggtitle("Violinplot") + 
+    coord_flip()
+}
+
+if(plottype == "sina"){
+ggplot(data_to_plot, aes(dummy, data)) +
+    ggforce::geom_sina(alpha = .3) +
+    theme_ipsum_rc() + 
+    theme(axis.text.y=element_blank()) + 
+    xlab("") + 
+    ylab("") + 
+    ggtitle("Violinplot") + 
+    coord_flip()
+}
+
+data <- 
+  tibble(
+    answerlist = c(
+      dist_descriptionstring_true,
+      dist_descriptionstring_false01,
+      dist_descriptionstring_false02,
+      dist_descriptionstring_false03,
+      dist_descriptionstring_false04,
+      dist_descriptionstring_false05),
+    exsolution = c(T,F,F,F,F,F)) |> 
+  sample_frac(1)
+```
+
+
+Welche Aussage ist korrekt?
+
+```{r, echo=FALSE, results='asis'}
+answerlist(data$answerlist,
+  markup = "markdown")
+```
+
+
+Meta-information
+================
+exname: Verteilung beschreiben
+extype: schoice
+exsolution: `r mchoice2string(data$exsolution)`

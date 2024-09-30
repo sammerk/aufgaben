@@ -1,0 +1,213 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+Question
+========
+```{r, echo = F, message = F, warning=FALSE,  fig.width=5, fig.height=15, out.width="50%", fig.retina=2}
+library(tidyverse)
+library(hrbrthemes)
+library(ggalluvial)
+library(patchwork)
+
+true_corr <- runif(1, -.9, -.8)
+
+data <-
+  MASS::mvrnorm(sample(100:5000, 1), mu = c(0, 0), Sigma = matrix(c(1, true_corr, true_corr, 1), 2, 2)) %>%
+  as_tibble() %>%
+  mutate(V3 = ordered(
+    case_when(
+      V1 < quantile(V1, .25) ~ "kein Schulabschl",
+      V1 < quantile(V1, .50) ~ "Sekundar I",
+      V1 < quantile(V1, .75) ~ "Sekundar II",
+      TRUE ~ "Hochschule"
+    )
+  ),
+  V4 = ordered(
+    case_when(
+      V2 < quantile(V2, .25) ~ "a",
+      V2 < quantile(V2, .50) ~ "b",
+      V2 < quantile(V2, .75) ~ "c",
+      TRUE ~ "d"
+    )
+  ),
+  V3 = factor(V3, 
+              levels = c("kein Schulabschl",
+"Sekundar I",
+"Sekundar II",
+"Hochschule")),
+  V5 = as.numeric(V3),
+  V6 = as.numeric(V4))
+
+true_corr <- round(cor(data$V5, data$V6, method = "kendall"), 2)
+
+
+plot1 <- 
+  ggplot(data %>% 
+         group_by(V3, V4) %>% 
+         summarize(Freq = n()) %>% 
+         ungroup(),
+       aes(y = Freq, axis1 = V3, axis2 = V4)) +
+  geom_alluvium(aes(fill = V3), 
+                width = 1/12, 
+                alpha = 1,) +
+  geom_stratum(width = 1/12, 
+               fill = "black", 
+               color = "white") +
+ # geom_label(stat = "stratum", aes(label = after_stat(stratum))) +
+  theme_modern_rc() +
+  scale_fill_viridis_d(begin = .1) +
+  ylab("") +
+  theme(legend.title = element_blank())
+
+
+
+true_corr <- runif(1, -.05, .05)
+
+data <-
+  MASS::mvrnorm(sample(100:5000, 1), mu = c(0, 0), Sigma = matrix(c(1, true_corr, true_corr, 1), 2, 2)) %>%
+  as_tibble() %>%
+  mutate(V3 = ordered(
+    case_when(
+      V1 < quantile(V1, .25) ~ "kein Schulabschl",
+      V1 < quantile(V1, .50) ~ "Sekundar I",
+      V1 < quantile(V1, .75) ~ "Sekundar II",
+      TRUE ~ "Hochschule"
+    )
+  ),
+  V4 = ordered(
+    case_when(
+      V2 < quantile(V2, .25) ~ "a",
+      V2 < quantile(V2, .50) ~ "b",
+      V2 < quantile(V2, .75) ~ "c",
+      TRUE ~ "d"
+    )
+  ),
+  V3 = factor(V3, 
+              levels = c("kein Schulabschl",
+"Sekundar I",
+"Sekundar II",
+"Hochschule")),
+  V5 = as.numeric(V3),
+  V6 = as.numeric(V4))
+
+true_corr <- round(cor(data$V5, data$V6, method = "kendall"), 2)
+
+
+plot2 <- 
+  ggplot(data %>% 
+         group_by(V3, V4) %>% 
+         summarize(Freq = n()) %>% 
+         ungroup(),
+       aes(y = Freq, axis1 = V3, axis2 = V4)) +
+  geom_alluvium(aes(fill = V3), 
+                width = 1/12, 
+                alpha = 1,) +
+  geom_stratum(width = 1/12, 
+               fill = "black", 
+               color = "white") +
+ # geom_label(stat = "stratum", aes(label = after_stat(stratum))) +
+  theme_modern_rc() +
+  scale_fill_viridis_d(begin = .1) +
+  ylab("") +
+  theme(legend.title = element_blank())
+
+
+true_corr <-runif(1, .8, .9)
+
+data <-
+  MASS::mvrnorm(sample(100:5000, 1), mu = c(0, 0), Sigma = matrix(c(1, true_corr, true_corr, 1), 2, 2)) %>%
+  as_tibble() %>%
+  mutate(V3 = ordered(
+    case_when(
+      V1 < quantile(V1, .25) ~ "kein Schulabschl",
+      V1 < quantile(V1, .50) ~ "Sekundar I",
+      V1 < quantile(V1, .75) ~ "Sekundar II",
+      TRUE ~ "Hochschule"
+    )
+  ),
+  V4 = ordered(
+    case_when(
+      V2 < quantile(V2, .25) ~ "a",
+      V2 < quantile(V2, .50) ~ "b",
+      V2 < quantile(V2, .75) ~ "c",
+      TRUE ~ "d"
+    )
+  ),
+  V3 = factor(V3, 
+              levels = c("kein Schulabschl",
+"Sekundar I",
+"Sekundar II",
+"Hochschule")),
+  V5 = as.numeric(V3),
+  V6 = as.numeric(V4))
+
+true_corr <- round(cor(data$V5, data$V6, method = "kendall"), 2)
+
+
+plot3 <- 
+  ggplot(data %>% 
+         group_by(V3, V4) %>% 
+         summarize(Freq = n()) %>% 
+         ungroup(),
+       aes(y = Freq, axis1 = V3, axis2 = V4)) +
+  geom_alluvium(aes(fill = V3), 
+                width = 1/12, 
+                alpha = 1,) +
+  geom_stratum(width = 1/12, 
+               fill = "black", 
+               color = "white") +
+ # geom_label(stat = "stratum", aes(label = after_stat(stratum))) +
+  theme_modern_rc() +
+  scale_fill_viridis_d(begin = .1) +
+  ylab("") +
+  theme(legend.title = element_blank())
+  
+
+set_sequence_of_plots <- sample(1:3,3)
+
+if(sum(set_sequence_of_plots == 1:3) == 3){
+  plot1 / plot2 / plot3
+}
+
+if(sum(set_sequence_of_plots == c(1,3,2)) == 3){
+  plot1 / plot3 / plot2
+}
+
+if(sum(set_sequence_of_plots == c(2,1,3)) == 3){
+  plot1 / plot3 / plot2
+}
+
+if(sum(set_sequence_of_plots == c(2,3,1)) == 3){
+  plot1 / plot3 / plot2
+}
+
+if(sum(set_sequence_of_plots == c(3,1,2)) == 3){
+  plot1 / plot3 / plot2
+}
+
+if(sum(set_sequence_of_plots == c(3,2,1)) == 3){
+  plot1 / plot3 / plot2
+}
+```
+
+Die drei Abbildungen stellt 
+
+* eine Abbildung eine starke positive, 
+* eine Abbildung eine starke negative und 
+* eine Abbildung eine vernachlässigbar kleine Korrelation von Schulabschlüssen der Eltern (links) und ihrer Kinder (rechts) dar.
+
+> Welche Abbildung kann welcher Korrelation zugeordnet werden?
+
+Answerlist
+----------
+* Oben: stark positive Korr. - Mitte: Sehr schwache Korr. - Unten: stark negative Korr. 
+* Oben: stark positive Korr. - Mitte: Sehr schwache Korr. - Unten: stark negative Korr.
+
+Meta-information
+================
+exname: Order Kendall's tau_b from alluvial
+extype: schoice
+exsolution: 01000
+exshuffle: TRUE

@@ -1,0 +1,59 @@
+Question
+========
+Markieren Sie im Folgenden wahre Aussagen.
+
+```{r echo = F, results = "asis"}
+library(exams)
+solution <- c(rep(T, 21), rep(F, 16))
+
+answerlist(
+  c(
+    "Cohen's d stellt eine Effektstärke dar.",
+    "Cliff's d stellt eine Effektstärke dar.",
+    "Cohen's d kann den Mittelwertsunterschied zweier normalverteilter Variablen beschreiben.",
+    "Cohen's U₃ stellt eine Effektstärke dar.",
+    "Cohen's U₃ kann den Mittelwertsunterschied zweier normalverteilter Variablen beschreiben.",
+    "Cohen's U₃ kann theoretisch Werte zwischen 0 und 1 annehmen (0 ≤ U₃ ≤ 1).",
+    "Cohen's U₃ stellt einen Nulleffekt dar, wenn U₃ = .5 gilt.",
+    "Cohen's U₃ stellt einen umso stärkeren Effekt dar, »je weiter U₃ von der .5 entfernt ist«.",
+    "Cohen's U₁ stellt eine Effektstärke dar.",
+    "Cohen's U₁ kann den Mittelwertsunterschied zweier normalverteilter Variablen beschreiben.",
+    "Cohen's U₁ kann theoretisch Werte zwischen 0 und 1 annehmen (0 ≤ U₁ ≤ 1).",
+    "Cohen's U₁ stellt einen Nulleffekt dar, wenn U₁ = 0 gilt.",
+    "Cohen's U₁ stellt einen umso stärkeren Effekt dar, »je weiter U₁ von der 0 entfernt ist«.",
+    "Cliff's d kann den Unterschied in der zentralen Tendenz zweier intervallskalierter Variablen beschreiben.",
+    "Cliff's d kann den Unterschied in der zentralen Tendenz zweier ordinaler Variablen beschreiben.",
+    "Cohen's d kann theoretisch Werte zwischen -∞ und ∞ annehmen (-∞ < d < ∞).",
+    "Cliff's d kann theoretisch Werte zwischen -1 und 1 annehmen (-1 ≤ d ≤ 1).",
+    "Cohen's d stellt einen Nulleffekt dar, wenn d = 0 gilt.",
+    "Cohen's d stellt einen umso stärkeren Effekt dar, »je weiter d von der Null entfernt ist«.",
+    "Cliff's d stellt einen Nulleffekt dar, wenn d = 0 gilt.",
+    "Cliff's d stellt einen umso stärkeren Effekt dar, »je weiter d von der 0 entfernt ist«.",
+    # FALSE
+    "Cohen's d kann den Mittelwertsunterschied zweier ordinaler Variablen beschreiben.",
+    "Cohen's U₃ kann die Korrelation zweier normalverteilter Variablen beschreiben.",
+    "Cliff's d kann den Zusammenhang zweier intervallskalierter Variablen beschreiben.",
+    "Cohen's d kann theoretisch nur Werte zwischen -1 und 1 annehmen (-1 < d < 1).",
+    "Cohen's U₃ kann theoretisch Werte zwischen -∞ und ∞ annehmen (-∞ < U₃ < ∞).",
+    "Cliff's d kann theoretisch Werte zwischen -∞ und ∞ annehmen (-∞ < d < ∞).",
+    "Cohen's d stellt einen Nulleffekt dar, wenn d = .5 gilt.",
+    "Cohen's d stellt einen umso stärkeren Effekt dar, »je weiter d von der .5 entfernt ist«.",
+    "Cohen's U₃ stellt einen Nulleffekt dar, wenn U₃ = 0 gilt.",
+    "Cohen's U₃ stellt einen umso stärkeren Effekt dar, »je weiter U₃ von der 0 entfernt ist«.",
+    "Cliff's d stellt einen Nulleffekt dar, wenn d = .5 gilt.",
+    "Cliff's d stellt einen umso stärkeren Effekt dar, »je weiter d von der .5 entfernt ist«.",
+    "Cohen's U₁ kann den Mittelwertsunterschied zweier ordinaler Variablen beschreiben.",
+    "Cohen's U₁ kann theoretisch Werte zwischen -∞ und ∞ annehmen (-∞ ≤ U₁ ≤ ∞).",
+    "Cohen's U₁ stellt einen Nulleffekt dar, wenn U₁ = 0.5 gilt.",
+    "Cohen's U₁ stellt einen umso stärkeren Effekt dar, »je weiter U₁ von der 1 entfernt ist«."),
+    markup = "markdown"
+  )
+
+```
+
+Meta-information
+================
+exname: Definitionen d, d, U3, U1
+extype: mchoice
+exsolution: `r mchoice2string(solution)`
+exshuffle: 3

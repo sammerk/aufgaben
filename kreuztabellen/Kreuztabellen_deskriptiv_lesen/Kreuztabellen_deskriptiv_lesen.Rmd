@@ -1,0 +1,114 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+```{r, echo = FALSE, results = "hide", message=FALSE}
+library(tidyverse)
+library(here)
+library(exams)
+
+## Matrix with variables and values
+data_vars <- 
+  tibble::tribble(
+                    ~AV,                                   ~UV,  ~AV_stufe1,        ~AV_stufe2,            ~UV_stufe1,                           ~UV_stufe2,  ~n11,  ~n12,  ~n21,   ~n22,
+ "verspätetes Ankommen im Unterricht",    "dem Verkehrsmittel", "Pünktlich",       "Verspätet",                "ÖPNV",                          "ohne ÖPNV", 203L, 105L,  312, 45,
+ "verspätetes Ankommen im Unterricht",    "dem Verkehrsmittel", "Pünktlich",       "Verspätet",                "ÖPNV",                          "ohne ÖPNV", 203L, 105L,  312, 45,
+ "verspätetes Ankommen im Unterricht",    "dem Verkehrsmittel", "Pünktlich",       "Verspätet",                "ÖPNV",                          "ohne ÖPNV", 203L, 105L,  312, 45,
+ "verspätetes Ankommen im Unterricht",    "dem Verkehrsmittel", "Pünktlich",       "Verspätet",                "ÖPNV",                          "ohne ÖPNV", 203L, 105L,  312, 45,
+     "der eigene Beruf",                "dem Beruf der Mutter", "Lehrer\\*in", "keine Lehrer\\*in",     "Mutter Lehrerin",              "Mutter keine Lehrerin", 203L, 105L,  312, 45,
+     "der eigene Beruf",                "dem Beruf der Mutter", "Lehrer\\*in", "keine Lehrer\\*in",     "Mutter Lehrerin",              "Mutter keine Lehrerin", 203L, 105L,  312, 45,
+     "der eigene Beruf",                "dem Beruf der Mutter", "Lehrer\\*in", "keine Lehrer\\*in",     "Mutter Lehrerin",              "Mutter keine Lehrerin", 203L, 105L,  312, 45,
+     "der eigene Beruf",                "dem Beruf der Mutter", "Lehrer\\*in", "keine Lehrer\\*in",     "Mutter Lehrerin",              "Mutter keine Lehrerin", 203L, 105L,  312, 45) %>% 
+  mutate(n11 = n11 + sample(-5:5, 1),
+         n12 = n12 + sample(-5:5, 1),
+         n21 = n21 + sample(-5:5, 1),
+         n22 = n22 + sample(-5:5, 1))
+
+
+## number of task (in shiny app button count)  
+nt <- sample(1:8,1)
+
+
+data_table <-
+  matrix(c(
+    c("",                    data_vars[nt, "UV_stufe1"], data_vars[nt, "UV_stufe2"]),
+    c(data_vars[nt, "AV_stufe1"],  data_vars[nt, "n11"],       data_vars[nt, "n12"]),
+    c(data_vars[nt, "AV_stufe2"],  data_vars[nt, "n21"],       data_vars[nt, "n22"])
+  ),
+  byrow = T, ncol = 3)
+
+
+  
+  
+table <-
+  matrix(c(
+    c("",                    data_vars[nt, "UV_stufe1"], data_vars[nt, "UV_stufe2"]),
+    c(data_vars[nt, "AV_stufe1"],  data_vars[nt, "n11"],       data_vars[nt, "n12"]),
+    c(data_vars[nt, "AV_stufe2"],  data_vars[nt, "n21"],       data_vars[nt, "n22"])
+  ),
+  byrow = T, ncol = 3)
+
+  
+questions_answers <-
+  tibble(questions = c(
+    paste(
+      "Die Ausprägung »",
+      data_vars[nt, "UV_stufe1"],
+      "« kam häufiger vor als die Ausprägung »",
+      data_vars[nt, "UV_stufe2"],
+      "«",
+      sep = ""
+    ),
+    paste(
+      "Die Ausprägung »",
+      data_vars[nt, "AV_stufe1"],
+      "« kam weniger häufig vor als die Ausprägung »",
+      data_vars[nt, "AV_stufe2"],
+      "«",
+      sep = ""
+    ),
+    case_when(
+      data_vars[nt, "AV"] == "verspätetes Ankommen im Unterricht" ~ "Der Anteil verspäteter Kinder ist bei nicht-ÖPNV-Nutzenden größer, als bei ÖPNV-Nutzenden.",
+      data_vars[nt, "AV"] == "der eigene Beruf" ~ "Der Anteil an Lehrermüttern ist bei Lehrer\\*innen größer als bei nicht Lehrer\\*innen.",
+      T ~ as.character(data_vars[nt, "AV"])
+    )
+  ),
+  answers = c((data_vars[nt, "n11"] + data_vars[nt, "n21"]) >
+                (data_vars[nt, "n21"] + data_vars[nt, "n22"]),
+              (data_vars[nt, "n11"] + data_vars[nt, "n12"]) <
+                (data_vars[nt, "n21"] + data_vars[nt, "n22"]),
+              (data_vars[nt, "n11"] /  (data_vars[nt, "n11"] + data_vars[nt, "n12"])) >
+                (data_vars[nt, "n21"] /  (data_vars[nt, "n21"] + data_vars[nt, "n22"]))
+  )) #%>%
+  #sample_frac(1)
+
+```
+
+Question
+========
+`r paste("Eine Forscherin untersucht, inwiefern ",
+          data_vars[nt, "AV"],
+          "mit",
+          data_vars[nt, "UV"],
+          "assoziert ist und erhebt dazu die folgenden (teilw. unrealistischen) Daten.")`. 
+
+Welche der folgenden Aussagen ist wahr?          
+
+```{r, echo = FALSE}
+knitr::kable(table, fullWidth = F) %>% kableExtra::kable_styling(bootstrap_options = "bordered", full_width = FALSE, position = "left")
+```
+
+
+
+```{r questionlist, echo = FALSE, results='asis'}
+answerlist(questions_answers %>% pull(questions), markup = "markdown")
+```
+
+
+
+Meta-information
+================
+exname: Kreuztabellen deskriptiv lesen
+extype: mchoice
+exsolution: `r mchoice2string(questions_answers$answers)`

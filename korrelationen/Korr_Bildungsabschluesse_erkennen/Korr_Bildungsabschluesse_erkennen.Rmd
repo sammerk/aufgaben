@@ -1,0 +1,81 @@
+Question
+========
+```{r, echo = F, message = F, warning=FALSE,  fig.width=5, fig.height=5, out.width="500px", fig.retina=2, fig.cap=""}
+library(tidyverse)
+library(exams)
+library(randomcoloR)
+true_corr <- runif(1, .8, 1) %>% 
+  round(., digits = 2) 
+
+data <-
+  MASS::mvrnorm(250, mu = c(0, 0), Sigma = matrix(c(1, true_corr, true_corr, 1), 2, 2)) %>%
+  as_tibble() %>%
+  mutate(V3 = ordered(
+    case_when(
+      V1 < quantile(V1, .25) ~ "kein Schulabschluss",
+      V1 < quantile(V1, .50) ~ "mittlerer Bildungsabschluss",
+      V1 < quantile(V1, .75) ~ "Hochschulzugangsberechtigung",
+      TRUE ~                   "Hochschulabschluss"
+    )
+  ),
+  V4 = ordered(
+    case_when(
+      V2 < quantile(V2, .25) ~ "kein Schulabschluss",
+      V2 < quantile(V2, .50) ~ "mittlerer Bildungsabschluss",
+      V2 < quantile(V2, .75) ~ "Hochschulzugangsberechtigung",
+      TRUE ~ "Hochschulabschluss"
+    )
+  ),
+  V5 = as.numeric(V3),
+  V6 = as.numeric(V4),
+  V3 = factor(V3, levels = c("kein Schulabschluss", "mittlerer Bildungsabschluss",
+                             "Hochschulzugangsberechtigung",
+                             "Hochschulabschluss")),
+  V4 = factor(V4, levels = c("kein Schulabschluss", "mittlerer Bildungsabschluss",
+                             "Hochschulzugangsberechtigung",
+                             "Hochschulabschluss")))
+
+true_corr <- round(cor(data$V5, data$V6, method = "kendall"), 2)
+
+answerlist <- 
+  c(true_corr + seq(-1.75, 1.75, .35)) |> 
+  sort() 
+
+answerlist <- answerlist[answerlist <= 1 & answerlist >= -1]
+
+ggplot(data, aes(V3, V4)) + 
+  geom_jitter(color = randomColor(1, luminosity = "dark"), width = .2, height = .2, alpha =.4) +
+  theme_minimal() + 
+  coord_fixed() +
+  ggtitle("Streudiagramm", "der (höchsten) Bildungsabschlüsse in einer\nStichprobe von Müttern und Töchtern") +
+  xlab("Bildungsabschlüsse der Mütter") + 
+  ylab("Bildungsabhsclüsse der Töchter") +
+  theme(axis.text.x = element_text(angle = 15, hjust = 1))
+
+  
+```
+
+Angenommen ein Forscherteam erhebt in einem Land querschnittlich die höchsten Bildungsabschlüsse von 250 Müttern und deren ältesten Töchter und erhält die oben dargestellten Daten. Welche der folgenden Aussagen können anhand der Daten geschlussfolgert werden?
+
+```{r, echo=FALSE, results='asis'}
+answerlist(c(
+  "Die Bildungsabschlüsse der Mütter und der Töchter sind stark positiv korreliert.",
+  "Die Bildungsabschlüsse der Mütter und der Töchter zeigen keine Assoziation.",
+  "Die Bildungsabschlüsse der Väter und der Töchter sind schwach negativ korreliert.",
+  "Höhere Bildung der Mütter **verursacht** höhere Bildung bei den Töchternz.",
+  "Höhere Bildung der Väter **verursacht** niedrigere Bildung bei den Töchtern."),
+  markup = "markdown")
+```
+
+```{r exsolutiongeneration, echo = F, results='hide'}
+ex_solution <- 
+  c(T,F,F,F,F)
+```
+
+
+
+Meta-information
+================
+extype: mchoice
+exsolution: `r mchoice2string(ex_solution)`
+exname: Korr_Bildungsabschluesse_erkennen

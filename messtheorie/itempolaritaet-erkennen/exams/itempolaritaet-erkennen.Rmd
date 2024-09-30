@@ -1,0 +1,48 @@
+```{r data generation, echo = FALSE, results = "hide", message=FALSE}
+library(tidyverse)
+library(exams)
+# library(exams)
+bsp <-
+  c("Stamm: Wie angespannt fühlen Sie sich im Moment?; Anwortskala: gar nicht … sehr",
+    "Stamm: Wie wichtig ist Ihnen der Umweltschutz?; Antwortskala: gar nicht wichtig … sehr wichtig",
+    "Stamm: Wie hilfsbereit schätzen Sie sich selbst ein?; Antwortskala: kaum … sehr",
+    "Stamm: Wie positiv ist heute Ihre Stimmung?; Antwortskala: gar nicht … sehr",
+    "Stamm: Wie sehr stimmen Sie der Aussage zu?; Antwortskala: gar nicht … sehr stark",
+    "Stamm: Wie zufrieden sind Sie mit der Lehrveranstaltung?; Antwortskala: gar nicht zufrieden … sehr zufrieden", #6
+    
+    "Stamm: Im Augenblick fühle ich mich…; Anwortskala: gespannt … gelöst",
+    "Stamm: Welchen Stellenwert hat für Sie der Umweltschutz? unwichtig … wichtig",
+    "Stamm: Wie schätzen Sie sich selbst ein?; Antwortskala: hilfsbereit … egoistisch",
+    "Stamm: Wie ist Ihre Stimmung heute?; Antwortskala: sehr negativ … sehr positiv",
+    "Stamm: Wie schätzen Sie die Aussage ein?; Antwortskala: lehne vollständig ab … stimme vollständig zu",
+    "Stamm: Wie zufrieden sind Sie mit der Lehrveranstaltung?; Antwortskala: sehr unzufrieden … äußerst zufrieden") #12
+
+wievieltes_bsp <- sample(1:12, 1)
+```
+
+
+Question
+========
+Bezeichnet man das folgende Item sinnvollerweise als uni- oder bipolar?
+
+> `r paste(bsp[wievieltes_bsp])`
+
+
+```{r questionlist, echo = FALSE, results = "asis"}
+answerlist(c("als unipolar",
+             "als bipolar"), 
+           markup = "markdown")
+```
+
+
+```{r exsolutiongeneration, echo = F, results='hide'}
+ex_solution <- case_when(wievieltes_bsp %in% 1:6 ~ c(T,F),
+                         TRUE ~ c(F,T))
+```
+
+
+Meta-information
+================
+exname: "Itempolarität erkennen"
+extype: schoice
+exsolution: `r mchoice2string(ex_solution)`

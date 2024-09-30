@@ -1,0 +1,106 @@
+```{r data generation, echo = FALSE, results = "hide", message=FALSE, warning=FALSE}
+library(exams)
+library(bayestestR)
+library(tidyverse)
+library(ggdist)
+library(hrbrthemes)
+
+n <- sample(30:30, 1)
+      
+data <-
+  tibble(
+    u = distribution_beta(n, .5, .5),
+    unif = distribution_beta(n, 1, 1),
+    normal = distribution_beta(n, 4, 4),
+    skew1 = distribution_beta(n, 1, 1.3),
+    skew2 = distribution_beta(n, 1.3, 1),
+    skew3 = distribution_beta(n, 5, 20),
+    skew4 = distribution_beta(n, 20, 5),
+    u_2 = distribution_beta(n, .4, .6),
+    unif_2 = distribution_beta(n, 1.1, 1),
+    normal_2 = distribution_beta(n, 4.1, 3.9),
+    skew1_2 = distribution_beta(n, .9, 1.2),
+    skew2_2 = distribution_beta(n, 1.2, .9),
+    skew3_2 = distribution_beta(n, 4, 21),
+    skew4_2 = distribution_beta(n, 17, 3)
+  ) %>%
+  mutate(PID = 1:n()) %>%
+  gather(variable, value,-PID) %>%
+  mutate(
+    Medallien = case_when(
+      value < .25 ~ "Bronze",
+      value < .5 ~ "Silber",
+      value < .75 ~ "Gold",
+      T ~ "Platin"
+    ),
+    Medallien = factor(Medallien, levels = c("Bronze", "Silber",
+                                             "Gold", "Platin"))
+  ) %>%
+  dplyr::select(-value) %>%
+  spread(variable, Medallien) %>%
+  dplyr::select(-PID) %>%
+  dplyr::relocate(sample(1:ncol(.)))
+
+
+names(data) <- c("Jinglies", "Sparklies", LETTERS[1:13])
+
+data <-
+  data %>%
+  dplyr::select(Jinglies, Sparklies) %>%
+  mutate_all(as.character) %>%
+  gather(Team, Medallien) %>%
+  mutate(Medallien = factor(Medallien, levels = c("Bronze", "Silber",
+                                                  "Gold", "Platin")))
+
+plot <- 
+   ggplot(data, aes(Medallien)) + 
+      facet_wrap(~Team) +
+      geom_bar(fill = "#8cd000", color = "#8cd000") +
+      theme_modern_rc() +
+      ylab("Anzahl") +
+      ggtitle("Medallienspiegel", "von Jinglies und Sparklies") +
+      theme(strip.text = element_text(color = "white"))
+
+cld <-  -1*effsize::cliff.delta(Medallien_num ~ Team, 
+                                data = data %>% 
+                                  mutate(Medallien_num = as.numeric(Medallien)))$estimate %>% 
+      round(., 2)
+
+start_answerlist <- sample(1:6, 1)
+answerlist <- 
+  c(-1, 1, cld + seq(-1, 1, 1/3)) |> 
+  sort() 
+answerlist <- 
+  answerlist[answerlist <= 1 & answerlist >= -1] %>%
+  round(., 2) |> 
+  unique()
+```
+
+Question
+========
+In der himmlischen Weihnachtswerkstatt batteln sich die beiden Elfenteams »Jinglies« und »Sparklies«, wer den besseren Medaillenspiegel (Bronze < Silber < Gold < Platin) hat. 
+
+>  Schätzen Sie  $\text{Cliff's } d = \frac{\#(Sparklies_i > Jinglies_i) - \#(Sparklies_i < Jinglies_i)}{\#Sparklies \cdot \#Jinglies}$
+
+```{r, echo = F, dev='svglite', message=FALSE, warning=FALSE, fig.cap = ""}
+plot
+```
+
+
+```{r, echo=FALSE, results='asis'}
+answerlist(answerlist,
+  markup = "markdown")
+```
+
+```{r exsolutiongeneration, echo = F, results='hide'}
+ex_solution <- 
+  answerlist == cld
+```
+
+
+
+Meta-information
+================
+extype: schoice
+exsolution: `r mchoice2string(ex_solution)`
+exname: Guessing_Cliffsd_SC

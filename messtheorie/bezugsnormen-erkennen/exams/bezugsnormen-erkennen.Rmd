@@ -1,0 +1,83 @@
+
+```{r, echo=FALSE, results='hide', message=FALSE}
+library(tidyverse)
+library(exams)
+
+# Ind kri oder soz ankreuzen lassen?
+ind_soz_kri <- 
+  sample(c("sozialen",
+           "kriterialen",
+           "individuellen"),
+         1)
+
+# Item universum
+ind <-
+  sample(
+    c(
+      "Bei Schüler:in X hat sich die Leistung von Woche 6 zu 8 verschlechtert.",
+      "Im Test zeigt sich, dass Schüler:in X eine Verbesserung durchlebte, vor allem von Woche 4 zu Woche 6.",
+      "Schüler:in X hat sich verschlechtert.",
+      "Manche Schüler:innen verschlechtern sich und manche Schüler:innen verbessern sich deutlich.",
+      "Einige Schüler:innen verbessern sich.",
+      "Zentrale Ergebnisse hier sind, dass Schüler:in X von Stufe 5 auf Stufe 1 gerutscht ist"
+    ),
+    6
+  )
+      
+soz <-
+  sample(
+    c(
+      "Schüler:in X liegt innerhalb der mittleren 90% der Vergleichsgruppe.",
+      "Die Klasse schneidet sogar besser als Vergleichsgruppe ab.",
+      "Diese Klasse scheint besser abgeschnitten zu haben als die Vergleichsgruppe, beziehend auf die mittleren 50%.",
+      "Einige Schüler:innen sind besser als der Landesdurchschnitt.",
+      "Es gibt einige Schüler:innen, die sind (viel) schlechter als die anderen.",
+      "Es gibt nur wenige Ausreißer von den anderen weg nach unten hin, aber einige davon gravierend.",
+      "Die meisten der Kinder liegen weit über dem Durchschnitt."),
+    7)
+      
+kri <-
+  sample(
+    c("Die große Mehrheit der Schüler:innen befinden sich weit über dem Grundanspruch/Mindeststandard für eine Klasse 9.",
+      "Die meisten Schüler erfüllen den Anspruch oder sind sogar darüber.",
+      "Y kann den text Y in einer Minute fehlerfrei abschreiben",
+      "Schüler:in X kann chemische Reaktionen von Aggregatszustandsänderungen unterscheiden.",
+      "Schüler:in X kann den Strahlensatz sicher auf Alltagsprobleme anwenden"
+    ),
+    5)
+
+# randomize 4th item
+fourth_item <- sample(c("ind", "kri", "soz"), 1)
+
+answerlist_data <- 
+  tibble(
+    answerlist = c(ind[1], kri[1], soz[1],
+                   ifelse(fourth_item == "ind", ind[2],
+                          ifelse(fourth_item == "kri", kri[2], 
+                                 soz[2]))),
+    exsolution = c("ind", "kri", "soz", fourth_item)
+    )
+  
+
+```
+
+
+Question
+========
+Welche der folgenden Aussagen können der `r ind_soz_kri` Bezugsnorm zugeordnet werden?
+
+  
+```{r questionlist, echo = FALSE, results='asis'}
+answerlist(
+  answerlist_data |> pull(answerlist),
+  markup = "markdown")
+```
+
+
+
+
+Meta-information
+================
+exname: Bezugsnorm erkennen
+extype: mchoice
+exsolution: `r mchoice2string(answerlist_data$exsolution == substr(ind_soz_kri, 1, 3))`

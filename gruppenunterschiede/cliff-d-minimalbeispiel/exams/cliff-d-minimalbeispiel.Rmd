@@ -1,0 +1,52 @@
+
+```{r, echo = FALSE, results = "hide", message=FALSE, warning=FALSE}
+library(tidyverse)
+library(exams)
+library(bayestestR)
+library(ggdist)
+library(effsize)
+library(hrbrthemes)
+
+data <-
+  tibble(
+    A = c(1, 3, 5, 7) * sample(c(-1, 1,-2, 2), 1),
+    B = c(
+      max(A) + sample(1:4, 1),
+      max(A) + sample(1:4, 1),
+      max(A) + sample(1:4, 1),
+      max(A) + sample(1:4, 1)
+    ),
+    C = A - abs(max(A) - min(A)) - 1,
+    D = A,
+  )
+data$E <- c(data$A[1] - 1,
+            data$A[2],
+            data$A[3],
+            data$A[4] + 1)
+
+data <-
+  data %>%
+  dplyr::select(1, sample(2:4, 1))
+
+names(data) <- c("X", "Y")
+
+```
+
+
+
+Question
+========
+Welches Cliff's $d(X,Y) = \frac{\# (x_i > y_i) - \# (x_i < y_i)}{\#X \cdot \#Y}$ ergibt sich für die folgenden Daten?  
+*(Eine Rechnung ist nicht unbedingt nötig.)*
+
+```{r, echo = FALSE}
+knitr::kable(data) |> kableExtra::kable_styling(full_width = F)
+```
+
+
+
+Meta-information
+================
+exname: Clifffs d EE
+extype: num
+exsolution: `r  (sum(data$X > data$Y) - (sum(data$X < data$Y)))/nrow(data^2)`  

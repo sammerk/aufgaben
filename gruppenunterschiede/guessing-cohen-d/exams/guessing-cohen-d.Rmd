@@ -1,0 +1,161 @@
+Question
+========
+```{r, echo = F, message = F, warning=FALSE,  fig.width=5, fig.height=5, out.width="400px", dev="svglite"}
+library(tidyverse)
+library(hrbrthemes)
+library(ggbeeswarm)
+library(bayestestR)
+
+num_to_moodle <- function(x, tol = 0, breaks = 1, range = NULL, digits = 5) {
+  ## round correct solution and tolerance
+  breaks <- round(breaks)
+  x <- round(x, digits = digits)
+  tol <- round(tol, digits = digits)
+
+  ## only correct solution without tolerance
+  if(breaks <= 0L || (breaks == 1L && tol <= 0)) return(paste0(":NUMERICAL:=", x))
+
+  ## only correct solution with tolerance
+  if(breaks == 1L) return(paste0(":NUMERICAL:=", x, ":", tol))
+
+  ## multiple partial solutions with tolerances
+  if(!(breaks %in% c(2:6, 10))) stop("'breaks' must be 0, 1, ..., 6, or 10")
+  perc <- exams:::moodlePercent((breaks:1L)/breaks)
+  y <- seq(x + 1.5 * tol, by = tol, length.out = breaks - 1L)
+
+  ## set up Moodle string: :NUMERICAL:=solution1~solution2~solution3 etc.
+  ## where each solution has: %_percent_%_solution_:_tolerance_#_comment_
+  perc <- c("", paste0("%", rep.int(perc[-1], 2), "%"))
+  x <- round(c(x, y, x + (x - y)), digits = digits)
+  tol <- c(tol, rep.int(tol/2, 2 * (breaks - 1L)))
+  if(!is.null(range)) {
+    if(length(range) != 2L) stop("'range' must have length 2")
+    ok <- (x >= range[1L]) & (x <= range[2L])
+    if(!ok[1L]) stop("'x' is not within 'range'")
+  } else {
+    ok <- rep.int(TRUE, 2 * breaks - 1L)
+  }
+  num <- paste0(":NUMERICAL:=", paste0(
+    perc[ok],        ## percents
+    x[ok],           ## solutions
+    ":", tol[ok],    ## tolerances
+    "",              ## comments (none for now)
+    collapse = "~")) ## collapse
+  return(num)
+}
+
+d <- runif(1, -1.5, 1.5)
+n <- 150
+    
+data_wide <- 
+  tibble(A = distribution_normal(n, 0, 1),
+         B = distribution_normal(n, d, 1))
+data <-
+   data_wide %>%
+  gather(Group, `Variable X`) %>%
+  mutate(PID = 1:n())
+  
+effsize <- effsize::cohen.d(`Variable X` ~ Group, data = data)
+demp <- effsize$estimate
+  
+U3emp <-sum(data_wide$B > mean(data_wide$A))/nrow(data_wide)
+  
+    
+plotart <- sample(c("beeswarm", "violin", "box", "histogram", "density", "errorbar", "sina"),1)
+
+
+if (plotart == "sina") {
+  plot <- ggplot(data, aes(Group, `Variable X`)) +
+    ggforce::geom_sina(color = "#62DC3A") +
+    theme_modern_rc() +
+    ylim(min(data$`Variable X`) + runif(1,-2, 0),
+         max(data$`Variable X`) + runif(1,  0, 2)) +
+    ylab("") + 
+    xlab("")
+}
+
+if (plotart == "histogram") {
+  plot <- ggplot(data, aes(`Variable X`)) +
+    geom_histogram(color = "#62DC3A",
+                   fill = "#62DC3A") +
+    theme_modern_rc() +
+    facet_wrap( ~ Group, ncol = 1) +
+    xlab("") +
+    theme(strip.text = element_text(color = "#ffffff"))
+}
+
+if (plotart == "density") {
+  plot <- ggplot(data, aes(`Variable X`)) +
+    geom_density(alpha = 0.3,
+                 color = "#62DC3A",
+                 fill = "#62DC3A09") +
+    facet_wrap(~Group, ncol = 1) + 
+    theme_modern_rc() +
+    scale_fill_manual(values = c("#a51e41", "#b4a069")) + 
+    theme(strip.text = element_text(color = "#ffffff")) +
+    xlab("")
+  }
+
+if (plotart == "violin") {
+  plot <- ggplot(data, aes(Group, `Variable X`)) +
+    geom_violin(color = "#62DC3A",
+                fill = "#62DC3A09") +
+    theme_modern_rc() +
+    ylim(min(data$`Variable X`) + runif(1,-2, 0),
+         max(data$`Variable X`) + runif(1,  0, 2)) +
+    ylab("") + 
+    xlab("")
+}
+
+if (plotart == "box") {
+  plot <- ggplot(data, aes(Group, `Variable X`)) +
+    geom_boxplot(width = 0.2,
+                 color = "#62DC3A",
+                 fill = "#62DC3A09") +
+    theme_modern_rc() +
+    ylim(min(data$`Variable X`) + runif(1,-2, 0),
+         max(data$`Variable X`) + runif(1,  0, 2)) +
+    ylab("") + 
+    xlab("")
+}
+
+if (plotart == "beeswarm") {
+  plot <- ggplot(data, aes(Group, `Variable X`)) +
+    geom_beeswarm(alpha = .5, color = "#62DC3A") +
+    theme_modern_rc() +
+    ylim(min(data$`Variable X`) + runif(1,-2, 0),
+         max(data$`Variable X`) + runif(1,  0, 2)) +
+    ylab("") + 
+    xlab("")
+}
+
+if (plotart == "errorbar") {
+  plot <- ggplot(data, aes(Group, `Variable X`)) +
+    stat_summary(
+      fun.data = "mean_sdl",
+      geom = "pointrange",
+      fun.args = list(mult = 1),
+      color = "#62DC3A"
+    ) +
+    theme_modern_rc() +
+    ylim(min(data$`Variable X`) + runif(1,-2, 0),
+         max(data$`Variable X`) + runif(1,  0, 2)) +
+    ylab("") + 
+    xlab("")
+}
+
+partial_credit_range <- 
+  c(ifelse(demp > .2 & demp - 1 < 0, 0, demp - 1),
+    ifelse(demp < -.2 & demp + 1 > 0, 0, demp + 1))
+
+plot
+```
+
+Obige Abbildung zeigt die Verteilung der Variablen A und B. Welches Cohen's $d(A,B) = \frac{\overline{A}-\overline{B}}{\sqrt{\frac{s_A^2 + s_B^2}{2}}}$ passt ihrer Abschätzung nach zu dieser Abbildung? (Verwenden Sie "," als Dezimaltrennzeichen)
+
+Meta-information
+================
+exname: Visual Guessing d (Histogramm) 
+extype: cloze
+exclozetype: verbatim
+exsolution: `r num_to_moodle(demp, tol = 0.2, breaks = 5, range = partial_credit_range)`

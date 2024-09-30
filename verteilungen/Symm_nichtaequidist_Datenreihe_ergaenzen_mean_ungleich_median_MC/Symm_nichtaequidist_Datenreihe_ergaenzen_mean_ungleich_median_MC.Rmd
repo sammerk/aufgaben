@@ -1,0 +1,46 @@
+```{r data generation, echo = FALSE, results = "hide", message=FALSE}
+library(exams)
+library(tidyverse)
+data_0 <- c(-4, -1, 0, 1, 4)*sample(1:3, 1)
+data_1 <- data_0 + sample(min(abs(data_0)):4*min(abs(data_0)), 1)
+
+i <- sample(1:5, 1)
+data_2 <- data_1
+data_2[i] <- "X"
+
+distractor_diffs <- sample(1:5, 3)
+
+data <- tibble(
+  answerlist = c(
+    data_1[i],
+    data_1[i] + distractor_diffs[1],
+    data_1[i] + distractor_diffs[2],
+    data_1[i] + distractor_diffs[3]
+  ),
+  exsolution = c(F,T,T,T)
+) |> 
+  sample_frac(1)
+```
+
+Question
+========
+Gegeben sei die Datenreihe A = `r data_2`.  
+Wählen Sie alle Zahlen X aus, welche die Datenreihe A so ergänzen, dass $mean(A) \ne median(A)$ gilt.
+
+Answer
+------
+```{r, echo=FALSE, results='asis'}
+answerlist(data$answerlist,
+  markup = "markdown")
+```
+
+
+Solution
+=========
+Median und Mean fallen bei nur bei perfekt symmetrischen Datenreihen aufeinander.
+
+Meta-information
+================
+extype: mchoice
+exsolution: `r mchoice2string(data$exsolution)`
+exname: Symm_nichtaequidist_Datenreihe_ergaenzen_mean_ungleich_median_MC

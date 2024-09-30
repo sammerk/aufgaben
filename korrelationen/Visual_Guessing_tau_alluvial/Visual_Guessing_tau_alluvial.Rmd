@@ -1,0 +1,72 @@
+Question
+========
+```{r, echo = F, message = F, warning=FALSE,  fig.width=5, fig.height=5, out.width="80%", fig.retina=2}
+library(tidyverse)
+library(hrbrthemes)
+library(ggalluvial)
+true_corr <- sample(c(runif(1, -.9, -.8), 
+                      runif(1, -.05, .05),
+                      runif(1, .8, .9)), 1) %>% 
+  round(., digits = 2) 
+
+
+data <-
+  MASS::mvrnorm(250, mu = c(0, 0), Sigma = matrix(c(1, true_corr, true_corr, 1), 2, 2)) %>%
+  as_tibble() %>%
+  mutate(V3 = ordered(
+    case_when(
+      V1 < quantile(V1, .25) ~ "A",
+      V1 < quantile(V1, .50) ~ "B",
+      V1 < quantile(V1, .75) ~ "C",
+      TRUE ~ "D"
+    )
+  ),
+  V4 = ordered(
+    case_when(
+      V2 < quantile(V2, .25) ~ "a",
+      V2 < quantile(V2, .50) ~ "b",
+      V2 < quantile(V2, .75) ~ "c",
+      TRUE ~ "d"
+    )
+  ),
+  V5 = as.numeric(V3),
+  V6 = as.numeric(V4))
+
+true_corr <- round(cor(data$V5, data$V6, method = "kendall"), 2)
+
+ggplot(data, aes(V3, V4)) + 
+  geom_jitter(color = "#8CD000", width = .2, height = .2, alpha =.4) +
+  theme_modern_rc() + 
+  ggtitle("Streudiagramm der Variablen V3 & V4")
+
+ggplot(data %>% 
+         group_by(V3, V4) %>% 
+         summarize(Freq = n()) %>% 
+         ungroup(),
+       aes(y = Freq, axis1 = V3, axis2 = V4)) +
+  geom_alluvium(aes(fill = V3), width = 1/12, alpha = 1) +
+  geom_stratum(width = 1/12, fill = "black", color = "white") +
+  geom_label(stat = "stratum", aes(label = after_stat(stratum))) +
+  theme_modern_rc() +
+  scale_fill_viridis_d(begin = .1)
+  
+```
+
+Obige Abbibldung zeigt die Assoziation der beiden Variablen V1 und V2. Welches Pearsons's r(V1,V2) passt am besten zu dieser Abbildung?
+
+Answerlist
+----------
+* `r true_corr`
+* `r 1 + true_corr - round(runif(1, 0, .05), 2)`
+* `r - 1 - true_corr + round(runif(1, 0, .05), 2)`
+* `r 1 - true_corr + round(runif(1, 0, .05), 2)`
+* `r -1 + true_corr + round(runif(1, 0, .05), 2)`
+* `r 1 - round(runif(1, 0, .05), 2)`
+*  `r -1 + round(runif(1, 0, .05), 2)`
+
+Meta-information
+================
+exname: Visual Guessing Kendall's tau_b (Alluvial Plot)
+extype: schoice
+exsolution: 01000
+exshuffle: TRUE

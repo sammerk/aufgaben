@@ -1,0 +1,66 @@
+```{r data generation, echo = FALSE, results = "hide"}
+library(tidyverse)
+# library(exams)
+
+kriterien <- c("Objektivität", "Reliabilität", "(Konstrukt-)Validität")
+defs <-
+  c("ist ein Vorgang, um Konstrukte messbar zu machen. Dabei werden den Konstrukten direkt beobachtbare Kriterien zugeordnet",
+    "bezeichnet die Verlässlichkeit von Messergebnissen und die Genauigkeit der Messung.",
+    "gibt an, ob ein Test oder Erhebungsverfahren ein interessierendes Merkmal so misst, dass es mit bestehenden Konstruktdefinitionen und Theorien übereinstimmt.",
+    "bezeichnet die intersubjektive Nachprüfbarkeit von Messergebnissen. Sie macht Messergebnisse nachvollziehbar und replizierbar durch Standardisierung und Transparenz."
+  )
+
+wievieltes_krit <- sample(1:3, 1)
+```
+
+
+Question
+========
+Wählen Sie die passende Umschreibung für das die Güte einer Messung beschreibende Kriterium _`r paste(kriterien[wievieltes_krit])`_
+
+
+```{r questionlist, echo = FALSE, results = "asis"}
+answerlist(c(
+  paste(
+    kriterien[wievieltes_krit],
+    "ist ein Vorgang, um Konstrukte messbar zu machen. Dabei werden den 
+    Konstrukten direkt beobachtbare Kriterien zugeordnet",
+    sep = " "
+  ),
+  paste(
+    kriterien[wievieltes_krit],
+    "bezeichnet die Verlässlichkeit von Messergebnissen und die Genauigkeit der
+    Messung im Sinne einer Messfehlerfreiheit.",
+    sep = " "
+  ),
+  paste(
+    kriterien[wievieltes_krit],
+    "gibt an, ob ein Test oder Erhebungsverfahren ein interessierendes Merkmal 
+    so misst, dass es mit bestehenden Konstruktdefinitionen und Theorien 
+    übereinstimmt.",
+    sep = " "
+  ),
+  paste(
+    kriterien[wievieltes_krit],
+    "bezeichnet die intersubjektive Nachprüfbarkeit von Messergebnissen. Sie 
+    macht Messergebnisse nachvollziehbar und replizierbar durch Standardisierung 
+    und Transparenz.",
+    sep = " "
+  )
+),
+markup = "markdown")
+```
+
+
+```{r exsolutiongeneration, echo = F, results='hide'}
+ex_solution <- case_when(wievieltes_krit == 1 ~ c(F,F,F,T),
+                         wievieltes_krit == 2 ~ c(F,T,F,F),
+                         TRUE ~ c(F,F,T,F))
+```
+
+
+Meta-information
+================
+exname: "Definition Gütekriterium einer Messung erkennen"
+extype: schoice
+exsolution: `r mchoice2string(ex_solution)`
