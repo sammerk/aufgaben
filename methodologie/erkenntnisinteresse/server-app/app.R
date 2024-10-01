@@ -35,13 +35,13 @@ ui <- page_fixed(
       uiOutput("ui_answers_task"),
       actionButton("show_feedback_task", 
                    "Prüfe meine Lösung!",
-                   icon = icon("send")),
+                   icon = icon("microscope")),
       actionButton("reshuffle_task", 
                    "Diese Aufgabe wiederholen",
                    icon = icon("repeat")),
       actionButton("new_task", 
                    "Neue Aufgabe derselben Art",
-                   icon = icon("plus"))
+                   icon = icon("plus-circle"))
     )      
 ))
 
@@ -49,30 +49,7 @@ ui <- page_fixed(
 
 server <- function(input, output, session) {
   
-  # Global functions ###########################################################
-  ## round2 rounds .5 upwards
-  round2 = function(x, n) {
-    posneg = sign(x)
-    z = abs(x)*10^n
-    z = z + 0.5 + sqrt(.Machine$double.eps)
-    z = trunc(z)
-    z = z/10^n
-    z*posneg
-  }
-
-  ##############################################################################
-  # Backend for task  ##########################################################
-  ##############################################################################
-  
-  # The global logic is to create a tibble containing  
-  #      - answers & distractors (column 1)
-  #      - questions (headers of columns 2 - m)
-  #      - correct solutions (columns 2 - m without headers)
-  #
-  # Then 
-  #     - reshuffle columns (without the first) to randomize order of questions
-  #     - reshuffle rows to randomize order of answers & distractors
-  
+ 
   
   ## Parameter solution matrix for task  ####
   q_a_matrix_qshuffeled <- 

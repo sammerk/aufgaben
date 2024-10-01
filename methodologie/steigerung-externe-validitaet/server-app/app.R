@@ -1,55 +1,49 @@
-# Task Name: Steigerung_externe_Validitaet ######################
-
+# Task Name: steigerung-externe-validität ######################
 library(shiny)
-library(miniUI)
+library(bslib)
 library(shinyjs)
-library(tidyverse)
+library(dplyr)
 library(learnr)
-library(googledrive)
-library(googlesheets4)
 library(shinycssloaders)
 
-## Googlesheets Connection Setup ###############################################
-options(
-  # whenever there is one account token found, use the cached token
-  gargle_oauth_email = TRUE,
-  # specify auth tokens should be stored in a hidden directory ".secrets"
-  gargle_oauth_cache = ".secrets/"
-)
-
-gs4_auth()
-
-
 ## UI #########################################################################
-ui <- miniPage(
+ui <- page_fixed(
   useShinyjs(),
-  miniContentPanel(
-    wellPanel(
-      h4("Aufgabe: Steigerung der externen Validität"),
-      p(HTML('Eine Forscherin untersucht, ob die Verwendung dynamischer Geometriesoftware (z.B. GeoGebra) den Erwerb von konzeptuellem Wissen fördert. Dazu erfasst sie Schülerleistungen der 7. Klasse <i>N</i> = 63 anhand eines entsprechenden Tests nach der Durchführung der Unterrichtseinheit zum "Satz vom Umkreis" bei Lehrerinnen, die entweder mit oder ohne die dynamische Geometriesoftware arbeiten und über diesen Einsatz auch selbst entscheiden konnten. Es konnte ein statistisch bedeutsamer Unterschied zugunsten der Lernenden, die GeoGebra genutzt haben, nachgewiesen werden.
-Eine Forschergruppe möchte sich die Vorteile der Verwendung von dynamischer Geometriesoftware genauer anschauen. Sie nutzt diese Studie als Grundlage für weitere Forschungsbemühungen. Sie will jedoch die <b>externe Validität</b> erhöhen. Ist die folgende Maßnahme hierzu zielführend?')),
+  card(
+    card(
+      card_header(
+        "Aufgabe: Steigerung der externen Validität"),
+      class = "bg-dark"),
+    card_body(
+      HTML('Eine Forscherin untersucht, ob die Verwendung dynamischer Geometriesoftware (z.B. GeoGebra) den Erwerb von konzeptuellem Wissen fördert. Dazu erfasst sie Schülerleistungen der 7. Klasse N = 63 anhand eines entsprechenden Tests nach der Durchführung der Unterrichtseinheit zum "Satz vom Umkreis" bei Lehrerinnen, die entweder mit oder ohne die dynamische Geometriesoftware arbeiten und über diesen Einsatz auch selbst entscheiden konnten. Es konnte ein statistisch bedeutsamer Unterschied zugunsten der Lernenden, die GeoGebra genutzt haben, nachgewiesen werden.
+Eine Forschergruppe möchte sich die Vorteile der Verwendung von dynamischer Geometriesoftware genauer anschauen. Sie nutzt diese Studie als Grundlage für weitere Forschungsbemühungen. Sie will jedoch die externe Validität erhöhen. Ist die folgende Maßnahme hierzu zielführend?'),
       htmlOutput("prompt_task")
     ),
-    shinyjs::hidden(wellPanel(id = "feedbackpanel_task",
-                              withSpinner(
-                                htmlOutput("feedback_task"),
-                                proxy.height = "50px",
-                                color = "#8cd000"))
-    ),
-    wellPanel(
-      uiOutput("ui_answers_task"),
-      actionButton("show_feedback_task", 
-                   "Prüfe meine Lösung!",
-                   icon = icon("send")),
-      actionButton("reshuffle_task", 
-                   "Diese Aufgabe wiederholen",
-                   icon = icon("repeat")),
-      actionButton("new_task", 
-                   "Neue Aufgabe derselben Art",
-                   icon = icon("plus"))
-    )      
-  )  
-)
+  shinyjs::hidden(card(id = "feedbackpanel_task",
+                       card_header(
+                         "Feedback",
+                         class = "bg-dark"),
+                       card_body(
+                         withSpinner(
+                           htmlOutput("feedback_task"),
+                           proxy.height = "50px",
+                           color = "#8cd000"))
+  )
+  ),
+  card(
+    uiOutput("ui_answers_task"),
+    actionButton("show_feedback_task", 
+                 "Prüfe meine Lösung!",
+                 icon = icon("microscope")),
+    actionButton("reshuffle_task", 
+                 "Diese Aufgabe wiederholen",
+                 icon = icon("repeat")),
+    actionButton("new_task", 
+                 "Neue Aufgabe derselben Art",
+                 icon = icon("plus-circle"))
+  )      
+))
+
 
 
 

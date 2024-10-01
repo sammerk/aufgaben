@@ -33,13 +33,13 @@ ui <- page_fixed(
       uiOutput("ui_answers_task"),
       actionButton("show_feedback_task", 
                    "Prüfe meine Lösung!",
-                   icon = icon("send")),
+                   icon = icon("microscope")),
       actionButton("reshuffle_task", 
                    "Diese Aufgabe wiederholen",
                    icon = icon("repeat")),
       actionButton("new_task", 
                    "Neue Aufgabe derselben Art",
-                   icon = icon("plus"))
+                   icon = icon("plus-circle"))
     )      
   ))
 
@@ -93,7 +93,7 @@ server <- function(input, output, session) {
   
   ## Prompt task 
   output$prompt_task <- renderText({
-    paste(HTML("<i>Worin unterscheiden sich die beiden im Folgenden dargestellen Studien?</i><br>"),
+    paste(HTML("<i>Worin unterscheiden sich die beiden im Folgenden dargestellen Studien?</i>"),
           names(q_a_matrix_qashuffeled())[2:ncol(q_a_matrix_qshuffeled)][nth_task()],
           "")
   }) 

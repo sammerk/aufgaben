@@ -38,13 +38,13 @@ ui <- page_fixed(
       uiOutput("ui_answers_task"),
       actionButton("show_feedback_task", 
                    "Prüfe meine Lösung!",
-                   icon = icon("send")),
+                   icon = icon("microscope")),
       actionButton("reshuffle_task", 
                    "Diese Aufgabe wiederholen",
                    icon = icon("repeat")),
       actionButton("new_task", 
                    "Neue Aufgabe derselben Art",
-                   icon = icon("plus"))
+                   icon = icon("plus-circle"))
     )      
   ))
 

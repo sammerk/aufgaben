@@ -3,6 +3,7 @@ library(shiny)
 library(bslib)
 library(shinyjs)
 library(dplyr)
+library(tidyr)
 library(learnr)
 library(shinycssloaders)
 
@@ -16,7 +17,7 @@ ui <- page_fixed(
           "Aufgabe: Bringen Sie die drei Studien in eine Rangfolge bzgl. ihrer internen Validität",
           class = "bg-dark"),
       card_body(
-      htmlOutput("prompt_task")
+      uiOutput("prompt_task")
       )
     ),
   
@@ -36,13 +37,13 @@ ui <- page_fixed(
       uiOutput("ui_answers_task"),
       actionButton("show_feedback_task", 
                    "Prüfe meine Lösung!",
-                   icon = icon("send")),
+                   icon = icon("microscope")),
       actionButton("reshuffle_task", 
                    "Diese Aufgabe wiederholen",
                    icon = icon("repeat")),
       actionButton("new_task", 
                    "Neue Aufgabe derselben Art",
-                   icon = icon("plus"))
+                   icon = icon("plus-circle"))
     )      
 ))
 
@@ -130,14 +131,16 @@ data <-
       "answers_task",
       "Bitte ankreuzen",
       answers,
-      selected = character(0)
+      selected = character(0),
+      width = "100%"
     )
   })
   
   ## Prompt task 
-  output$prompt_task <- renderText({
-    paste(
-      "<b>Studie A:</b> ",
+  output$prompt_task <- renderUI({
+    HTML(
+      paste0(
+      "<b>Studie A:</b>",
       data %>% filter(topic_numeric == nth_task()) %>% pull(abstracts) %>% .[1],
       "<b>Studie B:</b> ",
       data %>% filter(topic_numeric == nth_task()) %>% pull(abstracts) %>% .[2],
@@ -145,6 +148,7 @@ data <-
       data %>% filter(topic_numeric == nth_task()) %>% pull(abstracts) %>% .[3],
       "<br><b>Welche Studie hat die höchste, welche die niedrigste interne Validität?</b>",
       sep = "")
+    )
   }) 
   
   ## Correct answers ###

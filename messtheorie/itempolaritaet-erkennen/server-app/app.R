@@ -1,4 +1,4 @@
-## Task name guetekriterien-gemischt-mc
+# Task Name: Itempolaritaet_erkennen ######################
 library(shiny)
 library(bslib)
 library(shinyjs)
@@ -11,12 +11,15 @@ ui <- page_fixed(
   useShinyjs(),
   card(
     card(
-      card_header("Aufgabe: Ist die Aussage wahr?",
-                  class = "bg-dark"),
-      card_body(
+      card_header(
+        "Aufgabe: Itempolarität",
+      class = "bg-dark"),
+    card_body(
       htmlOutput("prompt_task")
-      )
+    )
   ),
+  
+  # komplett kopierbar für SC Aufgaben
   shinyjs::hidden(card(id = "feedbackpanel_task",
                        card_header(
                          "Feedback",
@@ -42,49 +45,25 @@ ui <- page_fixed(
   )      
 ))
 
-
-
 server <- function(input, output, session) {
-  
-  # Global functions ###########################################################
-  ## round2 rounds .5 upwards
-  round2 = function(x, n) {
-    posneg = sign(x)
-    z = abs(x)*10^n
-    z = z + 0.5 + sqrt(.Machine$double.eps)
-    z = trunc(z)
-    z = z/10^n
-    z*posneg
-  }
-
-  ##############################################################################
-  # Backend for task  ##########################################################
-  ##############################################################################
-  
-  # The global logic is to create a tibble containing  
-  #      - answers & distractors (column 1)
-  #      - questions (headers of columns 2 - m)
-  #      - correct solutions (columns 2 - m without headers)
-  #
-  # Then 
-  #     - reshuffle columns (without the first) to randomize order of questions
-  #     - reshuffle rows to randomize order of answers & distractors
-  
   
   ## Parameter solution matrix for task  ####
   q_a_matrix_qshuffeled <- 
     tibble(
-      Answers_and_Distractors = c("wahr",
-                                  "falsch"),
-      `Eine Erhöhung der internen Validität führt nicht zwangsläufig zu einer Erhöhung der externen Validität, eher im Gegenteil.` =  c(T,F), # adjust line 132 if coded 0/1 #1
-      `Auch ohne interne Validität kann ein hohes Maß an externer Validität einer Studie gegeben sein.` =  c(T,F), #2
-      `Eine Erhöhung der internen Validität führt automatisch zu einer Erhöhung der externen Validität.` =  c(F,T),#3
-      `Zur Einschätzung der Relevanz einer Studie gibt es keine feste Maßzahl.` =  c(T,F), #4
-      `Eine Studie ist nur dann als relevant zu bezeichnen, wenn eine neue Theorie aus ihr abgeleitet werden kann.` =  c(F,T),#5
-      #`Durch die Erhöhung der Stichprobengröße verringert sich die ethische Strenge.` =  c(T,F), #6 fachlich eher nicht richtig
-      `Durch die Erhöhung der Stichprobengröße in einer Untersuchung erhöht sich die externe Validität.` =  c(T,F),#7
-      `Präsentationsqualität wird gesteigert, wenn die Ergebnisse neben der Vorstellung im wissenschaftlichen Kontext auch in zusammengefasster und vereinfachter Form für ein breiteres Publikum zugänglich gemacht werden.` =  c(T,F),#8
-      `Präsentationsqualität ist dann verletzt, wenn die Ergebnisse von Forschungskolleg*innen auch unter Einsicht in die Originaldaten und -materialien nicht nachvollzogen werden können.` =  c(T,F)) %>% #9
+      Answers_and_Distractors = c("als unipolar", "als bipolar"),
+      `Stamm: Wie angespannt fühlen Sie sich im Moment?; Anwortskala: gar nicht … sehr` = c(T,F),
+      `Stamm: Wie wichtig ist Ihnen der Umweltschutz?; Antwortskala: gar nicht wichtig … sehr wichtig` = c(T,F),
+      `Stamm: Wie hilfsbereit schätzen Sie sich selbst ein?; Antwortskala: kaum … sehr` = c(T,F),
+      `Stamm: Wie positiv ist heute Ihre Stimmung?; Antwortskala: gar nicht … sehr` = c(T,F),
+      `Stamm: Wie sehr stimmen Sie der Aussage zu?; Antwortskala: gar nicht … sehr stark` = c(T,F),
+      `Stamm: Wie zufrieden sind Sie mit der Lehrveranstaltung?; Antwortskala: gar nicht zufrieden … sehr zufrieden` = c(T,F), #6
+      
+      `Stamm: Im Augenblick fühle ich mich…; Anwortskala: gespannt … gelöst` = c(F,T),
+      `Stamm: Welchen Stellenwert hat für Sie der Umweltschutz? unwichtig … wichtig` = c(F,T),
+      `Stamm: Wie schätzen Sie sich selbst ein?; Antwortskala: hilfsbereit … egoistisch` = c(F,T),
+      `Stamm: Wie ist Ihre Stimmung heute?; Antwortskala: sehr negativ … sehr positiv` = c(F,T),
+      `Stamm: Wie schätzen Sie die Aussage ein?; Antwortskala: lehne vollständig ab … stimme vollständig zu` = c(F,T),
+      `Stamm: Wie zufrieden sind Sie mit der Lehrveranstaltung?; Antwortskala: sehr unzufrieden … äußerst zufrieden` = c(F,T)) %>% 
     # shuffle order of questions
     relocate(1, 2, sample(3:ncol(.), ncol(.) - 2))
   
@@ -124,8 +103,8 @@ server <- function(input, output, session) {
   
   ## Prompt task 
   output$prompt_task <- renderText({
-    paste(names(q_a_matrix_qashuffeled())[2:ncol(q_a_matrix_qshuffeled)][nth_task()],
-          "")
+    paste("<br><b>Bezeichnet man das folgende Item sinnvollerweise als uni- oder bipolar?</b><br>",
+          names(q_a_matrix_qashuffeled())[2:ncol(q_a_matrix_qshuffeled)][nth_task()])
   }) 
   
   ## Correct answers ###
@@ -179,6 +158,9 @@ server <- function(input, output, session) {
   observeEvent(c(input$reshuffle_task, input$new_task), {
     reset(id = "answers_task")
   })
+
+  
+
 }
 
 

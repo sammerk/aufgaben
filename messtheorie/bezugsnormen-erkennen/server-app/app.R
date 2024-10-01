@@ -12,6 +12,7 @@ library(shinycssloaders)
 ui <- page_fixed(
   useShinyjs(),
   card(
+  card(
       card_header(
           "Aufgabe: Bezugsnorm in Aussage erkennen",
           class = "bg-dark"),
@@ -19,35 +20,31 @@ ui <- page_fixed(
       htmlOutput("prompt_task")
       )
     ),
+  
   shinyjs::hidden(card(id = "feedbackpanel_task",
-      card_header(
-          "Feedback",
-          class = "bg-dark"),
-      card_body(
-          withSpinner(
-                                htmlOutput("feedback_task"),
-                                proxy.height = "50px",
-                                color = "#8cd000"))
-          )
-      ),
-    card(
-      uiOutput("ui_answers_task"),
-      layout_column_wrap(
-        width = "200px",
-        actionButton("show_feedback_task", 
-                     "Prüfe meine Lösung!",
-                     icon = icon("microscope")),
-        actionButton("reshuffle_task", 
-                     "Diese Aufgabe wiederholen",
-                     icon = icon("repeat")),
-        actionButton("new_task", 
-                     "Neue Aufgabe derselben Art",
-                     icon = icon("circle-plus"))
-        )      
-    )
-)
-
-
+                       card_header(
+                         "Feedback",
+                         class = "bg-dark"),
+                       card_body(
+                         withSpinner(
+                           htmlOutput("feedback_task"),
+                           proxy.height = "50px",
+                           color = "#8cd000"))
+  )
+  ),
+  card(
+    uiOutput("ui_answers_task"),
+    actionButton("show_feedback_task", 
+                 "Prüfe meine Lösung!",
+                 icon = icon("microscope")),
+    actionButton("reshuffle_task", 
+                 "Diese Aufgabe wiederholen",
+                 icon = icon("repeat")),
+    actionButton("new_task", 
+                 "Neue Aufgabe derselben Art",
+                 icon = icon("plus-circle"))
+  )      
+))
 
 server <- function(input, output, session) {
 

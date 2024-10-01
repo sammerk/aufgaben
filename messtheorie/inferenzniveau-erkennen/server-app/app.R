@@ -1,4 +1,4 @@
-# Task Name: steigerung-interne-validitaet ######################
+# Task Name: Inferenzniveau_erkennen ######################
 library(shiny)
 library(bslib)
 library(shinyjs)
@@ -12,12 +12,10 @@ ui <- page_fixed(
   card(
     card(
       card_header(
-        "Aufgabe: Steigerung der internen Validität",
+        "Aufgabe: Inferenzniveau",
         class = "bg-dark"),
       card_body(
-        HTML('Eine Forscherin untersucht, ob die Verwendung dynamischer Geometriesoftware (z.B. GeoGebra) den Erwerb von konzeptuellem Wissen fördert. Dazu erfasst sie Schülerleistungen der 7. Klasse N = 63 anhand eines entsprechenden Tests nach der Durchführung der Unterrichtseinheit zum "Satz vom Umkreis" bei Lehrerinnen, die entweder mit oder ohne die dynamische Geometriesoftware arbeiten und über diesen Einsatz auch selbst entscheiden konnten. Es konnte ein statistisch bedeutsamer Unterschied zugunsten der Lernenden, die GeoGebra genutzt haben, nachgewiesen werden.
-Eine Forschergruppe möchte sich die Vorteile der Verwendung von dynamischer Geometriesoftware genauer anschauen. Sie nutzt diese Studie als Grundlage für weitere Forschungsbemühungen. Sie will jedoch die interne Validität erhöhen. Ist die folgende Maßnahme hierzu zielführend?'),
-      htmlOutput("prompt_task")
+        htmlOutput("prompt_task")
       )
     ),
     shinyjs::hidden(card(id = "feedbackpanel_task",
@@ -45,47 +43,33 @@ Eine Forschergruppe möchte sich die Vorteile der Verwendung von dynamischer Geo
     )      
   ))
 
-
-
 server <- function(input, output, session) {
   
-  # Global functions ###########################################################
-  ## round2 rounds .5 upwards
-  round2 = function(x, n) {
-    posneg = sign(x)
-    z = abs(x)*10^n
-    z = z + 0.5 + sqrt(.Machine$double.eps)
-    z = trunc(z)
-    z = z/10^n
-    z*posneg
-  }
-
-  ##############################################################################
-  # Backend for task  ##########################################################
-  ##############################################################################
-  
-  # The global logic is to create a tibble containing  
-  #      - answers & distractors (column 1)
-  #      - questions (headers of columns 2 - m)
-  #      - correct solutions (columns 2 - m without headers)
-  #
-  # Then 
-  #     - reshuffle columns (without the first) to randomize order of questions
-  #     - reshuffle rows to randomize order of answers & distractors
-  
-  
+ 
   ## Parameter solution matrix for task  ####
   q_a_matrix_qshuffeled <- 
     tibble(
-      Answers_and_Distractors = c("zielführend",
-                                  "nicht zielführend"),
-      `Erhöhung der Stichprobengröße` =  c(T,F), # adjust line 132 if coded 0/1 #1
-      `Wahl eines experimentellen Forschungsdesigns` =  c(T,F), #2
-      `Randomisierte Zuteilung der Teilnehmenden zu Lehrer*innen mit und ohne Nutzung der dynamischen Geometriesoftware` =  c(T,F),#3
-      `Alle Mädchen mit GeoGebra unterrichten und alle Jungen ohne` =  c(F,T), #4
-      `Kontrolle von Störvariablen, wie Vorwissen der Schüler*innen` =  c(T,F),#5
-      `Die Studie im Labor durchführen` =  c(T,F),#6
-      `Untersuchung bei Studierenden oder anderen Klassenstufen planen` =  c(F,T),) %>% #7
+      Answers_and_Distractors = c("als hochinferent", "als niedriginferent"),
+      `Anzahl der Wortmeldungen der einzelnen Schüler*innen` = c(F,T), #1
+      `Sozialform des Unterrichts` = c(F,T),
+      `Anteil an Mädchen in der Klasse` = c(F,T),
+      `Einsatz von Arbeitsblättern` = c(F,T),
+      `Anzahl Schüler*innen mit braunen Haaren` = c(F,T),
+      `Redeanteil Lehrkraft` = c(F,T),
+      `Lautstärke während Einzelarbeit` = c(F,T),
+      `Nutzung digitaler Medien` = c(F,T),
+      `Zeitpunkt der Erteilung von Hausaufgaben` = c(F,T),
+      `Anzahl fehlender Schüler*innen` = c(F,T), #10
+      `Unterrichtsklima` = c(T,F),
+      `Aufmerksamkeit der Schüler*innen` = c(T,F),
+      `Klassenführung` = c(T,F),
+      `Kompetenz der Lehrkraft` = c(T,F),
+      `Interesse der Schüler*innen am Thema` = c(T,F),
+      `kognitive Aktivierung` = c(T,F),
+      `Unterrichtsstörungen` = c(T,F),
+      `Grad der Differenzierung` = c(T,F),
+      `Didaktische Reduktion` = c(T,F),
+      `Akkustische Verständlichkeit der Lehrkraft` = c(T,F)) %>% 
     # shuffle order of questions
     relocate(1, 2, sample(3:ncol(.), ncol(.) - 2))
   
@@ -125,9 +109,8 @@ server <- function(input, output, session) {
   
   ## Prompt task 
   output$prompt_task <- renderText({
-    paste("<b>",
-          names(q_a_matrix_qashuffeled())[2:ncol(q_a_matrix_qshuffeled)][nth_task()],
-          "</b>")
+    paste("<b>Bezeichnet man die folgende Variable sinnvollerweise als hoch- oder niedriginferent?</b>",
+          names(q_a_matrix_qashuffeled())[2:ncol(q_a_matrix_qshuffeled)][nth_task()])
   }) 
   
   ## Correct answers ###
