@@ -2,7 +2,7 @@
 
 library(shiny)
 library(shinyjs)
-library(tidyverse)
+library(dplyr)
 library(learnr)
 library(bslib)
 library(shinycssloaders)
