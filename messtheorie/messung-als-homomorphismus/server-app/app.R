@@ -195,9 +195,7 @@ server <- function(input, output, session) {
   
   ## Prompt task 
   output$prompt_task <- renderText({
-    paste("<b>Stellt die folgende Tabelle eine Messung</b>",
-          
-          "<b>im Sinne eines Homomorphismus dar?</b>")
+    paste("<b>Stellt die folgende Tabelle eine Messung im Sinne eines Homomorphismus dar?</b>")
   }) 
   
   ## Correct answers ###

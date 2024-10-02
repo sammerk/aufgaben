@@ -103,7 +103,7 @@ server <- function(input, output, session) {
   
   ## Prompt task 
   output$prompt_task <- renderText({
-    paste("<br><b>Bezeichnet man das folgende Item sinnvollerweise als uni- oder bipolar?</b><br>",
+    paste("<b>Bezeichnet man das folgende Item sinnvollerweise als uni- oder bipolar?</b>",
           names(q_a_matrix_qashuffeled())[2:ncol(q_a_matrix_qshuffeled)][nth_task()])
   }) 
   

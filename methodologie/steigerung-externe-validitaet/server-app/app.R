@@ -12,11 +12,12 @@ ui <- page_fixed(
   card(
     card(
       card_header(
-        "Aufgabe: Steigerung der externen Validität"),
+        "Aufgabe: Steigerung der externen Validität",
       class = "bg-dark"),
     card_body(
       HTML('Eine Forscherin untersucht, ob die Verwendung dynamischer Geometriesoftware (z.B. GeoGebra) den Erwerb von konzeptuellem Wissen fördert. Dazu erfasst sie Schülerleistungen der 7. Klasse N = 63 anhand eines entsprechenden Tests nach der Durchführung der Unterrichtseinheit zum "Satz vom Umkreis" bei Lehrerinnen, die entweder mit oder ohne die dynamische Geometriesoftware arbeiten und über diesen Einsatz auch selbst entscheiden konnten. Es konnte ein statistisch bedeutsamer Unterschied zugunsten der Lernenden, die GeoGebra genutzt haben, nachgewiesen werden.
-Eine Forschergruppe möchte sich die Vorteile der Verwendung von dynamischer Geometriesoftware genauer anschauen. Sie nutzt diese Studie als Grundlage für weitere Forschungsbemühungen. Sie will jedoch die externe Validität erhöhen. Ist die folgende Maßnahme hierzu zielführend?'),
+Eine Forschergruppe möchte sich die Vorteile der Verwendung von dynamischer Geometriesoftware genauer anschauen. Sie nutzt diese Studie als Grundlage für weitere Forschungsbemühungen. Sie will jedoch die externe Validität erhöhen. Ist die folgende Maßnahme hierzu zielführend?')
+      ),
       htmlOutput("prompt_task")
     ),
   shinyjs::hidden(card(id = "feedbackpanel_task",
