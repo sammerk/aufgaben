@@ -49,16 +49,6 @@ ui <- page_fixed(
   
 server <- function(input, output, session) {
   
-  # Global functions ###########################################################
-  ## round2 rounds .5 upwards
-  round2 = function(x, n) {
-    posneg = sign(x)
-    z = abs(x)*10^n
-    z = z + 0.5 + sqrt(.Machine$double.eps)
-    z = trunc(z)
-    z = z/10^n
-    z*posneg
-  }
 
   ##############################################################################
   # Backend for task  ##########################################################
@@ -92,8 +82,7 @@ server <- function(input, output, session) {
       code_Werkrealschule <- sample(list_of_distinct_codes[list_of_distinct_codes < 75], 1) 
       code_Realschule <- code_Werkrealschule + sample(1:12, 1)
       code_Gymnasium <- code_Realschule + sample(1:12, 1)
-      code_falsch <- sample(setdiff(list_of_distinct_codes, 
-                                    c(code_Werkrealschule, code_Realschule, code_Gymnasium)), 1)
+      code_falsch <- sample(list_of_distinct_codes[list_of_distinct_codes > code_Realschule], 1) #später wird werkrea falsch
       
       data <- 
         babynames %>% 
@@ -242,35 +231,8 @@ server <- function(input, output, session) {
   observeEvent(c(input$reshuffle_task, input$new_task), {
     reset(id = "answers_task")
   })
+  
 
-  
-  ## URL Variable fetching #####################################################
-  url_vars <- reactive({
-    parseQueryString(session$clientData$url_search)
-  })
-  
-  ## Usage Logging #############################################################
-  observeEvent(input$show_feedback_task, {
-    if(!is.null(input$answers_task)){
-      sheet_append("1AZf7EQk-M2Wgej3WJXG1J2xRdql8b7Xiq0SvIiZogUo",
-                   tibble(PID = ifelse(is.null(url_vars()$PID), 
-                                       "PID is missing", #to keep ncol constant
-                                       url_vars()$PID), # Person identifier from URL
-                          task_name = "Messung_als_Homomorphismus",
-                          task_version = "repeatable_and_parametrized",
-                          time = Sys.time(),
-                          timezone = Sys.timezone(),
-                          result = # correct or wrong sol. provided by student
-                            case_when(is.null(input$answers_task) ~ 
-                                        "false_solution",
-                                      setequal(correct_answers_task(), 
-                                               input$answers_task) ~ 
-                                        "correct_solution",
-                                      TRUE ~  "false_solution")
-                   ),
-                   sheet = 1)
-    }
-  })
   
   
   ## Debug #############################################################

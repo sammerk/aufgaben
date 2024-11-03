@@ -14,8 +14,7 @@ list_of_distinct_codes <- sample(c(-100:100,
 code_Werkrealschule <- sample(list_of_distinct_codes[list_of_distinct_codes < 75], 1) 
 code_Realschule <- code_Werkrealschule + sample(1:12, 1)
 code_Gymnasium <- code_Realschule + sample(1:12, 1)
-code_falsch <- sample(setdiff(list_of_distinct_codes, 
-                              c(code_Werkrealschule, code_Realschule, code_Gymnasium)), 1)
+code_falsch <- sample(list_of_distinct_codes[list_of_distinct_codes > code_Realschule], 1) #später wird werkrea falsch
                  
 data <- 
   babynames %>% 
