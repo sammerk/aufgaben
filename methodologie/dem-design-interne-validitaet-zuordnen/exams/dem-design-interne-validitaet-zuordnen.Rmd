@@ -1,3 +1,5 @@
+Question
+========
 
 ```{r, echo=FALSE, results='hide', message=FALSE}
 library(tidyverse)
@@ -56,8 +58,6 @@ exsolution <-
 ```
 
 
-Question
-========
 Im Folgenden werden drei verschiedene Studien zum selben Thema vorgestellt. Welche zeigt die höchste/niedrigste interne Validität?
 
 **Studie A**
