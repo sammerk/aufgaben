@@ -132,6 +132,9 @@ answerlist(list_of_answers, markup = "markdown")
 ```
 
 
+Solution
+========
+
 ```{r exsolutiongeneration, echo = F, results='hide'}
 ex_solution <- c(T,F,F) 
 

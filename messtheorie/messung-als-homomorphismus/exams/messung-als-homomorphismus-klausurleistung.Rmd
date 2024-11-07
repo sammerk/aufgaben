@@ -43,6 +43,8 @@ answerlist(c("ja", "nein"),
            markup = "markdown")
 ```
 
+Solution
+========
 
 ```{r exsolutiongeneration, echo = F, results='hide'}
 ex_solution <- case_when(soll_homomorph_generiert_werden == "ja" ~ c(T,F),

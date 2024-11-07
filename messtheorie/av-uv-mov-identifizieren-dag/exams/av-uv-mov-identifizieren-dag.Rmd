@@ -388,6 +388,8 @@ if(solution_mode_manually_set == "graphically"){
 }
 ```
 
+Solution
+========
 
 ```{r exsolutiongeneration, echo = F, results='hide'}
 ex_solution <- case_when(title_of_right_graphical_solution == "A" ~ c(T,F,F,F,F,F),

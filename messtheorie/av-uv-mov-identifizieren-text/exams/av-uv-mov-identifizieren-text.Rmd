@@ -356,6 +356,8 @@ if(solution_mode_manually_set == "graphically"){
 }
 ```
 
+Solution
+========
 
 ```{r exsolutiongeneration, echo = F, results='hide'}
 if(solution_mode_manually_set == "graphically"){

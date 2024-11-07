@@ -40,6 +40,8 @@ answerlist(c("als hochinferent",
            markup = "markdown")
 ```
 
+Solution
+========
 
 ```{r exsolutiongeneration, echo = F, results='hide'}
 ex_solution <- case_when(wievieltes_bsp %in% 1:10 ~ c(F,T),
