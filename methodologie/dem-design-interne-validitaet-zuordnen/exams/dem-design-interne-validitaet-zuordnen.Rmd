@@ -60,13 +60,13 @@ Question
 ========
 Im Folgenden werden drei verschiedene Studien zum selben Thema vorgestellt. Welche zeigt die höchste/niedrigste interne Validität?
 
-### Studie A
+**Studie A**
 *`r data[1,2]`*
 
-### Studie B
+**Studie B**
 *`r data[2,2]`*
 
-### Studie C
+**Studie C**
 *`r data[3,2]`*
 
   
@@ -74,7 +74,8 @@ Im Folgenden werden drei verschiedene Studien zum selben Thema vorgestellt. Welc
 answerlist(answerlist, markup = "markdown")
 ```
 
-
+Solution
+========
 
 
 Meta-information
