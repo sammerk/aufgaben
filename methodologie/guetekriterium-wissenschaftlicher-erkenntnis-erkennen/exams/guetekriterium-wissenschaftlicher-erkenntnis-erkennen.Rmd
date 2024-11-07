@@ -25,6 +25,7 @@ answerlist(c("Konstruktvalidität",
            markup = "markdown")
 ```
 
+  
 
 ```{r exsolutiongeneration, echo = F, results='hide'}
 ex_solution <- case_when(wievielte_Definition == 1 ~ c(T,F,F,F),
