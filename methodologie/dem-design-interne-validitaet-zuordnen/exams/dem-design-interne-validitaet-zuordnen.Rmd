@@ -1,7 +1,7 @@
 Question
 ========
 
-```{r, echo=FALSE, results='hide', message=FALSE}
+```{r, echo=FALSE, results='hide', message=FALSE, warning=FALSE}
 library(tidyverse)
 library(exams)
 
@@ -61,13 +61,13 @@ exsolution <-
 Im Folgenden werden drei verschiedene Studien zum selben Thema vorgestellt. Welche zeigt die höchste/niedrigste interne Validität?
 
 **Studie A**
-*`r data[1,2]`*
+*`r data %>% slice(1) %>% pull(2)`*
 
 **Studie B**
-*`r data[2,2]`*
+*`r data %>% slice(2) %>% pull(2)`*
 
 **Studie C**
-*`r data[3,2]`*
+*`r data %>% slice(3) %>% pull(2)`*
 
   
 ```{r questionlist, echo = FALSE, results='asis'}
