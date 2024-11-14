@@ -102,6 +102,9 @@ answerlist(answerlist_mean,
   markup = "markdown")
 ```
 
+Solution
+========
+
 ```{r exsolutiongeneration, echo = F, results='hide'}
 ex_solution <- 
   answerlist_mean == round(descriptives$numeric.p75, 1)

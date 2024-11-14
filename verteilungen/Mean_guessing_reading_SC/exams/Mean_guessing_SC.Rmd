@@ -102,6 +102,10 @@ answerlist(answerlist_mean,
   markup = "markdown")
 ```
 
+Solution
+=========
+Nicht symmetrische Verteilungen zeichnen sich durch unterschiedliche Streuung in der oberen und unteren Hälfte der Datenreihe aus.
+
 ```{r exsolutiongeneration, echo = F, results='hide'}
 ex_solution <- 
   answerlist_mean == round(descriptives$numeric.mean, 1)
