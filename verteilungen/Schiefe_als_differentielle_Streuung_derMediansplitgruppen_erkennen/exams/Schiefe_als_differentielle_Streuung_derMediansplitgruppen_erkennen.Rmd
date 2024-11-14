@@ -40,7 +40,7 @@ Question
 ========
 In mehreren Schulen wird die `r dv` erhoben und anschließend in folgenden Histogrammen dargestellt.
 
-> In welche(n) Schule(n) gilt die Aussage: *Die Streung »der rechten Hälfte der Datenpunkte« (alle Datenpunkte für die gilt $x_i \geq \tilde{x}$) unterscheidet deutlich von der Streuung der andere Hälfte der Datenpunkte*.
+> In welche(n) Schule(n) gilt die Aussage: *Die Streung »der rechten Hälfte der Datenpunkte« (alle Datenpunkte für die gilt $x_i \geq \tilde{x}$) unterscheidet sich deutlich von der Streuung der anderen Hälfte der Datenpunkte*.
 
 ```{r, echo = F, dev='svglite', fig.cap = ""}
 randcol <- randomcoloR::randomColor()

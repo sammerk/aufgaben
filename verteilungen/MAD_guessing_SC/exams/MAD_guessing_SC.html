@@ -11,7 +11,7 @@
 
 
 
-<title>Symm_nichtaequidist_Datenreihe_ergaenzen_mean_ungleich_median_MC.knit</title>
+<title>MAD_guessing_SC.knit</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -352,33 +352,177 @@ display: none;
 </div>
 
 
+<pre><code>## Warning: package &#39;bayestestR&#39; was built under R version 4.4.1</code></pre>
 <div id="question" class="section level1">
 <h1>Question</h1>
-<p>Gegeben sei die Datenreihe A = -12, -3, 0, X, 12.<br />
-Wählen Sie alle Zahlen X aus, welche die Datenreihe A so ergänzen, dass
-<span class="math inline">\(mean(A) \ne median(A)\)</span> gilt.</p>
-<div id="answer" class="section level2">
-<h2>Answer</h2>
-</div>
+<p>Eine Grundschullehrerin erhebt die Leseflüssigkeit in zwei Klassen,
+indem sie erfasst, wie viele Wörter einer bestimmten Schwierigkeitsstufe
+jedes Kind in einer Minute richtig lesen kann.</p>
+<blockquote>
+<p>Wie groß ist die Mean Average Deviation der Anzahl richtig gelesener
+Wörter in Klasse 3a?</p>
+</blockquote>
+<p><svg id="svg_c54d2157dfacd6d39b8d" role="img" width="672" height="360.00pt" viewBox="0 0 504.00 360.00">
+<defs>
+  <style type="text/css">
+    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
+      fill: none;
+      stroke: #000000;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-miterlimit: 10.00;
+    }
+    .svglite text {
+      white-space: pre;
+    }
+  </style>
+</defs>
+<rect width="100%" height="100%" style="stroke: none; fill: #FFFFFF;" />
+<defs>
+  <clipPath id="svg_c54d2157dfacd6d39b8d_cpMC4wMHw1MDQuMDB8MC4wMHwzNjAuMDA=">
+    <rect x="0.00" y="0.00" width="504.00" height="360.00" />
+  </clipPath>
+</defs>
+<g clip-path="url(#svg_c54d2157dfacd6d39b8d_cpMC4wMHw1MDQuMDB8MC4wMHwzNjAuMDA=)">
+</g>
+<defs>
+  <clipPath id="svg_c54d2157dfacd6d39b8d_cpMjguMzd8MjYwLjcxfDIyLjUwfDMyOC4yNw==">
+    <rect x="28.37" y="22.50" width="232.33" height="305.76" />
+  </clipPath>
+</defs>
+<g clip-path="url(#svg_c54d2157dfacd6d39b8d_cpMjguMzd8MjYwLjcxfDIyLjUwfDMyOC4yNw==)">
+<polyline points="28.37,279.62 260.71,279.62 " style="stroke-width: 0.53; stroke: #EBEBEB; stroke-linecap: butt;"></polyline>
+<polyline points="28.37,210.13 260.71,210.13 " style="stroke-width: 0.53; stroke: #EBEBEB; stroke-linecap: butt;"></polyline>
+<polyline points="28.37,140.64 260.71,140.64 " style="stroke-width: 0.53; stroke: #EBEBEB; stroke-linecap: butt;"></polyline>
+<polyline points="28.37,71.15 260.71,71.15 " style="stroke-width: 0.53; stroke: #EBEBEB; stroke-linecap: butt;"></polyline>
+<polyline points="52.13,328.27 52.13,22.50 " style="stroke-width: 0.53; stroke: #EBEBEB; stroke-linecap: butt;"></polyline>
+<polyline points="96.14,328.27 96.14,22.50 " style="stroke-width: 0.53; stroke: #EBEBEB; stroke-linecap: butt;"></polyline>
+<polyline points="140.14,328.27 140.14,22.50 " style="stroke-width: 0.53; stroke: #EBEBEB; stroke-linecap: butt;"></polyline>
+<polyline points="184.14,328.27 184.14,22.50 " style="stroke-width: 0.53; stroke: #EBEBEB; stroke-linecap: butt;"></polyline>
+<polyline points="228.14,328.27 228.14,22.50 " style="stroke-width: 0.53; stroke: #EBEBEB; stroke-linecap: butt;"></polyline>
+<polyline points="28.37,314.37 260.71,314.37 " style="stroke-width: 1.07; stroke: #EBEBEB; stroke-linecap: butt;"></polyline>
+<polyline points="28.37,244.88 260.71,244.88 " style="stroke-width: 1.07; stroke: #EBEBEB; stroke-linecap: butt;"></polyline>
+<polyline points="28.37,175.39 260.71,175.39 " style="stroke-width: 1.07; stroke: #EBEBEB; stroke-linecap: butt;"></polyline>
+<polyline points="28.37,105.89 260.71,105.89 " style="stroke-width: 1.07; stroke: #EBEBEB; stroke-linecap: butt;"></polyline>
+<polyline points="28.37,36.40 260.71,36.40 " style="stroke-width: 1.07; stroke: #EBEBEB; stroke-linecap: butt;"></polyline>
+<polyline points="30.13,328.27 30.13,22.50 " style="stroke-width: 1.07; stroke: #EBEBEB; stroke-linecap: butt;"></polyline>
+<polyline points="74.13,328.27 74.13,22.50 " style="stroke-width: 1.07; stroke: #EBEBEB; stroke-linecap: butt;"></polyline>
+<polyline points="118.14,328.27 118.14,22.50 " style="stroke-width: 1.07; stroke: #EBEBEB; stroke-linecap: butt;"></polyline>
+<polyline points="162.14,328.27 162.14,22.50 " style="stroke-width: 1.07; stroke: #EBEBEB; stroke-linecap: butt;"></polyline>
+<polyline points="206.14,328.27 206.14,22.50 " style="stroke-width: 1.07; stroke: #EBEBEB; stroke-linecap: butt;"></polyline>
+<polyline points="250.15,328.27 250.15,22.50 " style="stroke-width: 1.07; stroke: #EBEBEB; stroke-linecap: butt;"></polyline>
+<rect x="38.93" y="244.88" width="17.60" height="69.49" style="stroke-width: 1.07; stroke: #9CF271; stroke-linecap: butt; stroke-linejoin: miter; fill: #9CF271;" />
+<rect x="56.53" y="314.37" width="17.60" height="0.00" style="stroke-width: 1.07; stroke: #9CF271; stroke-linecap: butt; stroke-linejoin: miter; fill: #9CF271;" />
+<rect x="74.13" y="314.37" width="17.60" height="0.00" style="stroke-width: 1.07; stroke: #9CF271; stroke-linecap: butt; stroke-linejoin: miter; fill: #9CF271;" />
+<rect x="91.74" y="244.88" width="17.60" height="69.49" style="stroke-width: 1.07; stroke: #9CF271; stroke-linecap: butt; stroke-linejoin: miter; fill: #9CF271;" />
+<rect x="109.34" y="175.39" width="17.60" height="138.98" style="stroke-width: 1.07; stroke: #9CF271; stroke-linecap: butt; stroke-linejoin: miter; fill: #9CF271;" />
+<rect x="126.94" y="244.88" width="17.60" height="69.49" style="stroke-width: 1.07; stroke: #9CF271; stroke-linecap: butt; stroke-linejoin: miter; fill: #9CF271;" />
+<rect x="144.54" y="175.39" width="17.60" height="138.98" style="stroke-width: 1.07; stroke: #9CF271; stroke-linecap: butt; stroke-linejoin: miter; fill: #9CF271;" />
+<rect x="162.14" y="105.89" width="17.60" height="208.47" style="stroke-width: 1.07; stroke: #9CF271; stroke-linecap: butt; stroke-linejoin: miter; fill: #9CF271;" />
+<rect x="179.74" y="36.40" width="17.60" height="277.96" style="stroke-width: 1.07; stroke: #9CF271; stroke-linecap: butt; stroke-linejoin: miter; fill: #9CF271;" />
+<rect x="197.34" y="36.40" width="17.60" height="277.96" style="stroke-width: 1.07; stroke: #9CF271; stroke-linecap: butt; stroke-linejoin: miter; fill: #9CF271;" />
+<rect x="214.94" y="105.89" width="17.60" height="208.47" style="stroke-width: 1.07; stroke: #9CF271; stroke-linecap: butt; stroke-linejoin: miter; fill: #9CF271;" />
+<rect x="232.54" y="244.88" width="17.60" height="69.49" style="stroke-width: 1.07; stroke: #9CF271; stroke-linecap: butt; stroke-linejoin: miter; fill: #9CF271;" />
+</g>
+<g clip-path="url(#svg_c54d2157dfacd6d39b8d_cpMC4wMHw1MDQuMDB8MC4wMHwzNjAuMDA=)">
+</g>
+<defs>
+  <clipPath id="svg_c54d2157dfacd6d39b8d_cpMjY2LjE5fDQ5OC41MnwyMi41MHwzMjguMjc=">
+    <rect x="266.19" y="22.50" width="232.33" height="305.76" />
+  </clipPath>
+</defs>
+<g clip-path="url(#svg_c54d2157dfacd6d39b8d_cpMjY2LjE5fDQ5OC41MnwyMi41MHwzMjguMjc=)">
+<polyline points="266.19,279.62 498.52,279.62 " style="stroke-width: 0.53; stroke: #EBEBEB; stroke-linecap: butt;"></polyline>
+<polyline points="266.19,210.13 498.52,210.13 " style="stroke-width: 0.53; stroke: #EBEBEB; stroke-linecap: butt;"></polyline>
+<polyline points="266.19,140.64 498.52,140.64 " style="stroke-width: 0.53; stroke: #EBEBEB; stroke-linecap: butt;"></polyline>
+<polyline points="266.19,71.15 498.52,71.15 " style="stroke-width: 0.53; stroke: #EBEBEB; stroke-linecap: butt;"></polyline>
+<polyline points="289.95,328.27 289.95,22.50 " style="stroke-width: 0.53; stroke: #EBEBEB; stroke-linecap: butt;"></polyline>
+<polyline points="333.95,328.27 333.95,22.50 " style="stroke-width: 0.53; stroke: #EBEBEB; stroke-linecap: butt;"></polyline>
+<polyline points="377.95,328.27 377.95,22.50 " style="stroke-width: 0.53; stroke: #EBEBEB; stroke-linecap: butt;"></polyline>
+<polyline points="421.96,328.27 421.96,22.50 " style="stroke-width: 0.53; stroke: #EBEBEB; stroke-linecap: butt;"></polyline>
+<polyline points="465.96,328.27 465.96,22.50 " style="stroke-width: 0.53; stroke: #EBEBEB; stroke-linecap: butt;"></polyline>
+<polyline points="266.19,314.37 498.52,314.37 " style="stroke-width: 1.07; stroke: #EBEBEB; stroke-linecap: butt;"></polyline>
+<polyline points="266.19,244.88 498.52,244.88 " style="stroke-width: 1.07; stroke: #EBEBEB; stroke-linecap: butt;"></polyline>
+<polyline points="266.19,175.39 498.52,175.39 " style="stroke-width: 1.07; stroke: #EBEBEB; stroke-linecap: butt;"></polyline>
+<polyline points="266.19,105.89 498.52,105.89 " style="stroke-width: 1.07; stroke: #EBEBEB; stroke-linecap: butt;"></polyline>
+<polyline points="266.19,36.40 498.52,36.40 " style="stroke-width: 1.07; stroke: #EBEBEB; stroke-linecap: butt;"></polyline>
+<polyline points="267.95,328.27 267.95,22.50 " style="stroke-width: 1.07; stroke: #EBEBEB; stroke-linecap: butt;"></polyline>
+<polyline points="311.95,328.27 311.95,22.50 " style="stroke-width: 1.07; stroke: #EBEBEB; stroke-linecap: butt;"></polyline>
+<polyline points="355.95,328.27 355.95,22.50 " style="stroke-width: 1.07; stroke: #EBEBEB; stroke-linecap: butt;"></polyline>
+<polyline points="399.95,328.27 399.95,22.50 " style="stroke-width: 1.07; stroke: #EBEBEB; stroke-linecap: butt;"></polyline>
+<polyline points="443.96,328.27 443.96,22.50 " style="stroke-width: 1.07; stroke: #EBEBEB; stroke-linecap: butt;"></polyline>
+<polyline points="487.96,328.27 487.96,22.50 " style="stroke-width: 1.07; stroke: #EBEBEB; stroke-linecap: butt;"></polyline>
+<rect x="276.75" y="244.88" width="17.60" height="69.49" style="stroke-width: 1.07; stroke: #9CF271; stroke-linecap: butt; stroke-linejoin: miter; fill: #9CF271;" />
+<rect x="294.35" y="244.88" width="17.60" height="69.49" style="stroke-width: 1.07; stroke: #9CF271; stroke-linecap: butt; stroke-linejoin: miter; fill: #9CF271;" />
+<rect x="311.95" y="244.88" width="17.60" height="69.49" style="stroke-width: 1.07; stroke: #9CF271; stroke-linecap: butt; stroke-linejoin: miter; fill: #9CF271;" />
+<rect x="329.55" y="175.39" width="17.60" height="138.98" style="stroke-width: 1.07; stroke: #9CF271; stroke-linecap: butt; stroke-linejoin: miter; fill: #9CF271;" />
+<rect x="347.15" y="175.39" width="17.60" height="138.98" style="stroke-width: 1.07; stroke: #9CF271; stroke-linecap: butt; stroke-linejoin: miter; fill: #9CF271;" />
+<rect x="364.75" y="36.40" width="17.60" height="277.96" style="stroke-width: 1.07; stroke: #9CF271; stroke-linecap: butt; stroke-linejoin: miter; fill: #9CF271;" />
+<rect x="382.35" y="36.40" width="17.60" height="277.96" style="stroke-width: 1.07; stroke: #9CF271; stroke-linecap: butt; stroke-linejoin: miter; fill: #9CF271;" />
+<rect x="399.95" y="36.40" width="17.60" height="277.96" style="stroke-width: 1.07; stroke: #9CF271; stroke-linecap: butt; stroke-linejoin: miter; fill: #9CF271;" />
+<rect x="417.56" y="105.89" width="17.60" height="208.47" style="stroke-width: 1.07; stroke: #9CF271; stroke-linecap: butt; stroke-linejoin: miter; fill: #9CF271;" />
+<rect x="435.16" y="175.39" width="17.60" height="138.98" style="stroke-width: 1.07; stroke: #9CF271; stroke-linecap: butt; stroke-linejoin: miter; fill: #9CF271;" />
+<rect x="452.76" y="244.88" width="17.60" height="69.49" style="stroke-width: 1.07; stroke: #9CF271; stroke-linecap: butt; stroke-linejoin: miter; fill: #9CF271;" />
+<rect x="470.36" y="314.37" width="17.60" height="0.00" style="stroke-width: 1.07; stroke: #9CF271; stroke-linecap: butt; stroke-linejoin: miter; fill: #9CF271;" />
+</g>
+<g clip-path="url(#svg_c54d2157dfacd6d39b8d_cpMC4wMHw1MDQuMDB8MC4wMHwzNjAuMDA=)">
+</g>
+<defs>
+  <clipPath id="svg_c54d2157dfacd6d39b8d_cpMjguMzd8MjYwLjcxfDUuNDh8MjIuNTA=">
+    <rect x="28.37" y="5.48" width="232.33" height="17.03" />
+  </clipPath>
+</defs>
+<g clip-path="url(#svg_c54d2157dfacd6d39b8d_cpMjguMzd8MjYwLjcxfDUuNDh8MjIuNTA=)">
+<text x="144.54" y="17.15" text-anchor="middle" style="font-size: 8.80px;fill: #1A1A1A; font-family: &quot;Arial&quot;;" textLength="38.64px" lengthAdjust="spacingAndGlyphs">Klasse 3a</text>
+</g>
+<g clip-path="url(#svg_c54d2157dfacd6d39b8d_cpMC4wMHw1MDQuMDB8MC4wMHwzNjAuMDA=)">
+</g>
+<defs>
+  <clipPath id="svg_c54d2157dfacd6d39b8d_cpMjY2LjE5fDQ5OC41Mnw1LjQ4fDIyLjUw">
+    <rect x="266.19" y="5.48" width="232.33" height="17.03" />
+  </clipPath>
+</defs>
+<g clip-path="url(#svg_c54d2157dfacd6d39b8d_cpMjY2LjE5fDQ5OC41Mnw1LjQ4fDIyLjUw)">
+<text x="382.35" y="17.15" text-anchor="middle" style="font-size: 8.80px;fill: #1A1A1A; font-family: &quot;Arial&quot;;" textLength="38.64px" lengthAdjust="spacingAndGlyphs">Klasse 3b</text>
+</g>
+<g clip-path="url(#svg_c54d2157dfacd6d39b8d_cpMC4wMHw1MDQuMDB8MC4wMHwzNjAuMDA=)">
+<text x="30.13" y="339.50" text-anchor="middle" style="font-size: 8.80px;fill: #4D4D4D; font-family: &quot;Arial&quot;;" textLength="9.79px" lengthAdjust="spacingAndGlyphs">20</text>
+<text x="74.13" y="339.50" text-anchor="middle" style="font-size: 8.80px;fill: #4D4D4D; font-family: &quot;Arial&quot;;" textLength="9.79px" lengthAdjust="spacingAndGlyphs">25</text>
+<text x="118.14" y="339.50" text-anchor="middle" style="font-size: 8.80px;fill: #4D4D4D; font-family: &quot;Arial&quot;;" textLength="9.79px" lengthAdjust="spacingAndGlyphs">30</text>
+<text x="162.14" y="339.50" text-anchor="middle" style="font-size: 8.80px;fill: #4D4D4D; font-family: &quot;Arial&quot;;" textLength="9.79px" lengthAdjust="spacingAndGlyphs">35</text>
+<text x="206.14" y="339.50" text-anchor="middle" style="font-size: 8.80px;fill: #4D4D4D; font-family: &quot;Arial&quot;;" textLength="9.79px" lengthAdjust="spacingAndGlyphs">40</text>
+<text x="250.15" y="339.50" text-anchor="middle" style="font-size: 8.80px;fill: #4D4D4D; font-family: &quot;Arial&quot;;" textLength="9.79px" lengthAdjust="spacingAndGlyphs">45</text>
+<text x="267.95" y="339.50" text-anchor="middle" style="font-size: 8.80px;fill: #4D4D4D; font-family: &quot;Arial&quot;;" textLength="9.79px" lengthAdjust="spacingAndGlyphs">20</text>
+<text x="311.95" y="339.50" text-anchor="middle" style="font-size: 8.80px;fill: #4D4D4D; font-family: &quot;Arial&quot;;" textLength="9.79px" lengthAdjust="spacingAndGlyphs">25</text>
+<text x="355.95" y="339.50" text-anchor="middle" style="font-size: 8.80px;fill: #4D4D4D; font-family: &quot;Arial&quot;;" textLength="9.79px" lengthAdjust="spacingAndGlyphs">30</text>
+<text x="399.95" y="339.50" text-anchor="middle" style="font-size: 8.80px;fill: #4D4D4D; font-family: &quot;Arial&quot;;" textLength="9.79px" lengthAdjust="spacingAndGlyphs">35</text>
+<text x="443.96" y="339.50" text-anchor="middle" style="font-size: 8.80px;fill: #4D4D4D; font-family: &quot;Arial&quot;;" textLength="9.79px" lengthAdjust="spacingAndGlyphs">40</text>
+<text x="487.96" y="339.50" text-anchor="middle" style="font-size: 8.80px;fill: #4D4D4D; font-family: &quot;Arial&quot;;" textLength="9.79px" lengthAdjust="spacingAndGlyphs">45</text>
+<text x="23.44" y="317.52" text-anchor="end" style="font-size: 8.80px;fill: #4D4D4D; font-family: &quot;Arial&quot;;" textLength="4.90px" lengthAdjust="spacingAndGlyphs">0</text>
+<text x="23.44" y="248.03" text-anchor="end" style="font-size: 8.80px;fill: #4D4D4D; font-family: &quot;Arial&quot;;" textLength="4.90px" lengthAdjust="spacingAndGlyphs">1</text>
+<text x="23.44" y="178.54" text-anchor="end" style="font-size: 8.80px;fill: #4D4D4D; font-family: &quot;Arial&quot;;" textLength="4.90px" lengthAdjust="spacingAndGlyphs">2</text>
+<text x="23.44" y="109.05" text-anchor="end" style="font-size: 8.80px;fill: #4D4D4D; font-family: &quot;Arial&quot;;" textLength="4.90px" lengthAdjust="spacingAndGlyphs">3</text>
+<text x="23.44" y="39.56" text-anchor="end" style="font-size: 8.80px;fill: #4D4D4D; font-family: &quot;Arial&quot;;" textLength="4.90px" lengthAdjust="spacingAndGlyphs">4</text>
+<text x="263.45" y="352.09" text-anchor="middle" style="font-size: 11.00px; font-family: &quot;Arial&quot;;" textLength="153.47px" lengthAdjust="spacingAndGlyphs">Anzahl richtig gelesener Wörter</text>
+<text transform="translate(13.37,175.39) rotate(-90)" text-anchor="middle" style="font-size: 11.00px; font-family: &quot;Arial&quot;;" textLength="57.48px" lengthAdjust="spacingAndGlyphs">Anzahl SuS</text>
+</g>
+</svg></p>
 <div id="answerlist" class="section level2">
 <h2>Answerlist</h2>
 <ul>
-<li>1</li>
-<li>3</li>
-<li>-1</li>
-<li>7</li>
+<li>0.205</li>
+<li>0.41</li>
+<li>0.615</li>
+<li>1.23</li>
+<li>2.05</li>
+<li>4.1</li>
 </ul>
 </div>
 </div>
-<div id="solution" class="section level1">
-<h1>Solution</h1>
-<p>Median und Mean fallen bei nur bei perfekt symmetrischen Datenreihen
-aufeinander.</p>
-</div>
 <div id="meta-information" class="section level1">
 <h1>Meta-information</h1>
-<p>extype: mchoice exsolution: 1011 exname:
-Symm_nichtaequidist_Datenreihe_ergaenzen_mean_ungleich_median_MC</p>
+<p>extype: schoice exsolution: 000001 exname:
+MAD_guessing_reading_SC</p>
 </div>
 
 

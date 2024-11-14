@@ -198,7 +198,7 @@ Gegeben sei die folgende Verteilung.
 if(plottype == "hist"){
 ggplot(data_to_plot, aes(data)) +
     geom_histogram() +
-    theme_ipsum_rc() + 
+    theme_ipsum() + 
     xlab("") + 
     ylab("") + 
     ggtitle("Histogramm")
@@ -207,7 +207,7 @@ ggplot(data_to_plot, aes(data)) +
 if(plottype == "violin"){
 ggplot(data_to_plot, aes(dummy, data)) +
     geom_violin(width = .5) +
-    theme_ipsum_rc() + 
+    theme_ipsum() + 
     theme(axis.text.y=element_blank()) + 
     xlab("") + 
     ylab("") + 
@@ -218,7 +218,7 @@ ggplot(data_to_plot, aes(dummy, data)) +
 if(plottype == "sina"){
 ggplot(data_to_plot, aes(dummy, data)) +
     ggforce::geom_sina(alpha = .3) +
-    theme_ipsum_rc() + 
+    theme_ipsum() + 
     theme(axis.text.y=element_blank()) + 
     xlab("") + 
     ylab("") + 

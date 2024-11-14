@@ -1,0 +1,69 @@
+```{r, Datengenese, echo = FALSE, message=FALSE}
+library(dplyr)
+library(exams)
+# 20 Beispiele von Vektoren mit ganzzahligem MAD
+integer_examples <- list(
+  c(1, 3, 5, 7),
+  c(2, 4, 6, 8),
+  c(3, 6, 9, 12),
+  c(5, 7, 9, 11),
+  c(10, 12, 14, 16),
+  c(0, 4, 8, 12),
+  c(-3, 1, 5, 9),
+  c(15, 17, 19, 21),
+  c(-1, 1, 3, 5),
+  c(2, 5, 8, 11),
+  c(0, 5, 10, 15),
+  c(-2, 2, 6, 10),
+  c(4, 6, 8, 10),
+  c(-5, 0, 5, 10),
+  c(8, 10, 12, 14),
+  c(1, 4, 7, 10),
+  c(-8, -4, 0, 4),
+  c(6, 9, 12, 15),
+  c(-4, -2, 0, 2),
+  c(3, 5, 7, 9)
+)
+
+x <- integer_examples[[sample(1:20, 1)]]
+
+ad <- DescTools::MeanAD(x)
+distractors <- sample(
+  c(sample(-10:-1, 10),
+    sample(1:10, 10)),
+    5)
+
+data <- tibble(
+  answerlist = c(
+    ad + distractors[1],
+    ad + distractors[2],
+    ad + distractors[3],
+    ad + distractors[4],
+    ad + distractors[5],
+    ad),
+  exsolution = c(F,F,F,F,F,T)
+) |> 
+  sample_frac(1)
+```    
+
+Question
+========
+Berechnen Sie die Mean Average Deviation (MAD) der Datenreihe Y = (`r x[1]`, `r x[2]`, `r x[3]`, `r x[4]`).  
+
+
+
+
+```{r questionlist, echo = FALSE, results='asis'}
+answerlist(
+  data |> pull(answerlist),
+  markup = "markdown")
+```
+
+
+
+
+Meta-information
+================
+exname: AD berechnen
+extype: schoice
+exsolution: `r mchoice2string(data |> pull(exsolution))`

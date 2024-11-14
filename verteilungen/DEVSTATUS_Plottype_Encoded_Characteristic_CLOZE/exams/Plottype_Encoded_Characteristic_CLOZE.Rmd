@@ -1,5 +1,6 @@
 ```{r data generation, echo = FALSE, results = "hide", message=FALSE}
 library(exams)
+library(tidyverse)
 questions <- solutions <- explanations <- rep(list(""), 6)
 type <- rep(list("schoice"), 6)
 
