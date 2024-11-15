@@ -1,4 +1,4 @@
-```{r data generation, echo = FALSE, results = "hide", message=FALSE}
+```{r data generation, echo = FALSE, results = "hide", message=FALSE, warning=FALSE}
 library(exams)
 library(bayestestR)
 library(tidyverse)
@@ -36,7 +36,7 @@ if(sample(1:2, 1) == 1){
 if(sample(1:4, 1) == 1){
   plot <- 
     ggplot(data, aes(Elfenteam, `Fertigungsdauer [Sekunden]`)) +
-    facet_wrap(~Geschenke) +
+    #facet_wrap(~Geschenke) +
     geom_boxplot(color = "#8cd000", fill = "#8cd00030", width = .2) +
     theme_ipsum() +
     coord_flip()
@@ -44,7 +44,7 @@ if(sample(1:4, 1) == 1){
   if(sample(1:3, 1) == 1){
     plot <- 
       ggplot(data, aes(Elfenteam, `Fertigungsdauer [Sekunden]`)) +
-      facet_wrap(~Geschenke) +
+      #facet_wrap(~Geschenke) +
       stat_dots(color = "#8cd000", fill = "#8cd00030") +
       theme_ipsum() +
       coord_flip() 
@@ -52,14 +52,14 @@ if(sample(1:4, 1) == 1){
     if(sample(1:2, 1) == 1){
       plot <- 
         ggplot(data, aes(Elfenteam, `Fertigungsdauer [Sekunden]`)) +
-        facet_wrap(~Geschenke) +
+        #facet_wrap(~Geschenke) +
         stat_halfeye(color = "#8cd000", fill = "#8cd00030") +
         theme_ipsum() +
         coord_flip()
     }else{
       plot <- 
         ggplot(data, aes(Elfenteam, `Fertigungsdauer [Sekunden]`)) +
-        facet_wrap(~Geschenke) +
+        #facet_wrap(~Geschenke) +
         stat_histinterval(color = "#8cd000", fill = "#8cd00030") +
         theme_ipsum() +
         coord_flip()
@@ -76,37 +76,32 @@ u1 <- 1 - 2*pnorm(-abs(d)/2)%>%
 
 start_answerlist <- sample(1:6, 1)
 answerlist <- 
-  d + seq(-9*1.1, 9*1.1, 1.1) |> 
-  sort() |> 
-  round(2)
-answerlist <- answerlist[(11-start_answerlist):(11-start_answerlist+6)]
+  c(0, 1, u1 + seq(-1, 1, 1/4)) |> 
+  sort() 
+answerlist <- answerlist[answerlist <= 1 & answerlist >= 0]
 ```
 
 Question
 ========
 In der himmlischen Weihnachtswerkstatt batteln sich die beiden Elfenteams »Jinglies« und »Sparklies«, wer mit der Fertigung welcher Geschenke schneller fertig ist. Dabei kommen die unten dargestellten Daten zustande. 
 
->  Schätzen Sie $\text{Cohen's }d = \frac{\overline{Sparklies} - \overline{Jinglies}}{\sqrt{\frac{s(Sparklies)^2 + s(Jinglies)^2}{2}}}$
+>  Schätzen Sie Cohen's $U_1$
 
 ```{r, echo = F, dev='svglite', message=FALSE, warning=FALSE, fig.cap = ""}
 plot
 ```
 
+Verwenden Sie "," als Dezimaltrennzeichen und geben Sie Prozente als Wert zwischen 0 und 1 ein. Also z.B. 35% $\Rightarrow$ 0,35.
 
-```{r, echo=FALSE, results='asis'}
-answerlist(answerlist,
-  markup = "markdown")
-```
+Solution
+========
 
-```{r exsolutiongeneration, echo = F, results='hide'}
-ex_solution <- 
-  answerlist == d
-```
-
+Das ware $U_1$ wäre `r round(u1, 2)`
 
 
 Meta-information
 ================
-extype: schoice
-exsolution: `r mchoice2string(ex_solution)`
-exname: Guessing_d_SC
+extype: num
+exsolution: `r round(u1, 2)`
+extol: .3
+exname: Guessing_U1

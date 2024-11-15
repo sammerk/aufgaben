@@ -66,7 +66,8 @@ plot <- ggplot(data, aes(`Variable X`)) +
                  fill = randcol) +
   theme_ipsum() +
   facet_wrap(~ Group, ncol = 1) +
-  xlab("") 
+  xlab("") +
+  ylab("Anzahl") 
 
 partial_credit_range <- 
   c(ifelse(U3emp > .5, .4, 0),
@@ -75,11 +76,15 @@ partial_credit_range <-
 plot
 ```
 
-Die obige Abbildung zeigt die Verteilung der Variablen A und B. Welches Cohen's $U_3(A,B) = \frac{\#a_i > \overline{B}}{\#A}$ passt Ihrer Abschätzung nach zu dieser Abbildung? (Verwenden Sie "," als Dezimaltrennzeichen)
+Die obige Abbildung zeigt die Verteilung der Variablen A und B. Welches Cohen's $U_3(A,B) = \frac{\#a_i > \overline{B}}{\#A}$ passt Ihrer Abschätzung nach zu dieser Abbildung? Verwenden Sie "," als Dezimaltrennzeichen (also z.B. 35% $\Rightarrow$ 0,35).
+
+Solution
+========
+Das Wahre $U_3(A,B)$ liegt bei `r round(U3emp, 2)`
 
 Meta-information
 ================
 exname: Visual Guessing U3 (Histogramm) 
-extype: cloze
-exclozetype: verbatim
-exsolution: `r num_to_moodle(U3emp, tol = 0.15, breaks = 5, range = partial_credit_range)`
+extype: num
+exsolution: `r U3emp`
+extol: .35

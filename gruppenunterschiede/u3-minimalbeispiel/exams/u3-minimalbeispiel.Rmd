@@ -6,6 +6,7 @@ library(bayestestR)
 library(ggdist)
 library(effsize)
 library(hrbrthemes)
+library(tinytable)
 
 
 
@@ -32,11 +33,17 @@ names(data) <- c("A", "B")
 Question
 ========
 Welches $U_3(A,B) = \frac{\# (a_i > \bar{b})}{\#A}$ ergibt sich für die folgenden Daten?  
-*(Eine Rechnung ist nicht unbedingt nötig)*
+*(Eine Rechnung ist nicht unbedingt nötig)*  
+
 
 ```{r, echo = FALSE}
-knitr::kable(data) |> kableExtra::kable_styling(full_width = F)
+data |> knitr::kable() %>% kableExtra::kable_styling(full_width = F,  position = "left")
 ```
+
+
+Solution
+========
+Der Mittelwert der Variable B beträgt `r data %>% pull(B) %>% mean(.)`. Darüber liegen `r sum(data %>% pull(A) > data %>% pull(B) %>% mean(.))` Datenpunkte der Variable A. Da es 4 Datenpunkte in A gibt, lautet das korrekte $U_3(A,B)$ `r round(sum(data %>% pull(A) > data %>% pull(B) %>% mean(.))/4, 2)`.
 
 
 
@@ -45,3 +52,4 @@ Meta-information
 exname: U3 EE
 extype: num
 exsolution: `r  sum(data %>% pull(A) > data %>% pull(B) %>% mean(.))/4`  
+extol: .1

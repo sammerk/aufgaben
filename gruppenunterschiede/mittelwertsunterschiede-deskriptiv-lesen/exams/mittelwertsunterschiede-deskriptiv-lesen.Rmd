@@ -31,7 +31,7 @@ names(data) <- "Geschenk A Jinglies"
 data <- data %>%
   dplyr::select(`Geschenk A Jinglies`) %>%
   mutate(
-    `Geschenk A Sparklies` = `Geschenk A Jinglies` + runif(1, .8, 1.5) * 
+    `Geschenk A Sparklies` = `Geschenk A Jinglies` + runif(1, 1, 2) * 
                                                       sd(`Geschenk A Jinglies`),
     `Geschenk B Jinglies` = `Geschenk A Jinglies` + runif(1, 2, 4) *
                                                       sd(`Geschenk A Jinglies`),

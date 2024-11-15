@@ -67,7 +67,7 @@ plotart <- sample(c("beeswarm", "violin", "box", "histogram", "density", "errorb
 if (plotart == "sina") {
   plot <- ggplot(data, aes(Group, `Variable X`)) +
     ggforce::geom_sina(color = "#62DC3A") +
-    theme_modern_rc() +
+    theme_ipsum() +
     ylim(min(data$`Variable X`) + runif(1,-2, 0),
          max(data$`Variable X`) + runif(1,  0, 2)) +
     ylab("") + 
@@ -78,29 +78,27 @@ if (plotart == "histogram") {
   plot <- ggplot(data, aes(`Variable X`)) +
     geom_histogram(color = "#62DC3A",
                    fill = "#62DC3A") +
-    theme_modern_rc() +
+    theme_ipsum() +
     facet_wrap( ~ Group, ncol = 1) +
-    xlab("") +
-    theme(strip.text = element_text(color = "#ffffff"))
+    xlab("")
 }
 
 if (plotart == "density") {
   plot <- ggplot(data, aes(`Variable X`)) +
     geom_density(alpha = 0.3,
                  color = "#62DC3A",
-                 fill = "#62DC3A09") +
+                 fill = "#62DC3A70") +
     facet_wrap(~Group, ncol = 1) + 
-    theme_modern_rc() +
-    scale_fill_manual(values = c("#a51e41", "#b4a069")) + 
-    theme(strip.text = element_text(color = "#ffffff")) +
+    theme_ipsum() +
+    scale_fill_manual(values = c("#62DC3A", "#62DC3A70")) +
     xlab("")
   }
 
 if (plotart == "violin") {
   plot <- ggplot(data, aes(Group, `Variable X`)) +
     geom_violin(color = "#62DC3A",
-                fill = "#62DC3A09") +
-    theme_modern_rc() +
+                fill = "#62DC3A70") +
+    theme_ipsum() +
     ylim(min(data$`Variable X`) + runif(1,-2, 0),
          max(data$`Variable X`) + runif(1,  0, 2)) +
     ylab("") + 
@@ -111,8 +109,8 @@ if (plotart == "box") {
   plot <- ggplot(data, aes(Group, `Variable X`)) +
     geom_boxplot(width = 0.2,
                  color = "#62DC3A",
-                 fill = "#62DC3A09") +
-    theme_modern_rc() +
+                 fill = "#62DC3A70") +
+    theme_ipsum() +
     ylim(min(data$`Variable X`) + runif(1,-2, 0),
          max(data$`Variable X`) + runif(1,  0, 2)) +
     ylab("") + 
@@ -122,7 +120,7 @@ if (plotart == "box") {
 if (plotart == "beeswarm") {
   plot <- ggplot(data, aes(Group, `Variable X`)) +
     geom_beeswarm(alpha = .5, color = "#62DC3A") +
-    theme_modern_rc() +
+    theme_ipsum() +
     ylim(min(data$`Variable X`) + runif(1,-2, 0),
          max(data$`Variable X`) + runif(1,  0, 2)) +
     ylab("") + 
@@ -137,7 +135,7 @@ if (plotart == "errorbar") {
       fun.args = list(mult = 1),
       color = "#62DC3A"
     ) +
-    theme_modern_rc() +
+    theme_ipsum() +
     ylim(min(data$`Variable X`) + runif(1,-2, 0),
          max(data$`Variable X`) + runif(1,  0, 2)) +
     ylab("") + 
@@ -153,9 +151,14 @@ plot
 
 Obige Abbildung zeigt die Verteilung der Variablen A und B. Welches Cohen's $d(A,B) = \frac{\overline{A}-\overline{B}}{\sqrt{\frac{s_A^2 + s_B^2}{2}}}$ passt ihrer Abschätzung nach zu dieser Abbildung? (Verwenden Sie "," als Dezimaltrennzeichen)
 
+Solution
+========
+
+Das korrekte Cohen's d wäre `r round(demp, 2)`.
+
 Meta-information
 ================
 exname: Visual Guessing d (Histogramm) 
-extype: cloze
-exclozetype: verbatim
-exsolution: `r num_to_moodle(demp, tol = 0.2, breaks = 5, range = partial_credit_range)`
+extype: num
+extol: .6
+exsolution: `r demp`
