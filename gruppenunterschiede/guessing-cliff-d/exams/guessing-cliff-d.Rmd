@@ -5,7 +5,7 @@ library(tidyverse)
 library(ggdist)
 library(hrbrthemes)
 
-n <- sample(30:30, 1)
+n <- sample(20:40, 1)
       
 data <-
   tibble(
@@ -81,8 +81,7 @@ plot
 
 Solution
 ========
-
-
+Das korrekte Cliff's d beträgt `r round(cld, 2)`.
 
 
 Meta-information
