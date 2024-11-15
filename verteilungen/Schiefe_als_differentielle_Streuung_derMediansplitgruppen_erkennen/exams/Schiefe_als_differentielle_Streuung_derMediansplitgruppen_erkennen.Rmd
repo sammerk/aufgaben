@@ -40,7 +40,7 @@ Question
 ========
 In mehreren Schulen wird die `r dv` erhoben und anschließend in folgenden Histogrammen dargestellt.
 
-> In welche(n) Schule(n) gilt die Aussage: *Die Streung »der rechten Hälfte der Datenpunkte« (alle Datenpunkte für die gilt $x_i \geq \tilde{x}$) unterscheidet sich deutlich von der Streuung der anderen Hälfte der Datenpunkte*.
+> In welche(n) Schule(n) gilt die Aussage: *Die Streuung »der rechten Hälfte der Datenpunkte« (alle Datenpunkte für die gilt $x_i \geq \tilde{x}$) unterscheidet sich deutlich von der Streuung der anderen Hälfte der Datenpunkte*.
 
 ```{r, echo = F, dev='svglite', fig.cap = ""}
 randcol <- randomcoloR::randomColor()
@@ -104,9 +104,7 @@ ex_solution <-
     
 ```
 
-Solution
-=========
-Nicht symmetrische Verteilungen zeichnen sich durch unterschiedliche Streuung in der oberen und unteren Hälfte der Datenreihe aus.
+
 
 Meta-information
 ================
