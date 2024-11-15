@@ -31,14 +31,14 @@ sd_3a <- data |>
   pull(`Anzahl richtig gelesener Wörter`) %>% 
   sd()
 
-start_answerlist <- sample(1:6, 1)
+start_answerlist <- sample(4:6, 1)
 
 answerlist <- 
   round(
     data |> 
       filter(Klasse == "Klasse 3a") |> 
       pull(`Anzahl richtig gelesener Wörter`) %>%
-      DescTools::MeanAD(.) + sd_3a*-5:5*.7, 1) %>% 
+      DescTools::MeanAD(.) + sd_3a*-5:5*1, 1) %>% 
   .[start_answerlist:(start_answerlist + 5)]
 ```
 

@@ -1,6 +1,7 @@
 library(exams2forms)
 
-exams2forms::exams2webquiz("/Users/samuelmerk/Nextcloud/Lehre/aufgaben/verteilungen/Diff MeanMedian in schiefen Verteilungen erkennen/exams/Diff MeanMedian in schiefen Verteilungen erkennen.Rmd", n = 5)
+exams2forms::exams2webquiz("/Users/samuelmerk/Nextcloud/Lehre/aufgaben/gruppenunterschiede/guessing-cliff-d/exams/guessing-cliff-d.Rmd", 
+                           n = 50)
 
 
 DescTools::MeanAD(c(0,2,4,6))

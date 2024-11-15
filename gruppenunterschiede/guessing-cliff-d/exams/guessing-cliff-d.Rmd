@@ -56,10 +56,10 @@ plot <-
    ggplot(data, aes(Medallien)) + 
       facet_wrap(~Team) +
       geom_bar(fill = "#8cd000", color = "#8cd000") +
-      theme_modern_rc() +
+      theme_ipsum() +
       ylab("Anzahl") +
       ggtitle("Medallienspiegel", "von Jinglies und Sparklies") +
-      theme(strip.text = element_text(color = "white"))
+      theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
 
 cld <-  -1*effsize::cliff.delta(Medallien_num ~ Team, 
                                 data = data %>% 
@@ -91,6 +91,9 @@ plot
 answerlist(answerlist,
   markup = "markdown")
 ```
+
+Solution
+========
 
 ```{r exsolutiongeneration, echo = F, results='hide'}
 ex_solution <- 
