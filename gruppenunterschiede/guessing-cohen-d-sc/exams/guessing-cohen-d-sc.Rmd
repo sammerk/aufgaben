@@ -98,6 +98,9 @@ answerlist(answerlist,
   markup = "markdown")
 ```
 
+Solution
+========
+
 ```{r exsolutiongeneration, echo = F, results='hide'}
 ex_solution <- 
   answerlist == d

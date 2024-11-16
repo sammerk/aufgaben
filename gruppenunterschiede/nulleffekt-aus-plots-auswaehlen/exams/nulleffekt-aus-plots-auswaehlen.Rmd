@@ -82,6 +82,8 @@ plot_f <-
 Question
 ========
 In welchem der folgenden Plots ist die Überlappung der beiden Gruppen am größten (zeigt sich also das kleinste Cohen's U~1~)?
+
+
 ```{r dev="svglite", echo=FALSE, fig.width=12, fig.height=6, warning=FALSE, out.width="800px", fig.cap = "", warning=FALSE, message=FALSE}
 (plot_a + plot_b + plot_c)/(plot_d + plot_e + plot_f)
 ```
@@ -92,7 +94,6 @@ answerlist(
   paste("Plot ", LETTERS[1:6], sep = ""),
   markup = "markdown")
 ```
-
 
 
 
