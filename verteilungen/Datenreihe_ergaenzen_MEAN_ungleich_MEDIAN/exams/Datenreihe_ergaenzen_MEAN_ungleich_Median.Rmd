@@ -10,8 +10,7 @@ Question
 Gegeben sei die Datenreihe A = `r data_1`.  
 Wählen Sie die Zahl(en) X aus, die die Datenreihe A so ergänzt, dass $mean(A) \ne median(A)$ gilt.
 
-Answer
-------
+
 ```{r, echo=FALSE, results='asis'}
 answerlist(c(
   mean(as.numeric(data_1[c(1,2,4,5)])),
