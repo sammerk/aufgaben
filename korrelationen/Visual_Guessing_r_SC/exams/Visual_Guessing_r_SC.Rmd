@@ -45,6 +45,9 @@ answerlist(round(answerlist, 2),
   markup = "markdown")
 ```
 
+Solution
+========
+
 ```{r exsolutiongeneration, echo = F, results='hide'}
 ex_solution <- 
   answerlist == sample_r
