@@ -10,6 +10,7 @@ library(tidyverse)
 library(hrbrthemes)
 library(ggalluvial)
 library(patchwork)
+library(exams)
 
 true_corr <- runif(1, -.9, -.8)
 
@@ -18,25 +19,26 @@ data <-
   as_tibble() %>%
   mutate(V3 = ordered(
     case_when(
-      V1 < quantile(V1, .25) ~ "kein Schulabschl",
-      V1 < quantile(V1, .50) ~ "Sekundar I",
-      V1 < quantile(V1, .75) ~ "Sekundar II",
-      TRUE ~ "Hochschule"
+      V1 < quantile(V1, .25) ~ "kein Abschl.",
+      V1 < quantile(V1, .50) ~ "Sek. I",
+      V1 < quantile(V1, .75) ~ "Sek. II",
+      TRUE ~ "Hochsch."
     )
   ),
   V4 = ordered(
     case_when(
-      V2 < quantile(V2, .25) ~ "a",
-      V2 < quantile(V2, .50) ~ "b",
-      V2 < quantile(V2, .75) ~ "c",
-      TRUE ~ "d"
+      V2 < quantile(V2, .25) ~ "kein Abschl.",
+      V2 < quantile(V2, .50) ~ "Sek. I",
+      V2 < quantile(V2, .75) ~ "Sek. II",
+      TRUE ~ "Hochsch."
     )
   ),
   V3 = factor(V3, 
-              levels = c("kein Schulabschl",
-"Sekundar I",
-"Sekundar II",
-"Hochschule")),
+              levels = c("kein Abschl.",
+                         "Sek. I",
+                         "Sek. II",
+                         "Hochsch."
+                         )),
   V5 = as.numeric(V3),
   V6 = as.numeric(V4))
 
@@ -49,17 +51,17 @@ plot1 <-
          summarize(Freq = n()) %>% 
          ungroup(),
        aes(y = Freq, axis1 = V3, axis2 = V4)) +
-  geom_alluvium(aes(fill = V3), 
-                width = 1/12, 
+  geom_flow(aes(fill = V3), 
+                width = 1/3, 
                 alpha = 1,) +
-  geom_stratum(width = 1/12, 
+  geom_stratum(width = 1/3, 
                fill = "black", 
                color = "white") +
- # geom_label(stat = "stratum", aes(label = after_stat(stratum))) +
+  geom_label(stat = "stratum", size = 4,
+             aes(label = after_stat(stratum))) +
   theme_modern_rc() +
   scale_fill_viridis_d(begin = .1) +
-  ylab("") +
-  theme(legend.title = element_blank())
+  ylab("") 
 
 
 
@@ -70,25 +72,26 @@ data <-
   as_tibble() %>%
   mutate(V3 = ordered(
     case_when(
-      V1 < quantile(V1, .25) ~ "kein Schulabschl",
-      V1 < quantile(V1, .50) ~ "Sekundar I",
-      V1 < quantile(V1, .75) ~ "Sekundar II",
-      TRUE ~ "Hochschule"
+      V1 < quantile(V1, .25) ~ "kein Abschl.",
+      V1 < quantile(V1, .50) ~ "Sek. I",
+      V1 < quantile(V1, .75) ~ "Sek. II",
+      TRUE ~ "Hochsch."
     )
   ),
   V4 = ordered(
     case_when(
-      V2 < quantile(V2, .25) ~ "a",
-      V2 < quantile(V2, .50) ~ "b",
-      V2 < quantile(V2, .75) ~ "c",
-      TRUE ~ "d"
+      V2 < quantile(V2, .25) ~ "kein Abschl.",
+      V2 < quantile(V2, .50) ~ "Sek. I",
+      V2 < quantile(V2, .75) ~ "Sek. II",
+      TRUE ~ "Hochsch."
     )
   ),
   V3 = factor(V3, 
-              levels = c("kein Schulabschl",
-"Sekundar I",
-"Sekundar II",
-"Hochschule")),
+              levels = c("kein Abschl.",
+                         "Sek. I",
+                         "Sek. II",
+                         "Hochsch."
+                         )),
   V5 = as.numeric(V3),
   V6 = as.numeric(V4))
 
@@ -101,18 +104,17 @@ plot2 <-
          summarize(Freq = n()) %>% 
          ungroup(),
        aes(y = Freq, axis1 = V3, axis2 = V4)) +
-  geom_alluvium(aes(fill = V3), 
-                width = 1/12, 
+  geom_flow(aes(fill = V3), 
+                width = 1/3, 
                 alpha = 1,) +
-  geom_stratum(width = 1/12, 
+  geom_stratum(width = 1/3, 
                fill = "black", 
                color = "white") +
- # geom_label(stat = "stratum", aes(label = after_stat(stratum))) +
+  geom_label(stat = "stratum", size = 4,
+             aes(label = after_stat(stratum))) +
   theme_modern_rc() +
   scale_fill_viridis_d(begin = .1) +
-  ylab("") +
-  theme(legend.title = element_blank())
-
+  ylab("")
 
 true_corr <-runif(1, .8, .9)
 
@@ -121,25 +123,25 @@ data <-
   as_tibble() %>%
   mutate(V3 = ordered(
     case_when(
-      V1 < quantile(V1, .25) ~ "kein Schulabschl",
-      V1 < quantile(V1, .50) ~ "Sekundar I",
-      V1 < quantile(V1, .75) ~ "Sekundar II",
-      TRUE ~ "Hochschule"
+      V1 < quantile(V1, .25) ~ "kein Abschl.",
+      V1 < quantile(V1, .50) ~ "Sek. I",
+      V1 < quantile(V1, .75) ~ "Sek. II",
+      TRUE ~ "Hochsch."
     )
   ),
   V4 = ordered(
     case_when(
-      V2 < quantile(V2, .25) ~ "a",
-      V2 < quantile(V2, .50) ~ "b",
-      V2 < quantile(V2, .75) ~ "c",
-      TRUE ~ "d"
+      V2 < quantile(V2, .25) ~ "kein Abschl.",
+      V2 < quantile(V2, .50) ~ "Sek. I",
+      V2 < quantile(V2, .75) ~ "Sek. II",
+      TRUE ~ "Hochsch."
     )
   ),
   V3 = factor(V3, 
-              levels = c("kein Schulabschl",
-"Sekundar I",
-"Sekundar II",
-"Hochschule")),
+              levels = c("kein Abschl.",
+                         "Sek. I",
+                         "Sek. II",
+                         "Hochsch.")),
   V5 = as.numeric(V3),
   V6 = as.numeric(V4))
 
@@ -152,43 +154,44 @@ plot3 <-
          summarize(Freq = n()) %>% 
          ungroup(),
        aes(y = Freq, axis1 = V3, axis2 = V4)) +
-  geom_alluvium(aes(fill = V3), 
-                width = 1/12, 
+  geom_flow(aes(fill = V3), 
+                width = 1/3, 
                 alpha = 1,) +
-  geom_stratum(width = 1/12, 
+  geom_stratum(width = 1/3, 
                fill = "black", 
                color = "white") +
- # geom_label(stat = "stratum", aes(label = after_stat(stratum))) +
-  theme_ipsum() +
+  geom_label(stat = "stratum", size = 4,
+             aes(label = after_stat(stratum))) +
+  theme_modern_rc() +
   scale_fill_viridis_d(begin = .1) +
-  ylab("") +
-  theme(legend.title = element_blank())
+  ylab("")
   
 
 set_sequence_of_plots <- sample(1:3,3)
 
+
 if(sum(set_sequence_of_plots == 1:3) == 3){
-  plot1 / plot2 / plot3
+  plot1 / plot2 / plot3 + plot_layout(guides = "collect") & theme(legend.position = 'none')
 }
 
 if(sum(set_sequence_of_plots == c(1,3,2)) == 3){
-  plot1 / plot3 / plot2
+  plot1 / plot3 / plot2 + plot_layout(guides = "collect") & theme(legend.position = 'none')
 }
 
 if(sum(set_sequence_of_plots == c(2,1,3)) == 3){
-  plot1 / plot3 / plot2
+  plot1 / plot3 / plot2 + plot_layout(guides = "collect") & theme(legend.position = 'none')
 }
 
 if(sum(set_sequence_of_plots == c(2,3,1)) == 3){
-  plot1 / plot3 / plot2
+  plot1 / plot3 / plot2 + plot_layout(guides = "collect") & theme(legend.position = 'none')
 }
 
 if(sum(set_sequence_of_plots == c(3,1,2)) == 3){
-  plot1 / plot3 / plot2
+  plot1 / plot3 / plot2 + plot_layout(guides = "collect") & theme(legend.position = 'none')
 }
 
 if(sum(set_sequence_of_plots == c(3,2,1)) == 3){
-  plot1 / plot3 / plot2
+  plot1 / plot3 / plot2 + plot_layout(guides = "collect") & theme(legend.position = 'none')
 }
 ```
 
@@ -200,14 +203,45 @@ Die drei Abbildungen stellen die Assoziation der Schulabschlüssen der Eltern  (
 
 > Welche Abbildung kann welcher Korrelation zugeordnet werden?
 
-Answerlist
-----------
-* Oben: stark positive Korr. - Mitte: Sehr schwache Korr. - Unten: stark negative Korr. 
-* Oben: stark positive Korr. - Mitte: Sehr schwache Korr. - Unten: stark negative Korr.
+```{r  echo = F, results = "asis"}
+
+if(sum(set_sequence_of_plots == c(1,2,3)) == 3){
+exsolution <- c(T,F,F,F,F,F)
+}
+if(sum(set_sequence_of_plots == c(1,3,2)) == 3){
+exsolution <- c(F,T,F,F,F,F)
+}
+
+if(sum(set_sequence_of_plots == c(2,1,3)) == 3){
+exsolution <- c(F,F,T,F,F,F)
+}
+if(sum(set_sequence_of_plots == c(2,3,1)) == 3){
+exsolution <- c(F,F,F,T,F,F)
+}
+
+if(sum(set_sequence_of_plots == c(3,1,2)) == 3){
+exsolution <- c(F,F,F,F,T,F)
+}
+if(sum(set_sequence_of_plots == c(3,2,1)) == 3){
+exsolution <- c(F,F,F,F,F,T)
+}
+
+answerlist(
+  c("Oben: Stark negativ, Mitte: Vernachlässigbar, Unten: Stark positiv",
+    "Oben: Stark negativ, Mitte: Stark positiv, Unten: Vernachlässigbar",
+    
+    "Oben: Vernachlässigbar, Mitte: Stark negativ, Unten: Stark positiv",
+    "Oben: Vernachlässigbar, Mitte: Stark positiv, Unten: Stark negativ",
+    
+    "Oben: Stark positiv, Mitte: Stark negativ, Unten: Vernachlässigbar",
+    "Oben: Stark positiv, Mitte: Vernachlässigbar, Unten: Stark negativ"),
+    
+  markup = "markdown")
+```
 
 Meta-information
 ================
 exname: Order Kendall's tau_b from alluvial
 extype: schoice
-exsolution: 01000
-exshuffle: TRUE
+exsolution: `r mchoice2string(exsolution)`
+exshuffle: FALSE
