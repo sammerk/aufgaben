@@ -1,4 +1,4 @@
 library(exams2forms)
 
-exams2webquiz("/Users/samuelmerk/Nextcloud/Lehre/aufgaben/korrelationen/Visual_Guessing_tau_num/exams/Visual_Guessing_tau_num.Rmd", 
+exams2webquiz("/Users/samuelmerk/Nextcloud/Lehre/aufgaben/inferenzstatistik/bf-abbildung-zuordnen/BF_Abbildung_zuordnen.Rmd", 
               n = 10)
