@@ -36,6 +36,8 @@ solutionstringvector <-
 
 Gegeben sind die folgenden Daten. Welches Kendall's $\tau_b$ ergibt sich für die folgenden Variabenpaare?
 
+> Hinweis: Eine Rechnung ist nicht unbedingt notwendig
+
 `r knitr::kable(data, fullWidth = F) %>% kableExtra::kable_styling(bootstrap_options = "bordered", full_width = FALSE, position = "left")`
 
 ```{r questionlist, echo = FALSE, results = "asis"}

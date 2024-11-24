@@ -56,7 +56,7 @@ ggplot(data, aes(A, B)) +
 
 ```{r questionlist, echo = FALSE, results='asis'}
 answerlist(
-  c("A und B sind schwach korreliert",
+  c("A und B sind eher schwach korreliert",
     paste("Pearson's r(A,B) = ", round(runif(1, 1.01, 2), 2)),
     paste("Pearson's r(A,B) = ", round(runif(1, -2, -1.01), 2)),
     "A und B sind stark positiv korreliert.",
@@ -65,14 +65,14 @@ answerlist(
   markup = "markdown"
 )
 
-if(cor(data$A, data$B) > -.4){
+if(cor(data$A, data$B) < -.4){
 exsolution <- 
-  c(F,F,F,T,F)
+  c(T,F,F,T,F)
 }
 
-if(cor(data$A, data$B) < .4){
+if(cor(data$A, data$B) > .4){
 exsolution <- 
-  c(F,F,F,F,T)
+  c(T,F,F,F,T)
 }
 
 if(cor(data$A, data$B) > -.1 & cor(data$A, data$B) < .1){

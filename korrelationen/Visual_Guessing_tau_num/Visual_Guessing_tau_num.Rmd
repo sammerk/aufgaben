@@ -47,20 +47,16 @@ ggplot(data, aes(V3, V4)) +
 
 Obige Abbibldung zeigt die Assoziation der beiden Variablen V1 und V2. Welches Kendall's $\tau_b (V1,V2)$ passt am besten zu dieser Abbildung?
 
-```{r, echo=FALSE, results='asis'}
-answerlist(round(answerlist, 2),
-  markup = "markdown")
-```
 
-```{r exsolutiongeneration, echo = F, results='hide'}
-ex_solution <- 
-  answerlist == true_corr
-```
+Solution
+========
+Das berechnete Kendall's $\tau_b$ beträgt `r true_corr`.
 
 
 
 Meta-information
 ================
-extype: schoice
-exsolution: `r mchoice2string(ex_solution)`
+extype: num
+extol: .35
+exsolution: `r true_corr`
 exname: Guessing_tau_SC

@@ -1,0 +1,60 @@
+```{r, echo = FALSE, results = "hide", message=FALSE}
+library(tidyverse)
+library(exams)
+data <- 
+    tibble(
+      Effekte_in_r = c("Eine Forscherin untersucht die Korrelation zwischen der Klassengröße (variiert zwischen 21 und 27 Schülerinnen und Schülern) und dem Ergebnis eines Fachwissenstests. Dazu erhebt sie beide Variablen bei N = 18678 Schülerinnen und Schülern in 778 Klassen und erhält ein Pearson's r von .12.",
+                       "Ein Forscher untersucht, inwiefern Intelligenz und Gehalt korreliert sind. Dazu erhebt er beide Variablen bei N = 58678 Studierenden und erhält ein Pearson's r von .33.",
+                       "Eine Forscherin untersucht, inwiefern Gewissenhaftigkeit und akademische Leistung korreliert sind. Dazu erhebt sie beide Variablen bei N = 678 Studierenden und erhält ein Pearson's r von .43.",
+                       "Ein Forscher untersucht, inwiefern die Fachkompetenz einer Lehrkraft mit dem Lernfortschritt der Schülerinnen und Schüler assoziiert ist. Dazu erfasst er beide Variablen bei N = 142 Lehrkräften und deren Schülerinnen und Schüler und erhält ein Pearson's r von .54.",
+                       "Ein Forscher untersucht, inwiefern die Begeisterung für den pädagogischen Beruf mit dem Lernfortschritt der Schülerinnen und Schüler assoziiert ist. Dazu erhebt er beide Variablen bei N = 568 Studierenden und erhält ein Pearson's r von .31.",
+                       "Ein Forscher untersucht, inwiefern das Gehalt der Eltern mit dem Gehalt von Befragten korreliert. Dazu erhebt er beide Variablen bei N = 664 Studierenden und erhält ein Pearson's r von .43."),
+      Frage = c(
+        "Mit welcher Wahrscheinlichkeit zeigt demnach eine Schüler:in in einer überdurchschnittlich großen Klasse eine überdurchschnittlich starke Leistung?",
+        "Mit welcher Wahrscheinlichkeit zeigt demnach ein:e überdurchschnittlich intelligente:r Student:in in eine überdurchschnittlich großes Gehalt?",
+        "Mit welcher Wahrscheinlichkeit zeigt demnach ein:e überdurchschnittlich gewissenhafte:r Student:in  eine überdurchschnittlich starke akademische Leistung?",
+        "Mit welcher Wahrscheinlichkeit zeigen demnach die Schüler:innen einer überdurchschnittlich fachkompetenten Lehrkraft einen überdurchschnittlichen Lernfortschritt?",
+        "Mit welcher Wahrscheinlichkeit zeigen demnach die Schüler:innen einer überdurchschnittlich enthusiastischen Lehrkraft einen überdurchschnittlichen Lernfortschritt?",
+        "Mit welcher Wahrscheinlichkeit zeigt demnach ein:e Befragte:r mit überdurchschnittlich verdienenden Eltern ein überdurchschnittliches Gehalt?"),
+      r = as.numeric(str_sub(Effekte_in_r, -5, -2)),
+      CLES = asin(r)/pi + .5
+    ) |> 
+  sample_n(1)
+
+prob_to_perc <- function(x) {
+  paste(substr(sprintf("%.3f", round(x, digits = 3)), 3, 4),
+        ",",
+        substr(sprintf("%.3f", round(x, digits = 3)), 5, 5),
+        "%",
+        sep = "")
+}
+
+
+
+answerlist <- c(data$CLES,
+                runif(1, -1, -.88),
+                0 + runif(1, -.08, .08),
+                runif(1, .88, 1),
+                data$CLES + .4, 
+                data$CLES + 2*.4,
+                data$CLES - .4, 
+                data$CLES - 2*.4)
+
+answerlist <- sort(answerlist[answerlist <= 1 & answerlist >= -1])
+answerlist <- answerlist %>% 
+  round(., 2)
+```
+
+Question
+========
+`r paste(data$Effekte_in_r, data$Frage, sep = " ")`
+
+> Geben Sie die Antwort als Dezimalzahl mit führender 0 zwischen 0 und 1 an (z.B. 0,123)
+
+
+Meta-information
+================
+exname: Uebersetzung_r_CLES_num
+extype: num
+exsolution: `r data$CLES`
+extol: .35

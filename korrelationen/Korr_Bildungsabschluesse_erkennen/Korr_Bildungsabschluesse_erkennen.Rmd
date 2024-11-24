@@ -4,11 +4,14 @@ Question
 library(tidyverse)
 library(exams)
 library(randomcoloR)
+
+N <- sample(80:350, 1)
+
 true_corr <- runif(1, .8, 1) %>% 
   round(., digits = 2) 
 
 data <-
-  MASS::mvrnorm(250, mu = c(0, 0), Sigma = matrix(c(1, true_corr, true_corr, 1), 2, 2)) %>%
+  MASS::mvrnorm(N, mu = c(0, 0), Sigma = matrix(c(1, true_corr, true_corr, 1), 2, 2)) %>%
   as_tibble() %>%
   mutate(V3 = ordered(
     case_when(
@@ -49,13 +52,13 @@ ggplot(data, aes(V3, V4)) +
   coord_fixed() +
   ggtitle("Streudiagramm", "der (höchsten) Bildungsabschlüsse in einer\nStichprobe von Müttern und Töchtern") +
   xlab("Bildungsabschlüsse der Mütter") + 
-  ylab("Bildungsabhsclüsse der Töchter") +
+  ylab("Bildungsabschlüsse der Töchter") +
   theme(axis.text.x = element_text(angle = 15, hjust = 1))
 
   
 ```
 
-Angenommen ein Forscherteam erhebt in einem Land querschnittlich die höchsten Bildungsabschlüsse von 250 Müttern und deren ältesten Töchter und erhält die oben dargestellten Daten. Welche der folgenden Aussagen können anhand der Daten geschlussfolgert werden?
+Angenommen ein Forscherteam erhebt in einem Land querschnittlich die höchsten Bildungsabschlüsse von `r N` Müttern und deren ältesten Töchter und erhält die oben dargestellten Daten. Welche der folgenden Aussagen können anhand der Daten geschlussfolgert werden?
 
 ```{r, echo=FALSE, results='asis'}
 answerlist(c(
@@ -66,6 +69,12 @@ answerlist(c(
   "Höhere Bildung der Väter **verursacht** niedrigere Bildung bei den Töchtern."),
   markup = "markdown")
 ```
+
+
+Solution
+========
+
+
 
 ```{r exsolutiongeneration, echo = F, results='hide'}
 ex_solution <- 
