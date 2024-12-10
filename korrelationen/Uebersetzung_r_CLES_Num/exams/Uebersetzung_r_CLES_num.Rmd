@@ -49,7 +49,7 @@ Question
 ========
 `r paste(data$Effekte_in_r, data$Frage, sep = " ")`
 
-> Geben Sie die Antwort als Dezimalzahl mit führender 0 zwischen 0 und 1 an (z.B. 0,123)
+> Schätzen Sie einen plausiblen Wert und geben Sie die Antwort als Dezimalzahl mit führender 0 zwischen 0 und 1 an (z.B. 0,123)
 
 
 Meta-information

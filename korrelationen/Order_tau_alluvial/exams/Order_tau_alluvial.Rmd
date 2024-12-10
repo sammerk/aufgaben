@@ -12,6 +12,8 @@ library(ggalluvial)
 library(patchwork)
 library(exams)
 
+
+### Plot 1: Strong negativ correlation ########
 true_corr <- runif(1, -.9, -.8)
 
 data <-
@@ -42,8 +44,10 @@ data <-
   V5 = as.numeric(V3),
   V6 = as.numeric(V4))
 
-true_corr <- round(cor(data$V5, data$V6, method = "kendall"), 2)
 
+
+
+true_corr <- round(cor(data$V5, data$V6, method = "kendall"), 2)
 
 plot1 <- 
   ggplot(data %>% 
@@ -64,6 +68,7 @@ plot1 <-
   ylab("") 
 
 
+### Plot 2: Negligible correlation ########
 
 true_corr <- runif(1, -.05, .05)
 
@@ -115,6 +120,8 @@ plot2 <-
   theme_modern_rc() +
   scale_fill_viridis_d(begin = .1) +
   ylab("")
+
+### Plot 3: Strong positive correlation ########
 
 true_corr <-runif(1, .8, .9)
 
@@ -179,23 +186,23 @@ if(sum(set_sequence_of_plots == c(1,3,2)) == 3){
 }
 
 if(sum(set_sequence_of_plots == c(2,1,3)) == 3){
-  plot1 / plot3 / plot2 + plot_layout(guides = "collect") & theme(legend.position = 'none')
+  plot2 / plot1 / plot3 + plot_layout(guides = "collect") & theme(legend.position = 'none')
 }
 
 if(sum(set_sequence_of_plots == c(2,3,1)) == 3){
-  plot1 / plot3 / plot2 + plot_layout(guides = "collect") & theme(legend.position = 'none')
+  plot2 / plot3 / plot1 + plot_layout(guides = "collect") & theme(legend.position = 'none')
 }
 
 if(sum(set_sequence_of_plots == c(3,1,2)) == 3){
-  plot1 / plot3 / plot2 + plot_layout(guides = "collect") & theme(legend.position = 'none')
+  plot3 / plot1 / plot2 + plot_layout(guides = "collect") & theme(legend.position = 'none')
 }
 
 if(sum(set_sequence_of_plots == c(3,2,1)) == 3){
-  plot1 / plot3 / plot2 + plot_layout(guides = "collect") & theme(legend.position = 'none')
+  plot3 / plot2 / plot1 + plot_layout(guides = "collect") & theme(legend.position = 'none')
 }
 ```
 
-Die drei Abbildungen stellen die Assoziationen der Schulabschlüsse der Eltern  (links) und ihrer Kinder (rechts) dar.
+Gegeben sind drei Alluvial Plots/Flussdiagramme, welche die Assoziation der Schulabschlüsse von Eltern  (links) und ihren Kindern (rechts) darstellt.
 
 * Eine Abbildung zeigt eine starke positive Assoziation, 
 * eine Abbildung zeigt eine starke negative Assoziation und 
