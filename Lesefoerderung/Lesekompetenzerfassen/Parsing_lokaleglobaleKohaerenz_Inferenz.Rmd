@@ -1,0 +1,66 @@
+##############################################
+# Frage 1: Multiple-Choice zum Leseverständnis auf Wortebene
+##############################################
+
+```{r, echo = FALSE, results = "hide"}
+library(exams)
+library(dplyr)
+# Begriffe und Definitionen für eine Zuordnungsaufgabe
+data <- tibble(
+  terms =  c("Parsing",
+             "Lokale Kohärenzbildung",
+             "Globale Kohärenzbildung",
+             "Inferenzbildung"),
+  definitions  = c("Das Entschlüsseln der Tiefenstruktur eines Satzes, wodurch eine propositionale Struktur entsteht.",
+                   "Der mentale Aufbau einer Bedeutungsstruktur innerhalb eines Satzes durch Verknüpfung von Wortgruppen.",
+                   "Ein Prozess, bei dem Propositionen aus verschiedenen Textstellen in eine übergeordnete Makrostruktur eingefügt werden.",
+                   "Das Ziehen von über den Text hinausgehenden Schlussfolgerungen während des Lesens.")
+  ) %>% 
+  sample_n(4)
+
+```
+
+Question
+=====
+
+Welche Begriffe sind im Folgenden definiert?
+
+`r data$definitions[1]`  
+##ANSWER1##
+
+`r data$definitions[2]`  
+##ANSWER2##
+
+`r data$definitions[3]`  
+##ANSWER3##
+
+`r data$definitions[4]`  
+##ANSWER4##
+
+Answerlist
+----------
+* `r data$terms[4]`
+* `r data$terms[3]`
+* `r data$terms[2]`
+* `r data$terms[1]`
+* `r data$terms[4]`
+* `r data$terms[3]`
+* `r data$terms[2]`
+* `r data$terms[1]`
+* `r data$terms[1]`
+* `r data$terms[2]`
+* `r data$terms[3]`
+* `r data$terms[4]`
+* `r data$terms[1]`
+* `r data$terms[2]`
+* `r data$terms[3]`
+* `r data$terms[4]`
+
+
+
+Meta-information
+===============
+exname: Parsing_lokaleglobaleKohaerenz_Inferenz
+extype: cloze
+exsolution: 0001|0010|0010|0001
+exclozetype: schoice|schoice|schoice|schoice

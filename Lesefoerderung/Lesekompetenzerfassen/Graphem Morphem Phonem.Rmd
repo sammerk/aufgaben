@@ -1,0 +1,47 @@
+```{r, echo = FALSE, results = "hide"}
+library(exams)
+library(dplyr)
+# Begriffe und Definitionen für eine Zuordnungsaufgabe
+data <- tibble(
+  definitions =  c("Kleinste Bedeutungsunterscheidende Einheit eines Schriftsystems",
+                   "Kleinste bedeutungsunterscheidende Einheit im Lautsystem einer Sprache",
+                   "Kleinste bedeutungstragende Einheit einer Sprache"),
+  terms  = c("Graphem", "Phonem", "Morphem")) %>% 
+  sample_n(3)
+
+```
+
+Question
+=====
+
+Welche Begriffe sind im Folgenden definiert?
+
+`r data$definitions[1]`  
+##ANSWER1##
+
+`r data$definitions[2]`  
+##ANSWER2##
+
+`r data$definitions[3]`  
+##ANSWER3##
+
+
+Answerlist
+----------
+* `r data$terms[3]`
+* `r data$terms[2]`
+* `r data$terms[1]`
+* `r data$terms[1]`
+* `r data$terms[2]`
+* `r data$terms[3]`
+* `r data$terms[3]`
+* `r data$terms[2]`
+* `r data$terms[1]`
+
+Meta-information
+===============
+exname: Graphem Morphem Phonem
+extype: cloze
+exsolution: 001|010|100
+exclozetype: schoice|schoice|schoice
+exshuffle: 3

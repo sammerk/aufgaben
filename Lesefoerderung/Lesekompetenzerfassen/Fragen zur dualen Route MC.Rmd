@@ -1,0 +1,39 @@
+##############################################
+# Frage 1: Multiple-Choice zum Leseverständnis auf Wortebene
+##############################################
+
+```{r, echo = FALSE, results = "hide"}
+library(exams)
+# Frage zum Zwei-Wege-Modell der Worterkennung
+questions <- c(
+  "Die automatisierte Worterkennung erfolgt bei geübten Lesern schneller als die Rekodierung der Einzellaute.",
+  "Beim Zwei-Wege-Modell der Worterkennung wird bei unbekannten Wörtern die direkte Route aktiviert.",
+  "Das Zwei-Wege-Modell der Worterkennung postuliert zwei voneinander unabhängige Verarbeitungswege.",
+  "Die Rekodierung von Graphemen zu Phonemen ist im Deutschen immer eindeutig."
+)
+
+solutions <- c(TRUE, FALSE, TRUE, FALSE)
+```
+
+Question
+=====
+
+Welche der folgenden Aussagen zum Zwei-Wege-Modell der Worterkennung und zu Prozessen auf Wortebene sind korrekt?
+
+```{r, echo = FALSE, results = "asis"}
+exams::answerlist(questions, markup = "markdown")
+```
+
+Solution
+======
+* Laut Text erfolgt die automatisierte Erkennung ganzer Wörter beim geübten Leser wesentlich schneller als die Rekodierung der Einzellaute.
+* Falsch, beim Zwei-Wege-Modell wird bei unbekannten Wörtern die indirekte Route gewählt, bei der die Einzellaute rekodiert werden.
+* Laut Text manifestieren sich beide Routen in voneinander unabhängigen neuronalen Netzwerken unseres Gehirns.
+* Falsch, im Text wird explizit erwähnt, dass es auch im Deutschen keine ganz eindeutige Zuordnung von Lauten zu Schriftzeichen gibt.
+
+Meta-information
+===============
+exname: Worterkennung_MC
+extype: mchoice
+exsolution: `r paste(as.integer(solutions), collapse = "")`
+exshuffle: 3

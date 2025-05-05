@@ -1,0 +1,26 @@
+Question
+========
+Kreuzen Sie wahre Aussagen zum Wissenschaftverständnis an!
+
+Answerlist
+----------
+* Wissenschaftliches Wissen ist immer vorläufig und kann durch neue Erkenntnisse verändert oder widerlegt werden
+* Zu jedem wissenschaftlichen Thema gibt es widersprüchliche Forschungsergebnisse, dennoch kann ein Konsens vorliegen
+* In der Wissenschaft ist es unerlässlich, dass Forschungsergebnisse von anderen überprüfbar und replizierbar sind.
+
+Solution
+========
+
+Answerlist
+----------
+* True. Wissenschaftliches Wissen ist immer vorläufig und kann durch neue Erkenntnisse verändert oder widerlegt werden
+* True. Zu jedem wissenschaftlichen Thema gibt es widersprüchliche Forschungsergebnisse, dennoch kann ein Konsens vorliegen
+* True. In der Wissenschaft ist es unerlässlich, dass Forschungsergebnisse von anderen überprüfbar und replizierbar sind.
+
+
+Meta-information
+================
+exname: wissenschaftsverstaendnis
+extype: mchoice
+exsolution: 111
+exshuffle: TRUE

@@ -1,0 +1,34 @@
+```{r, echo = FALSE, results = "hide"}
+library(exams)
+```
+
+Question
+=====
+
+Der Text beschreibt den sogenannten Wortüberlegenheitseffekt. Vervollständigen Sie die folgenden Aussagen dazu:
+
+Der Wortüberlegenheitseffekt wurde erstmals von beschrieben. Er besagt, dass ein Schriftzeichen ##ANSWER1## gelesen werden kann, wenn es in einem sinnvollen Wort vorkommt, als wenn es ##ANSWER2## oder in einer sinnlosen Zeichenkette präsentiert wird.
+Dieser Effekt zeigt, dass ##ANSWER3## auf die Worterkennung zurückwirken.
+
+
+Answerlist
+----------
+* schneller
+* langsamer
+* isoliert
+* kontaminiert
+* abstrahiert
+* hierachiehöhere Prozesse
+* hierachieniedrigere Prozesse
+
+
+
+
+
+Meta-information
+===============
+exname: Wortuberlegenheitseffekt_Cloze
+extype: cloze
+exsolution: 10|100|10
+exclozetype: schoice|schoice|schoice
+exshuffle: 5

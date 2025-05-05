@@ -1,0 +1,33 @@
+Question
+========
+### Die Lesemeister-AG
+In einer Schule melden sich Kinder freiwillig für eine Leseförder-AG an, nachdem ein Lesetest durchgeführt wurde. Die 20 Schülerinnen und Schüler mit den schlechtesten Ergebnissen nehmen an der AG teil. Nach drei Wochen erfolgt erneut ein Lesetest.
+
+> Welche Beobachtung ist aufgrund statistischer Effekte wahrscheinlich, selbst wenn die AG keinen Effekt hätte?
+
+Answerlist
+----------
+* Die Leistungen bleiben unverändert.
+* Die Leistungen der Teilnehmenden verbessern sich im Durchschnitt etwas.
+* Die Leistungen der Teilnehmenden verschlechtern sich im Durchschnitt etwas.
+* Die Streuung der Ergebnisse bleibt exakt gleich.
+
+Solution
+========
+
+Answerlist
+----------
+* False. Mehrere blabla bla Erklärung
+* True. Mehrere blabla bla Erklärung
+* False. Mehrere blabla bla Erklärung
+* False. Mehrere blabla bla Erklärung
+
+
+
+Meta-information
+================
+exname: regressiontothemean_lesemeister
+extype: mchoice
+exsolution: 0100
+exshuffle: TRUE
+
