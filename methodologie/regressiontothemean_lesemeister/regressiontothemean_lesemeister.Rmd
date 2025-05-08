@@ -1,0 +1,37 @@
+Question
+========
+### Die Lesemeister-AG
+In einer Schule melden sich Kinder freiwillig für eine Leseförder-AG an, nachdem ein Lesetest durchgeführt wurde. Die 20 Schülerinnen und Schüler mit den schlechtesten Ergebnissen nehmen an der AG teil. Nach drei Wochen erfolgt erneut ein Lesetest.
+
+> Welche Beobachtung ist aufgrund statistischer Effekte wahrscheinlich, selbst wenn die AG keinen Effekt auf die Leseleistung hätte?
+
+Answerlist
+----------
+* Eine wiederholte Messung der Leseleistung der Teilnehmenden liefert identische Daten.
+* Die Leistungen der Teilnehmenden verbessern sich im Durchschnitt etwas.
+* Die Leistungen der Teilnehmenden verschlechtern sich im Durchschnitt etwas.
+* Der Mittelwert der Ergebnisse der Leseleistung bleibt exakt gleich.
+* Die Leistungen der Teilnehmenden bleiben im Durchschnitt gleich.
+* Die Leistungen der Nicht-Teilnehmenden verschlechtern sich im Durchschnitt deutlich.
+
+Solution
+========
+
+Answerlist
+----------
+* False. Es ist eine Fehlvorstellung, dass bei wiederholter Messung identische Daten entstehen, da Messungen stets potenziellen Messfehlern unterliegen.
+* True. Extreme Ausreißer werden bei wiederholten Messungen tendenziell weniger extrem. Dies ist ein statistischer Effekt, der als Regression zur Mitte bezeichnet wird.
+* False. Extreme Werte tendieren dazu, bei wiederholten Messungen weniger extrem zu sein. Dies ist ein statistischer Effekt, der als Regression zur Mitte bezeichnet wird.
+* False. Bei wiederholter Messung ist es äußerst unwahrscheinlich biw unmöglich, dass der Mittelwert exakt gleich bleibt, da Messungen potenziellen Messfehlern unterliegen.
+* False. Die Leistungen der Teilnehmenden werden sich im Durchschnitt verbessern, da extreme Ausreißer bei wiederholten Messungen tendenziell weniger extrem sind. Dies ist ein statistischer Effekt, der als Regression zur Mitte bezeichnet wird.
+* False. Es ist nicht zu erwarten, dass die Leistungen der Nicht-Teilnehmenden sich deutlich verschlechtern, da es keinen Grund für eine Verschlechterung gibt.
+
+
+
+Meta-information
+================
+exname: regressiontothemean_lesemeister
+extype: schoice
+exsolution: 010000
+exshuffle: 4
+
