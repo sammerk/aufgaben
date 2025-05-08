@@ -1,0 +1,56 @@
+Question
+========
+```{r echo=FALSE, results='hide'}
+library(exams)
+include_supplement("Rlogo.png",
+  dir = find.package("exams"), recursive = TRUE)
+
+include_supplement("LV_SL1.png")
+include_supplement("LV_SL10.png")
+include_supplement("LV_SL3.png")
+include_supplement("LV_SL4.png")
+include_supplement("LV_SL5.png")
+include_supplement("LV_SL6.png")
+include_supplement("LV_SL7.png")
+include_supplement("LV_SL8.png")
+include_supplement("LV_SL9.png")
+include_supplement("LV_SL10.png")
+include_supplement("LV_SL11.png")
+include_supplement("LV_SL12.png")
+include_supplement("LV_SL13.png")
+include_supplement("LV_SL14.png")
+include_supplement("LV_SL15.png")
+include_supplement("LV_SL16.png")
+include_supplement("LV_SL17.png")
+include_supplement("LV_SL18.png")
+include_supplement("LV_SL19.png")
+perzentil <- sample(54:88, 1)
+verlauf <- sample(1:19,1)
+image_path <- paste0("LV_SL", verlauf, ".png")
+```
+
+
+
+In folgender Abbildung finden Sie Leselernverläufe einer Schülerin bzw. eines Schülers, dargestellt als Messwerte der Lesegenauigkeit, Leseflüssigkeit und Leseverständnis vor repräsentativen `r perzentil`% Perzentilbändern.
+
+![Leselernverlauf](`r image_path`){width=90%}
+
+
+1. Beschreiben Sie die Leselernverläufe der Schülerin bzw. des Schülers unter Verwendung der individuellen **und** der sozialen Bezugsnorm.
+2. Erläutern Sie, welche diagnostischen Schlüsse Sie aus den Leselernverläufen ziehen können.
+3. Beschreiben Sie eine evidenzbasierte Methode zur Förderung des Schülers bzw. der Schülerin
+
+
+Meta-information
+================
+extype: string
+exsolution: nil
+exname: regression essay
+exstringtype: essay|file
+exextra[essay,logical]: TRUE
+exextra[essay_format,character]: editor
+exextra[essay_required,logical]: True
+exextra[essay_fieldlines,numeric]: 20
+exextra[essay_attachments,numeric]: 0
+exextra[essay_attachmentsrequired,logical]: FALSE
+exmaxchars: 10000, 10, 50

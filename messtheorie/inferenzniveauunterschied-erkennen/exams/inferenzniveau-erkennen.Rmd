@@ -1,0 +1,65 @@
+```{r data generation, echo = FALSE, results = "hide"}
+library(tidyverse)
+library(exams)
+bsp <-
+  c("Anzahl der Wortmeldungen der einzelnen Schüler*innen", #1
+    "Sozialform des Unterrichts",
+    "Anteil an Mädchen in der Klasse laut Klassenbuch",
+    "Einsatz von Arbeitsblättern",
+    "Anzahl Schüler*innen mit braunen Haaren",
+    "Redeanteil Lehrkraft",
+    "Lautstärke in dB während Einzelarbeit",
+    "Nutzung digitaler Medien",
+    "Zeitpunkt der Erteilung von Hausaufgaben",
+    "Anzahl fehlender Schüler*innen", #10
+    "Unterrichtsklima",
+    "Aufmerksamkeit der Schüler*innen",
+    "Qualität der Klassenführung",
+    "Kompetenz der Lehrkraft",
+    "Interesse der Schüler*innen am Thema",
+    "Außmaß der kognitiven Aktivierung",
+    "Persönlichkeit der Lehrkraft",
+    "Intelligenz",
+    "Depressivität") #19
+
+auszuwaehlen <- sample(c("niedrigste", "höchste"), 1)
+
+if(auszuwaehlen == "höchste"){
+  distractors <- bsp[sample(1:10, 3)]
+}else{
+  distractors <- bsp[sample(11:19, 3)]
+}
+
+data <- tibble(
+  items = c(ifelse(auszuwaehlen == "niedrigste",
+                              bsp[sample(1:10, 1)],
+                              bsp[sample(11:19, 1)]),
+            distractors),
+  solution = c(T,F,F,F)) %>% 
+  sample_frac(1)
+```
+
+
+Question
+========
+Welche der folgenden Variablen kann sinnvollerweise **das `r auszuwaehlen` Inferenzniveau** zugewiesen werden?
+
+
+```{r questionlist, echo = FALSE, results = "asis"}
+answerlist(data$items,
+           markup = "markdown")
+```
+
+Solution
+========
+
+```{r exsolutiongeneration, echo = F, results='hide'}
+ex_solution <- data$solution
+```
+
+
+Meta-information
+================
+exname: "Inferenzniveau erkennen"
+extype: schoice
+exsolution: `r mchoice2string(ex_solution)`

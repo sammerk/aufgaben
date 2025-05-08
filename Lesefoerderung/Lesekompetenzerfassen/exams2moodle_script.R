@@ -1,13 +1,12 @@
 library(exams)
 
 exams2moodle(
-  c("regressiontothemean_lesemeister/regressiontothemean_lesemeister.Rmd",
-    "wissenschaftsverstaendnis/wissenschaftsverstaendnis.Rmd"),
-  name = "xml_export_uebung_mit_flo",
+  c(here::here("Lesefoerderung/Studienleistung/Studienleistung_exams.Rmd")),
+  name = "Teilstudienleistung_Merk",
   mchoice = list(eval = exams_eval(rule = "true")),
   schoice = list(eval = exams_eval(rule = "none")),
   points = 10,
-  n = 10,
+  n = 30,
   converter = "pandoc-mathjax"
 )
 
