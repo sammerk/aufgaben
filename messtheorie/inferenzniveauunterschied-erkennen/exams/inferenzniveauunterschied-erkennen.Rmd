@@ -60,6 +60,6 @@ ex_solution <- data$solution
 
 Meta-information
 ================
-exname: "Inferenzniveau erkennen"
+exname: "Inferenzniveauunterschied erkennen"
 extype: schoice
 exsolution: `r mchoice2string(ex_solution)`
