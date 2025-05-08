@@ -2,21 +2,21 @@
 library(tidyverse)
 library(exams)
 bsp <-
-  c("Anzahl der Wortmeldungen der einzelnen Schüler*innen", #1
+  c("Anzahl der Wortmeldungen der einzelnen Schüler:innen", #1
     "Sozialform des Unterrichts",
     "Anteil an Mädchen in der Klasse laut Klassenbuch",
     "Einsatz von Arbeitsblättern",
-    "Anzahl Schüler*innen mit braunen Haaren",
+    "Anzahl Schüler:innen mit braunen Haaren",
     "Redeanteil Lehrkraft",
     "Lautstärke in dB während Einzelarbeit",
     "Nutzung digitaler Medien",
     "Zeitpunkt der Erteilung von Hausaufgaben",
-    "Anzahl fehlender Schüler*innen", #10
+    "Anzahl fehlender Schüler:innen", #10
     "Unterrichtsklima",
-    "Aufmerksamkeit der Schüler*innen",
+    "Aufmerksamkeit der Schüler:innen",
     "Qualität der Klassenführung",
     "Kompetenz der Lehrkraft",
-    "Interesse der Schüler*innen am Thema",
+    "Interesse der Schüler:innen am Thema",
     "Außmaß der kognitiven Aktivierung",
     "Persönlichkeit der Lehrkraft",
     "Intelligenz",
