@@ -2,38 +2,40 @@
 library(tidyverse)
 library(exams)
 bsp <-
-  c("Anzahl der Wortmeldungen der einzelnen Schüler:innen", #1
+  c(#"Anzahl der Wortmeldungen der einzelnen Schüler:innen", #1
     "Sozialform des Unterrichts",
     "Anteil an Mädchen in der Klasse laut Klassenbuch",
     "Einsatz von Arbeitsblättern",
-    "Anzahl Schüler:innen mit braunen Haaren",
-    "Redeanteil Lehrkraft",
-    "Lautstärke in dB während Einzelarbeit",
-    "Nutzung digitaler Medien",
-    "Zeitpunkt der Erteilung von Hausaufgaben",
-    "Anzahl fehlender Schüler:innen", #10
+    #"Anzahl Schüler:innen mit braunen Haaren",
+    #"Redeanteil Lehrkraft",
+    #"Lautstärke in dB während Einzelarbeit",
+    #"Nutzung digitaler Medien",
+    #"Zeitpunkt der Erteilung von Hausaufgaben",
+    #"Anzahl fehlender Schüler:innen", #10
     "Unterrichtsklima",
-    "Aufmerksamkeit der Schüler:innen",
-    "Qualität der Klassenführung",
+    #"Aufmerksamkeit der Schüler:innen",
+    #"Qualität der Klassenführung",
     "Kompetenz der Lehrkraft",
-    "Interesse der Schüler:innen am Thema",
-    "Außmaß der kognitiven Aktivierung",
-    "Persönlichkeit der Lehrkraft",
-    "Intelligenz",
-    "Depressivität") #19
+    #"Interesse der Schüler:innen am Thema",
+    "Außmaß der kognitiven Aktivierung"
+    #,
+    #"Persönlichkeit der Lehrkraft",
+    #"Intelligenz",
+    #"Depressivität"
+    ) #19
 
 auszuwaehlen <- sample(c("niedrigste", "höchste"), 1)
 
 if(auszuwaehlen == "höchste"){
-  distractors <- bsp[sample(1:10, 3)]
+  distractors <- bsp[sample(1:3, 3)]
 }else{
-  distractors <- bsp[sample(11:19, 3)]
+  distractors <- bsp[sample(4:6, 3)]
 }
 
 data <- tibble(
   items = c(ifelse(auszuwaehlen == "niedrigste",
-                              bsp[sample(1:10, 1)],
-                              bsp[sample(11:19, 1)]),
+                              bsp[sample(1:3, 1)],
+                              bsp[sample(4:6, 1)]),
             distractors),
   solution = c(T,F,F,F)) %>% 
   sample_frac(1)

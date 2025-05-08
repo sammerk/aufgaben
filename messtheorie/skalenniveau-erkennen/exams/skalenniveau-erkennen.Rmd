@@ -33,20 +33,16 @@ Welches Skalenniveau sollte der folgenden Variable sinnvollerweise zugeschrieben
 
 
 ```{r questionlist, echo = FALSE, results = "asis"}
+ex_solution <- case_when(wievieltes_bsp %in% 1:9 ~ c(T,F,F),
+                         wievieltes_bsp %in% 10:12 ~ c(F,T,F),
+                         TRUE ~ c(F,F,T))
+
 answerlist(c("Nominales Skalenniveau",
              "Ordinales Skalenniveau", 
              "Intervallskaliertes Skalenniveau"), 
            markup = "markdown")
 ```
 
-Solution
-========
-
-```{r exsolutiongeneration, echo = F, results='hide'}
-ex_solution <- case_when(wievieltes_bsp %in% 1:9 ~ c(T,F,F),
-                         wievieltes_bsp %in% 10:12 ~ c(F,T,F),
-                         TRUE ~ c(F,F,T))
-```
 
 
 Meta-information
