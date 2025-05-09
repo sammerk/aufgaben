@@ -40,7 +40,7 @@ kri <-
   sample(
     c("Die große Mehrheit der Schüler:innen befinden sich weit über dem Grundanspruch/Mindeststandard für eine Klasse 9.",
       "Die meisten Schüler erfüllen den Anspruch oder sind sogar darüber.",
-      "Y kann den text Y in einer Minute fehlerfrei abschreiben",
+      "Y kann den Text Y in einer Minute fehlerfrei abschreiben",
       "Schüler:in X kann chemische Reaktionen von Aggregatszustandsänderungen unterscheiden.",
       "Schüler:in X kann den Strahlensatz sicher auf Alltagsprobleme anwenden"
     ),
