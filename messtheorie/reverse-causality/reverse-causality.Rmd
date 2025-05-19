@@ -1,0 +1,43 @@
+Question
+========
+### Kausalität
+Sie haben einen querschnittlichen Datensatz mit *N* = 250 Beobachtungen, in welchem höhere Ausprägungen der **Variablen A** mit höheren Ausprägungen **der Variablen B** einhergehen.
+
+> Welche Hypothesen stehen im Einklang mit dieser Beobachtung? 
+> (Mehrfachnennungen möglich.)
+
+Answerlist
+----------
+* A beeinflusst B.
+* B beeinflusst A.
+* Eine Drittvariable C beeinflusst sowohl A als auch B.
+* Die beobachtete Assoziation ist stichprobenbedingter Zufall.
+* Die Korrelation beweist, dass A → B (A verursacht B direkt)
+ gilt.
+* Eine Scheinkorrelation kann ausgeschlossen werden, weil Variablen A und B im selben Fragebogen erhoben wurden. 
+* Ein Mediator M erklärt den Zusammenhang, indem er den Effekt von A auf B vollständig aufhebt – erst dadurch entsteht die positive Korrelation.  
+* Da die Stichprobe groß ist, kann die Korrelation nicht zufällig sein.
+
+Solution
+========
+
+Answerlist
+----------
+* True. Bei einer (reinen) Korrelation zwischen A und B ist es möglich, dass A B beeinflusst, aber auch die Alternative ist möglich.
+* True. Bei einer Korrelation zwischen B und A ist es möglich, dass B A beeinflusst, aber auch die Alternative ist möglich.
+* True. Eine Drittvariable C kann sowohl A als auch B beeinflussen, was zu einer Korrelation zwischen A und B führt (sog. Scheinkorrelation aufgrund eines Confounders).
+* True. Eine Korrelation kann auch zufällig sein, insbesondere bei kleinen Stichproben.
+* False. Die Korrelation allein beweist nicht, dass A B verursacht. Es könnte auch eine umgekehrte Kausalität oder eine Drittvariable C vorliegen.
+* False. Eine Scheinkorrelation kann nicht ausgeschlossen werden, nur weil A und B im selben Fragebogen erhoben wurden. Es könnte immer noch eine Drittvariable C geben, die beide Variablen beeinflusst.
+* False. Würde der Mediator M den Zusammenhang vollständig aufheben, würde die Korrelation zwischen A und B verschwinden. E
+* False. Eine große Stichprobe verringert zwar die Wahrscheinlichkeit, dass eine Korrelation rein zufällig auftritt, aber sie beweist nicht, dass die Korrelation nicht zufällig ist. Anders gesagt: auch in großen Stichproben können zufallsbedingte Korrelationen auftreten.
+
+
+
+Meta-information
+================
+exname: reverse-causality
+extype: mchoice
+exsolution: 11110000
+exshuffle: 4
+

@@ -1,24 +1,23 @@
-# Script generating a .xml file for moodle
+# Script for generating a .xml file for the integration in moodle
 library(exams)
 library(exams2forms)
 library(here)
 
-# Methodologie ----
+
+# Messtheorie ----
 ## Teilklausur ----
 exams2moodle(
-  c("regressiontothemean_lesemeister/regressiontothemean_lesemeister.Rmd",
-    "methodologie/steigerung-interne-validitaet/exams/steigerung-interne-validitaet.Rmd",
-    "methodologie/erkenntnisinteresse/exams/Deskriptive_Explorative_Explanative_Studien_r.Rmd",
-    "methodologie/experimentelles-design/exams/Exp_Quasiexp_Nichtexp_Studien_r.Rmd",
-    "methodologie/steigerung-externe-validitaet/exams/steigerung-externe-validitaet.Rmd"
-    ),
-  name = "Teilklausur_methodologie",
+  c("messtheorie/av-uv-mov-identifizieren-dag/exams/av-uv-mov-identifizieren-dag.Rmd",
+    "messtheorie/bezugsnormen-erkennen/exams/bezugsnormen-erkennen.Rmd",
+    "messtheorie/reverse-causality/exams/reverse-causality.Rmd",
+    "verteilungen/Streuung_in_Kompetenzstufen_erkennen/exams/Streuung_in_Kompetenzstufen_erkennen.Rmd",
+    "verteilungen/Mean_median_Q1_IQR_sd_aus_grafik_abschaetzen/exams/Mean_median_Q1_IQR_sd_aus_grafik_abschaetzen.Rmd"
+  ),
+  name = NULL,
   mchoice = list(eval = exams_eval(rule = "true")),
   #"true" uses 1/ncorrect (so that each wrong selection cancels one correct selection);
-  schoice = list(eval = exams_eval(rule = "none")),
-  # sets minimum for schoice to zero
+  schoice = list(eval = exams_eval(rule = "none")), # sets minimum for schoice to zero
   points = 10, # points for each exercise?
   n = 10,
   converter = "pandoc-mathjax"
 )
-

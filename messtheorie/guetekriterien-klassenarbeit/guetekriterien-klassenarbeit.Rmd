@@ -1,0 +1,37 @@
+Question
+========
+### Gütekriterien bei einer Klassenarbeit 
+Zwei Lehrkräfte einer weiterführenden Schule entwerfen eine identische Single-Choice-Klassenarbeit, welche sie gleich objektiv durchführen und ebenso gleich objektiv auswerten. Lehrkraft B bietet als Antwortmöglichkeit eine richtige und eine falsche Antwort an, Lehrkraft A hingegen eine richtige und drei falsche.
+
+> Kreuzen Sie wahre Aussagen an
+> (Mehrfachnennungen möglich)!
+
+Answerlist
+----------
+* Rel(A) > Rel(B)
+* Rel(A) = Rel(B)
+* Konstruktval(A) > Konstruktval(B)
+* Konstruktval(A) = Konstruktval(B)
+* Objektivität(A) = Obkektivität(B)
+* Objektivität(A) > Obkektivität(B)
+
+Solution
+========
+
+Answerlist
+----------
+* True. Die Reliabilität einer Messung ist umso höher, je mehr Antwortmöglichkeiten es gibt, da dadurch die Ratewahrscheinlichkeit sinkt.
+* False. Die Reliabilität ist nicht gleich, da unterschiedlich viele Antwortoptionen bei beiden Klassenarbeiten zur Auswahl stehen.
+* True. Die Konstruktvalidität ist bei Lehrkraft A höher, da die Wahrscheinlichkeit, dass die Schüler:innen die richtige Antwort erraten, geringer ist. Hohe Reliabilität ist eine (hinreichende) Voraussetzung für hohe die Konstruktvalidität.
+* False. Da die Reliabilität unterschiedlich ist, ist auch die Konstruktvalidität unterschiedlich. 
+* True. Die Objektivität ist bei beiden Lehrkräften gleich, da beide die Klassenarbeit gleich objektiv durchführen und auswerten.
+* False. Die Objektivität ist nicht höher, da beide Lehrkräfte die Klassenarbeit gemeinsam erstellt haben, diese auch gleich objektiv durchführt und auswertet haben.
+
+
+Meta-information
+================
+exname: guetekriterien-klassenarbeit
+extype: mchoice
+exsolution: 101010
+exshuffle: 4
+
