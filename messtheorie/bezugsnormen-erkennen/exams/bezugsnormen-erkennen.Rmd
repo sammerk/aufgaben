@@ -65,7 +65,6 @@ answerlist_data <-
 Question
 ========
 Welche der folgenden Aussagen können der `r ind_soz_kri` Bezugsnorm zugeordnet werden?
-
   
 ```{r questionlist, echo = FALSE, results='asis'}
 answerlist(

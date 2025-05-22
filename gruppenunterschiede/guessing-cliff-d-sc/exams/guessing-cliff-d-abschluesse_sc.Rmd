@@ -1,0 +1,110 @@
+```{r data generation, echo = FALSE, results = "hide", message=FALSE, warning=FALSE}
+library(exams)
+library(bayestestR)
+library(tidyverse)
+library(ggdist)
+library(hrbrthemes)
+
+n <- sample(50:80, 1)
+      
+data <-
+  tibble(
+    u = distribution_beta(n, .5, .5),
+    unif = distribution_beta(n, 1, 1),
+    normal = distribution_beta(n, 4, 4),
+    skew1 = distribution_beta(n, 1, 1.3),
+    skew2 = distribution_beta(n, 1.3, 1),
+    skew3 = distribution_beta(n, 5, 20),
+    skew4 = distribution_beta(n, 20, 5),
+    u_2 = distribution_beta(n, .4, .6),
+    unif_2 = distribution_beta(n, 1.1, 1),
+    normal_2 = distribution_beta(n, 4.1, 3.9),
+    skew1_2 = distribution_beta(n, .9, 1.2),
+    skew2_2 = distribution_beta(n, 1.2, .9),
+    skew3_2 = distribution_beta(n, 4, 21),
+    skew4_2 = distribution_beta(n, 17, 3)
+  ) %>%
+  mutate(PID = 1:n()) %>%
+  gather(variable, value,-PID) %>%
+  mutate(
+    Abschlüsse = case_when(
+      value < .25 ~ "kein Abschluss",
+      value < .5 ~ "mittlerer Abschluss",
+      value < .75 ~ "Hochschulzugang",
+      T ~ "Hochschulabschluss"
+    ),
+    Abschlüsse = factor(Abschlüsse, levels = c("kein Abschluss", "mittlerer Abschluss",
+                                             "Hochschulzugang", "Hochschulabschluss"))
+  ) %>%
+  dplyr::select(-value) %>%
+  spread(variable, Abschlüsse) %>%
+  dplyr::select(-PID) %>%
+  dplyr::relocate(sample(1:ncol(.)))
+
+
+names(data) <- c("Gruppe A", "Gruppe B", LETTERS[1:13])
+
+data <-
+  data %>%
+  dplyr::select(`Gruppe A`, `Gruppe B`) %>%
+  mutate_all(as.character) %>%
+  gather(Gruppe, Abschlüsse) %>%
+  mutate(Abschlüsse = factor(Abschlüsse,  levels = c("kein Abschluss", "mittlerer Abschluss",
+                                             "Hochschulzugang", "Hochschulabschluss")))
+
+plot <- 
+   ggplot(data, aes(Abschlüsse)) + 
+      facet_wrap(~Gruppe) +
+      geom_bar(fill = "#8cd000", color = "#8cd000") +
+      theme_ipsum() +
+      ylab("Anzahl") +
+      xlab("")+
+      ggtitle("Höchster Bildungsabschluss", "in zwei Gruppen") +
+      theme(axis.text.x = element_text(angle = 30, vjust = 1, hjust=1))
+
+cld <-  -1*effsize::cliff.delta(Abschlüsse_num ~ Gruppe, 
+                                data = data %>% 
+                                  mutate(Abschlüsse_num = as.numeric(Abschlüsse)))$estimate %>% 
+      round(., 2)
+
+start_answerlist <- sample(1:6, 1)
+answerlist <- 
+  c(-1, 1, cld + seq(-1, 1, 1/3)) |> 
+  sort() 
+answerlist <- 
+  answerlist[answerlist <= 1 & answerlist >= -1] %>%
+  round(., 2) |> 
+  unique()
+```
+
+Question
+========
+Eine Studie vergleicht den höchsten Bildungsabschluss zweier Gruppen.
+
+>  Schätzen Sie  $\text{Cliff's } d = \frac{\#(A_i > B_i) - \#(A_i < B_i)}{\#A \cdot \#B}$
+
+```{r, echo = F, dev='svglite', message=FALSE, warning=FALSE, fig.cap = ""}
+plot
+```
+
+
+```{r, echo=FALSE, results='asis'}
+answerlist(answerlist,
+  markup = "markdown")
+```
+
+Solution
+========
+
+```{r exsolutiongeneration, echo = F, results='hide'}
+ex_solution <- 
+  answerlist == cld
+```
+
+
+
+Meta-information
+================
+extype: schoice
+exsolution: `r mchoice2string(ex_solution)`
+exname: Guessing_Cliffsd_SC
