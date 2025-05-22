@@ -45,7 +45,7 @@ ggplot(data, aes(V3, V4)) +
   
 ```
 
-Obige Abbibldung zeigt die Assoziation der beiden Variablen V1 und V2. Welches Kendall's $\tau_b (V1,V2)$ passt am besten zu dieser Abbildung?
+Obige Abbildung zeigt die Assoziation der beiden Variablen V1 und V2. Welches Kendall's $\tau_b (V1,V2)$ passt am besten zu dieser Abbildung?
 
 
 Solution
