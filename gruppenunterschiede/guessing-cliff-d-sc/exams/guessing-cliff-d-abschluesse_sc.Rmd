@@ -83,7 +83,7 @@ Eine Studie vergleicht den höchsten Bildungsabschluss zweier Gruppen.
 
 >  Schätzen Sie  $\text{Cliff's } d = \frac{\#(A_i > B_i) - \#(A_i < B_i)}{\#A \cdot \#B}$
 
-```{r, echo = F, dev='svglite', message=FALSE, warning=FALSE, fig.cap = ""}
+```{r, echo = F, dev='png', message=FALSE, warning=FALSE, fig.cap = "", fig.width=10}
 plot
 ```
 
@@ -107,4 +107,4 @@ Meta-information
 ================
 extype: schoice
 exsolution: `r mchoice2string(ex_solution)`
-exname: Guessing_Cliffsd_SC
+exname: Guessing_Cliffsd_SC_Abschlüsse
