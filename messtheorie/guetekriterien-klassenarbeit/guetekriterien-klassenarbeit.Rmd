@@ -1,7 +1,7 @@
 Question
 ========
 ### Gütekriterien bei einer Klassenarbeit 
-Zwei Lehrkräfte einer weiterführenden Schule entwerfen eine identische Single-Choice-Klassenarbeit, welche sie gleich objektiv durchführen und ebenso gleich objektiv auswerten. Lehrkraft B bietet als Antwortmöglichkeit eine richtige und eine falsche Antwort an, Lehrkraft A hingegen eine richtige und drei falsche.
+Zwei Lehrkräfte einer weiterführenden Schule entwerfen gemeinsam eine Single-Choice-Klassenarbeit mit identischer Anzahl an Fragen, welche sie gleich objektiv durchführen und ebenso gleich objektiv auswerten. Lehrkraft B bietet als Antwortmöglichkeit bei allen Fragen eine richtige und eine falsche Antwort an, Lehrkraft A hingegen eine richtige und drei falsche.
 
 > Kreuzen Sie wahre Aussagen an
 > (Mehrfachnennungen möglich)!
