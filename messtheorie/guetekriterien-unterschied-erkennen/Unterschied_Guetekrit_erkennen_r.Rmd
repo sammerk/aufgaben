@@ -1,0 +1,83 @@
+```{r data generation, echo = FALSE, results = "hide", warning=F, message=F}
+library(tidyverse)
+library(exams)
+
+question_data <- tibble(
+  topic = c(
+  "Zwei Forschungsteams untersuchen den Einfluss von Störungen im Unterricht auf die Lehrer:innen-Schüler:innen-Beziehung. \n",
+  "Zwei Forschungsteams untersuchen den Einfluss des Mathematik-Interesses der Eltern auf die Anstrengungsbereitschaft ihrer Kinder im Mathematikunterricht. \n",
+  "Zwei Forschungsteams untersuchen den Einfluss des akademischen Selbstkonzepts von Erstsemester-Studierenden auf deren Wohlbefinden. \n"
+),
+  relmeasure = c(
+    "von Störungen im Unterricht",
+    "des elterlichen Mathematik-Interesses",
+    "des akademischen Selbstkonzepts")
+  ) |>
+  slice(sample(1:3,1))
+
+question_string_part1 <- question_data[1]
+
+obj_rel_val <- sample(c("obj", "rel", "val"), 1)
+
+question_string_part2_options <- tibble(
+  obj = paste0("Forschungsgruppe A setzt ein Instrument zur Messung ",
+        question_data %>% 
+          pull(2),
+        " ein, das sensibel darauf reagiert, wer diese Messung durchführt. \n",
+        "Das Instrument von Forschungsgruppe B führt zu Messergebnissen, die unabhängig von der durchführenden Person sind."
+  ),
+  rel = paste0("Forschungsteam A setzt ein Messinstrument für die Erfassung ",
+        question_data %>% 
+          pull(2),
+        " ein, dessen Messergebnis durch einen hohen Anteil an Messfehlern verfälscht ist. \n",
+        "Forschungsteam B nutzt ein Messinstrument, das von Messfehlerfreiheit gekennzeichnet ist."
+  ),
+  val = paste0("Forschungsteam A entscheidet sich für den Einsatz eines Messinstruments, das eine Differenzierung ",
+        question_data %>% 
+          pull(2),
+        " in Subdimensionen ermöglicht. Erwartungskonform stehen die Subdimensionen in Zusammenhang zueinander. \n",
+        "Forschungsteam B setzt ein Messinstrument ein, das dieselben Subdimensionen misst, findet aber ein ungewöhnliches, den Erwartungen widersprechendes Muster der einzelnen Subdimensionen zueinander."
+  )
+)
+
+question_string_part2 <- question_string_part2_options %>%
+  pull(obj_rel_val)
+
+
+
+answerlist_data <- tibble(
+  answerlist = c(
+  "Objektivität",
+  "Reliabilität",
+  "(Konstrukt-)Validität",
+  "Präsentationsqualität"
+  ),
+  exsolution = c("obj", "rel", "val", "pres"))
+
+
+```
+
+
+Question
+========
+`r paste(question_string_part1, question_string_part2)`
+
+**Worin unterscheiden sich die beschriebenen Messinstrumente von Gruppe A und B?**
+
+
+```{r echo=FALSE, results='asis'}
+answerlist(
+  answerlist_data$answerlist,
+  markup = "markdown"
+)
+```
+
+
+
+
+Meta-information
+================
+exname: Unterschied_wiss_Guetekrit_erkennen
+extype: schoice
+exsolution: `r mchoice2string(answerlist_data$exsolution == obj_rel_val)`
+exshuffle: true

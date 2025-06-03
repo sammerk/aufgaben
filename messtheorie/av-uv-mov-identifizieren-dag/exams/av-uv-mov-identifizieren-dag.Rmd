@@ -13,15 +13,15 @@ library(exams)
 # read Excel table with variable in same folder
 variables <- tibble::tribble(
                ~Topic,                               ~MV,                             ~IV,                               ~DV,
-                   1L,           "Kognitive Fähigkeiten",            "Gewissenhaftigkeit", "Schulische Leistungsentwicklung",
-                   2L,                           "Alter",             "Menge an Freizeit",         "Nutzung sozialer Medien",
-                   3L,     "Motivation der Studierenden",       "Anspruch eines Seminars",          "Bewertung des Seminars",
-                   4L,                           "Alter",           "Verbale Intelligenz",              "Gedächtnisleistung",
-                   5L,                     "Straßenlärm", "Dosierung eines Schlafmittels",                     "Schlafdauer",
-                   6L, "Einsatz von Entspannungstechnik",         "Aufgewendete Lernzeit",                      "Lernerfolg",
-                   7L,                   "Alkoholkonsum",         "Aufgewendete Lernzeit",                      "Lernerfolg",
-                   8L,           "Soziale Unterstützung",     "Individueller Stresslevel",                  "Lebensqualität",
-                   9L,                      "Geschlecht",              "Arbeitserfahrung",                          "Gehalt"
+				   1L,            "**Qualität des Feedbacks**",                      "**Feedback**",                     "**Lernzuwachs**",
+				   2L,             "**Elterliche Einbindung**",         "**Menge an Hausaufgaben**",                     "**Lernzuwachs**",
+				   3L,             "**Aufgabenschwierigkeit**",              "**Übungshäufigkeit**",                     "**Lernzuwachs**",
+				   4L,                      "**Tagträumerei**",         "**Aufgewendete Lernzeit**",                      "**Lernerfolg**",
+				   5L,                 "**Gedächtnisleitung**",      "**Anzahl an Übungsaufgaben**",                      "**Lernerfolg**",
+				   6L,        "**Angewendete Lernstrategien**",         "**Aufgewendete Lernzeit**",                      "**Lernerfolg**",
+				   7L,       "**Authentizität der Lehrkraft**",       "**Lehrkräfte-Enthusiasmus**",        "**Schüler:innen-Motivation**",
+				   8L,         "**Beliebtheit der Lehrkraft**",    "**Konstruktive Unterstützung**",        "**Schüler:innen-Motivation**",
+				   9L, "**Bewältigbarkeit der Anforderungen**",      "**Anspruch des Unterrichts**",        "**Schüler:innen-Motivation**"  
                )
 
 # manually set the topic to be used in the task
@@ -31,7 +31,7 @@ topic_manually_set <- sample(1:9,1)
 solution_mode_manually_set <- "graphically" # or "verbally"
 
 # (random) sequence of the mentioning of the three variables within the topic 
-av_uv_mov_seq <- 1:3 #sample(1:3,3)
+av_uv_mov_seq <- sample(1:3,3)
 
 # generate the question string to alternate wordings 
 question_string_part1 <- 
@@ -44,7 +44,7 @@ question_string_part1 <-
           variables %>% 
           slice(topic_manually_set) %>% 
           pull(1 + av_uv_mov_seq[1]), 
-          1,3),
+          3,5),
         ")«, »",
         variables %>% 
           slice(topic_manually_set) %>% 
@@ -54,7 +54,7 @@ question_string_part1 <-
           variables %>% 
           slice(topic_manually_set) %>% 
           pull(1 + av_uv_mov_seq[2]), 
-          1,3),
+          3,5),
         ")« und »",
         variables %>% 
           slice(topic_manually_set) %>% 
@@ -64,7 +64,7 @@ question_string_part1 <-
           variables %>% 
           slice(topic_manually_set) %>% 
           pull(1 + av_uv_mov_seq[3]), 
-          1,3),
+          3,5),
         ")«. Sie erhebt die entsprechenden Daten bei einer repräsentativen Stichprobe von ",
         sample(501:7654, 1),
         " SchülerInnen.", 
@@ -138,17 +138,17 @@ right_graphical_solution <-
                          aes(label = c(substr(variables %>% 
                                                 slice(topic_manually_set) %>% 
                                                 pull(MV), 
-                                              1, 3),
+                                              3, 5),
                                        substr(variables %>% 
                                                 slice(topic_manually_set) %>% 
                                                 pull(IV), 
-                                              1, 3),
+                                              3, 5),
                                        substr(variables %>% 
                                                 slice(topic_manually_set) %>% 
                                                 pull(DV), 
-                                              1, 3)))) +
+                                              3, 5)))) +
   ggtitle(paste("Lösung ", title_of_right_graphical_solution)) +
-    theme(plot.margin = margin(1.5, 1.5, 1.5, 1.5, "cm"))
+    theme(plot.margin = margin(0.5, 0.5, 0.5, 0.5, "cm"))
 
 assign(paste("graphical_solution", 
              title_of_right_graphical_solution, 
@@ -167,15 +167,15 @@ assign(paste("graphical_solution", title_of_wrong_graphical_solutions[1], sep = 
                          aes(label = c(substr(variables %>% 
                                                 slice(topic_manually_set) %>% 
                                                 pull(c("MV", "IV", "IV", "DV", "DV")[1]), 
-                                              1, 3),
+                                              3, 5),
                                        substr(variables %>% 
                                                 slice(topic_manually_set) %>% 
                                                 pull(c("DV", "MV", "DV", "IV", "MV")[1]), 
-                                              1, 3),
+                                              3, 5),
                                        substr(variables %>% 
                                                 slice(topic_manually_set) %>% 
                                                 pull(c("IV", "DV", "MV", "MV", "IV")[1]), 
-                                              1, 3)))) +
+                                              3, 5)))) +
   ggtitle(paste("Lösung", title_of_wrong_graphical_solutions[1])) +
     theme(plot.margin = margin(0.5, 0.5, 0.5, 0.5, "cm"))
 ) 
@@ -192,15 +192,15 @@ assign(paste("graphical_solution", title_of_wrong_graphical_solutions[2], sep = 
                          aes(label = c(substr(variables %>% 
                                                 slice(topic_manually_set) %>% 
                                                 pull(c("MV", "IV", "IV", "DV", "DV")[2]), 
-                                              1, 3),
+                                              3, 5),
                                        substr(variables %>% 
                                                 slice(topic_manually_set) %>% 
                                                 pull(c("DV", "MV", "DV", "IV", "MV")[2]), 
-                                              1, 3),
+                                              3, 5),
                                        substr(variables %>% 
                                                 slice(topic_manually_set) %>% 
                                                 pull(c("IV", "DV", "MV", "MV", "IV")[2]), 
-                                              1, 3)))) +
+                                              3, 5)))) +
   ggtitle(paste("Lösung", title_of_wrong_graphical_solutions[2])) +
     theme(plot.margin = margin(0.5, 0.5, 0.5, 0.5, "cm"))
 ) 
@@ -217,15 +217,15 @@ assign(paste("graphical_solution", title_of_wrong_graphical_solutions[3], sep = 
                          aes(label = c(substr(variables %>% 
                                                 slice(topic_manually_set) %>% 
                                                 pull(c("MV", "IV", "IV", "DV", "DV")[3]), 
-                                              1, 3),
+                                              3, 5),
                                        substr(variables %>% 
                                                 slice(topic_manually_set) %>% 
                                                 pull(c("DV", "MV", "DV", "IV", "MV")[3]), 
-                                              1, 3),
+                                              3, 5),
                                        substr(variables %>% 
                                                 slice(topic_manually_set) %>% 
                                                 pull(c("IV", "DV", "MV", "MV", "IV")[3]), 
-                                              1, 3)))) +
+                                              3, 5)))) +
   ggtitle(paste("Lösung", title_of_wrong_graphical_solutions[3])) +
     theme(plot.margin = margin(0.5, 0.5, 0.5, 0.5, "cm"))
 ) 
@@ -242,15 +242,15 @@ assign(paste("graphical_solution", title_of_wrong_graphical_solutions[4], sep = 
                          aes(label = c(substr(variables %>% 
                                                 slice(topic_manually_set) %>% 
                                                 pull(c("MV", "IV", "IV", "DV", "DV")[4]), 
-                                              1, 3),
+                                              3, 5),
                                        substr(variables %>% 
                                                 slice(topic_manually_set) %>% 
                                                 pull(c("DV", "MV", "DV", "IV", "MV")[4]), 
-                                              1, 3),
+                                              3, 5),
                                        substr(variables %>% 
                                                 slice(topic_manually_set) %>% 
                                                 pull(c("IV", "DV", "MV", "MV", "IV")[4]), 
-                                              1, 3)))) +
+                                              3, 5)))) +
   ggtitle(paste("Lösung", title_of_wrong_graphical_solutions[4])) +
     theme(plot.margin = margin(0.5, 0.5, 0.5, 0.5, "cm"))
 ) 
@@ -267,15 +267,15 @@ assign(paste("graphical_solution", title_of_wrong_graphical_solutions[5], sep = 
                          aes(label = c(substr(variables %>% 
                                                 slice(topic_manually_set) %>% 
                                                 pull(c("MV", "IV", "IV", "DV", "DV")[5]), 
-                                              1, 3),
+                                              3, 5),
                                        substr(variables %>% 
                                                 slice(topic_manually_set) %>% 
                                                 pull(c("DV", "MV", "DV", "IV", "MV")[5]), 
-                                              1, 3),
+                                              3, 5),
                                        substr(variables %>% 
                                                 slice(topic_manually_set) %>% 
                                                 pull(c("IV", "DV", "MV", "MV", "IV")[5]), 
-                                              1, 3)))) +
+                                              3, 5)))) +
   ggtitle(paste("Lösung", title_of_wrong_graphical_solutions[5])) +
     theme(plot.margin = margin(0.5, 0.5, 0.5, 0.5, "cm"))
 ) 
@@ -406,4 +406,4 @@ Meta-information
 exname: AV UV & MoV identifizieren
 extype: schoice
 exsolution: `r mchoice2string(ex_solution)`
-exshuffle: true
+exshuffle: false

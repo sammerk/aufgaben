@@ -1,0 +1,533 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+
+
+<question type="category">
+<category>
+<text>$course$/teilklausur_skalenniveau-erkennen/Exercise 1</text>
+</category>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R1 Q1 : messtheorie_skalenniveau-erkennen_exams_skalenniveau-erkennen </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Welches Skalenniveau sollte der folgenden Variable sinnvollerweise zugeschrieben werden?</p>
+<blockquote>
+<p><em>Gehalt</em></p>
+</blockquote>
+</p>]]></text>
+</questiontext>
+<penalty>0</penalty>
+<defaultgrade>10</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Nominales Skalenniveau
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Ordinales Skalenniveau
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+Intervallskaliertes Skalenniveau
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R2 Q1 : messtheorie_skalenniveau-erkennen_exams_skalenniveau-erkennen </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Welches Skalenniveau sollte der folgenden Variable sinnvollerweise zugeschrieben werden?</p>
+<blockquote>
+<p><em>Platzierung im IQB Ländervergleich</em></p>
+</blockquote>
+</p>]]></text>
+</questiontext>
+<penalty>0</penalty>
+<defaultgrade>10</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Nominales Skalenniveau
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+Ordinales Skalenniveau
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Intervallskaliertes Skalenniveau
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R3 Q1 : messtheorie_skalenniveau-erkennen_exams_skalenniveau-erkennen </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Welches Skalenniveau sollte der folgenden Variable sinnvollerweise zugeschrieben werden?</p>
+<blockquote>
+<p><em>Olympische Medaille</em></p>
+</blockquote>
+</p>]]></text>
+</questiontext>
+<penalty>0</penalty>
+<defaultgrade>10</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Nominales Skalenniveau
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+Ordinales Skalenniveau
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Intervallskaliertes Skalenniveau
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R4 Q1 : messtheorie_skalenniveau-erkennen_exams_skalenniveau-erkennen </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Welches Skalenniveau sollte der folgenden Variable sinnvollerweise zugeschrieben werden?</p>
+<blockquote>
+<p><em>Geschlecht</em></p>
+</blockquote>
+</p>]]></text>
+</questiontext>
+<penalty>0</penalty>
+<defaultgrade>10</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+Nominales Skalenniveau
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Ordinales Skalenniveau
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Intervallskaliertes Skalenniveau
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R5 Q1 : messtheorie_skalenniveau-erkennen_exams_skalenniveau-erkennen </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Welches Skalenniveau sollte der folgenden Variable sinnvollerweise zugeschrieben werden?</p>
+<blockquote>
+<p><em>Nationalität</em></p>
+</blockquote>
+</p>]]></text>
+</questiontext>
+<penalty>0</penalty>
+<defaultgrade>10</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+Nominales Skalenniveau
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Ordinales Skalenniveau
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Intervallskaliertes Skalenniveau
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R6 Q1 : messtheorie_skalenniveau-erkennen_exams_skalenniveau-erkennen </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Welches Skalenniveau sollte der folgenden Variable sinnvollerweise zugeschrieben werden?</p>
+<blockquote>
+<p><em>Grundschulempfehlung</em></p>
+</blockquote>
+</p>]]></text>
+</questiontext>
+<penalty>0</penalty>
+<defaultgrade>10</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Nominales Skalenniveau
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+Ordinales Skalenniveau
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Intervallskaliertes Skalenniveau
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R7 Q1 : messtheorie_skalenniveau-erkennen_exams_skalenniveau-erkennen </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Welches Skalenniveau sollte der folgenden Variable sinnvollerweise zugeschrieben werden?</p>
+<blockquote>
+<p><em>Reaktionsgeschwindigkeit</em></p>
+</blockquote>
+</p>]]></text>
+</questiontext>
+<penalty>0</penalty>
+<defaultgrade>10</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Nominales Skalenniveau
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Ordinales Skalenniveau
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+Intervallskaliertes Skalenniveau
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R8 Q1 : messtheorie_skalenniveau-erkennen_exams_skalenniveau-erkennen </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Welches Skalenniveau sollte der folgenden Variable sinnvollerweise zugeschrieben werden?</p>
+<blockquote>
+<p><em>Platzierung im IQB Ländervergleich</em></p>
+</blockquote>
+</p>]]></text>
+</questiontext>
+<penalty>0</penalty>
+<defaultgrade>10</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Nominales Skalenniveau
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+Ordinales Skalenniveau
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Intervallskaliertes Skalenniveau
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R9 Q1 : messtheorie_skalenniveau-erkennen_exams_skalenniveau-erkennen </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Welches Skalenniveau sollte der folgenden Variable sinnvollerweise zugeschrieben werden?</p>
+<blockquote>
+<p><em>Olympische Medaille</em></p>
+</blockquote>
+</p>]]></text>
+</questiontext>
+<penalty>0</penalty>
+<defaultgrade>10</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Nominales Skalenniveau
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+Ordinales Skalenniveau
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Intervallskaliertes Skalenniveau
+</p>]]></text>
+</answer>
+</question>
+
+</quiz>

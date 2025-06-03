@@ -1,0 +1,560 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+
+
+<question type="category">
+<category>
+<text>$course$/teilklausur_bezugsnormen-unterschiede-erkennen/Exercise 1</text>
+</category>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R1 Q1 : messtheorie_bezugsnorm-unterschiede-erkennen_bezugsnorm-unterschiede-erkennen </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Zwei Lehrkräfte bewerten die Leistungen ihrer Schüler:innen in einem Mathematiktest. Lehrperson A prüft, inwiefern die Schüler:innen die im Lehrplan definierten Kompetenzen und Lernziele erreicht haben. Lehrperson B vergleicht die Testleistungen der Schüler:innen miteinander, um zu ermitteln, wer im Vergleich zur Klasse besonders gut oder besonders schlecht abgeschnitten hat.</p>
+<p><strong>Worin unterscheiden sich die Bewertungsmaßstäbe der beiden Lehrkräfte?</strong></p>
+</p>]]></text>
+</questiontext>
+<penalty>0</penalty>
+<defaultgrade>10</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Lehrkraft A verwendet eine individuelle Bezugsnorm, Lehrkraft B eine soziale Bezugsnorm.
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+Lehrkraft A verwendet eine kriteriale Bezugsnorm, Lehrkraft B eine soziale Bezugsnorm.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Lehrkraft A verwendet eine kriteriale Bezugsnorm, Lehrkraft B eine individuelle Bezugsnorm.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Lehrkraft A verwendet eine soziale Bezugsnorm, Lehrkraft B eine individuelle Bezugsnorm.
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R2 Q1 : messtheorie_bezugsnorm-unterschiede-erkennen_bezugsnorm-unterschiede-erkennen </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Zwei Lehrkräfte bewerten die Leistungen ihrer Schüler:innen in einem Mathematiktest. Lehrperson A prüft, inwiefern die Schüler:innen die im Lehrplan definierten Kompetenzen und Lernziele erreicht haben. Lehrperson B vergleicht die aktuellen Testergebnisse mit den Ergebnissen, die die Schüler:innen in früheren Tests erzielt haben, um den individuellen Lernfortschritt zu beurteilen.</p>
+<p><strong>Worin unterscheiden sich die Bewertungsmaßstäbe der beiden Lehrkräfte?</strong></p>
+</p>]]></text>
+</questiontext>
+<penalty>0</penalty>
+<defaultgrade>10</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Lehrkraft A verwendet eine kriteriale Bezugsnorm, Lehrkraft B eine soziale Bezugsnorm.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Lehrkraft A verwendet eine individuelle Bezugsnorm, Lehrkraft B eine soziale Bezugsnorm.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Lehrkraft A verwendet eine individuelle Bezugsnorm, Lehrkraft B eine kriteriale Bezugsnorm.
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+Lehrkraft A verwendet eine kriteriale Bezugsnorm, Lehrkraft B eine individuelle Bezugsnorm.
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R3 Q1 : messtheorie_bezugsnorm-unterschiede-erkennen_bezugsnorm-unterschiede-erkennen </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Zwei Lehrkräfte bewerten die Leistungen ihrer Schüler:innen in einem Mathematiktest. Lehrperson A prüft, inwiefern die Schüler:innen die im Lehrplan definierten Kompetenzen und Lernziele erreicht haben. Lehrperson B vergleicht die Testleistungen der Schüler:innen miteinander, um zu ermitteln, wer im Vergleich zur Klasse besonders gut oder besonders schlecht abgeschnitten hat.</p>
+<p><strong>Worin unterscheiden sich die Bewertungsmaßstäbe der beiden Lehrkräfte?</strong></p>
+</p>]]></text>
+</questiontext>
+<penalty>0</penalty>
+<defaultgrade>10</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Lehrkraft A verwendet eine individuelle Bezugsnorm, Lehrkraft B eine kriteriale Bezugsnorm.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Lehrkraft A verwendet eine soziale Bezugsnorm, Lehrkraft B eine individuelle Bezugsnorm.
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+Lehrkraft A verwendet eine kriteriale Bezugsnorm, Lehrkraft B eine soziale Bezugsnorm.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Lehrkraft A verwendet eine kriteriale Bezugsnorm, Lehrkraft B eine individuelle Bezugsnorm.
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R4 Q1 : messtheorie_bezugsnorm-unterschiede-erkennen_bezugsnorm-unterschiede-erkennen </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Zwei Lehrkräfte bewerten die Leistungen ihrer Schüler:innen in einem Mathematiktest. Lehrperson A vergleicht die aktuellen Testergebnisse mit den Ergebnissen, die die Schüler:innen in früheren Tests erzielt haben, um den individuellen Lernfortschritt zu beurteilen. Lehrperson B prüft, inwiefern die Schüler:innen die im Lehrplan definierten Kompetenzen und Lernziele erreicht haben.</p>
+<p><strong>Worin unterscheiden sich die Bewertungsmaßstäbe der beiden Lehrkräfte?</strong></p>
+</p>]]></text>
+</questiontext>
+<penalty>0</penalty>
+<defaultgrade>10</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Lehrkraft A verwendet eine individuelle Bezugsnorm, Lehrkraft B eine soziale Bezugsnorm.
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+Lehrkraft A verwendet eine individuelle Bezugsnorm, Lehrkraft B eine kriteriale Bezugsnorm.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Lehrkraft A verwendet eine soziale Bezugsnorm, Lehrkraft B eine individuelle Bezugsnorm.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Lehrkraft A verwendet eine kriteriale Bezugsnorm, Lehrkraft B eine soziale Bezugsnorm.
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R5 Q1 : messtheorie_bezugsnorm-unterschiede-erkennen_bezugsnorm-unterschiede-erkennen </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Zwei Lehrkräfte bewerten die Leistungen ihrer Schüler:innen in einem Mathematiktest. Lehrperson A prüft, inwiefern die Schüler:innen die im Lehrplan definierten Kompetenzen und Lernziele erreicht haben. Lehrperson B vergleicht die aktuellen Testergebnisse mit den Ergebnissen, die die Schüler:innen in früheren Tests erzielt haben, um den individuellen Lernfortschritt zu beurteilen.</p>
+<p><strong>Worin unterscheiden sich die Bewertungsmaßstäbe der beiden Lehrkräfte?</strong></p>
+</p>]]></text>
+</questiontext>
+<penalty>0</penalty>
+<defaultgrade>10</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Lehrkraft A verwendet eine soziale Bezugsnorm, Lehrkraft B eine individuelle Bezugsnorm.
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+Lehrkraft A verwendet eine kriteriale Bezugsnorm, Lehrkraft B eine individuelle Bezugsnorm.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Lehrkraft A verwendet eine individuelle Bezugsnorm, Lehrkraft B eine soziale Bezugsnorm.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Lehrkraft A verwendet eine individuelle Bezugsnorm, Lehrkraft B eine kriteriale Bezugsnorm.
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R6 Q1 : messtheorie_bezugsnorm-unterschiede-erkennen_bezugsnorm-unterschiede-erkennen </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Zwei Lehrkräfte bewerten die Leistungen ihrer Schüler:innen in einem Mathematiktest. Lehrperson A vergleicht die aktuellen Testergebnisse mit den Ergebnissen, die die Schüler:innen in früheren Tests erzielt haben, um den individuellen Lernfortschritt zu beurteilen. Lehrperson B prüft, inwiefern die Schüler:innen die im Lehrplan definierten Kompetenzen und Lernziele erreicht haben.</p>
+<p><strong>Worin unterscheiden sich die Bewertungsmaßstäbe der beiden Lehrkräfte?</strong></p>
+</p>]]></text>
+</questiontext>
+<penalty>0</penalty>
+<defaultgrade>10</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+Lehrkraft A verwendet eine individuelle Bezugsnorm, Lehrkraft B eine kriteriale Bezugsnorm.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Lehrkraft A verwendet eine individuelle Bezugsnorm, Lehrkraft B eine soziale Bezugsnorm.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Lehrkraft A verwendet eine soziale Bezugsnorm, Lehrkraft B eine individuelle Bezugsnorm.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Lehrkraft A verwendet eine kriteriale Bezugsnorm, Lehrkraft B eine individuelle Bezugsnorm.
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R7 Q1 : messtheorie_bezugsnorm-unterschiede-erkennen_bezugsnorm-unterschiede-erkennen </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Zwei Lehrkräfte bewerten die Leistungen ihrer Schüler:innen in einem Mathematiktest. Lehrperson A vergleicht die aktuellen Testergebnisse mit den Ergebnissen, die die Schüler:innen in früheren Tests erzielt haben, um den individuellen Lernfortschritt zu beurteilen. Lehrperson B vergleicht die Testleistungen der Schüler:innen miteinander, um zu ermitteln, wer im Vergleich zur Klasse besonders gut oder besonders schlecht abgeschnitten hat.</p>
+<p><strong>Worin unterscheiden sich die Bewertungsmaßstäbe der beiden Lehrkräfte?</strong></p>
+</p>]]></text>
+</questiontext>
+<penalty>0</penalty>
+<defaultgrade>10</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Lehrkraft A verwendet eine individuelle Bezugsnorm, Lehrkraft B eine kriteriale Bezugsnorm.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Lehrkraft A verwendet eine kriteriale Bezugsnorm, Lehrkraft B eine individuelle Bezugsnorm.
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+Lehrkraft A verwendet eine individuelle Bezugsnorm, Lehrkraft B eine soziale Bezugsnorm.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Lehrkraft A verwendet eine soziale Bezugsnorm, Lehrkraft B eine kriteriale Bezugsnorm.
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R8 Q1 : messtheorie_bezugsnorm-unterschiede-erkennen_bezugsnorm-unterschiede-erkennen </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Zwei Lehrkräfte bewerten die Leistungen ihrer Schüler:innen in einem Mathematiktest. Lehrperson A prüft, inwiefern die Schüler:innen die im Lehrplan definierten Kompetenzen und Lernziele erreicht haben. Lehrperson B vergleicht die Testleistungen der Schüler:innen miteinander, um zu ermitteln, wer im Vergleich zur Klasse besonders gut oder besonders schlecht abgeschnitten hat.</p>
+<p><strong>Worin unterscheiden sich die Bewertungsmaßstäbe der beiden Lehrkräfte?</strong></p>
+</p>]]></text>
+</questiontext>
+<penalty>0</penalty>
+<defaultgrade>10</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Lehrkraft A verwendet eine soziale Bezugsnorm, Lehrkraft B eine kriteriale Bezugsnorm.
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+Lehrkraft A verwendet eine kriteriale Bezugsnorm, Lehrkraft B eine soziale Bezugsnorm.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Lehrkraft A verwendet eine individuelle Bezugsnorm, Lehrkraft B eine soziale Bezugsnorm.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Lehrkraft A verwendet eine soziale Bezugsnorm, Lehrkraft B eine individuelle Bezugsnorm.
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R9 Q1 : messtheorie_bezugsnorm-unterschiede-erkennen_bezugsnorm-unterschiede-erkennen </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Zwei Lehrkräfte bewerten die Leistungen ihrer Schüler:innen in einem Mathematiktest. Lehrperson A vergleicht die Testleistungen der Schüler:innen miteinander, um zu ermitteln, wer im Vergleich zur Klasse besonders gut oder besonders schlecht abgeschnitten hat. Lehrperson B prüft, inwiefern die Schüler:innen die im Lehrplan definierten Kompetenzen und Lernziele erreicht haben.</p>
+<p><strong>Worin unterscheiden sich die Bewertungsmaßstäbe der beiden Lehrkräfte?</strong></p>
+</p>]]></text>
+</questiontext>
+<penalty>0</penalty>
+<defaultgrade>10</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Lehrkraft A verwendet eine individuelle Bezugsnorm, Lehrkraft B eine kriteriale Bezugsnorm.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Lehrkraft A verwendet eine individuelle Bezugsnorm, Lehrkraft B eine soziale Bezugsnorm.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Lehrkraft A verwendet eine kriteriale Bezugsnorm, Lehrkraft B eine soziale Bezugsnorm.
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+Lehrkraft A verwendet eine soziale Bezugsnorm, Lehrkraft B eine kriteriale Bezugsnorm.
+</p>]]></text>
+</answer>
+</question>
+
+</quiz>

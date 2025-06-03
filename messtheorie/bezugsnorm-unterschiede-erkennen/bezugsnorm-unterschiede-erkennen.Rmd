@@ -1,0 +1,82 @@
+```{r data generation, echo = FALSE, results = "hide", warning=F, message=F}
+library(tidyverse)
+library(exams)
+
+soz_kri_ind <- sample(c("soziale", "kriteriale", "individuelle"), 3)
+
+question_string_part1 <- "Zwei Lehrkräfte bewerten die Leistungen ihrer Schüler:innen in einem Mathematiktest."
+
+comparison <- tibble(
+  soz = "vergleicht die Testleistungen der Schüler:innen miteinander, um zu ermitteln, wer im Vergleich zur Klasse besonders gut oder besonders schlecht abgeschnitten hat.",
+  ind = "vergleicht die aktuellen Testergebnisse mit den Ergebnissen, die die Schüler:innen in früheren Tests erzielt haben, um den individuellen Lernfortschritt zu beurteilen.",
+  kri = "prüft, inwiefern die Schüler:innen die im Lehrplan definierten Kompetenzen und Lernziele erreicht haben."
+)
+
+question_string_part2 <- paste("Lehrperson A",
+                               comparison %>% pull(substr(soz_kri_ind[1],1,3)),
+                               "Lehrperson B",
+                               comparison %>% pull(substr(soz_kri_ind[2],1,3))
+)
+
+answerlist_data <- tibble(
+  answerlist = c(paste0("Lehrkraft A verwendet eine ",
+                     soz_kri_ind[1],
+                     " Bezugsnorm, Lehrkraft B eine ",
+                     soz_kri_ind[2],
+                     " Bezugsnorm."),
+              paste0("Lehrkraft A verwendet eine ",
+                     soz_kri_ind[1],
+                     " Bezugsnorm, Lehrkraft B eine ",
+                     soz_kri_ind[3],
+                     " Bezugsnorm."),
+              paste0("Lehrkraft A verwendet eine ",
+                     soz_kri_ind[2],
+                     " Bezugsnorm, Lehrkraft B eine ",
+                     soz_kri_ind[1],
+                     " Bezugsnorm."),
+              paste0("Lehrkraft A verwendet eine ",
+                     soz_kri_ind[2],
+                     " Bezugsnorm, Lehrkraft B eine ",
+                     soz_kri_ind[3],
+                     " Bezugsnorm."),
+              paste0("Lehrkraft A verwendet eine ",
+                     soz_kri_ind[3],
+                     " Bezugsnorm, Lehrkraft B eine ",
+                     soz_kri_ind[1],
+                     " Bezugsnorm."),
+              paste0("Lehrkraft A verwendet eine ",
+                     soz_kri_ind[3],
+                     " Bezugsnorm, Lehrkraft B eine ",
+                     soz_kri_ind[2],
+                     " Bezugsnorm.")
+  ),
+  exsolution = c(T, rep(F, 5))
+) |>
+  slice(1, sample(2:6,3))
+
+```
+
+
+Question
+========
+`r paste(question_string_part1, question_string_part2)`
+
+**Worin unterscheiden sich die Bewertungsmaßstäbe der beiden Lehrkräfte?**
+  
+  
+```{r echo=FALSE, results='asis'}
+answerlist(
+  answerlist_data$answerlist,
+  markup = "markdown"
+)
+```
+
+
+
+
+Meta-information
+================
+  exname: Unterschied_wiss_Guetekrit_erkennen
+extype: schoice
+exsolution: `r mchoice2string(answerlist_data$exsolution)`
+exshuffle: true

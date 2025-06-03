@@ -1,5 +1,5 @@
 
-```{r, echo=FALSE, results='hide', message=FALSE}
+```{r, echo=FALSE, results='hide', message=FALSE, warning=FALSE}
 library(tidyverse)
 library(exams)
 
@@ -38,7 +38,7 @@ soz <-
       
 kri <-
   sample(
-    c("Die große Mehrheit der Schüler:innen befinden sich weit über dem Grundanspruch/Mindeststandard für eine 9. Klasse.",
+    c("Die große Mehrheit der Schüler:innen befindet sich weit über dem Grundanspruch/Mindeststandard für eine 9. Klasse.",
       "Die meisten Schüler:innen erfüllen den Anspruch oder sind sogar darüber.",
       "Schüler:in X kann den Text über Napoleon in einer Minute fehlerfrei abschreiben.",
       "Schüler:in X kann chemische Reaktionen von Aggregatszustandsänderungen unterscheiden.",
@@ -46,16 +46,16 @@ kri <-
     ),
     5)
 
-# randomize 4th item
-# fourth_item <- sample(c("ind", "kri", "soz"), 1)
+# 4th item
+ fourth_item <- substr(ind_soz_kri, 1, 3)
 
 answerlist_data <- 
   tibble(
-    answerlist = c(ind[1], kri[1], soz[1]), #,
-                  # ifelse(fourth_item == "ind", ind[2],
-                   #       ifelse(fourth_item == "kri", kri[2], 
-                    #             soz[2]))),
-    exsolution = c("ind", "kri", "soz")#, fourth_item)
+    answerlist = c(ind[1], kri[1], soz[1], 
+                   ifelse(fourth_item == "ind", ind[2],
+                          ifelse(fourth_item == "kri", kri[2], 
+                                 soz[2]))),
+    exsolution = c("ind", "kri", "soz", fourth_item)
     )
   
 
@@ -78,5 +78,6 @@ answerlist(
 Meta-information
 ================
 exname: Bezugsnorm erkennen
-extype: schoice
+extype: mchoice
 exsolution: `r mchoice2string(answerlist_data$exsolution == substr(ind_soz_kri, 1, 3))`
+exshuffle: true

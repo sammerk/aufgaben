@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+
+
+<question type="category">
+<category>
+<text>$course$/teilklausur_mean-median-berechnen/Exercise 1</text>
+</category>
+</question>
+
+
+<question type="cloze">
+<name>
+<text> R1 Q1 : verteilungen_Mean-Median-berechnen_Mean_Median_berechnen </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Berechnen Sie <strong>den Median</strong> der Datenreihe Y = (54, 56, 84, 8, 14, 96).</p>
+<p>(Runden Sie ggf. auf zwei Dezimalstellen und verwenden Sie “,” als Dezimaltrennzeichen)</p>
+<p> {10:NUMERICAL:=55:0~%50%55:0.01}</p>
+</p>]]></text>
+</questiontext>
+<penalty>0</penalty>
+<defaultgrade>10</defaultgrade>
+</question>
+
+
+<question type="cloze">
+<name>
+<text> R2 Q1 : verteilungen_Mean-Median-berechnen_Mean_Median_berechnen </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Berechnen Sie <strong>den Median</strong> der Datenreihe Y = (24, 12, 87, 5, 23, 4).</p>
+<p>(Runden Sie ggf. auf zwei Dezimalstellen und verwenden Sie “,” als Dezimaltrennzeichen)</p>
+<p> {10:NUMERICAL:=17.5:0~%50%17.5:0.01}</p>
+</p>]]></text>
+</questiontext>
+<penalty>0</penalty>
+<defaultgrade>10</defaultgrade>
+</question>
+
+
+<question type="cloze">
+<name>
+<text> R3 Q1 : verteilungen_Mean-Median-berechnen_Mean_Median_berechnen </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Berechnen Sie <strong>das arithmetische Mittel (Mean)</strong> der Datenreihe Y = (33, 99, 40, 75, 81, 29).</p>
+<p>(Runden Sie ggf. auf zwei Dezimalstellen und verwenden Sie “,” als Dezimaltrennzeichen)</p>
+<p> {10:NUMERICAL:=59.5:0~%50%59.5:0.01}</p>
+</p>]]></text>
+</questiontext>
+<penalty>0</penalty>
+<defaultgrade>10</defaultgrade>
+</question>
+
+
+<question type="cloze">
+<name>
+<text> R4 Q1 : verteilungen_Mean-Median-berechnen_Mean_Median_berechnen </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Berechnen Sie <strong>den Median</strong> der Datenreihe Y = (13, 87, 26, 11, 97, 59).</p>
+<p>(Runden Sie ggf. auf zwei Dezimalstellen und verwenden Sie “,” als Dezimaltrennzeichen)</p>
+<p> {10:NUMERICAL:=42.5:0~%50%42.5:0.01}</p>
+</p>]]></text>
+</questiontext>
+<penalty>0</penalty>
+<defaultgrade>10</defaultgrade>
+</question>
+
+
+<question type="cloze">
+<name>
+<text> R5 Q1 : verteilungen_Mean-Median-berechnen_Mean_Median_berechnen </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Berechnen Sie <strong>den Median</strong> der Datenreihe Y = (55, 42, 23, 77, 12, 19).</p>
+<p>(Runden Sie ggf. auf zwei Dezimalstellen und verwenden Sie “,” als Dezimaltrennzeichen)</p>
+<p> {10:NUMERICAL:=32.5:0~%50%32.5:0.01}</p>
+</p>]]></text>
+</questiontext>
+<penalty>0</penalty>
+<defaultgrade>10</defaultgrade>
+</question>
+
+
+<question type="cloze">
+<name>
+<text> R6 Q1 : verteilungen_Mean-Median-berechnen_Mean_Median_berechnen </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Berechnen Sie <strong>das arithmetische Mittel (Mean)</strong> der Datenreihe Y = (65, 8, 85, 45, 93, 67).</p>
+<p>(Runden Sie ggf. auf zwei Dezimalstellen und verwenden Sie “,” als Dezimaltrennzeichen)</p>
+<p> {10:NUMERICAL:=60.5:0~%50%60.5:0.01}</p>
+</p>]]></text>
+</questiontext>
+<penalty>0</penalty>
+<defaultgrade>10</defaultgrade>
+</question>
+
+
+<question type="cloze">
+<name>
+<text> R7 Q1 : verteilungen_Mean-Median-berechnen_Mean_Median_berechnen </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Berechnen Sie <strong>das arithmetische Mittel (Mean)</strong> der Datenreihe Y = (56, 2, 1, 93, 87, 19).</p>
+<p>(Runden Sie ggf. auf zwei Dezimalstellen und verwenden Sie “,” als Dezimaltrennzeichen)</p>
+<p> {10:NUMERICAL:=43:0~%50%43:0.01}</p>
+</p>]]></text>
+</questiontext>
+<penalty>0</penalty>
+<defaultgrade>10</defaultgrade>
+</question>
+
+
+<question type="cloze">
+<name>
+<text> R8 Q1 : verteilungen_Mean-Median-berechnen_Mean_Median_berechnen </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Berechnen Sie <strong>den Median</strong> der Datenreihe Y = (75, 62, 30, 44, 76, 84).</p>
+<p>(Runden Sie ggf. auf zwei Dezimalstellen und verwenden Sie “,” als Dezimaltrennzeichen)</p>
+<p> {10:NUMERICAL:=68.5:0~%50%68.5:0.01}</p>
+</p>]]></text>
+</questiontext>
+<penalty>0</penalty>
+<defaultgrade>10</defaultgrade>
+</question>
+
+
+<question type="cloze">
+<name>
+<text> R9 Q1 : verteilungen_Mean-Median-berechnen_Mean_Median_berechnen </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Berechnen Sie <strong>das arithmetische Mittel (Mean)</strong> der Datenreihe Y = (74, 80, 53, 4, 63, 78).</p>
+<p>(Runden Sie ggf. auf zwei Dezimalstellen und verwenden Sie “,” als Dezimaltrennzeichen)</p>
+<p> {10:NUMERICAL:=58.67:0~%50%58.67:0.01}</p>
+</p>]]></text>
+</questiontext>
+<penalty>0</penalty>
+<defaultgrade>10</defaultgrade>
+</question>
+
+</quiz>

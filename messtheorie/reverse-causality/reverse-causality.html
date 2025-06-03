@@ -11,7 +11,7 @@
 
 
 
-<title>bezugsnormen-erkennen.knit</title>
+<title>reverse-causality.knit</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -354,26 +354,71 @@ display: none;
 
 <div id="question" class="section level1">
 <h1>Question</h1>
-<p>Welche der folgenden Aussagen können der sozialen Bezugsnorm
-zugeordnet werden?</p>
+<div id="kausalität" class="section level3">
+<h3>Kausalität</h3>
+<p>Sie haben einen querschnittlichen Datensatz mit <em>N</em> = 250
+Beobachtungen, in welchem höhere Ausprägungen der <strong>Variablen
+A</strong> mit höheren Ausprägungen <strong>der Variablen B</strong>
+einhergehen.</p>
+<blockquote>
+<p>Welche Hypothesen stehen im Einklang mit dieser Beobachtung?
+(Mehrfachnennungen möglich.)</p>
+</blockquote>
+</div>
 <div id="answerlist" class="section level2">
 <h2>Answerlist</h2>
 <ul>
-<li>Im Test zeigt sich, dass Schüler:in X eine Verbesserung erfuhr, vor
-allem von Woche 4 zu Woche 6.</li>
-<li>Die meisten Schüler:innen erfüllen den Anspruch oder sind sogar
-darüber.</li>
-<li>Diese Klasse scheint besser abgeschnitten zu haben als die
-Vergleichsgruppe, beziehend auf die mittleren 50%.</li>
-<li>Es gibt nur wenige Ausreißer von den anderen weg nach unten hin,
-aber einige davon sind gravierend.</li>
+<li>A beeinflusst B.</li>
+<li>B beeinflusst A.</li>
+<li>Eine Drittvariable C beeinflusst sowohl A als auch B.</li>
+<li>Die beobachtete Assoziation ist stichprobenbedingter Zufall.</li>
+<li>Die Korrelation beweist, dass A → B (A verursacht B direkt)
+gilt.</li>
+<li>Eine Scheinkorrelation kann ausgeschlossen werden, weil Variablen A
+und B im selben Fragebogen erhoben wurden.</li>
+<li>Ein Mediator M erklärt den Zusammenhang, indem er den Effekt von A
+auf B vollständig aufhebt – erst dadurch entsteht die positive
+Korrelation.<br />
+</li>
+<li>Da die Stichprobe groß ist, kann die Korrelation nicht zufällig
+sein.</li>
+</ul>
+</div>
+</div>
+<div id="solution" class="section level1">
+<h1>Solution</h1>
+<div id="answerlist-1" class="section level2">
+<h2>Answerlist</h2>
+<ul>
+<li>True. Bei einer (reinen) Korrelation zwischen A und B ist es
+möglich, dass A B beeinflusst, aber auch die Alternative ist
+möglich.</li>
+<li>True. Bei einer Korrelation zwischen B und A ist es möglich, dass B
+A beeinflusst, aber auch die Alternative ist möglich.</li>
+<li>True. Eine Drittvariable C kann sowohl A als auch B beeinflussen,
+was zu einer Korrelation zwischen A und B führt (sog. Scheinkorrelation
+aufgrund eines Confounders).</li>
+<li>True. Eine Korrelation kann auch zufällig sein, insbesondere bei
+kleinen Stichproben.</li>
+<li>False. Die Korrelation allein beweist nicht, dass A B verursacht. Es
+könnte auch eine umgekehrte Kausalität oder eine Drittvariable C
+vorliegen.</li>
+<li>False. Eine Scheinkorrelation kann nicht ausgeschlossen werden, nur
+weil A und B im selben Fragebogen erhoben wurden. Es könnte immer noch
+eine Drittvariable C geben, die beide Variablen beeinflusst.</li>
+<li>False. Würde der Mediator M den Zusammenhang vollständig aufheben,
+würde die Korrelation zwischen A und B verschwinden. E</li>
+<li>False. Eine große Stichprobe verringert zwar die Wahrscheinlichkeit,
+dass eine Korrelation rein zufällig auftritt, aber sie beweist nicht,
+dass die Korrelation nicht zufällig ist. Anders gesagt: auch in großen
+Stichproben können zufallsbedingte Korrelationen auftreten.</li>
 </ul>
 </div>
 </div>
 <div id="meta-information" class="section level1">
 <h1>Meta-information</h1>
-<p>exname: Bezugsnorm erkennen extype: mchoice exsolution: 0011
-exshuffle: true</p>
+<p>exname: reverse-causality extype: mchoice exsolution: 11110000
+exshuffle: 4</p>
 </div>
 
 

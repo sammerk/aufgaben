@@ -1,0 +1,578 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+
+
+<question type="category">
+<category>
+<text>$course$/teilklausur_unterschiede-guetekriterien-erkennen/Exercise 1</text>
+</category>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R1 Q1 : messtheorie_guetekriterien-unterschied-erkennen_Unterschied_Guetekrit_erkennen_r </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Zwei Forschungsteams untersuchen den Einfluss des Mathematik-Interesses der Eltern auf die Anstrengungsbereitschaft ihrer Kinder im Mathematikunterricht.
+Forschungsteam A setzt ein Messinstrument für die Erfassung des elterlichen Mathematik-Interesses ein, dessen Messergebnis durch einen hohen Anteil an Messfehlern verfälscht ist.
+Forschungsteam B nutzt ein Messinstrument, das von Messfehlerfreiheit gekennzeichnet ist.</p>
+<p><strong>Worin unterscheiden sich die beschriebenen Messinstrumente von Gruppe A und B?</strong></p>
+</p>]]></text>
+</questiontext>
+<penalty>0</penalty>
+<defaultgrade>10</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+(Konstrukt-)Validität
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+Reliabilität
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Präsentationsqualität
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Objektivität
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R2 Q1 : messtheorie_guetekriterien-unterschied-erkennen_Unterschied_Guetekrit_erkennen_r </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Zwei Forschungsteams untersuchen den Einfluss des Mathematik-Interesses der Eltern auf die Anstrengungsbereitschaft ihrer Kinder im Mathematikunterricht.
+Forschungsteam A entscheidet sich für den Einsatz eines Messinstruments, das eine Differenzierung des elterlichen Mathematik-Interesses in Subdimensionen ermöglicht. Erwartungskonform stehen die Subdimensionen in Zusammenhang zueinander.
+Forschungsteam B setzt ein Messinstrument ein, das dieselben Subdimensionen misst, findet aber ein ungewöhnliches, den Erwartungen widersprechendes Muster der einzelnen Subdimensionen zueinander.</p>
+<p><strong>Worin unterscheiden sich die beschriebenen Messinstrumente von Gruppe A und B?</strong></p>
+</p>]]></text>
+</questiontext>
+<penalty>0</penalty>
+<defaultgrade>10</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Objektivität
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Reliabilität
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Präsentationsqualität
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+(Konstrukt-)Validität
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R3 Q1 : messtheorie_guetekriterien-unterschied-erkennen_Unterschied_Guetekrit_erkennen_r </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Zwei Forschungsteams untersuchen den Einfluss des Mathematik-Interesses der Eltern auf die Anstrengungsbereitschaft ihrer Kinder im Mathematikunterricht.
+Forschungsteam A setzt ein Messinstrument für die Erfassung des elterlichen Mathematik-Interesses ein, dessen Messergebnis durch einen hohen Anteil an Messfehlern verfälscht ist.
+Forschungsteam B nutzt ein Messinstrument, das von Messfehlerfreiheit gekennzeichnet ist.</p>
+<p><strong>Worin unterscheiden sich die beschriebenen Messinstrumente von Gruppe A und B?</strong></p>
+</p>]]></text>
+</questiontext>
+<penalty>0</penalty>
+<defaultgrade>10</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+(Konstrukt-)Validität
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+Reliabilität
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Präsentationsqualität
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Objektivität
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R4 Q1 : messtheorie_guetekriterien-unterschied-erkennen_Unterschied_Guetekrit_erkennen_r </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Zwei Forschungsteams untersuchen den Einfluss des Mathematik-Interesses der Eltern auf die Anstrengungsbereitschaft ihrer Kinder im Mathematikunterricht.
+Forschungsteam A entscheidet sich für den Einsatz eines Messinstruments, das eine Differenzierung des elterlichen Mathematik-Interesses in Subdimensionen ermöglicht. Erwartungskonform stehen die Subdimensionen in Zusammenhang zueinander.
+Forschungsteam B setzt ein Messinstrument ein, das dieselben Subdimensionen misst, findet aber ein ungewöhnliches, den Erwartungen widersprechendes Muster der einzelnen Subdimensionen zueinander.</p>
+<p><strong>Worin unterscheiden sich die beschriebenen Messinstrumente von Gruppe A und B?</strong></p>
+</p>]]></text>
+</questiontext>
+<penalty>0</penalty>
+<defaultgrade>10</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Reliabilität
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Präsentationsqualität
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+(Konstrukt-)Validität
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Objektivität
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R5 Q1 : messtheorie_guetekriterien-unterschied-erkennen_Unterschied_Guetekrit_erkennen_r </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Zwei Forschungsteams untersuchen den Einfluss des Mathematik-Interesses der Eltern auf die Anstrengungsbereitschaft ihrer Kinder im Mathematikunterricht.
+Forschungsgruppe A setzt ein Instrument zur Messung des elterlichen Mathematik-Interesses ein, das sensibel darauf reagiert, wer diese Messung durchführt.
+Das Instrument von Forschungsgruppe B führt zu Messergebnissen, die unabhängig von der durchführenden Person sind.</p>
+<p><strong>Worin unterscheiden sich die beschriebenen Messinstrumente von Gruppe A und B?</strong></p>
+</p>]]></text>
+</questiontext>
+<penalty>0</penalty>
+<defaultgrade>10</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Präsentationsqualität
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Reliabilität
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+(Konstrukt-)Validität
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+Objektivität
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R6 Q1 : messtheorie_guetekriterien-unterschied-erkennen_Unterschied_Guetekrit_erkennen_r </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Zwei Forschungsteams untersuchen den Einfluss von Störungen im Unterricht auf die Lehrer:innen-Schüler:innen-Beziehung.
+Forschungsteam A entscheidet sich für den Einsatz eines Messinstruments, das eine Differenzierung von Störungen im Unterricht in Subdimensionen ermöglicht. Erwartungskonform stehen die Subdimensionen in Zusammenhang zueinander.
+Forschungsteam B setzt ein Messinstrument ein, das dieselben Subdimensionen misst, findet aber ein ungewöhnliches, den Erwartungen widersprechendes Muster der einzelnen Subdimensionen zueinander.</p>
+<p><strong>Worin unterscheiden sich die beschriebenen Messinstrumente von Gruppe A und B?</strong></p>
+</p>]]></text>
+</questiontext>
+<penalty>0</penalty>
+<defaultgrade>10</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Objektivität
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+(Konstrukt-)Validität
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Präsentationsqualität
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Reliabilität
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R7 Q1 : messtheorie_guetekriterien-unterschied-erkennen_Unterschied_Guetekrit_erkennen_r </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Zwei Forschungsteams untersuchen den Einfluss des akademischen Selbstkonzepts von Erstsemester-Studierenden auf deren Wohlbefinden.
+Forschungsteam A setzt ein Messinstrument für die Erfassung des akademischen Selbstkonzepts ein, dessen Messergebnis durch einen hohen Anteil an Messfehlern verfälscht ist.
+Forschungsteam B nutzt ein Messinstrument, das von Messfehlerfreiheit gekennzeichnet ist.</p>
+<p><strong>Worin unterscheiden sich die beschriebenen Messinstrumente von Gruppe A und B?</strong></p>
+</p>]]></text>
+</questiontext>
+<penalty>0</penalty>
+<defaultgrade>10</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+Reliabilität
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Präsentationsqualität
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Objektivität
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+(Konstrukt-)Validität
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R8 Q1 : messtheorie_guetekriterien-unterschied-erkennen_Unterschied_Guetekrit_erkennen_r </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Zwei Forschungsteams untersuchen den Einfluss des Mathematik-Interesses der Eltern auf die Anstrengungsbereitschaft ihrer Kinder im Mathematikunterricht.
+Forschungsgruppe A setzt ein Instrument zur Messung des elterlichen Mathematik-Interesses ein, das sensibel darauf reagiert, wer diese Messung durchführt.
+Das Instrument von Forschungsgruppe B führt zu Messergebnissen, die unabhängig von der durchführenden Person sind.</p>
+<p><strong>Worin unterscheiden sich die beschriebenen Messinstrumente von Gruppe A und B?</strong></p>
+</p>]]></text>
+</questiontext>
+<penalty>0</penalty>
+<defaultgrade>10</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+Objektivität
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Präsentationsqualität
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+(Konstrukt-)Validität
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Reliabilität
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R9 Q1 : messtheorie_guetekriterien-unterschied-erkennen_Unterschied_Guetekrit_erkennen_r </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Zwei Forschungsteams untersuchen den Einfluss von Störungen im Unterricht auf die Lehrer:innen-Schüler:innen-Beziehung.
+Forschungsgruppe A setzt ein Instrument zur Messung von Störungen im Unterricht ein, das sensibel darauf reagiert, wer diese Messung durchführt.
+Das Instrument von Forschungsgruppe B führt zu Messergebnissen, die unabhängig von der durchführenden Person sind.</p>
+<p><strong>Worin unterscheiden sich die beschriebenen Messinstrumente von Gruppe A und B?</strong></p>
+</p>]]></text>
+</questiontext>
+<penalty>0</penalty>
+<defaultgrade>10</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+(Konstrukt-)Validität
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Reliabilität
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Präsentationsqualität
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+Objektivität
+</p>]]></text>
+</answer>
+</question>
+
+</quiz>
