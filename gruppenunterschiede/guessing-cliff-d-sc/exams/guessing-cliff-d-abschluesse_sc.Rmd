@@ -62,7 +62,7 @@ plot <-
       ggtitle("Höchster Bildungsabschluss", "in zwei Gruppen") +
       theme(axis.text.x = element_text(angle = 30, vjust = 1, hjust=1))
 
-cld <-  -1*effsize::cliff.delta(Abschlüsse_num ~ Gruppe, 
+cld <-  effsize::cliff.delta(Abschlüsse_num ~ Gruppe, 
                                 data = data %>% 
                                   mutate(Abschlüsse_num = as.numeric(Abschlüsse)))$estimate %>% 
       round(., 2)
