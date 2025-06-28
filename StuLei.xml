@@ -1,0 +1,1051 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+
+
+<question type="category">
+<category>
+<text>$course$/StuLei/Exercise 1</text>
+</category>
+</question>
+
+
+<question type="essay">
+<name>
+<text> R01 Q1 : _Users_samuelmerk_Nextcloud_Lehre_aufgaben_Lesefoerderung_Studienleistung_Studienleistung_exams </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>In folgender Abbildung finden Sie Leselernverläufe einer Schülerin bzw. eines Schülers, dargestellt als Messwerte der Lesegenauigkeit, Leseflüssigkeit und Leseverständnis vor repräsentativen 59% Perzentilbändern.</p>
+<div class="float">
+<img src="LV_SL19.png" style="width:90.0%" alt="Leselernverlauf" />
+<div class="figcaption">Leselernverlauf</div>
+</div>
+<ol style="list-style-type: decimal">
+<li>Beschreiben Sie die Leselernverläufe der Schülerin bzw. des Schülers unter Verwendung der individuellen <strong>und</strong> der sozialen Bezugsnorm.</li>
+<li>Erläutern Sie, welche diagnostischen Schlüsse Sie aus den Leselernverläufen ziehen können.</li>
+<li>Beschreiben Sie eine evidenzbasierte Methode zur Förderung des Schülers bzw. der Schülerin</li>
+</ol>
+</p>]]></text>
+</questiontext>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<responseformat>plain</responseformat>
+<responserequired>1</responserequired>
+<responsefieldlines>5</responsefieldlines>
+<attachments>0</attachments>
+<attachmentsrequired>0</attachmentsrequired>
+
+</question>
+
+
+<question type="essay">
+<name>
+<text> R02 Q1 : _Users_samuelmerk_Nextcloud_Lehre_aufgaben_Lesefoerderung_Studienleistung_Studienleistung_exams </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>In folgender Abbildung finden Sie Leselernverläufe einer Schülerin bzw. eines Schülers, dargestellt als Messwerte der Lesegenauigkeit, Leseflüssigkeit und Leseverständnis vor repräsentativen 73% Perzentilbändern.</p>
+<div class="float">
+<img src="LV_SL18.png" style="width:90.0%" alt="Leselernverlauf" />
+<div class="figcaption">Leselernverlauf</div>
+</div>
+<ol style="list-style-type: decimal">
+<li>Beschreiben Sie die Leselernverläufe der Schülerin bzw. des Schülers unter Verwendung der individuellen <strong>und</strong> der sozialen Bezugsnorm.</li>
+<li>Erläutern Sie, welche diagnostischen Schlüsse Sie aus den Leselernverläufen ziehen können.</li>
+<li>Beschreiben Sie eine evidenzbasierte Methode zur Förderung des Schülers bzw. der Schülerin</li>
+</ol>
+</p>]]></text>
+</questiontext>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<responseformat>plain</responseformat>
+<responserequired>1</responserequired>
+<responsefieldlines>5</responsefieldlines>
+<attachments>0</attachments>
+<attachmentsrequired>0</attachmentsrequired>
+
+</question>
+
+
+<question type="essay">
+<name>
+<text> R03 Q1 : _Users_samuelmerk_Nextcloud_Lehre_aufgaben_Lesefoerderung_Studienleistung_Studienleistung_exams </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>In folgender Abbildung finden Sie Leselernverläufe einer Schülerin bzw. eines Schülers, dargestellt als Messwerte der Lesegenauigkeit, Leseflüssigkeit und Leseverständnis vor repräsentativen 71% Perzentilbändern.</p>
+<div class="float">
+<img src="LV_SL2.png" style="width:90.0%" alt="Leselernverlauf" />
+<div class="figcaption">Leselernverlauf</div>
+</div>
+<ol style="list-style-type: decimal">
+<li>Beschreiben Sie die Leselernverläufe der Schülerin bzw. des Schülers unter Verwendung der individuellen <strong>und</strong> der sozialen Bezugsnorm.</li>
+<li>Erläutern Sie, welche diagnostischen Schlüsse Sie aus den Leselernverläufen ziehen können.</li>
+<li>Beschreiben Sie eine evidenzbasierte Methode zur Förderung des Schülers bzw. der Schülerin</li>
+</ol>
+</p>]]></text>
+</questiontext>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<responseformat>plain</responseformat>
+<responserequired>1</responserequired>
+<responsefieldlines>5</responsefieldlines>
+<attachments>0</attachments>
+<attachmentsrequired>0</attachmentsrequired>
+
+</question>
+
+
+<question type="essay">
+<name>
+<text> R04 Q1 : _Users_samuelmerk_Nextcloud_Lehre_aufgaben_Lesefoerderung_Studienleistung_Studienleistung_exams </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>In folgender Abbildung finden Sie Leselernverläufe einer Schülerin bzw. eines Schülers, dargestellt als Messwerte der Lesegenauigkeit, Leseflüssigkeit und Leseverständnis vor repräsentativen 66% Perzentilbändern.</p>
+<div class="float">
+<img src="LV_SL12.png" style="width:90.0%" alt="Leselernverlauf" />
+<div class="figcaption">Leselernverlauf</div>
+</div>
+<ol style="list-style-type: decimal">
+<li>Beschreiben Sie die Leselernverläufe der Schülerin bzw. des Schülers unter Verwendung der individuellen <strong>und</strong> der sozialen Bezugsnorm.</li>
+<li>Erläutern Sie, welche diagnostischen Schlüsse Sie aus den Leselernverläufen ziehen können.</li>
+<li>Beschreiben Sie eine evidenzbasierte Methode zur Förderung des Schülers bzw. der Schülerin</li>
+</ol>
+</p>]]></text>
+</questiontext>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<responseformat>plain</responseformat>
+<responserequired>1</responserequired>
+<responsefieldlines>5</responsefieldlines>
+<attachments>0</attachments>
+<attachmentsrequired>0</attachmentsrequired>
+
+</question>
+
+
+<question type="essay">
+<name>
+<text> R05 Q1 : _Users_samuelmerk_Nextcloud_Lehre_aufgaben_Lesefoerderung_Studienleistung_Studienleistung_exams </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>In folgender Abbildung finden Sie Leselernverläufe einer Schülerin bzw. eines Schülers, dargestellt als Messwerte der Lesegenauigkeit, Leseflüssigkeit und Leseverständnis vor repräsentativen 81% Perzentilbändern.</p>
+<div class="float">
+<img src="LV_SL18.png" style="width:90.0%" alt="Leselernverlauf" />
+<div class="figcaption">Leselernverlauf</div>
+</div>
+<ol style="list-style-type: decimal">
+<li>Beschreiben Sie die Leselernverläufe der Schülerin bzw. des Schülers unter Verwendung der individuellen <strong>und</strong> der sozialen Bezugsnorm.</li>
+<li>Erläutern Sie, welche diagnostischen Schlüsse Sie aus den Leselernverläufen ziehen können.</li>
+<li>Beschreiben Sie eine evidenzbasierte Methode zur Förderung des Schülers bzw. der Schülerin</li>
+</ol>
+</p>]]></text>
+</questiontext>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<responseformat>plain</responseformat>
+<responserequired>1</responserequired>
+<responsefieldlines>5</responsefieldlines>
+<attachments>0</attachments>
+<attachmentsrequired>0</attachmentsrequired>
+
+</question>
+
+
+<question type="essay">
+<name>
+<text> R06 Q1 : _Users_samuelmerk_Nextcloud_Lehre_aufgaben_Lesefoerderung_Studienleistung_Studienleistung_exams </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>In folgender Abbildung finden Sie Leselernverläufe einer Schülerin bzw. eines Schülers, dargestellt als Messwerte der Lesegenauigkeit, Leseflüssigkeit und Leseverständnis vor repräsentativen 87% Perzentilbändern.</p>
+<div class="float">
+<img src="LV_SL17.png" style="width:90.0%" alt="Leselernverlauf" />
+<div class="figcaption">Leselernverlauf</div>
+</div>
+<ol style="list-style-type: decimal">
+<li>Beschreiben Sie die Leselernverläufe der Schülerin bzw. des Schülers unter Verwendung der individuellen <strong>und</strong> der sozialen Bezugsnorm.</li>
+<li>Erläutern Sie, welche diagnostischen Schlüsse Sie aus den Leselernverläufen ziehen können.</li>
+<li>Beschreiben Sie eine evidenzbasierte Methode zur Förderung des Schülers bzw. der Schülerin</li>
+</ol>
+</p>]]></text>
+</questiontext>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<responseformat>plain</responseformat>
+<responserequired>1</responserequired>
+<responsefieldlines>5</responsefieldlines>
+<attachments>0</attachments>
+<attachmentsrequired>0</attachmentsrequired>
+
+</question>
+
+
+<question type="essay">
+<name>
+<text> R07 Q1 : _Users_samuelmerk_Nextcloud_Lehre_aufgaben_Lesefoerderung_Studienleistung_Studienleistung_exams </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>In folgender Abbildung finden Sie Leselernverläufe einer Schülerin bzw. eines Schülers, dargestellt als Messwerte der Lesegenauigkeit, Leseflüssigkeit und Leseverständnis vor repräsentativen 81% Perzentilbändern.</p>
+<div class="float">
+<img src="LV_SL12.png" style="width:90.0%" alt="Leselernverlauf" />
+<div class="figcaption">Leselernverlauf</div>
+</div>
+<ol style="list-style-type: decimal">
+<li>Beschreiben Sie die Leselernverläufe der Schülerin bzw. des Schülers unter Verwendung der individuellen <strong>und</strong> der sozialen Bezugsnorm.</li>
+<li>Erläutern Sie, welche diagnostischen Schlüsse Sie aus den Leselernverläufen ziehen können.</li>
+<li>Beschreiben Sie eine evidenzbasierte Methode zur Förderung des Schülers bzw. der Schülerin</li>
+</ol>
+</p>]]></text>
+</questiontext>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<responseformat>plain</responseformat>
+<responserequired>1</responserequired>
+<responsefieldlines>5</responsefieldlines>
+<attachments>0</attachments>
+<attachmentsrequired>0</attachmentsrequired>
+
+</question>
+
+
+<question type="essay">
+<name>
+<text> R08 Q1 : _Users_samuelmerk_Nextcloud_Lehre_aufgaben_Lesefoerderung_Studienleistung_Studienleistung_exams </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>In folgender Abbildung finden Sie Leselernverläufe einer Schülerin bzw. eines Schülers, dargestellt als Messwerte der Lesegenauigkeit, Leseflüssigkeit und Leseverständnis vor repräsentativen 85% Perzentilbändern.</p>
+<div class="float">
+<img src="LV_SL2.png" style="width:90.0%" alt="Leselernverlauf" />
+<div class="figcaption">Leselernverlauf</div>
+</div>
+<ol style="list-style-type: decimal">
+<li>Beschreiben Sie die Leselernverläufe der Schülerin bzw. des Schülers unter Verwendung der individuellen <strong>und</strong> der sozialen Bezugsnorm.</li>
+<li>Erläutern Sie, welche diagnostischen Schlüsse Sie aus den Leselernverläufen ziehen können.</li>
+<li>Beschreiben Sie eine evidenzbasierte Methode zur Förderung des Schülers bzw. der Schülerin</li>
+</ol>
+</p>]]></text>
+</questiontext>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<responseformat>plain</responseformat>
+<responserequired>1</responserequired>
+<responsefieldlines>5</responsefieldlines>
+<attachments>0</attachments>
+<attachmentsrequired>0</attachmentsrequired>
+
+</question>
+
+
+<question type="essay">
+<name>
+<text> R09 Q1 : _Users_samuelmerk_Nextcloud_Lehre_aufgaben_Lesefoerderung_Studienleistung_Studienleistung_exams </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>In folgender Abbildung finden Sie Leselernverläufe einer Schülerin bzw. eines Schülers, dargestellt als Messwerte der Lesegenauigkeit, Leseflüssigkeit und Leseverständnis vor repräsentativen 62% Perzentilbändern.</p>
+<div class="float">
+<img src="LV_SL6.png" style="width:90.0%" alt="Leselernverlauf" />
+<div class="figcaption">Leselernverlauf</div>
+</div>
+<ol style="list-style-type: decimal">
+<li>Beschreiben Sie die Leselernverläufe der Schülerin bzw. des Schülers unter Verwendung der individuellen <strong>und</strong> der sozialen Bezugsnorm.</li>
+<li>Erläutern Sie, welche diagnostischen Schlüsse Sie aus den Leselernverläufen ziehen können.</li>
+<li>Beschreiben Sie eine evidenzbasierte Methode zur Förderung des Schülers bzw. der Schülerin</li>
+</ol>
+</p>]]></text>
+</questiontext>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<responseformat>plain</responseformat>
+<responserequired>1</responserequired>
+<responsefieldlines>5</responsefieldlines>
+<attachments>0</attachments>
+<attachmentsrequired>0</attachmentsrequired>
+
+</question>
+
+
+<question type="essay">
+<name>
+<text> R10 Q1 : _Users_samuelmerk_Nextcloud_Lehre_aufgaben_Lesefoerderung_Studienleistung_Studienleistung_exams </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>In folgender Abbildung finden Sie Leselernverläufe einer Schülerin bzw. eines Schülers, dargestellt als Messwerte der Lesegenauigkeit, Leseflüssigkeit und Leseverständnis vor repräsentativen 67% Perzentilbändern.</p>
+<div class="float">
+<img src="LV_SL11.png" style="width:90.0%" alt="Leselernverlauf" />
+<div class="figcaption">Leselernverlauf</div>
+</div>
+<ol style="list-style-type: decimal">
+<li>Beschreiben Sie die Leselernverläufe der Schülerin bzw. des Schülers unter Verwendung der individuellen <strong>und</strong> der sozialen Bezugsnorm.</li>
+<li>Erläutern Sie, welche diagnostischen Schlüsse Sie aus den Leselernverläufen ziehen können.</li>
+<li>Beschreiben Sie eine evidenzbasierte Methode zur Förderung des Schülers bzw. der Schülerin</li>
+</ol>
+</p>]]></text>
+</questiontext>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<responseformat>plain</responseformat>
+<responserequired>1</responserequired>
+<responsefieldlines>5</responsefieldlines>
+<attachments>0</attachments>
+<attachmentsrequired>0</attachmentsrequired>
+
+</question>
+
+
+<question type="essay">
+<name>
+<text> R11 Q1 : _Users_samuelmerk_Nextcloud_Lehre_aufgaben_Lesefoerderung_Studienleistung_Studienleistung_exams </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>In folgender Abbildung finden Sie Leselernverläufe einer Schülerin bzw. eines Schülers, dargestellt als Messwerte der Lesegenauigkeit, Leseflüssigkeit und Leseverständnis vor repräsentativen 76% Perzentilbändern.</p>
+<div class="float">
+<img src="LV_SL19.png" style="width:90.0%" alt="Leselernverlauf" />
+<div class="figcaption">Leselernverlauf</div>
+</div>
+<ol style="list-style-type: decimal">
+<li>Beschreiben Sie die Leselernverläufe der Schülerin bzw. des Schülers unter Verwendung der individuellen <strong>und</strong> der sozialen Bezugsnorm.</li>
+<li>Erläutern Sie, welche diagnostischen Schlüsse Sie aus den Leselernverläufen ziehen können.</li>
+<li>Beschreiben Sie eine evidenzbasierte Methode zur Förderung des Schülers bzw. der Schülerin</li>
+</ol>
+</p>]]></text>
+</questiontext>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<responseformat>plain</responseformat>
+<responserequired>1</responserequired>
+<responsefieldlines>5</responsefieldlines>
+<attachments>0</attachments>
+<attachmentsrequired>0</attachmentsrequired>
+
+</question>
+
+
+<question type="essay">
+<name>
+<text> R12 Q1 : _Users_samuelmerk_Nextcloud_Lehre_aufgaben_Lesefoerderung_Studienleistung_Studienleistung_exams </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>In folgender Abbildung finden Sie Leselernverläufe einer Schülerin bzw. eines Schülers, dargestellt als Messwerte der Lesegenauigkeit, Leseflüssigkeit und Leseverständnis vor repräsentativen 60% Perzentilbändern.</p>
+<div class="float">
+<img src="LV_SL19.png" style="width:90.0%" alt="Leselernverlauf" />
+<div class="figcaption">Leselernverlauf</div>
+</div>
+<ol style="list-style-type: decimal">
+<li>Beschreiben Sie die Leselernverläufe der Schülerin bzw. des Schülers unter Verwendung der individuellen <strong>und</strong> der sozialen Bezugsnorm.</li>
+<li>Erläutern Sie, welche diagnostischen Schlüsse Sie aus den Leselernverläufen ziehen können.</li>
+<li>Beschreiben Sie eine evidenzbasierte Methode zur Förderung des Schülers bzw. der Schülerin</li>
+</ol>
+</p>]]></text>
+</questiontext>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<responseformat>plain</responseformat>
+<responserequired>1</responserequired>
+<responsefieldlines>5</responsefieldlines>
+<attachments>0</attachments>
+<attachmentsrequired>0</attachmentsrequired>
+
+</question>
+
+
+<question type="essay">
+<name>
+<text> R13 Q1 : _Users_samuelmerk_Nextcloud_Lehre_aufgaben_Lesefoerderung_Studienleistung_Studienleistung_exams </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>In folgender Abbildung finden Sie Leselernverläufe einer Schülerin bzw. eines Schülers, dargestellt als Messwerte der Lesegenauigkeit, Leseflüssigkeit und Leseverständnis vor repräsentativen 85% Perzentilbändern.</p>
+<div class="float">
+<img src="LV_SL19.png" style="width:90.0%" alt="Leselernverlauf" />
+<div class="figcaption">Leselernverlauf</div>
+</div>
+<ol style="list-style-type: decimal">
+<li>Beschreiben Sie die Leselernverläufe der Schülerin bzw. des Schülers unter Verwendung der individuellen <strong>und</strong> der sozialen Bezugsnorm.</li>
+<li>Erläutern Sie, welche diagnostischen Schlüsse Sie aus den Leselernverläufen ziehen können.</li>
+<li>Beschreiben Sie eine evidenzbasierte Methode zur Förderung des Schülers bzw. der Schülerin</li>
+</ol>
+</p>]]></text>
+</questiontext>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<responseformat>plain</responseformat>
+<responserequired>1</responserequired>
+<responsefieldlines>5</responsefieldlines>
+<attachments>0</attachments>
+<attachmentsrequired>0</attachmentsrequired>
+
+</question>
+
+
+<question type="essay">
+<name>
+<text> R14 Q1 : _Users_samuelmerk_Nextcloud_Lehre_aufgaben_Lesefoerderung_Studienleistung_Studienleistung_exams </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>In folgender Abbildung finden Sie Leselernverläufe einer Schülerin bzw. eines Schülers, dargestellt als Messwerte der Lesegenauigkeit, Leseflüssigkeit und Leseverständnis vor repräsentativen 63% Perzentilbändern.</p>
+<div class="float">
+<img src="LV_SL13.png" style="width:90.0%" alt="Leselernverlauf" />
+<div class="figcaption">Leselernverlauf</div>
+</div>
+<ol style="list-style-type: decimal">
+<li>Beschreiben Sie die Leselernverläufe der Schülerin bzw. des Schülers unter Verwendung der individuellen <strong>und</strong> der sozialen Bezugsnorm.</li>
+<li>Erläutern Sie, welche diagnostischen Schlüsse Sie aus den Leselernverläufen ziehen können.</li>
+<li>Beschreiben Sie eine evidenzbasierte Methode zur Förderung des Schülers bzw. der Schülerin</li>
+</ol>
+</p>]]></text>
+</questiontext>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<responseformat>plain</responseformat>
+<responserequired>1</responserequired>
+<responsefieldlines>5</responsefieldlines>
+<attachments>0</attachments>
+<attachmentsrequired>0</attachmentsrequired>
+
+</question>
+
+
+<question type="essay">
+<name>
+<text> R15 Q1 : _Users_samuelmerk_Nextcloud_Lehre_aufgaben_Lesefoerderung_Studienleistung_Studienleistung_exams </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>In folgender Abbildung finden Sie Leselernverläufe einer Schülerin bzw. eines Schülers, dargestellt als Messwerte der Lesegenauigkeit, Leseflüssigkeit und Leseverständnis vor repräsentativen 55% Perzentilbändern.</p>
+<div class="float">
+<img src="LV_SL7.png" style="width:90.0%" alt="Leselernverlauf" />
+<div class="figcaption">Leselernverlauf</div>
+</div>
+<ol style="list-style-type: decimal">
+<li>Beschreiben Sie die Leselernverläufe der Schülerin bzw. des Schülers unter Verwendung der individuellen <strong>und</strong> der sozialen Bezugsnorm.</li>
+<li>Erläutern Sie, welche diagnostischen Schlüsse Sie aus den Leselernverläufen ziehen können.</li>
+<li>Beschreiben Sie eine evidenzbasierte Methode zur Förderung des Schülers bzw. der Schülerin</li>
+</ol>
+</p>]]></text>
+</questiontext>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<responseformat>plain</responseformat>
+<responserequired>1</responserequired>
+<responsefieldlines>5</responsefieldlines>
+<attachments>0</attachments>
+<attachmentsrequired>0</attachmentsrequired>
+
+</question>
+
+
+<question type="essay">
+<name>
+<text> R16 Q1 : _Users_samuelmerk_Nextcloud_Lehre_aufgaben_Lesefoerderung_Studienleistung_Studienleistung_exams </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>In folgender Abbildung finden Sie Leselernverläufe einer Schülerin bzw. eines Schülers, dargestellt als Messwerte der Lesegenauigkeit, Leseflüssigkeit und Leseverständnis vor repräsentativen 62% Perzentilbändern.</p>
+<div class="float">
+<img src="LV_SL14.png" style="width:90.0%" alt="Leselernverlauf" />
+<div class="figcaption">Leselernverlauf</div>
+</div>
+<ol style="list-style-type: decimal">
+<li>Beschreiben Sie die Leselernverläufe der Schülerin bzw. des Schülers unter Verwendung der individuellen <strong>und</strong> der sozialen Bezugsnorm.</li>
+<li>Erläutern Sie, welche diagnostischen Schlüsse Sie aus den Leselernverläufen ziehen können.</li>
+<li>Beschreiben Sie eine evidenzbasierte Methode zur Förderung des Schülers bzw. der Schülerin</li>
+</ol>
+</p>]]></text>
+</questiontext>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<responseformat>plain</responseformat>
+<responserequired>1</responserequired>
+<responsefieldlines>5</responsefieldlines>
+<attachments>0</attachments>
+<attachmentsrequired>0</attachmentsrequired>
+
+</question>
+
+
+<question type="essay">
+<name>
+<text> R17 Q1 : _Users_samuelmerk_Nextcloud_Lehre_aufgaben_Lesefoerderung_Studienleistung_Studienleistung_exams </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>In folgender Abbildung finden Sie Leselernverläufe einer Schülerin bzw. eines Schülers, dargestellt als Messwerte der Lesegenauigkeit, Leseflüssigkeit und Leseverständnis vor repräsentativen 87% Perzentilbändern.</p>
+<div class="float">
+<img src="LV_SL19.png" style="width:90.0%" alt="Leselernverlauf" />
+<div class="figcaption">Leselernverlauf</div>
+</div>
+<ol style="list-style-type: decimal">
+<li>Beschreiben Sie die Leselernverläufe der Schülerin bzw. des Schülers unter Verwendung der individuellen <strong>und</strong> der sozialen Bezugsnorm.</li>
+<li>Erläutern Sie, welche diagnostischen Schlüsse Sie aus den Leselernverläufen ziehen können.</li>
+<li>Beschreiben Sie eine evidenzbasierte Methode zur Förderung des Schülers bzw. der Schülerin</li>
+</ol>
+</p>]]></text>
+</questiontext>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<responseformat>plain</responseformat>
+<responserequired>1</responserequired>
+<responsefieldlines>5</responsefieldlines>
+<attachments>0</attachments>
+<attachmentsrequired>0</attachmentsrequired>
+
+</question>
+
+
+<question type="essay">
+<name>
+<text> R18 Q1 : _Users_samuelmerk_Nextcloud_Lehre_aufgaben_Lesefoerderung_Studienleistung_Studienleistung_exams </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>In folgender Abbildung finden Sie Leselernverläufe einer Schülerin bzw. eines Schülers, dargestellt als Messwerte der Lesegenauigkeit, Leseflüssigkeit und Leseverständnis vor repräsentativen 85% Perzentilbändern.</p>
+<div class="float">
+<img src="LV_SL9.png" style="width:90.0%" alt="Leselernverlauf" />
+<div class="figcaption">Leselernverlauf</div>
+</div>
+<ol style="list-style-type: decimal">
+<li>Beschreiben Sie die Leselernverläufe der Schülerin bzw. des Schülers unter Verwendung der individuellen <strong>und</strong> der sozialen Bezugsnorm.</li>
+<li>Erläutern Sie, welche diagnostischen Schlüsse Sie aus den Leselernverläufen ziehen können.</li>
+<li>Beschreiben Sie eine evidenzbasierte Methode zur Förderung des Schülers bzw. der Schülerin</li>
+</ol>
+</p>]]></text>
+</questiontext>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<responseformat>plain</responseformat>
+<responserequired>1</responserequired>
+<responsefieldlines>5</responsefieldlines>
+<attachments>0</attachments>
+<attachmentsrequired>0</attachmentsrequired>
+
+</question>
+
+
+<question type="essay">
+<name>
+<text> R19 Q1 : _Users_samuelmerk_Nextcloud_Lehre_aufgaben_Lesefoerderung_Studienleistung_Studienleistung_exams </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>In folgender Abbildung finden Sie Leselernverläufe einer Schülerin bzw. eines Schülers, dargestellt als Messwerte der Lesegenauigkeit, Leseflüssigkeit und Leseverständnis vor repräsentativen 87% Perzentilbändern.</p>
+<div class="float">
+<img src="LV_SL15.png" style="width:90.0%" alt="Leselernverlauf" />
+<div class="figcaption">Leselernverlauf</div>
+</div>
+<ol style="list-style-type: decimal">
+<li>Beschreiben Sie die Leselernverläufe der Schülerin bzw. des Schülers unter Verwendung der individuellen <strong>und</strong> der sozialen Bezugsnorm.</li>
+<li>Erläutern Sie, welche diagnostischen Schlüsse Sie aus den Leselernverläufen ziehen können.</li>
+<li>Beschreiben Sie eine evidenzbasierte Methode zur Förderung des Schülers bzw. der Schülerin</li>
+</ol>
+</p>]]></text>
+</questiontext>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<responseformat>plain</responseformat>
+<responserequired>1</responserequired>
+<responsefieldlines>5</responsefieldlines>
+<attachments>0</attachments>
+<attachmentsrequired>0</attachmentsrequired>
+
+</question>
+
+
+<question type="essay">
+<name>
+<text> R20 Q1 : _Users_samuelmerk_Nextcloud_Lehre_aufgaben_Lesefoerderung_Studienleistung_Studienleistung_exams </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>In folgender Abbildung finden Sie Leselernverläufe einer Schülerin bzw. eines Schülers, dargestellt als Messwerte der Lesegenauigkeit, Leseflüssigkeit und Leseverständnis vor repräsentativen 78% Perzentilbändern.</p>
+<div class="float">
+<img src="LV_SL4.png" style="width:90.0%" alt="Leselernverlauf" />
+<div class="figcaption">Leselernverlauf</div>
+</div>
+<ol style="list-style-type: decimal">
+<li>Beschreiben Sie die Leselernverläufe der Schülerin bzw. des Schülers unter Verwendung der individuellen <strong>und</strong> der sozialen Bezugsnorm.</li>
+<li>Erläutern Sie, welche diagnostischen Schlüsse Sie aus den Leselernverläufen ziehen können.</li>
+<li>Beschreiben Sie eine evidenzbasierte Methode zur Förderung des Schülers bzw. der Schülerin</li>
+</ol>
+</p>]]></text>
+</questiontext>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<responseformat>plain</responseformat>
+<responserequired>1</responserequired>
+<responsefieldlines>5</responsefieldlines>
+<attachments>0</attachments>
+<attachmentsrequired>0</attachmentsrequired>
+
+</question>
+
+</quiz>
