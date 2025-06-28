@@ -160,7 +160,7 @@
         <div id="histogram1" class="histogram"></div>
         <div id="histogram2" class="histogram"></div>
         <div class="difference-display" id="differenceDisplay">
-            Aktuell eingestellter Mittelwertsunterschied: 0.0 Stunden
+            Aktuell eingestellter Mittelwertsunterschied: 0.0 Minuten
         </div>
         <div class="button-container" id="buttonContainer"></div>
     </div>
@@ -218,7 +218,7 @@
             function updateDifferenceDisplay() {
                 const difference = Math.abs(mean - lowerMean);
                 const differenceDisplay = document.getElementById('differenceDisplay');
-                differenceDisplay.textContent = `Aktuell eingestellter Mittelwertsunterschied: ${difference.toFixed(1)} Stunden`;
+                differenceDisplay.textContent = `Aktuell eingestellter Mittelwertsunterschied: ${difference.toFixed(1)} Minuten`;
             }
 
             // Random headline selection
@@ -256,8 +256,8 @@
             imageContainer.appendChild(img);
 
             // Configuration
-            const mean = 14.3;
-            const stdDev = 3.5;
+            const mean = 23.3;
+            const stdDev = 5;
             const sampleSize = 10000;
             const colors = ['#237326', '#f2f2f2'];
             let lowerMean = mean;
@@ -302,7 +302,7 @@
                     marginLeft: dimensions.marginLeft,
                     x: {
                         domain: xDomain,
-                        label: "Lesezeit (Stunden pro Woche)",
+                        label: "Lesezeit (Minuten pro Tag)",
                         grid: true
                     },
                     y: {
@@ -385,7 +385,7 @@
                 e.stopPropagation();
                 const currentScrollY = window.scrollY;
                 try {
-                    lowerMean += 0.3;
+                    lowerMean += 5*0.12;
                     data1 = generateNormalData(mean, stdDev, sampleSize);
                     data2 = generateNormalData(lowerMean, stdDev, sampleSize);
                     
