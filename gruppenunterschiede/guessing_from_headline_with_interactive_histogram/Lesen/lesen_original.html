@@ -61,6 +61,17 @@
             display: block;
             margin: 0 auto;
         }
+        .difference-display {
+            text-align: center;
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #e8f4f800;
+            border: 1px solid #11111130;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 400;
+            color: #111;
+        }
         .button-container {
             text-align: center;
             margin-top: 20px;
@@ -113,6 +124,10 @@
             .image-container img {
                 max-width: 300px;
             }
+            .difference-display {
+                font-size: 14px;
+                padding: 12px;
+            }
             .control-button {
                 padding: 6px 12px;
                 font-size: 11px;
@@ -140,10 +155,13 @@
 </head>
 <body>
     <div class="container">
-        <div class="instruction-text">Im Folgenden sehen Sie eine Schlagzeile aus den Tagesmedien. Stellen Sie mit den ±-Buttons die Grafik so ein, dass Sie Ihrem Eindruck nach die Situation der folgenden Schlagzeile bestmöglich wiederspiegelt und tragen Sie die kursive Zahl rechts unten in der Abbildung in das Antwortfeld ein.</div>
+        <div class="instruction-text">Im Folgenden sehen Sie eine Schlagzeile aus den Tagesmedien. Stellen Sie mit den ±-Buttons die Grafik so ein, dass Sie Ihrem Eindruck nach die Situation der folgenden Schlagzeile bestmöglich wiederspiegelt und tragen Sie die dann angezeigte Mittelwertsdifferenz in das Antwortfeld ein.</div>
         <div class="image-container" id="imageContainer"></div>
         <div id="histogram1" class="histogram"></div>
         <div id="histogram2" class="histogram"></div>
+        <div class="difference-display" id="differenceDisplay">
+            Aktuell eingestellter Mittelwertsunterschied: 0.0 Stunden
+        </div>
         <div class="button-container" id="buttonContainer"></div>
     </div>
 
@@ -196,15 +214,22 @@
                 return [Math.max(0, extent[0] - 0.5), extent[1] + 0.5];
             }
 
+            // Function to update the difference display
+            function updateDifferenceDisplay() {
+                const difference = Math.abs(mean - lowerMean);
+                const differenceDisplay = document.getElementById('differenceDisplay');
+                differenceDisplay.textContent = `Aktuell eingestellter Mittelwertsunterschied: ${difference.toFixed(1)} Stunden`;
+            }
+
             // Random headline selection
             const headlines = ["headline_original", "headline_u3", "headline_overlap"];
             const selectedHeadline = headlines[Math.floor(Math.random() * headlines.length)];
             
             // Add headline image above histograms
             const imageUrls = {
-                "headline_original": "https://raw.githubusercontent.com/sammerk/VL-Forschungsmethoden-SoSe25/refs/heads/master/Block03-Effektstaerken/Folien/Integrierte%20Apps/MW-Einschaetzung/www/headline_original.jpg",
-                "headline_u3": "https://raw.githubusercontent.com/sammerk/VL-Forschungsmethoden-SoSe25/refs/heads/master/Block03-Effektstaerken/Folien/Integrierte%20Apps/MW-Einschaetzung/www/headline_original_u3.jpg",
-                "headline_overlap": "https://raw.githubusercontent.com/sammerk/VL-Forschungsmethoden-SoSe25/refs/heads/master/Block03-Effektstaerken/Folien/Integrierte%20Apps/MW-Einschaetzung/www/headline_original_overlap.jpg"
+                "headline_original": "https://raw.githubusercontent.com/sammerk/aufgaben/refs/heads/master/gruppenunterschiede/guessing_from_headline_with_interactive_histogram/Lesen/headlines/Original.png",
+                "headline_u3": "https://raw.githubusercontent.com/sammerk/aufgaben/refs/heads/master/gruppenunterschiede/guessing_from_headline_with_interactive_histogram/Lesen/headlines/Original.png",
+                "headline_overlap": "https://raw.githubusercontent.com/sammerk/aufgaben/refs/heads/master/gruppenunterschiede/guessing_from_headline_with_interactive_histogram/Lesen/headlines/Original.png"
             };
             
             // Create image element
@@ -231,7 +256,7 @@
             imageContainer.appendChild(img);
 
             // Configuration
-            const mean = 7;
+            const mean = 30;
             const stdDev = 2.5;
             const sampleSize = 10000;
             const colors = ['#237326', '#f2f2f2'];
@@ -277,7 +302,7 @@
                     marginLeft: dimensions.marginLeft,
                     x: {
                         domain: xDomain,
-                        label: "Bildschirmzeit (Stunden pro Woche)",
+                        label: "Lesezeit (Stunden pro Woche)",
                         grid: true
                     },
                     y: {
@@ -311,6 +336,7 @@
             function updateHistograms() {
                 createHistogram(data1, "#histogram1", colors[0], xDomain, mean, "OECD");
                 createHistogram(data2, "#histogram2", colors[1], xDomain, lowerMean, "Deutschland");
+                updateDifferenceDisplay();
             }
 
             updateHistograms();
