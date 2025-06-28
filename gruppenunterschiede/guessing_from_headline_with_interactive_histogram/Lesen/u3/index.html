@@ -355,8 +355,8 @@
                 const currentScrollY = window.scrollY;
                 try {
                     // Only decrease if Finnland's mean won't go below OECD's mean
-                    if (lowerMean - 0.3 >= mean) {
-                        lowerMean -= 0.3;
+                    if (lowerMean - 5*0.12 >= mean) {
+                        lowerMean -= 5*0.12;
                         data1 = generateNormalData(mean, stdDev, sampleSize);
                         data2 = generateNormalData(lowerMean, stdDev, sampleSize);
                         

@@ -256,8 +256,8 @@
             imageContainer.appendChild(img);
 
             // Configuration
-            const mean = 23.3;
-            const stdDev = 5;
+            const mean = 68;
+            const stdDev = 20;
             const sampleSize = 10000;
             const colors = ['#237326', '#f2f2f2'];
             let lowerMean = mean;
@@ -334,7 +334,7 @@
 
             // Create both histograms with same domain
             function updateHistograms() {
-                createHistogram(data1, "#histogram1", colors[0], xDomain, mean, "OECD");
+                createHistogram(data1, "#histogram1", colors[0], xDomain, mean, "EU");
                 createHistogram(data2, "#histogram2", colors[1], xDomain, lowerMean, "Finnland");
                 updateDifferenceDisplay();
             }
@@ -355,8 +355,8 @@
                 const currentScrollY = window.scrollY;
                 try {
                     // Only decrease if Finnland's mean won't go below OECD's mean
-                    if (lowerMean - 0.3 >= mean) {
-                        lowerMean -= 0.3;
+                    if (lowerMean - 20*0.12 >= mean) {
+                        lowerMean -= 20*0.12;
                         data1 = generateNormalData(mean, stdDev, sampleSize);
                         data2 = generateNormalData(lowerMean, stdDev, sampleSize);
                         
@@ -385,7 +385,7 @@
                 e.stopPropagation();
                 const currentScrollY = window.scrollY;
                 try {
-                    lowerMean += 5*0.12;
+                    lowerMean += 20*0.12;
                     data1 = generateNormalData(mean, stdDev, sampleSize);
                     data2 = generateNormalData(lowerMean, stdDev, sampleSize);
                     
