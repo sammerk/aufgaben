@@ -155,7 +155,7 @@
 </head>
 <body>
     <div class="container">
-        <div class="instruction-text">Im Folgenden sehen Sie eine Schlagzeile aus den Tagesmedien. Stellen Sie mit den ±-Buttons die Grafik so ein, dass Sie Ihrem Eindruck nach die Situation der folgenden Schlagzeile bestmöglich wiederspiegelt und tragen Sie die dann angezeigte Mittelwertsdifferenz in das Antwortfeld ein.</div>
+        <div class="instruction-text">Im Folgenden sehen Sie eine Schlagzeile aus den Tagesmedien. Stellen Sie mit den ±-Buttons die Grafik so ein, dass diese Ihrem Eindruck nach die Situation der folgenden Schlagzeile bestmöglich widerspiegelt und tragen Sie dann den angezeigten Mittelwertsunterschied in das Antwortfeld ein.</div>
         <div class="image-container" id="imageContainer"></div>
         <div id="histogram1" class="histogram"></div>
         <div id="histogram2" class="histogram"></div>
@@ -335,7 +335,7 @@
             // Create both histograms with same domain
             function updateHistograms() {
                 createHistogram(data1, "#histogram1", colors[0], xDomain, mean, "EU");
-                createHistogram(data2, "#histogram2", colors[1], xDomain, lowerMean, "Finnland");
+                createHistogram(data2, "#histogram2", colors[1], xDomain, lowerMean, "Schweden");
                 updateDifferenceDisplay();
             }
 
