@@ -1,0 +1,686 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+
+
+<question type="category">
+<category>
+<text>$course$/teilklausur_definitions-U1-d-d-taub-r/Exercise 1</text>
+</category>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R1 Q1 : gruppenunterschiede_definitions-U1-d-d-taub-r_definitions-U1-d-d-taub-r </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Welche Aussagen sind wahr?</p>
+</p>]]></text>
+</questiontext>
+<penalty>0</penalty>
+<defaultgrade>10</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>false</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="33.33333" format="html">
+<text><![CDATA[<p>
+Cliff’s d kann den Unterschied in der zentralen Tendenz zweier ordinaler Variablen beschreiben.
+</p>]]></text>
+</answer>
+<answer fraction="-33.33333" format="html">
+<text><![CDATA[<p>
+Pearson’s r kann den Zusammenhang zweier nominaler Variablen beschreiben.
+</p>]]></text>
+</answer>
+<answer fraction="-33.33333" format="html">
+<text><![CDATA[<p>
+Cohen’s d kann den Mittelwertunterschied zweier ordinaler Variablen beschreiben.
+</p>]]></text>
+</answer>
+<answer fraction="33.33333" format="html">
+<text><![CDATA[<p>
+Cohen’s U₁ kann den Mittelwertunterschied zweier normalverteilter Variablen beschreiben.
+</p>]]></text>
+</answer>
+<answer fraction="-33.33333" format="html">
+<text><![CDATA[<p>
+Cliff’s d kann theoretisch Werte zwischen -∞ und ∞ annehmen (-∞ &lt; d &lt; ∞).
+</p>]]></text>
+</answer>
+<answer fraction="33.33333" format="html">
+<text><![CDATA[<p>
+Kendall’s 𝜏ᵇ kann theoretisch Werte zwischen -1 und 1 annehmen (-1 ≤ 𝜏ᵇ ≤ 1).
+</p>]]></text>
+</answer>
+<answer fraction="-33.33333" format="html">
+<text><![CDATA[<p>
+Cohen’s d stellt einen Nulleffekt dar, wenn d = .5 gilt.
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R2 Q1 : gruppenunterschiede_definitions-U1-d-d-taub-r_definitions-U1-d-d-taub-r </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Welche Aussagen sind wahr?</p>
+</p>]]></text>
+</questiontext>
+<penalty>0</penalty>
+<defaultgrade>10</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>false</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="-33.33333" format="html">
+<text><![CDATA[<p>
+Cohen’s U₁ stellt einen umso stärkeren Effekt dar, »je weiter U₁ von der 1 entfernt ist«.
+</p>]]></text>
+</answer>
+<answer fraction="33.33333" format="html">
+<text><![CDATA[<p>
+Kendall’s 𝜏ᵇ kann den Zusammenhang zweier intervallskalierter Variablen beschreiben.
+</p>]]></text>
+</answer>
+<answer fraction="33.33333" format="html">
+<text><![CDATA[<p>
+Cohen’s d kann theoretisch Werte zwischen -∞ und ∞ annehmen (-∞ &lt; d &lt; ∞).
+</p>]]></text>
+</answer>
+<answer fraction="-33.33333" format="html">
+<text><![CDATA[<p>
+Cohen’s U₁ kann den Mittelwertunterschied zweier ordinaler Variablen beschreiben.
+</p>]]></text>
+</answer>
+<answer fraction="-33.33333" format="html">
+<text><![CDATA[<p>
+Pearson’s r kann den Zusammenhang zweier ordinaler Variablen beschreiben.
+</p>]]></text>
+</answer>
+<answer fraction="-33.33333" format="html">
+<text><![CDATA[<p>
+Cohen’s U₁ kann theoretisch Werte zwischen -∞ und ∞ annehmen (-∞ ≤ U₁ ≤ ∞).
+</p>]]></text>
+</answer>
+<answer fraction="33.33333" format="html">
+<text><![CDATA[<p>
+Cohen’s U₁ kann den Mittelwertunterschied zweier normalverteilter Variablen beschreiben.
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R3 Q1 : gruppenunterschiede_definitions-U1-d-d-taub-r_definitions-U1-d-d-taub-r </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Welche Aussagen sind wahr?</p>
+</p>]]></text>
+</questiontext>
+<penalty>0</penalty>
+<defaultgrade>10</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>false</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="33.33333" format="html">
+<text><![CDATA[<p>
+Kendall’s 𝜏ᵇ kann den Zusammenhang zweier ordinaler Variablen beschreiben.
+</p>]]></text>
+</answer>
+<answer fraction="-33.33333" format="html">
+<text><![CDATA[<p>
+Cohen’s U₁ kann den Mittelwertunterschied zweier ordinaler Variablen beschreiben.
+</p>]]></text>
+</answer>
+<answer fraction="-33.33333" format="html">
+<text><![CDATA[<p>
+Pearson’s r kann den Zusammenhang zweier nominaler Variablen beschreiben.
+</p>]]></text>
+</answer>
+<answer fraction="-33.33333" format="html">
+<text><![CDATA[<p>
+Cohen’s U₁ stellt einen Nulleffekt dar, wenn U₁ = 0.5 gilt.
+</p>]]></text>
+</answer>
+<answer fraction="-33.33333" format="html">
+<text><![CDATA[<p>
+Cohen’s U₁ kann theoretisch Werte zwischen -∞ und ∞ annehmen (-∞ ≤ U₁ ≤ ∞).
+</p>]]></text>
+</answer>
+<answer fraction="33.33333" format="html">
+<text><![CDATA[<p>
+Pearson’s r stellt einen umso stärkeren Effekt dar, »je weiter r von der Null entfernt ist«.
+</p>]]></text>
+</answer>
+<answer fraction="33.33333" format="html">
+<text><![CDATA[<p>
+Kendall’s 𝜏ᵇ stellt eine Effektstärke dar.
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R4 Q1 : gruppenunterschiede_definitions-U1-d-d-taub-r_definitions-U1-d-d-taub-r </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Welche Aussagen sind wahr?</p>
+</p>]]></text>
+</questiontext>
+<penalty>0</penalty>
+<defaultgrade>10</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>false</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="-33.33333" format="html">
+<text><![CDATA[<p>
+Cohen’s U₁ kann den Mittelwertunterschied zweier ordinaler Variablen beschreiben.
+</p>]]></text>
+</answer>
+<answer fraction="33.33333" format="html">
+<text><![CDATA[<p>
+Kendall’s 𝜏ᵇ kann den Zusammenhang zweier ordinaler Variablen beschreiben.
+</p>]]></text>
+</answer>
+<answer fraction="33.33333" format="html">
+<text><![CDATA[<p>
+Kendall’s 𝜏ᵇ stellt eine Effektstärke dar.
+</p>]]></text>
+</answer>
+<answer fraction="33.33333" format="html">
+<text><![CDATA[<p>
+Kendall’s 𝜏ᵇ kann den Zusammenhang zweier nicht-normalverteilten intervallskalierter Variablen beschreiben.
+</p>]]></text>
+</answer>
+<answer fraction="-33.33333" format="html">
+<text><![CDATA[<p>
+Kendall’s 𝜏ᵇ stellt einen Nulleffekt dar, wenn 𝜏ᵇ = 0.5 gilt.
+</p>]]></text>
+</answer>
+<answer fraction="-33.33333" format="html">
+<text><![CDATA[<p>
+Cohen’s d kann theoretisch nur Werte zwischen -1 und 1 annehmen (-1 &lt; d &lt; 1).
+</p>]]></text>
+</answer>
+<answer fraction="-33.33333" format="html">
+<text><![CDATA[<p>
+Cohen’s U₁ stellt einen umso stärkeren Effekt dar, »je weiter U₁ von der 1 entfernt ist«.
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R5 Q1 : gruppenunterschiede_definitions-U1-d-d-taub-r_definitions-U1-d-d-taub-r </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Welche Aussagen sind wahr?</p>
+</p>]]></text>
+</questiontext>
+<penalty>0</penalty>
+<defaultgrade>10</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>false</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="-33.33333" format="html">
+<text><![CDATA[<p>
+Kendall’s 𝜏ᵇ stellt einen Nulleffekt dar, wenn 𝜏ᵇ = 0.5 gilt.
+</p>]]></text>
+</answer>
+<answer fraction="33.33333" format="html">
+<text><![CDATA[<p>
+Cliff’s d kann den Unterschied in der zentralen Tendenz zweier ordinaler Variablen beschreiben.
+</p>]]></text>
+</answer>
+<answer fraction="-33.33333" format="html">
+<text><![CDATA[<p>
+Cohen’s U₁ stellt einen umso stärkeren Effekt dar, »je weiter U₁ von der 1 entfernt ist«.
+</p>]]></text>
+</answer>
+<answer fraction="33.33333" format="html">
+<text><![CDATA[<p>
+Kendall’s 𝜏ᵇ stellt einen umso stärkeren Effekt dar, je größer der Betrag von 𝜏ᵇ (|𝜏ᵇ|) ist.
+</p>]]></text>
+</answer>
+<answer fraction="-33.33333" format="html">
+<text><![CDATA[<p>
+Pearson’s r kann den Zusammenhang zweier nominaler Variablen beschreiben.
+</p>]]></text>
+</answer>
+<answer fraction="33.33333" format="html">
+<text><![CDATA[<p>
+Cohen’s U₁ stellt eine Effektstärke dar.
+</p>]]></text>
+</answer>
+<answer fraction="-33.33333" format="html">
+<text><![CDATA[<p>
+Cliff’s d kann den Zusammenhang zweier intervallskalierter Variablen beschreiben.
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R6 Q1 : gruppenunterschiede_definitions-U1-d-d-taub-r_definitions-U1-d-d-taub-r </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Welche Aussagen sind wahr?</p>
+</p>]]></text>
+</questiontext>
+<penalty>0</penalty>
+<defaultgrade>10</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>false</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="33.33333" format="html">
+<text><![CDATA[<p>
+Cohen’s U₁ stellt einen Nulleffekt dar, wenn U₁ = 0 gilt.
+</p>]]></text>
+</answer>
+<answer fraction="33.33333" format="html">
+<text><![CDATA[<p>
+Cohen’s d stellt einen Nulleffekt dar, wenn d = 0 gilt.
+</p>]]></text>
+</answer>
+<answer fraction="-33.33333" format="html">
+<text><![CDATA[<p>
+Cohen’s d kann den Mittelwertunterschied zweier ordinaler Variablen beschreiben.
+</p>]]></text>
+</answer>
+<answer fraction="-33.33333" format="html">
+<text><![CDATA[<p>
+Kendall’s r kann theoretisch Werte zwischen -∞ und ∞ annehmen (-∞ ≤ r ≤ ∞).
+</p>]]></text>
+</answer>
+<answer fraction="-33.33333" format="html">
+<text><![CDATA[<p>
+Cohen’s U₁ kann theoretisch Werte zwischen -∞ und ∞ annehmen (-∞ ≤ U₁ ≤ ∞).
+</p>]]></text>
+</answer>
+<answer fraction="33.33333" format="html">
+<text><![CDATA[<p>
+Cliff’s d kann den Unterschied in der zentralen Tendenz zweier intervallskalierter Variablen beschreiben.
+</p>]]></text>
+</answer>
+<answer fraction="-33.33333" format="html">
+<text><![CDATA[<p>
+Cliff’s d kann theoretisch Werte zwischen -∞ und ∞ annehmen (-∞ &lt; d &lt; ∞).
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R7 Q1 : gruppenunterschiede_definitions-U1-d-d-taub-r_definitions-U1-d-d-taub-r </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Welche Aussagen sind wahr?</p>
+</p>]]></text>
+</questiontext>
+<penalty>0</penalty>
+<defaultgrade>10</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>false</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="-33.33333" format="html">
+<text><![CDATA[<p>
+Cohen’s U₁ kann theoretisch Werte zwischen -∞ und ∞ annehmen (-∞ ≤ U₁ ≤ ∞).
+</p>]]></text>
+</answer>
+<answer fraction="-33.33333" format="html">
+<text><![CDATA[<p>
+Je größer die Stichprobe, desto größer Kendall’s 𝜏ᵇ.
+</p>]]></text>
+</answer>
+<answer fraction="33.33333" format="html">
+<text><![CDATA[<p>
+Cliff’s d stellt eine Effektstärke dar.
+</p>]]></text>
+</answer>
+<answer fraction="33.33333" format="html">
+<text><![CDATA[<p>
+Cliff’s d kann theoretisch Werte zwischen -1 und 1 annehmen (-1 ≤ d ≤ 1).
+</p>]]></text>
+</answer>
+<answer fraction="33.33333" format="html">
+<text><![CDATA[<p>
+Cohen’s d stellt einen umso stärkeren Effekt dar, »je weiter d von der Null entfernt ist«.
+</p>]]></text>
+</answer>
+<answer fraction="-33.33333" format="html">
+<text><![CDATA[<p>
+Kendall’s r kann theoretisch Werte zwischen -∞ und ∞ annehmen (-∞ ≤ r ≤ ∞).
+</p>]]></text>
+</answer>
+<answer fraction="-33.33333" format="html">
+<text><![CDATA[<p>
+Cohen’s d stellt einen Nulleffekt dar, wenn d = .5 gilt.
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R8 Q1 : gruppenunterschiede_definitions-U1-d-d-taub-r_definitions-U1-d-d-taub-r </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Welche Aussagen sind wahr?</p>
+</p>]]></text>
+</questiontext>
+<penalty>0</penalty>
+<defaultgrade>10</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>false</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="-33.33333" format="html">
+<text><![CDATA[<p>
+Cliff’s d kann theoretisch Werte zwischen -∞ und ∞ annehmen (-∞ &lt; d &lt; ∞).
+</p>]]></text>
+</answer>
+<answer fraction="33.33333" format="html">
+<text><![CDATA[<p>
+Pearson’s r kann theoretisch Werte zwischen -1 und 1 annehmen (-1 ≤ r ≤ 1).
+</p>]]></text>
+</answer>
+<answer fraction="-33.33333" format="html">
+<text><![CDATA[<p>
+Kendall’s 𝜏ᵇ kann den Zusammenhang zweier nominaler Variablen beschreiben.
+</p>]]></text>
+</answer>
+<answer fraction="-33.33333" format="html">
+<text><![CDATA[<p>
+Kendall’s 𝜏ᵇ stellt einen starken Effekt dar, wenn es positiv ist.
+</p>]]></text>
+</answer>
+<answer fraction="33.33333" format="html">
+<text><![CDATA[<p>
+Kendall’s 𝜏ᵇ stellt eine Effektstärke dar.
+</p>]]></text>
+</answer>
+<answer fraction="33.33333" format="html">
+<text><![CDATA[<p>
+Cliff’s d stellt eine Effektstärke dar.
+</p>]]></text>
+</answer>
+<answer fraction="-33.33333" format="html">
+<text><![CDATA[<p>
+Kendall’s 𝜏ᵇ stellt einen Nulleffekt dar, wenn 𝜏ᵇ = 0.5 gilt.
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R9 Q1 : gruppenunterschiede_definitions-U1-d-d-taub-r_definitions-U1-d-d-taub-r </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Welche Aussagen sind wahr?</p>
+</p>]]></text>
+</questiontext>
+<penalty>0</penalty>
+<defaultgrade>10</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>false</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="-33.33333" format="html">
+<text><![CDATA[<p>
+Kendall’s 𝜏ᵇ stellt einen Nulleffekt dar, wenn 𝜏ᵇ = 0.5 gilt.
+</p>]]></text>
+</answer>
+<answer fraction="-33.33333" format="html">
+<text><![CDATA[<p>
+Cohen’s U₁ kann theoretisch Werte zwischen -∞ und ∞ annehmen (-∞ ≤ U₁ ≤ ∞).
+</p>]]></text>
+</answer>
+<answer fraction="33.33333" format="html">
+<text><![CDATA[<p>
+Cliff’s d stellt einen umso stärkeren Effekt dar, »je weiter d von der 0 entfernt ist«.
+</p>]]></text>
+</answer>
+<answer fraction="-33.33333" format="html">
+<text><![CDATA[<p>
+Je größer die Stichprobe, desto größer Kendall’s 𝜏ᵇ.
+</p>]]></text>
+</answer>
+<answer fraction="33.33333" format="html">
+<text><![CDATA[<p>
+Kendall’s 𝜏ᵇ stellt einen umso stärkeren Effekt dar, »je weiter 𝜏ᵇ von der Null entfernt ist«.
+</p>]]></text>
+</answer>
+<answer fraction="-33.33333" format="html">
+<text><![CDATA[<p>
+Cohen’s U₁ stellt einen Nulleffekt dar, wenn U₁ = 0.5 gilt.
+</p>]]></text>
+</answer>
+<answer fraction="33.33333" format="html">
+<text><![CDATA[<p>
+Pearson’s r stellt einen umso stärkeren Effekt dar, »je weiter r von der Null entfernt ist«.
+</p>]]></text>
+</answer>
+</question>
+
+</quiz>

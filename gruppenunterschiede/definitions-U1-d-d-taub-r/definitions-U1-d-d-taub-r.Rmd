@@ -1,0 +1,104 @@
+```{r data generation, echo = FALSE, results = "hide", message=FALSE, warning=FALSE}
+library(tidyverse)
+library(exams)
+
+answerlistdata <-
+  tibble(
+      answerlist = c(#TRUE
+        # gruppenunterschiede
+        "Cohen's d stellt eine Effektstärke dar.",
+        "Cliff's d stellt eine Effektstärke dar.",
+        "Cohen's d kann den Mittelwertunterschied zweier normalverteilter Variablen beschreiben.",
+        #"Cohen's U₃ stellt eine Effektstärke dar.",
+        #"Cohen's U₃ kann den Mittelwertunterschied zweier normalverteilter Variablen beschreiben.",
+        #"Cohen's U₃ kann theoretisch Werte zwischen 0 und 1 annehmen (0 ≤ U₃ ≤ 1).",
+        #"Cohen's U₃ stellt einen Nulleffekt dar, wenn U₃ = .5 gilt.",
+        #"Cohen's U₃ stellt einen umso stärkeren Effekt dar, »je weiter U₃ von der .5 entfernt ist«.",
+        "Cohen's U₁ stellt eine Effektstärke dar.",
+        "Cohen's U₁ kann den Mittelwertunterschied zweier normalverteilter Variablen beschreiben.",
+        "Cohen's U₁ kann theoretisch Werte zwischen 0 und 1 annehmen (0 ≤ U₁ ≤ 1).",
+        "Cohen's U₁ stellt einen Nulleffekt dar, wenn U₁ = 0 gilt.",
+        "Cohen's U₁ stellt einen umso stärkeren Effekt dar, »je weiter U₁ von der 0 entfernt ist«.",
+        "Cliff's d kann den Unterschied in der zentralen Tendenz zweier intervallskalierter Variablen beschreiben.",
+        "Cliff's d kann den Unterschied in der zentralen Tendenz zweier ordinaler Variablen beschreiben.",
+        "Cohen's d kann theoretisch Werte zwischen -∞ und ∞ annehmen (-∞ < d < ∞).",
+        "Cliff's d kann theoretisch Werte zwischen -1 und 1 annehmen (-1 ≤ d ≤ 1).",
+        "Cohen's d stellt einen Nulleffekt dar, wenn d = 0 gilt.",
+        "Cohen's d stellt einen umso stärkeren Effekt dar, »je weiter d von der Null entfernt ist«.",
+        "Cliff's d stellt einen Nulleffekt dar, wenn d = 0 gilt.",
+        "Cliff's d stellt einen umso stärkeren Effekt dar, »je weiter d von der 0 entfernt ist«.",
+        # korrelationen
+        "Pearson's r stellt eine Effektstärke dar.",
+        "Kendall's 𝜏ᵇ stellt eine Effektstärke dar.",
+        "Kendall's 𝜏ᵇ kann den Zusammenhang zweier ordinaler Variablen beschreiben.",
+        "Kendall's 𝜏ᵇ kann den Zusammenhang zweier nicht-normalverteilten intervallskalierter Variablen beschreiben.",
+        "Kendall's 𝜏ᵇ kann den Zusammenhang zweier intervallskalierter Variablen beschreiben.",
+        "Kendall's 𝜏ᵇ kann theoretisch Werte zwischen -1 und 1 annehmen (-1 ≤ 𝜏ᵇ ≤ 1).",
+        "Pearson's r kann theoretisch Werte zwischen -1 und 1 annehmen (-1 ≤ r ≤ 1).",
+        "Kendall's 𝜏ᵇ stellt einen umso stärkeren Effekt dar, »je weiter 𝜏ᵇ von der Null entfernt ist«.",
+        "Kendall's 𝜏ᵇ stellt einen Nulleffekt dar, wenn 𝜏ᵇ = 0 gilt.",
+        "Pearson's r stellt einen umso stärkeren Effekt dar, »je weiter r von der Null entfernt ist«.",
+        "Pearson's r stellt einen Nulleffekt dar, wenn r = 0 gilt.",
+        "Kendall's 𝜏ᵇ stellt einen umso stärkeren Effekt dar, je größer der Betrag von 𝜏ᵇ (|𝜏ᵇ|) ist.",
+        "Pearson's r stellt einen umso stärkeren Effekt dar, je größer der Betrag von r (|r|) ist.",
+        "Pearson's r kann den Zusammenhang zweier intervallskalierter Variablen beschreiben."),
+      exsolution = c(rep(T, 30))
+      ) |>
+        sample_n(3) |>
+        add_row(tibble(
+          answerlist = c(#FALSE
+          # gruppenunterschiede
+          "Cohen's d kann den Mittelwertunterschied zweier ordinaler Variablen beschreiben.",
+          #"Cohen's U₃ kann die Korrelation zweier normalverteilter Variablen beschreiben.",
+          "Cliff's d kann den Zusammenhang zweier intervallskalierter Variablen beschreiben.",
+          "Cohen's d kann theoretisch nur Werte zwischen -1 und 1 annehmen (-1 < d < 1).",
+          #"Cohen's U₃ kann theoretisch Werte zwischen -∞ und ∞ annehmen (-∞ < U₃ < ∞).",
+          "Cliff's d kann theoretisch Werte zwischen -∞ und ∞ annehmen (-∞ < d < ∞).",
+          "Cohen's d stellt einen Nulleffekt dar, wenn d = .5 gilt.",
+          "Cohen's d stellt einen umso stärkeren Effekt dar, »je weiter d von der .5 entfernt ist«.",
+          #"Cohen's U₃ stellt einen Nulleffekt dar, wenn U₃ = 0 gilt.",
+          #"Cohen's U₃ stellt einen umso stärkeren Effekt dar, »je weiter U₃ von der 0 entfernt ist«.",
+          "Cliff's d stellt einen Nulleffekt dar, wenn d = .5 gilt.",
+          "Cliff's d stellt einen umso stärkeren Effekt dar, »je weiter d von der .5 entfernt ist«.",
+          "Cohen's U₁ kann den Mittelwertunterschied zweier ordinaler Variablen beschreiben.",
+          "Cohen's U₁ kann theoretisch Werte zwischen -∞ und ∞ annehmen (-∞ ≤ U₁ ≤ ∞).",
+          "Cohen's U₁ stellt einen Nulleffekt dar, wenn U₁ = 0.5 gilt.",
+          "Cohen's U₁ stellt einen umso stärkeren Effekt dar, »je weiter U₁ von der 1 entfernt ist«.",
+          # korrelationen
+          #"Pearson's r  stellt eine Inferenzstatistik dar.",
+          #"Kendall's 𝜏ᵇ stellt eine Inferenzstatistik dar.",
+          "Kendall's 𝜏ᵇ kann den Zusammenhang zweier nominaler Variablen beschreiben.",
+          "Kendall's 𝜏ᵇ kann theoretisch Werte zwischen -∞ und ∞ annehmen (-∞ ≤ 𝜏ᵇ ≤ ∞).",
+          "Kendall's r kann theoretisch Werte zwischen -∞ und ∞ annehmen (-∞ ≤ r ≤ ∞).",
+          "Kendall's 𝜏ᵇ stellt einen starken Effekt dar, wenn es positiv ist.",
+          "Pearson's r stellt einen starken Effekt dar, wenn es positiv ist.",
+          "Je größer die Stichprobe, desto größer Pearson's r.",
+          "Je größer die Stichprobe, desto größer Kendall's 𝜏ᵇ.",
+          "Pearson's r kann den Zusammenhang zweier nominaler Variablen beschreiben.",
+          "Pearson's r kann den Zusammenhang zweier ordinaler Variablen beschreiben.",
+          "Kendall's 𝜏ᵇ stellt einen Nulleffekt dar, wenn 𝜏ᵇ = 0.5 gilt.",
+          "Pearson's r stellt einen Nulleffekt dar, wenn r = 0.5 gilt."),
+                exsolution = c(rep(F, 23))
+          ) |>
+            sample_n(4)
+        )
+
+```
+
+
+
+Question
+========
+Welche Aussagen sind wahr?
+
+```{r questionlist, echo = FALSE, results = "asis"}
+answerlist(answerlistdata$answerlist, 
+           markup = "markdown")
+```
+
+Meta-information
+================
+exname: Definitionen d, d, U3, U1
+extype: mchoice
+exsolution: `r mchoice2string(answerlistdata$exsolution)`
+exshuffle: true

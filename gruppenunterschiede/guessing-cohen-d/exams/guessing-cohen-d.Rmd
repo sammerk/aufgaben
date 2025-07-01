@@ -61,7 +61,7 @@ demp <- effsize$estimate
 U3emp <-sum(data_wide$B > mean(data_wide$A))/nrow(data_wide)
   
     
-plotart <- sample(c("beeswarm", "violin", "box", "histogram", "density", "errorbar", "sina"),1)
+plotart <- sample(c("beeswarm", "violin", "box", "histogram", "density", "sina"),1)
 
 
 if (plotart == "sina") {
@@ -153,8 +153,6 @@ Obige Abbildung zeigt die Verteilung der Variablen A und B. Welches Cohen's $d(A
 
 Solution
 ========
-
-Das korrekte Cohen's d wäre `r round(demp, 2)`.
 
 Meta-information
 ================

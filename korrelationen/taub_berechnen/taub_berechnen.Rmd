@@ -1,0 +1,151 @@
+Question
+========
+```{r, echo = F, message = F, warning=FALSE,  fig.width=6, fig.height=6, out.width="400px", fig.retina=2, fig.cap=""}
+library(ggplot2)
+library(tidyverse)
+library(hrbrthemes)
+library(exams)
+
+num_to_moodle <- function(x, tol = 0, breaks = 1, range = NULL, digits = 5) {
+  ## round correct solution and tolerance
+  breaks <- round(breaks)
+  x <- round(x, digits = digits)
+  tol <- round(tol, digits = digits)
+
+  ## only correct solution without tolerance
+  if(breaks <= 0L || (breaks == 1L && tol <= 0)) return(paste0(":NUMERICAL:=", x))
+
+  ## only correct solution with tolerance
+  if(breaks == 1L) return(paste0(":NUMERICAL:=", x, ":", tol))
+
+  ## multiple partial solutions with tolerances
+  if(!(breaks %in% c(2:6, 10))) stop("'breaks' must be 0, 1, ..., 6, or 10")
+  perc <- exams:::moodlePercent((breaks:1L)/breaks)
+  y <- seq(x + 1.5 * tol, by = tol, length.out = breaks - 1L)
+
+  ## set up Moodle string: :NUMERICAL:=solution1~solution2~solution3 etc.
+  ## where each solution has: %_percent_%_solution_:_tolerance_#_comment_
+  perc <- c("", paste0("%", rep.int(perc[-1], 2), "%"))
+  x <- round(c(x, y, x + (x - y)), digits = digits)
+  tol <- c(tol, rep.int(tol/2, 2 * (breaks - 1L)))
+  if(!is.null(range)) {
+    if(length(range) != 2L) stop("'range' must have length 2")
+    ok <- (x >= range[1L]) & (x <= range[2L])
+    if(!ok[1L]) stop("'x' is not within 'range'")
+  } else {
+    ok <- rep.int(TRUE, 2 * breaks - 1L)
+  }
+  num <- paste0(":NUMERICAL:=", paste0(
+    perc[ok],        ## percents
+    x[ok],           ## solutions
+    ":", tol[ok],    ## tolerances
+    "",              ## comments (none for now)
+    collapse = "~")) ## collapse
+  return(num)
+}
+  
+  vis_tau <- function(plot_raw, 
+                    rnd = 1, 
+                    alpha = .5, 
+                    color = "#8cd000", 
+                    linewidth = 3, 
+                    size_point = 3) {
+data_rawplot <- 
+  layer_data(plot_raw)
+
+data_to_add <- 
+  expand_grid(A = paste(data_rawplot$x,data_rawplot$y, sep = "X"),
+              B = paste(data_rawplot$x,data_rawplot$y, sep = "X")) |> 
+  separate_wider_delim(A, "X", names = c("xlinks", "ylinks")) |> 
+  separate_wider_delim(B, "X", names = c("xrechts", "yrechts")) |> 
+  mutate(xlinks = as.numeric(xlinks),
+         ylinks = as.numeric(ylinks),
+         xrechts = as.numeric(xrechts),
+         yrechts = as.numeric(yrechts),
+         Vergleich = 
+           case_when(
+             round(ylinks, rnd) < round(yrechts, rnd) &
+               round(xlinks, rnd) < round(xrechts, rnd) ~ "konkordant", 
+             round(ylinks, rnd) > round(yrechts, rnd) &
+               round(xlinks, rnd) < round(xrechts, rnd) ~ "diskordant",
+             round(xlinks, rnd) == round(xrechts, rnd) &
+               round(ylinks, rnd) != round(yrechts, rnd) ~ "tie AV",
+             round(ylinks, rnd) == round(yrechts, rnd) &
+               round(xlinks, rnd) != round(xrechts, rnd) ~ "tie UV")) |> 
+  filter(!(ylinks == yrechts & xlinks == xrechts)) |> 
+  filter(!is.na(Vergleich))
+
+ggplot() +
+  geom_segment(
+    data = data_to_add,
+    aes(
+      x = xlinks,
+      y = ylinks,
+      xend = xrechts,
+      yend = yrechts,
+      color = Vergleich
+    ),
+    linewidth = linewidth,
+    alpha = alpha
+  ) +
+  geom_point(data = data_rawplot, aes(x,y),
+             color = color,
+             size = size_point) +
+  #theme_modern_rc() +
+  labs(title = "Streudiagramm",
+       subtitle = "der Variablen X & Y") +
+  scale_color_manual(values = c("#d77d00", 
+                                "#8cd000",
+                                "#ff0000", 
+                                "#0FA5D7"),
+                     guide = guide_legend(override.aes = list(size = 4,
+                                                              alpha = 1))
+                     ) +
+  theme(legend.position="none")
+
+}
+
+xvalues <- sample(1:10,5, replace = TRUE)
+yvalues <- sample(1:10,5, replace = TRUE)
+true_corr <- round(cor(xvalues, yvalues,method = "kendall"),2)
+
+min_plot <- 
+  ggplot(tibble( x = xvalues,
+                 y = yvalues),
+         aes(x,y)) +
+  geom_jitter(color = "#8cd000", width = .05, height = .05) +
+  theme_modern_rc() +
+  theme(strip.text = element_text(color = "#8cd000"))
+
+vis_tau(
+  min_plot,
+  rnd = 0,
+  color = "#8cd000",
+  alpha = .5,
+  linewidth = .5,
+  size_point = 4
+) +
+  xlab("X") +
+  ylab("Y") +
+  ggtitle("Streudiagramm", "der Variablen X & Y")
+
+```
+
+Obige Abbildung zeigt die Assoziation der beiden ordinalen Variablen $X = (`r xvalues[1]`,`r xvalues[2]`,`r xvalues[3]`,`r xvalues[4]`,`r xvalues[5]`)$ und $Y = (`r yvalues[1]`,`r yvalues[2]`,`r yvalues[3]`,`r yvalues[4]`,`r yvalues[5]`)$. Berechnen Sie.
+
+
+$\tau_{\mathrm{b}} \left(X,Y \right)=\frac{\color{#8cd000}{n_{\mathrm{K}}}-\color{#d77d00}{n_{\mathrm{D}}}}{\sqrt{\left(\color{#8cd000}{n_{\mathrm{K}}}+\color{#d77d00}{n_{\mathrm{D}}}+\color{#ff0000}{n_{\mathrm{B}(X)}}\right) \cdot\left(\color{#8cd000}{n_{\mathrm{K}}}+\color{#d77d00}{n_{\mathrm{D}}}+\color{#0FA5D7}{n_{\mathrm{B}(Y)}}\right)}}$.
+
+
+Answerlist
+----------
+* Wie groß ist Kendall's $\tau_{\mathrm{b}}$ für diese Daten? (Runden Sie auf 2 Dezimalstellen und verwenden Sie "," als Dezimaltrennzeichen)
+
+
+
+Meta-information
+================
+exname: Caculating taub 
+extype: cloze
+exclozetype: verbatim
+exsolution: `r num_to_moodle(true_corr, tol = 0.02, breaks = 1)`
