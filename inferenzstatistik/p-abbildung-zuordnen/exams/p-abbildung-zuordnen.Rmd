@@ -1,0 +1,102 @@
+```{r datageneration, echo = FALSE, message=FALSE}
+library(tidyverse)
+library(exams)
+library(bayestestR)
+library(bain)
+library(ggforce)
+
+true_ds <- runif(1,.2,.4)
+Ns <- c(sample(3:5,1),
+        sample(18:22, 1),
+        sample(180:200, 1))
+order_of_Datensatz <- sample(c("Datensatz A", "Datensatz B", "Datensatz C"),3)
+
+data <- tibble(
+  Datensatz = c(rep(order_of_Datensatz[1], Ns[1]*2), 
+                rep(order_of_Datensatz[2], Ns[2]*2), 
+                rep(order_of_Datensatz[3], Ns[3]*2)),
+  Gruppe = c(rep("Kontrollgruppe", Ns[1]), rep("Interventionsgruppe", Ns[1]), 
+             rep("Kontrollgruppe", Ns[2]), rep("Interventionsgruppe", Ns[2]), 
+             rep("Kontrollgruppe", Ns[3]), rep("Interventionsgruppe", Ns[3])),
+  Motivation = c(distribution_normal(Ns[1]) + 20, distribution_normal(Ns[1], true_ds) +20,
+                 distribution_normal(Ns[2]) + 20, distribution_normal(Ns[2], true_ds) +20,
+                 distribution_normal(Ns[3]) + 20, distribution_normal(Ns[3], true_ds) +20)
+)
+
+pvalues <- numeric(0)
+pvalues[1] <- t_test(Motivation ~ Gruppe, 
+                      data = data |> filter(Datensatz == "Datensatz A"))$p.value
+pvalues[2] <- t_test(Motivation ~ Gruppe, 
+                      data = data |> filter(Datensatz == "Datensatz B"))$p.value
+pvalues[3] <- t_test(Motivation ~ Gruppe, 
+                      data = data |> filter(Datensatz == "Datensatz C"))$p.value
+
+
+round_p <- function(x){
+  ifelse(x < 0.001, "< 0.001", round(x, 3))
+}
+
+answerlist_data <- 
+  tibble(
+  answerlist = c(paste("Datensatz A: p = ", round_p(pvalues[1]), ", Datensatz B: p = ", round_p(pvalues[2]), ", Datensatz C: p = ", round_p(pvalues[3]), sep = " "),
+                 paste("Datensatz A: p = ", round_p(pvalues[1]), ", Datensatz B: p = ", round_p(pvalues[3]), ", Datensatz C: p = ", round_p(pvalues[2]), sep = " ")),
+  exsolution = c(T,F)
+  ) |> 
+  add_row(tibble(
+    answerlist = c(paste("Datensatz A: p = ", round_p(pvalues[2]), ", Datensatz B: p = ", round_p(pvalues[1]), ", Datensatz C: p = ", round_p(pvalues[3]), sep = " "),
+                   paste("Datensatz A: p = ", round_p(pvalues[2]), ", Datensatz B: p = ", round_p(pvalues[3]), ", Datensatz C: p = ", round_p(pvalues[1]), sep = " "),
+                   paste("Datensatz A: p = ", round_p(pvalues[3]), ", Datensatz B: p = ", round_p(pvalues[1]), ", Datensatz C: p = ", round_p(pvalues[2]), sep = " "),
+                   paste("Datensatz A: p = ", round_p(pvalues[3]), ", Datensatz B: p = ", round_p(pvalues[2]), ", Datensatz C: p = ", round_p(pvalues[1]), sep = " ")),
+    exsolution = c(F,F,F,F)) |>
+      sample_n(3)
+  )
+
+
+```
+
+Question
+========
+# Große Überschrift
+
+Angenommen **drei Forscher:innen-Teams** untersuchen jeweils die Wirksamkeit einer Motivationsintervention in einem randomisiert kontrollierten Experiment. Sie erhalten zwar dasselbe Cohen's d von `r round(true_ds,2)`, verwenden aber unterschiedliche Stichprobengrößen, die zu den im Folgenden dargestellten Datensätzen führen. 
+
+```{r showplot, echo=FALSE, results = "hide", fig.width=6, fig.height=3, fig.cap = ""}
+
+ggplot(data, aes(Gruppe, Motivation)) +
+  geom_violin() +
+  geom_sina() +
+  facet_wrap(~Datensatz) +
+  scale_colour_manual(values = randomcoloR::randomColor(count = 3,
+                                                        luminosity = "bright")) +
+  theme_minimal() +
+  xlab("")+
+  theme(legend.position = "none",
+        axis.text.x = element_text(angle = 15, hjust = 1))
+
+```
+
+
+Alle drei Forscher:innen-Teams ermitteln einen p-Wert für die
+
+* Nullhypothese *H~0~: Kontroll- und Interventionsgruppe unterscheiden sich in ihrer durchschnittlichen Motivation nicht voneinander (d = 0)* und die 
+* Alternativhypothese *H~A~: Die Interventionsgruppe ist der Kontrollgruppe in der Motivation überlegen (d > 0)*
+
+und erhalten dabei die *p*-Werte `r round_p(sort(pvalues)[1])`, `r round_p(sort(pvalues)[2])` und `r round_p(sort(pvalues)[3])`. 
+
+**Welcher *p*-Wert passt zu welchem Datensatz?**
+
+
+```{r answerlist, echo=FALSE, results='asis'}
+answerlist(
+  answerlist_data$answerlist,
+  markup = "markdown"
+)
+```
+
+
+Meta-information
+================
+exname: pvalue Abbildung zuordnen
+extype: schoice
+exsolution: `r mchoice2string(answerlist_data$exsolution)`
+exshuffle: true

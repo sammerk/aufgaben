@@ -9,36 +9,36 @@ library(effsize)
 q_a_matrix <-
   tibble(
     Answers_and_Distractors = 
-        c("Es liegt moderate Evidenz (3 < BF₁₀ < 10) für die Alternativhypothese (Cohen's d > 0) vor.",
-          "Es liegt starke Evidenz (10 ≤ BF₁₀) für die Alternativhypothese (Cohen's d > 0) vor.",
-          "Es liegt moderate Evidenz (1/10 < BF₁₀ < 1/3) für die Nullhypothese (Cohen's d = 0) vor.",
+        c("Es liegt moderate Evidenz (da 3 < BF₁₀ < 10) für die Alternativhypothese (Cohen's d > 0) vor.",
+          "Es liegt starke Evidenz (da 10 ≤ BF₁₀) für die Alternativhypothese (Cohen's d > 0) vor.",
+          "Es liegt moderate Evidenz (da 1/10 < BF₁₀ < 1/3) für die Nullhypothese (Cohen's d = 0) vor.",
           
-          "Es liegt starke Evidenz (BF₁₀ ≤ 1/10) für die Nullhypothese (Cohen's d = 0) vor.",
-          "Die inferenzstatistische Prüfung ist inkonklusiv (1/3 < BF₁₀ < 3)",
+          "Es liegt starke Evidenz (da BF₁₀ ≤ 1/10) für die Nullhypothese (Cohen's d = 0) vor.",
+          "Die inferenzstatistische Prüfung ist inkonklusiv (da 1/3 < BF₁₀ < 3).",
           "Die Alternativhypothese ist wahr.", 
           
           "Die Nullhypothese ist wahr.",
           "Es liegt ein substantieller (mindestens kleiner) Effekt vor."),
       `Eine Bildungsverwaltung führt in zufällig ausgewählten Kommunen einen monetären Bonus für Lehrerinnen und Lehrer ein, die in der Schulleiterbewertung und in Tests ihrer Schülerinnen und Schüler besonders gut abschneiden. Sie erfasst auch ob diese Kommunen als Ganzes durch dieses Anreizsystem besser in der Schülerleistung werden und findet ein Cohen's d = .05 und einen BF₁₀ > 10000` =  
-        c(0,1,NA,  0,0,0,  NA,0),
+        c(0,1,NA,  0,0,NA,  NA,0),
       `Ein Forscherteam untersucht, ob Schülerinnen und Schüler, die an einem Vorschulprogramm teilgenommen haben nach der 1. Klasse bessere Leseleistungen erzielen als diejenigen, die an keinem Vorschulprogramm teilgenommen haben. Sie erhalten ein Cohen's d = .45 und einen BF₁₀ = 128` =  
-        c(0,1,NA,  0,0,0,  NA,1),
+        c(0,1,NA,  0,0,NA,  NA,1),
       `Eine Forscherin untersucht, ob Kinder mit körperlichen Vorerkrankungen im schulischen Umfeld schlechter abschneiden, als Schülerinnen und Schüler bei denen keinerlei chronischen Erkrankungen bekannt sind. Sie erhält ein Cohen's d = .23 und einen BF₁₀ = 19` =  
-        c(0,1,NA,  0,0,0,  NA,1),
+        c(0,1,NA,  0,0,NA,  NA,1),
       `Ein Forscher untersucht in einem experimentellen Design die Wirksamkeit eines Trainings zur Reduktion von Prüfungsangst bei Schülerinnen und Schülern in Klassenstufe 7. Ihn interessiert, ob sich die Prüfungsleistungen im Fach Mathematik dadurch verbessern lassen.  Er erhält ein Cohen's d = .04 und einen BF₁₀ = 9` =  
-        c(1,0,NA,  0,0,NA,  0,0),
+        c(1,0,NA,  0,0,NA,  NA,0),
       `Eine Forschergruppe beschäftigt sich mit Einflüssen im häuslichen Umfeld auf die Bildungswege von Schülerinnen und Schülern. Dazu untersuchen sie in zwei repräsentativen Stichproben, ob Schülerinnen und Schüler an Gymnasien zu Hause auf mehr Bücher zugreifen können als Schülerinnen und Schüler an Realschulen. Sie erhalten ein Cohen's d = .56 und einen BF₁₀ > 1000` =  
-        c(0,1,NA,  0,0,0,  NA,1),
+        c(0,1,NA,  0,0,NA,  NA,1),
       `Eine Doktorandin untersucht für ihre Doktorarbeit die Unterschiede zwischen einfachem Feedback (richtig/falsch) und informativen Feedback (richtig/falsch plus richtige Lösung bzw. weitere Hinweise). In einem Experiment mit 240 Studentinnen und Studenten hat sie eigens für das Experiment einen Text mit Faktenwissen gestaltet. Eine Gruppe bekommt nach der Lernphase Übungsaufgaben mit einfachem Feedback, die andere Gruppe mit informativem Feedback. Beim Vergleich der Gruppen in einem abschließenden Test erhält sie ein Cohen's d = .47 und einen BF₁₀ = 210` =  
-        c(0,1,NA,  0,0,0,  NA,1),
+        c(0,1,NA,  0,0,NA,  NA,1),
       `Eine Forscherin untersucht, ob Lehramtsstudierende, die nach dem 01.01.2000 geboren wurden in einem Test zur digitalen Kompetenz besser abschneiden als Lehramtsstudierende, die vor dem 01.01.2000 geboren wurden. Sie erhält ein Cohen's d = .2 und einen BF₁₀ = .027` =  
-        c(0,0,NA,  1,0,0,  NA,1),
-      `Ein Forscher beschäftigt sich mit der Frage, ob es sinnvoll ist Schülerinnen und Schüler in weiterführenden Schulen eine Schulung zum Speedreading zu geben. Dazu überprüft er zunächst experimentell, ob die Schülerinnen und Schüler davon profitieren. Er vergleicht daher zwei Gruppen (mit und ohne Einführung im Speedreading) in Bezug auf Ihr Textverständnis. Er ermittelt ein Cohen's d =- .2 und einen BF₁₀ = .5` =  
-        c(NA,0,0,  0,1,0,  NA,1),
+        c(0,0,NA,  1,0,NA,  NA,1),
+      `Ein Forscher beschäftigt sich mit der Frage, ob es sinnvoll ist Schülerinnen und Schüler in weiterführenden Schulen eine Schulung zum Speedreading zu geben. Dazu überprüft er zunächst experimentell, ob die Schülerinnen und Schüler davon profitieren. Er vergleicht daher zwei Gruppen (mit und ohne Einführung im Speedreading) in Bezug auf Ihr Textverständnis. Er ermittelt ein Cohen's d = -.2 und einen BF₁₀ = .5` =  
+        c(NA,0,0,  0,1,NA,  NA,1),
       `Ein Forscher untersucht, ob Schüler bessere schulische Leistungen im Leseverständnis erzielen, wenn Sie in der Grundschule von Lehrern unterrichtet werden. Dazu werden an zehn zweizügigen Grundschulen in einer lang angelegten Studie die neuen Erstklässler zufällig in eine Klasse mit Klassenlehrer und eine Klasse mit Klassenlehrerin zugeteilt. Beim Vergleich nach Klassenstufe 2 erhalten die Forscher ein Cohen's d = .02 und einen BF₁₀ = 0.09` =  
-        c(0,0,NA,  1,0,NA,  0,0),
+        c(0,0,NA,  1,0,NA,  NA,0),
       `Eine Doktorandin möchte untersuchen, ob klassische Musik lernförderlich ist. Sie teilt 10 Ganztagsschulen zufällig einer Kontrollgruppe und eine Experimentalgruppe zu. In der Kontrollgruppe macht sie keine Vorgaben. In der Experimentalgruppe wird über das gesamte Schuljahr während der Lernzeit leise klassische Musik abgespielt. Am Anfang und am Ende des Schuljahres absolvieren alle Schülerinnen und Schüler einen standardisierten Wissenstest. Beim Vergleich der Lernzuwächse in den beiden Gruppen findet sie ein Cohen's d = -.03 und einen BF₁₀ < 1/1000` =  
-        c(0,0,NA,  1,0,NA,  0,0),
+        c(0,0,NA,  1,0,NA,  NA,0),
       
     )
 

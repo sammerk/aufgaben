@@ -2,10 +2,10 @@
 library(tidyverse)
 library(exams)
 data <- tibble(
-  answerlist = c("Cohen's U~1~", "Pearson's r", "Kendall's τ", "Cohen's U~3~",
+  answerlist = c("Cohen's U~1~", "Pearson's r", "Kendall's τ", #"Cohen's U~3~",
                  "Cohen's d", "Mittelwert", "Standardabweichung"),
-  exsolution = rep(F, 7))|> 
-  sample_n(2) |> 
+  exsolution = rep(F, 6))|> 
+  sample_n(3) |> 
   add_row(answerlist = c("p-Wert", "Bayes-Faktor"), 
           exsolution = c(T, T)) |> 
   sample_frac(1)
@@ -14,7 +14,7 @@ data <- tibble(
 
 Question
 ========
-Welche der folgenden Koeffizienten beschreiben wie sicher ein Effekt ist (also eine Inferenzstatistik)?
+Welche der folgenden Koeffizienten beschreiben, wie sicher ein Effekt ist (also eine Inferenzstatistik)?
 
 
 ```{r echo=FALSE, results='asis'}
