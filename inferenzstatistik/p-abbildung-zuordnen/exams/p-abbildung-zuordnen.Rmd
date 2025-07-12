@@ -56,7 +56,7 @@ answerlist_data <-
 
 Question
 ========
-# Große Überschrift
+# Aufgabe 3 {-}
 
 Angenommen **drei Forscher:innen-Teams** untersuchen jeweils die Wirksamkeit einer Motivationsintervention in einem randomisiert kontrollierten Experiment. Sie erhalten zwar dasselbe Cohen's d von `r round(true_ds,2)`, verwenden aber unterschiedliche Stichprobengrößen, die zu den im Folgenden dargestellten Datensätzen führen. 
 
