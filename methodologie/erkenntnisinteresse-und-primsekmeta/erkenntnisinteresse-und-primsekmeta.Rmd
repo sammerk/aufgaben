@@ -1,0 +1,59 @@
+```{r}
+n <- sample(1:5, 1)
+abstract <- c(
+  "Ein Forschungsteam untersucht mögliche Zusammenhänge zwischen Persönlichkeitsmerkmalen und Studienabbrüchen. Dazu analysieren sie frei zugängliche Daten des deutschen Studierendenpanels. Ziel ist es, auf Basis von Korrelationsanalysen Hypothesen zu generieren, welche Merkmale mit erhöhtem Abbruchrisiko verbunden sein könnten.",
+  
+  "Zur Überprüfung der Hypothese, dass strukturierte Lernpläne Prüfungsangst reduzieren, führen Forschende ein kontrolliertes Experiment mit N = 120 Studierenden durch. Die Teilnehmenden werden zufällig auf zwei Gruppen verteilt – mit vs. ohne Lernplan-Intervention – und anschließend auf ihre Angstsymptome hin verglichen.",
+  
+  "In einer groß angelegten Online-Befragung werden 2.000 Schüler:innen zu ihren Mediennutzungsgewohnheiten befragt. Die Forschenden analysieren Häufigkeiten und Mittelwerte zur Nutzung von Smartphone, TikTok und Streaming-Diensten nach Alter, Geschlecht und Schulform.",
+  
+  "Ein Forschungsteam will klären, ob kognitive Verhaltenstherapie (KVT) wirksamer ist als andere Therapieformen bei der Behandlung sozialer Ängste. Dazu reanalysieren sie vorhandene Studien, in dem sie die Effektstärken aus 47 randomisierten Kontrollstudien extrahieren und akkumulierend auswerten. Ziel ist die Prüfung der Überlegenheit der KVT.",
+  
+  "Forschende führen qualitative Interviews mit 30 Internatlehrkräften durch, um bisher unerforschte Belastungsfaktoren zu identifizieren. Ziel ist die Ableitung erster Konzepte und Hypothesen zur weiteren Erforschung psychischer Belastung im Lehrberuf")[n]
+
+studie_korrekt <- 
+  c("Explorative Sekundärstudie",
+    "Explanative Primärstudie",
+    "Deskriptive Primärstudie",
+    "Explanative Metaanalyse",
+    "Explorative Primärstudie")[n]
+
+answerlist <- 
+  c(
+    "Explorative Sekundärstudie",
+    "Explorative Primärstudie",
+    "Explorative Metaanalyse",
+    "Explanative Sekundärstudie",
+    "Explanative Primärstudie",
+    "Explanative Metaanalyse",
+    "Deskriptive Sekundärstudie",
+    "Deskriptive Primärstudie",
+    "Deskriptive Metaanalyse"
+  )
+
+exsolution <- studie_korrekt == answerlist
+
+```
+
+Question
+========
+Kategorisieren Sie den folgenden Abstract:
+
+> `r abstract`
+
+
+
+```{r echo=FALSE, results='asis'}
+answerlist(
+  answerlist,
+  markup = "markdown"
+)
+```
+
+
+
+Meta-information
+================
+exname: Abstracts Erkenntisinteresse und PrimSekMeta
+extype: schoice
+exsolution: `r mchoice2string(exsolution)`
