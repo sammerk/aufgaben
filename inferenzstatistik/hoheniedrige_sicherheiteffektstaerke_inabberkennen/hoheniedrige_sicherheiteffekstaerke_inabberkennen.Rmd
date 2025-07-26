@@ -1,0 +1,131 @@
+```{r datageneration, echo = FALSE, message=FALSE}
+library(tidyverse)
+library(bayestestR)
+library(hrbrthemes)
+library(ggdist)
+library(viridis)
+library(patchwork)
+library(exams)
+
+data <- tibble(
+  # large effect & high certainty
+  `Kontrollgruppe` = distribution_normal(50, 50, 10),
+  `Formative Assessment` = distribution_normal(50, 57, 10)) %>% 
+  gather(Gruppe, `Ergebnis im Leistungstest`) %>% 
+  mutate(Effekt = "Starker Effekt",
+         Unsicherheit = "Geringe Unsicherheit") %>% 
+  # large Effekt & high certainty
+  full_join(tibble(`Kontrollgruppe` = distribution_normal(4, 50, 10),
+                   `Formative Assessment` = distribution_normal(4, 57, 10)) %>% 
+              gather(Gruppe, `Ergebnis im Leistungstest`) %>% 
+              mutate(Effekt = "Starker Effekt",
+                     Unsicherheit = "Große Unsicherheit")) %>% 
+  full_join(tibble(`Kontrollgruppe` = distribution_normal(210, 50, 10),
+                   `Formative Assessment` = distribution_normal(210, 52, 10)) %>% 
+              gather(Gruppe, `Ergebnis im Leistungstest`) %>% 
+              mutate(Effekt = "Schwacher Effekt",
+                     Unsicherheit = "Geringe Unsicherheit")) %>% 
+  full_join(tibble(`Kontrollgruppe` = distribution_normal(11, 50, 10),
+                   `Formative Assessment` = distribution_normal(11, 52, 10)) %>% 
+              gather(Gruppe, `Ergebnis im Leistungstest`) %>% 
+              mutate(Effekt = "Schwacher Effekt",
+                     Unsicherheit = "Große Unsicherheit")) %>% 
+  mutate(Gruppe = factor(Gruppe, 
+                         levels = c("Kontrollgruppe",
+                                    "Formative Assessment")),
+         Gruppe2 = ifelse(Gruppe == "Kontrollgruppe", 
+                          Gruppe,
+                          "FormativeAssessment"),
+         Gruppe3 = paste(Effekt, Unsicherheit, sep = " & "),
+         u3farbe = (`Ergebnis im Leistungstest` > 50 & 
+                      Gruppe == "Formative Assessment"))
+
+reihenfolge_gruppe <- sample(unique(data$Gruppe3))
+
+data <- data %>% 
+  mutate(Gruppe4 = factor(Gruppe3, levels = reihenfolge_gruppe),
+         Gruppe5 = as.numeric(Gruppe4))
+
+plot <- ggplot(data,
+       aes(`Ergebnis im Leistungstest`, Gruppe, 
+           fill = stat(x < 50 & y == 2), )) +
+  stat_slab(height = 0.6, 
+            position = position_nudge(y = .1),
+            alpha = .7) +
+  geom_point(position = position_jitter(width = 0, height = 0.05, seed = 1),
+             alpha = .3) +
+  geom_vline(xintercept = 50, alpha = 0.25) +
+  theme_ipsum_rc() +
+  scale_color_manual(values = viridis(2)) +
+  scale_fill_manual(values = viridis(2)) +
+  facet_wrap(~ Gruppe5, ncol = 2) +
+  labs(title = "Vier Ergebnisse") +
+  ylab("") +
+  theme(strip.text = element_text(lineheight=6.0, 
+                                  hjust = 0.5,
+                                  size = 11),
+        legend.position = "none",
+        panel.grid.minor.x = element_blank(),
+        panel.grid.major.x = element_blank())
+
+answerlist <- 
+  c(
+    paste(
+      paste("1 = ", reihenfolge_gruppe[1], ", ", sep = ""),
+      paste("2 = ", reihenfolge_gruppe[2], ", ", sep = ""),
+      paste("3 = ", reihenfolge_gruppe[3], ", ", sep = ""),
+      paste("4 = ", reihenfolge_gruppe[4], ".", sep = "")),
+    paste(
+      paste("1 = ", reihenfolge_gruppe[2], ", ", sep = ""),
+      paste("2 = ", reihenfolge_gruppe[3], ", ", sep = ""),
+      paste("3 = ", reihenfolge_gruppe[4], ", ", sep = ""),
+      paste("4 = ", reihenfolge_gruppe[1], ".", sep = "")),
+    paste(
+      paste("1 = ", reihenfolge_gruppe[3], ", ", sep = ""),
+      paste("2 = ", reihenfolge_gruppe[4], ", ", sep = ""),
+      paste("3 = ", reihenfolge_gruppe[1], ", ", sep = ""),
+      paste("4 = ", reihenfolge_gruppe[2], ".", sep = "")),
+    paste(
+      paste("1 = ", reihenfolge_gruppe[4], ", ", sep = ""),
+      paste("2 = ", reihenfolge_gruppe[1], ", ", sep = ""),
+      paste("3 = ", reihenfolge_gruppe[2], ", ", sep = ""),
+      paste("4 = ", reihenfolge_gruppe[3], ".", sep = "")),
+    paste(
+      paste("1 = ", reihenfolge_gruppe[2], ", ", sep = ""),
+      paste("2 = ", reihenfolge_gruppe[4], ", ", sep = ""),
+      paste("3 = ", reihenfolge_gruppe[1], ", ", sep = ""),
+      paste("4 = ", reihenfolge_gruppe[3], ".", sep = "")),
+    paste(
+      paste("1 = ", reihenfolge_gruppe[4], ", ", sep = ""),
+      paste("2 = ", reihenfolge_gruppe[3], ", ", sep = ""),
+      paste("3 = ", reihenfolge_gruppe[2], ", ", sep = ""),
+      paste("4 = ", reihenfolge_gruppe[1], ".", sep = ""))
+  )
+
+```
+
+Question
+========
+Angenommen **vier Forscher:innen-Teams** untersuchen jeweils die Wirksamkeit von Formative Assessment in einem randomisiert kontrollierten Experiment.  Welche Aussagen bzgl. Effektstärke und Inferenzstatistik passen zu welchem Ergebnis, angenommen die Nullhypothese lautet $MW_\text{Formatives Assessment} = MW_\text{Kontrollgruppe}$ und die Alternativhypothese $MW_\text{Formatives Assessment} > MW_\text{Kontrollgruppe}$?
+
+```{r showplot, echo=FALSE, results = "hide", fig.width=6, fig.height=6, fig.cap = ""}
+
+plot
+```
+
+
+
+```{r answerlist, echo=FALSE, results='asis'}
+answerlist(
+  answerlist,
+  markup = "markdown"
+)
+```
+
+
+Meta-information
+================
+exname: hoheniedrige_sicherheiteffekstaerke_inabberkennen
+extype: schoice
+exsolution: 100000
+exshuffle: true
