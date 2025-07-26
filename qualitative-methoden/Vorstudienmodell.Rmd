@@ -1,0 +1,22 @@
+Question
+========
+Im Mixed-Methods-Vorstudienmodell folgt auf eine qualitative Untersuchung eine ____________ Untersuchung zur Hypothesenprüfung.
+
+
+
+Answerlist
+----------
+* experimentelle
+* quantitative
+* ethnografische
+* longitudinale
+* narrative
+* offene
+
+
+
+Meta-information
+================
+exname: QualiProzessStruktur
+extype: schoice
+exsolution: 010000

@@ -1,0 +1,56 @@
+```{r}
+n <- sample(1:5, 1)
+abstract <- c(
+  "Die vorliegende qualitative Studie untersucht Sinnzuschreibungen auf drei Ebenen. Zur Rekonstruktion des X Sinns wurden narrative Interviews mit Jugendlichen durchgeführt, um individuelle Erfahrungen mit schulischer Ausgrenzung nachzuvollziehen. Zur Rekonstruktion des Y Sinns wurden Gruppendiskussionen mit Lehrkräften analysiert, um gemeinsame Deutungsmuster im Umgang mit Diversität zu erfassen. Zur Rekonstruktion des Z Sinns wurden Fallakten von Schulverweigerung mit der dokumentarischen Methode ausgewertet, um latente Tiefenstrukturen institutionellen Handelns sichtbar zu machen.",
+  
+  "Diese qualitative Studie beleuchtet schulische Inklusionsprozesse aus drei Perspektiven. Zur Rekonstruktion des X Sinns wurden Gruppendiskussionen mit Fachkräften ausgewertet, um kollektive Deutungsmuster im Umgang mit Heterogenität zu erfassen. Zur Rekonstruktion des Y Sinns erfolgte eine Analyse von Schulprogrammen und Leitlinien mittels objektiver Hermeneutik. Zur Rekonstruktion des Z Sinns wurden Interviews mit Schüler:innen durchgeführt, in denen persönliche Erfahrungen mit Ausgrenzung im Mittelpunkt standen. Die Studie zeigt, wie soziale, strukturelle und individuelle Ebenen ineinandergreifen.",
+  
+  "Ziel dieser Untersuchung ist die mehrdimensionale Betrachtung von Lernbarrieren im Berufsschulkontext. Zur Rekonstruktion des X Sinns wurden Curricula und Fallakten analysiert, um strukturelle Vorgaben und institutionelle Logiken zu identifizieren. Zur Rekonstruktion des Y Sinns wurden Interviews mit Auszubildenden geführt, in denen individuelle Wahrnehmungen schulischer Anforderungen erfasst wurden. Zur Rekonstruktion des Z Sinns wurden Gruppendiskussionen mit Ausbildungsverantwortlichen analysiert, um geteilte Deutungsmuster in betrieblich-schulischen Schnittstellen herauszuarbeiten. So entsteht ein vielschichtiges Bild der Bedingungen beruflicher Bildung.",
+  
+  "In dieser qualitativen Studie werden individuelle, institutionelle und kollektive Perspektiven auf Prüfungsangst untersucht. Zur Rekonstruktion des X Sinns wurden Interviews mit Studierenden geführt, um deren persönliche Sichtweisen auf Leistungsdruck zu erfassen. Zur Rekonstruktion des Y Sinns wurden hochschulische Regelwerke und Prüfungsdokumente ausgewertet. Zur Rekonstruktion des Z Sinns wurden Gruppendiskussionen mit Lehrenden durchgeführt, um kollektive Vorstellungen von Leistung und Bewertung sichtbar zu machen. Die Analyse ermöglicht ein umfassendes Verständnis der sozialen Konstruktion von Prüfungsanforderungen.",
+  
+  "Diese Studie widmet sich der Entstehung und Vermittlung von Geschlechterrollen im Schulalltag. Zur Rekonstruktion des X Sinns wurden Gruppendiskussionen mit Schüler:innengruppen analysiert, um kollektive Bedeutungszuschreibungen zu erfassen. Zur Rekonstruktion des Y Sinns wurden narrative Interviews mit einzelnen Jugendlichen geführt, die ihre persönlichen Erfahrungen und Deutungen schilderten. Zur Rekonstruktion des Z Sinns wurden Unterrichtsmaterialien und Schulbücher inhaltsanalytisch untersucht, um latente geschlechterbezogene Strukturen und Normen zu identifizieren. Die Studie zeigt, wie Diskurse, Erfahrungen und Strukturen zusammenspielen.")[n]
+
+sinne_korrekt <- 
+  c("X = subjektiven, Y = sozialen, Z = objektiven",
+    "X = sozialen, Y = objektiven, Z = subjektiven",
+    "X = objektiven, Y = subjektiven, Z = sozialen",
+    "X = subjektiven, Y = objektiven , Z = sozialen",
+    "X = sozialen, Y = subjektiven , Z = objektiven")[n]
+
+answerlist <- 
+  c(
+    "X = subjektiven, Y = sozialen, Z = objektiven",
+    "X = subjektiven, Y = objektiven , Z = sozialen",
+    "X = sozialen, Y = objektiven, Z = subjektiven",
+    "X = sozialen, Y = subjektiven , Z = objektiven",
+    "X = objektiven, Y = subjektiven, Z = sozialen",
+    "X = objektiven, Y = sozialen, Z = subjektiven"
+  )
+
+exsolution <- sinne_korrekt == answerlist
+
+```
+
+Question
+========
+Ordnen Sie zu:
+
+> `r abstract`
+
+
+
+```{r echo=FALSE, results='asis'}
+answerlist(
+  answerlist,
+  markup = "markdown"
+)
+```
+
+
+
+Meta-information
+================
+exname: Abstracts Sinnebenen
+extype: schoice
+exsolution: `r mchoice2string(exsolution)`

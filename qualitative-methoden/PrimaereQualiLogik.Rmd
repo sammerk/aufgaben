@@ -1,0 +1,22 @@
+Question
+========
+Qualitative Forschung folgt meist einer ____________ oder induktiven Logik.
+
+
+
+Answerlist
+----------
+* objektiven
+* kritischen
+* deskriptiven
+* normativen
+* abduktiven 
+* komparativen
+
+
+
+Meta-information
+================
+exname: QualiProzessStruktur
+extype: schoice
+exsolution: 000010

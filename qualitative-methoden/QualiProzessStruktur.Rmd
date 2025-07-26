@@ -1,0 +1,21 @@
+Question
+========
+Der qualitative Forschungsprozess folgt typischerweise einer ____________ Struktur.
+
+
+Answerlist
+----------
+* linearen
+* deduktiven
+* starren
+* sequenziellen
+* zirkulären
+* experimentellen
+
+
+
+Meta-information
+================
+exname: QualiProzessStruktur
+extype: schoice
+exsolution: 000010

@@ -1,0 +1,21 @@
+Question
+========
+Im qualitativen Paradigma wird Erkenntnisgewinn primär durch ____________ der Perspektiven der Beteiligten angestrebt.
+
+
+Answerlist
+----------
+* Kontrolle
+* Verstehen
+* Standardisierung
+* Berechnung
+* Operationalisierung
+* Reduktion
+
+
+
+Meta-information
+================
+exname: QualiProzessStruktur
+extype: schoice
+exsolution: 010000
