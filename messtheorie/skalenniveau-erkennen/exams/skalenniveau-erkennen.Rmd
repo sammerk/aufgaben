@@ -1,6 +1,6 @@
 ```{r data generation, echo = FALSE, results = "hide"}
 library(tidyverse)
-# library(exams)
+library(exams)
 bsp <- 
   c("Nationalität", #1
     "Religionszugehörigkeit", #2

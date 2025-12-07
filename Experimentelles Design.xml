@@ -1,0 +1,571 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+
+
+<question type="category">
+<category>
+<text>$course$/Experimentelles Design/Exercise 1</text>
+</category>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> Q1 : methodologie_experimentelles-design_exams_Exp_Quasiexp_Nichtexp_Studien_01 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Es soll untersucht werden, welchen Zusammenhang es zwischen Pausen beim Lernen und der Lernleistung gibt. Dazu werden die Studierenden eines Seminars während ihrer Lernzeit beobachtet. Es wird registriert, wie viel Zeit sie für das Lernen der Inhalte aufwenden und wie viele Lernpausen sie machen. Die Lernleistung wird anhand der erreichten Punktzahl in einer Abschlussklausur bewertet.</p>
+<p><strong>Welches Untersuchungsdesign liegt vor?</strong></p>
+</p>]]></text>
+</questiontext>
+<penalty>0</penalty>
+<defaultgrade>10</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Eine experimentelle Studie
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Eine quasi-experimentelle Studie
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+Eine nicht-experimentelle Studie
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="category">
+<category>
+<text>$course$/Experimentelles Design/Exercise 2</text>
+</category>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> Q2 : methodologie_experimentelles-design_exams_Exp_Quasiexp_Nichtexp_Studien_02 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Es soll untersucht werden, welchen Zusammenhang es zwischen Pausen beim Lernen und der Lernleistung gibt. Dazu werden Studentinnen und Studenten eines Seminars miteinander verglichen. Die Studentinnen werden aufgefordert nach jeweils 30 Minuten Lernzeit eine Pause von 5 Minuten einzulegen. Die Studenten sollen die Zeit ohne Unterbrechung zum Lernen nutzen. Zusätzlich wird die Lernzeit erfasst. Die Lernleistung wird anhand der erreichten Punktzahl in einer Abschlussklausur bewertet.</p>
+<p><strong>Welches Untersuchungsdesign liegt vor?</strong></p>
+</p>]]></text>
+</questiontext>
+<penalty>0</penalty>
+<defaultgrade>10</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Eine experimentelle Studie
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+Eine quasi-experimentelle Studie
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Eine nicht-experimentelle Studie
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="category">
+<category>
+<text>$course$/Experimentelles Design/Exercise 3</text>
+</category>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> Q3 : methodologie_experimentelles-design_exams_Exp_Quasiexp_Nichtexp_Studien_03 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Es soll untersucht werden, welchen Zusammenhang es zwischen Pausen beim Lernen und der Lernleistung gibt. Dazu werden die Studierenden in einem Seminar zufällig in zwei Gruppen zugeteilt. Die Gesamtlernzeit wird für beide Gruppen auf 3 h begrenzt. Gruppe 1 soll nach jeweils 30 Minuten eine Pause von 5 Minuten machen, Gruppe 2 soll die Zeit ohne Unterbrechung zum Lernen nutzen. Die Lernleistung wird anhand der erreichten Punktzahl in einer Abschlussklausur bewertet.</p>
+<p><strong>Welches Untersuchungsdesign liegt vor?</strong></p>
+</p>]]></text>
+</questiontext>
+<penalty>0</penalty>
+<defaultgrade>10</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+Eine experimentelle Studie
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Eine quasi-experimentelle Studie
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Eine nicht-experimentelle Studie
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="category">
+<category>
+<text>$course$/Experimentelles Design/Exercise 4</text>
+</category>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> Q4 : methodologie_experimentelles-design_exams_Exp_Quasiexp_Nichtexp_Studien_04 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Der Ankereffekt tritt ein, wenn Menschen mit neuen Informationen (z. B. Zahlenwerten) konfrontiert werden, die sie unbewusst als Anker nutzen, um daran ihre eigene Einschätzung zu orientieren. Es soll untersucht werden, ob die Zweitkorrektur von Abituraufsätzen im Fach Deutsch durch den Ankereffekt verfälscht wird, wenn die Erstkorrekturnote bekannt ist. Dazu werden in einer repräsentative Stichprobe von Deutschlehrkräften die gleichen fünf Deutschaufsätze samt Erstkorrektur mit der Bitte um Zweitkorrektur vorgelegt. Anschließend beantworten die Lehrkräfte in einem standardisierten Fragebogen, ob sie bei der Beurteilung von der Erstkorrektur beeinflusst wurden.</p>
+<p><strong>Welches Untersuchungsdesign liegt vor?</strong></p>
+</p>]]></text>
+</questiontext>
+<penalty>0</penalty>
+<defaultgrade>10</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Eine experimentelle Studie
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Eine quasi-experimentelle Studie
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+Eine nicht-experimentelle Studie
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="category">
+<category>
+<text>$course$/Experimentelles Design/Exercise 5</text>
+</category>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> Q5 : methodologie_experimentelles-design_exams_Exp_Quasiexp_Nichtexp_Studien_05 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Der Ankereffekt tritt ein, wenn Menschen mit neuen Informationen (z. B. Zahlenwerten) konfrontiert werden, die sie unbewusst als Anker nutzen, um daran ihre eigene Einschätzung zu orientieren. Es soll untersucht werden, ob die Zweitkorrektur von Abituraufsätzen im Fach Deutsch durch den Ankereffekt verfälscht wird, wenn die Erstkorrekturnote bekannt ist. Dazu werden Lehrer*innen zufällig in zwei Experimentalgruppen eingeteilt. Eine Gruppe erhält Deutschaufsätze mit einer angeblich guten Erstkorrekturnote (Note 2). Die andere Gruppe erhält dieselben Deutschaufsätze jedoch unter Angabe einer schlechten Erstkorrekturnote (Note 5). Es wird untersucht, ob eine bessere Note für Arbeiten mit der angeblichen guten Erstkorrekturnote als mit der angeblich schlechten Erstkorrekturnote vergeben werden.</p>
+<p><strong>Welches Untersuchungsdesign liegt vor?</strong></p>
+</p>]]></text>
+</questiontext>
+<penalty>0</penalty>
+<defaultgrade>10</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+Eine experimentelle Studie
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Eine quasi-experimentelle Studie
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Eine nicht-experimentelle Studie
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="category">
+<category>
+<text>$course$/Experimentelles Design/Exercise 6</text>
+</category>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> Q6 : methodologie_experimentelles-design_exams_Exp_Quasiexp_Nichtexp_Studien_06 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Der Ankereffekt tritt ein, wenn Menschen mit neuen Informationen (z. B. Zahlenwerten) konfrontiert werden, die sie unbewusst als Anker nutzen, um daran ihre eigene Einschätzung zu orientieren. Es soll untersucht werden, ob die Zweitkorrektur von Abituraufsätzen im Fach Deutsch durch den Ankereffekt verfälscht wird, wenn die Erstkorrekturnote bekannt ist. Der Einfachheit halber bilden die Lehrkräfte an Schule A die eine Experimentalgruppe und die Lehrkräfte an Schule B die zweite Experimentalgruppe. Eine Gruppe erhält Deutschaufsätze mit einer angeblich guten Erstkorrekturnote (Note 2). Die andere Gruppe erhält dieselben Deutschaufsätze jedoch unter Angabe einer schlechten Erstkorrekturnote (Note 5). Es wird untersucht, ob eine bessere Note für Arbeiten mit der angeblichen guten Erstkorrekturnote als mit der angeblich schlechten Erstkorrekturnote vergeben werden.</p>
+<p><strong>Welches Untersuchungsdesign liegt vor?</strong></p>
+</p>]]></text>
+</questiontext>
+<penalty>0</penalty>
+<defaultgrade>10</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Eine experimentelle Studie
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+Eine quasi-experimentelle Studie
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Eine nicht-experimentelle Studie
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="category">
+<category>
+<text>$course$/Experimentelles Design/Exercise 7</text>
+</category>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> Q7 : methodologie_experimentelles-design_exams_Exp_Quasiexp_Nichtexp_Studien_07 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Es sollen genauere Erkenntnisse darüber gewonnen werden, wie sich die Stressbewältigung bei Lehrkräften verbessern lässt. Dazu werden umfangreiche Fragebögen zu Persönlichkeitsmerkmalen, Wissen zu Stressbewältigungsstrategien sowie eigenem Stressempfinden bei Lehrkräften mit und ohne vorherige Burnout-Diagnose miteinander verglichen.</p>
+<p><strong>Welches Untersuchungsdesign liegt vor?</strong></p>
+</p>]]></text>
+</questiontext>
+<penalty>0</penalty>
+<defaultgrade>10</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Eine experimentelle Studie
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Eine quasi-experimentelle Studie
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+Eine nicht-experimentelle Studie
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="category">
+<category>
+<text>$course$/Experimentelles Design/Exercise 8</text>
+</category>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> Q8 : methodologie_experimentelles-design_exams_Exp_Quasiexp_Nichtexp_Studien_08 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Es sollen genauere Erkenntnisse darüber gewonnen werden, wie sich die Stressbewältigung bei Lehrkräften verbessern lässt. Dazu werden aus einem Pool interessierter Lehrkräfte zufällig 30 Personen ausgewählt und zu einem Stressbewältigungstraining eingeladen. Die nicht eingeladenen Lehrkräfte wurden als Kontrollgruppe genutzt. Beim Training wird umfangreiches Wissen zur Entstehung von Stress und zu Stressbewältigungsstrategien angeboten und in kleineren Gruppenübungen vertieft. Längsschnittlich werden die Teilnehmenden zu ihrem eigenen Stressempfinden im Beruf befragt und mit der Kontrollstichprobe verglichen.</p>
+<p><strong>Welches Untersuchungsdesign liegt vor?</strong></p>
+</p>]]></text>
+</questiontext>
+<penalty>0</penalty>
+<defaultgrade>10</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+Eine experimentelle Studie
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Eine quasi-experimentelle Studie
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Eine nicht-experimentelle Studie
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="category">
+<category>
+<text>$course$/Experimentelles Design/Exercise 9</text>
+</category>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> Q9 : methodologie_experimentelles-design_exams_Exp_Quasiexp_Nichtexp_Studien_09 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Es sollen genauere Erkenntnisse darüber gewonnen werden, wie sich die Stressbewältigung bei Lehrkräften verbessern lässt. Dazu wird auf einer Fortbildung zum Thema Burnout für alle Teilnehmenden ein Stressbewältigungstraining in Kleingruppen durchgeführt. Die Kontrollstichprobe wurde auf einer Fortbildung für Inklusion für die Studie ausgewählt. Längsschnittlich werden die Teilnehmenden anschließend zu ihrem eigenen Stressempfinden im Beruf befragt und mit der Kontrollstichprobe verglichen.</p>
+<p><strong>Welches Untersuchungsdesign liegt vor?</strong></p>
+</p>]]></text>
+</questiontext>
+<penalty>0</penalty>
+<defaultgrade>10</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Eine experimentelle Studie
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+Eine quasi-experimentelle Studie
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Eine nicht-experimentelle Studie
+</p>]]></text>
+</answer>
+</question>
+
+</quiz>
