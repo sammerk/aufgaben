@@ -1,4 +1,4 @@
-```{r, Datengenese, echo = FALSE, message=FALSE}
+```{r, Datengenese3, echo = FALSE, message=FALSE}
 x <- sample(1:100, 7)
 median <- median(x)
 library(dplyr)
@@ -28,7 +28,7 @@ Welchen Wert hat der Median von Y?
 
 
 
-```{r questionlist, echo = FALSE, results='asis'}
+```{r questionlist2, echo = FALSE, results='asis'}
 answerlist(
   data |> pull(answerlist),
   markup = "markdown")
